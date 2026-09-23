@@ -1,0 +1,11 @@
+{
+  "name": "hoamex",
+  "version": "1.0.0",
+  "description": "Joamex Home Services UI",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "author": "",
+  "license": "ISC"
+}

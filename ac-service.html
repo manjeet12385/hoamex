@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Service & Repair - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="ac-service-layout">
+            
+            <!-- Left Column: Title and Services -->
+            <div class="ac-left-col">
+                <div class="ac-page-header">
+                    <h1 class="ac-page-title">AC Service<br>& Repair</h1>
+                    <div class="ac-instant-badge">
+                        <i class="fa-solid fa-bolt"></i> Instant
+                        <div class="ac-instant-time">In 44 mins</div>
+                    </div>
+                </div>
+                
+                <div class="ac-rating">
+                    <i class="fa-solid fa-star"></i> 4.78 <span>(14.1 M bookings)</span>
+                </div>
+
+                <div class="ac-select-service-card">
+                    <h3>Select a service</h3>
+                    <div class="ac-service-grid">
+                        <div class="ac-service-card-item" id="annual-plan-btn" style="border: 2px solid #000; padding: 5px; border-radius: 8px;">
+                            <div class="ac-discount-badge">Upto<br><strong>30%</strong><br>OFF</div>
+                            <p>Annual plan</p>
+                        </div>
+                        <div class="ac-service-card-item" id="service-plan-btn">
+                            <img src="images/ac.jpg" alt="Service">
+                            <p>Service</p>
+                        </div>
+                        <div class="ac-service-card-item" id="repair-plan-btn">
+                            <img src="images/ac.jpg" alt="Repair & gas refill">
+                            <p>Repair & gas refill</p>
+                        </div>
+                        <div class="ac-service-card-item" id="install-plan-btn">
+                            <img src="images/ac.jpg" alt="Installation">
+                            <p>Installation/uninstall<br>lation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Banner -->
+            <div class="ac-right-col">
+                <div class="ac-banner-container">
+                    <div class="ac-banner-text">
+                        <h2>Foam-jet<br>AC service</h2>
+                        <p>Deep cleans AC coils<br>for better cooling</p>
+                    </div>
+                    <img src="images/cleaning.jpg" alt="Foam-jet AC Service" class="ac-banner-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="divider" style="margin: 40px auto; max-width: 1200px;"></div>
+
+        <!-- 3-Column Detailed Section -->
+        <div class="ac-details-section" id="ac-details-section">
+            
+            <!-- Left Sidebar -->
+            <div class="ac-sidebar">
+                <!-- Intentionally left blank to maintain spacing -->
+            </div>
+
+            <!-- Center Content -->
+            <div class="ac-main-content">
+                <h2 class="section-heading">Annual plan</h2>
+                
+                <div class="annual-promo-card">
+                    <div class="promo-tag">10% OFF</div>
+                    <div class="promo-content">
+                        <h3>Annual service plan</h3>
+                        <div class="promo-price"><strike>₹599</strike> <strong>₹399/AC</strong></div>
+                        <p>Starts at 399/AC<br>Valid in 2026*</p>
+                    </div>
+                    <img src="images/cleaning.jpg" alt="AC Service Promo">
+                </div>
+
+                <div class="plan-details-card">
+                    <div class="plan-header">
+                        <div>
+                            <h4>Annual plan [2 times/year]</h4>
+                            <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                            <div class="plan-price">Starts at ₹1,198 <strike>₹1,290</strike></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" id="open-options-modal-btn">Add</button>
+                            <span>10 options</span>
+                        </div>
+                    </div>
+                    
+                    <div class="save-tag"><i class="fa-solid fa-tag"></i> Add more & save up to 23%</div>
+                    
+                    <ul class="plan-features">
+                        <li>Get 1st service now, choose 2nd service anytime in 2026</li>
+                        <li>Applicable for both window or split ACs</li>
+                    </ul>
+                    
+                    <a href="#" class="view-details">View details</a>
+                </div>
+
+                <!-- New Service Details Section -->
+                <div id="service-details-section" style="margin-top: 60px;">
+                    <h2 class="section-heading">Service</h2>
+                    
+                    <div class="service-banner-card" style="position: relative; border-radius: 12px; overflow: hidden; background: #f0f0f0; margin-bottom: 20px;">
+                        <div class="free-gas-tag" style="position: absolute; top: 15px; left: 15px; background: #00875a; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 13px; z-index: 2;">Free gas check</div>
+                        <div style="padding: 60px 20px 20px 20px; width: 50%; position: relative; z-index: 2;">
+                            <h3 style="font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 10px;">Foam-jet<br>AC service</h3>
+                            <p style="color: #555; font-size: 15px;">Deep clean AC vents<br>for efficient cooling</p>
+                        </div>
+                        <img src="images/cleaning.jpg" alt="AC Cleaning" style="position: absolute; top: 0; right: 0; height: 100%; width: 60%; object-fit: cover;">
+                    </div>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px;">
+                        <div class="plan-header">
+                            <div>
+                                <h4>Foam-jet AC service</h4>
+                                <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                                <div class="plan-price">Starts at ₹649</div>
+                            </div>
+                            <div class="add-btn-container">
+                                <button class="add-btn" style="padding: 8px 30px;">Add</button>
+                                <span style="display: block; margin-top: 5px;">9 options</span>
+                            </div>
+                        </div>
+                        
+                        <div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> Add more & save up to 23%</div>
+                        
+                        <ul class="plan-features" style="margin-top: 15px;">
+                            <li>Applicable for both window & split ACs</li>
+                            <li>Indoor unit deep cleaning with foam & jet spray</li>
+                        </ul>
+                        
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px dashed #ccc;">
+                        <div class="plan-header">
+                            <div>
+                                <h4>Foam-jet service (2 ACs)</h4>
+                                <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                                <div class="plan-price">₹1,198 <strike>₹1,290</strike> &bull; <span style="font-weight: 400; color: #666; font-size: 13px;">2 hrs</span></div>
+                            </div>
+                            <div class="add-btn-container">
+                                <button class="add-btn" style="padding: 8px 30px;">Add</button>
+                            </div>
+                        </div>
+                        
+                        <div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> ₹599 per AC</div>
+                        
+                        <ul class="plan-features" style="margin-top: 15px;">
+                            <li>Applicable for both window or split ACs</li>
+                            <li>Indoor unit deep cleaning with foam & jet spray</li>
+                        </ul>
+                        
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (3 ACs)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,647 <strike style="color:#999; font-weight:400; font-size: 13px;">₹1,947</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">3 hrs</span></div>
+                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹549 per AC</div>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+                                    <img src="images/cleaning.jpg" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (4 ACs)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,996 <strike style="color:#999; font-weight:400; font-size: 13px;">₹2,596</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">4 hrs</span></div>
+                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+                                    <img src="images/cleaning.jpg" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (5 ACs)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹2,495 <strike style="color:#999; font-weight:400; font-size: 13px;">₹3,245</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">5 hrs</span></div>
+                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+                                    <img src="images/cleaning.jpg" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Repair & Gas Refill Section -->
+                <div id="repair-details-section" style="margin-top: 60px;">
+                    <h2 class="section-heading">Repair & gas refill</h2>
+                    
+                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC repair</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.73 <span style="color: #666; font-weight: 400;">(865K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹299</div>
+                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                    <li>Complete check-up to identify issues before repair</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/cleaning.jpg" alt="AC Repair" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
+                                </div>
+                                <button id="add-ac-repair-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Gas refill & check-up</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span style="color: #666; font-weight: 400;">(111K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹3,000 <span style="font-weight: 400; color: #666; font-size: 13px;">&bull; 2 hrs 30 mins</span></div>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-block; margin-top: 10px;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/ac.jpg" alt="Gas Refill" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px; background: #f8f8f8;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Installation/Uninstallation Section -->
+                <div id="install-details-section" style="margin-top: 60px;">
+                    <h2 class="section-heading">Installation/uninstallation</h2>
+                    
+                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC installation</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.69 <span style="color: #666; font-weight: 400;">(151K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹1,599</div>
+                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                    <li>Installation of indoor & outdoor units with free gas check</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/homecare.jpg" alt="AC Installation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
+                                </div>
+                                <button id="open-install-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC uninstallation</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.79 <span style="color: #666; font-weight: 400;">(141K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹699</div>
+                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                    <li>Uninstallation of both indoor & outdoor units</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/homecare.jpg" alt="AC Uninstallation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
+                                </div>
+                                <button id="open-uninstall-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="ac-right-sidebar">
+                <div class="uc-promise-card">
+                    <h3>UC Promise</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                        <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
+                        <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                    </ul>
+                    <img src="images/beauty.jpg" class="promise-badge" alt="Quality Assured">
+                </div>
+
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Options Modal -->
+    <div id="options-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content">
+            <button id="close-options-modal-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner">
+                <div class="options-banner-text">
+                    <h2>Foam-jet<br>AC service</h2>
+                    <p>Deep cleans AC coils<br>for better cooling</p>
+                </div>
+                <img src="images/cleaning.jpg" alt="Foam-jet AC Service">
+            </div>
+            
+            <div class="options-modal-body">
+                <h3 class="options-modal-title">Annual plan [2 times/year]</h3>
+                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                <div class="options-discount"><i class="fa-solid fa-tag"></i> Get ₹100 off</div>
+
+                <div class="options-card-container">
+                    <div class="option-card">
+                        <h4>1 AC</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹1198 <strike>₹1298</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>2 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹2196 <strike>₹2596</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>3 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹2994 <strike>₹3894</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>4 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹3592 <strike>₹5192</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>5 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹4490 <strike>₹6490</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>6 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹5388 <strike>₹7788</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>7 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹6286 <strike>₹9086</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>8 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹7184 <strike>₹10384</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>9 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹8082 <strike>₹11682</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>10 ACs</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+                        <div class="option-price">₹8980 <strike>₹12980</strike></div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Install Options Modal -->
+    <div id="install-options-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content">
+            <button id="close-install-options-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner">
+                <div class="options-banner-text">
+                    <h2>AC installation</h2>
+                    <p>Expert installation done<br>right the first time</p>
+                </div>
+                <img src="images/homecare.jpg" alt="AC Installation">
+            </div>
+            
+            <div class="options-modal-body">
+                <h3 class="options-modal-title">AC installation</h3>
+                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(151K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div class="options-card-container">
+                    <div class="option-card">
+                        <h4>Split AC</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(141K reviews)</span></div>
+                        <div class="option-price">₹2499</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>Window AC</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(11K reviews)</span></div>
+                        <div class="option-price">₹1599</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uninstall Options Modal -->
+    <div id="uninstall-options-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content">
+            <button id="close-uninstall-options-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner">
+                <div class="options-banner-text">
+                    <h2>AC uninstallation</h2>
+                    <p>Safe removal without damage<br>to your unit or walls</p>
+                </div>
+                <img src="images/homecare.jpg" alt="AC Uninstallation">
+            </div>
+            
+            <div class="options-modal-body">
+                <h3 class="options-modal-title">AC uninstallation</h3>
+                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(141K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div class="options-card-container">
+                    <div class="option-card">
+                        <h4>Split AC</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(132K reviews)</span></div>
+                        <div class="option-price">₹899</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>Window AC</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.82 <span>(9K reviews)</span></div>
+                        <div class="option-price">₹699</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Repair Options Modal -->
+    <div id="repair-options-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content">
+            <button id="close-repair-options-modal-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="options-modal-banner" style="background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); position: relative;">
+                <div class="options-banner-text" style="position: absolute; left: 20px; top: 20px; z-index: 2;">
+                    <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px;">AC Repair</h2>
+                    <p style="font-size: 14px; color: #555; line-height: 1.4;">Hassle-free fixes<br>for all AC issues</p>
+                </div>
+                <img src="images/ac.jpg" alt="AC Repair" style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8; mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
+            </div>
+            
+            <div class="options-modal-body">
+                <h3 class="options-modal-title">AC repair</h3>
+                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.73 <span>(865K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div class="options-card-container">
+                    <div class="option-card">
+                        <h4>Less/no cooling</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(496K reviews)</span></div>
+                        <div class="option-price">₹299</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>Power issue</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.72 <span>(142K reviews)</span></div>
+                        <div class="option-price">₹299</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card">
+                        <h4>Unwanted noise/smell</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(42K reviews)</span></div>
+                        <div class="option-price">₹499</div>
+                        <button class="option-add-btn">Add</button>
+                    </div>
+                    <div class="option-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+                        <h4>Water leakage</h4>
+                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(185K reviews)</span></div>
+                        <div class="option-price">₹599</div>
+                        <button class="option-add-btn" style="padding: 5px 10px; width: fit-content; align-self: flex-end; position: absolute; bottom: 15px; right: 15px; background: transparent; color: #000; border: 2px solid #000; border-radius: 6px;"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annualPlanBtn = document.getElementById('annual-plan-btn');
+            const detailsSection = document.getElementById('ac-details-section');
+
+            if (annualPlanBtn && detailsSection) {
+                annualPlanBtn.addEventListener('click', () => {
+                    detailsSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const servicePlanBtn = document.getElementById('service-plan-btn');
+            const serviceDetailsSection = document.getElementById('service-details-section');
+
+            if (servicePlanBtn && serviceDetailsSection) {
+                servicePlanBtn.addEventListener('click', () => {
+                    serviceDetailsSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const repairPlanBtn = document.getElementById('repair-plan-btn');
+            const repairDetailsSection = document.getElementById('repair-details-section');
+
+            if (repairPlanBtn && repairDetailsSection) {
+                repairPlanBtn.addEventListener('click', () => {
+                    repairDetailsSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const installPlanBtn = document.getElementById('install-plan-btn');
+            const installDetailsSection = document.getElementById('install-details-section');
+
+            if (installPlanBtn && installDetailsSection) {
+                installPlanBtn.addEventListener('click', () => {
+                    installDetailsSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Options Modal Logic
+            const openOptionsBtn = document.getElementById('open-options-modal-btn');
+            const optionsModal = document.getElementById('options-modal');
+            const closeOptionsBtn = document.getElementById('close-options-modal-btn');
+
+            if (openOptionsBtn && optionsModal && closeOptionsBtn) {
+                openOptionsBtn.addEventListener('click', () => {
+                    optionsModal.classList.remove('hidden');
+                });
+
+                closeOptionsBtn.addEventListener('click', () => {
+                    optionsModal.classList.add('hidden');
+                });
+
+                optionsModal.addEventListener('click', (e) => {
+                    if (e.target === optionsModal) {
+                        optionsModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Install Options Modal Logic
+            const openInstallOptionsBtn = document.getElementById('open-install-options-btn');
+            const installOptionsModal = document.getElementById('install-options-modal');
+            const closeInstallOptionsBtn = document.getElementById('close-install-options-btn');
+
+            if (openInstallOptionsBtn && installOptionsModal && closeInstallOptionsBtn) {
+                openInstallOptionsBtn.addEventListener('click', () => {
+                    installOptionsModal.classList.remove('hidden');
+                });
+
+                closeInstallOptionsBtn.addEventListener('click', () => {
+                    installOptionsModal.classList.add('hidden');
+                });
+
+                installOptionsModal.addEventListener('click', (e) => {
+                    if (e.target === installOptionsModal) {
+                        installOptionsModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Uninstall Options Modal Logic
+            const openUninstallOptionsBtn = document.getElementById('open-uninstall-options-btn');
+            const uninstallOptionsModal = document.getElementById('uninstall-options-modal');
+            const closeUninstallOptionsBtn = document.getElementById('close-uninstall-options-btn');
+
+            if (openUninstallOptionsBtn && uninstallOptionsModal && closeUninstallOptionsBtn) {
+                openUninstallOptionsBtn.addEventListener('click', () => {
+                    uninstallOptionsModal.classList.remove('hidden');
+                });
+
+                closeUninstallOptionsBtn.addEventListener('click', () => {
+                    uninstallOptionsModal.classList.add('hidden');
+                });
+
+                uninstallOptionsModal.addEventListener('click', (e) => {
+                    if (e.target === uninstallOptionsModal) {
+                        uninstallOptionsModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Repair Options Modal Logic
+            const openRepairOptionsBtn = document.getElementById('add-ac-repair-btn');
+            const repairOptionsModal = document.getElementById('repair-options-modal');
+            const closeRepairOptionsBtn = document.getElementById('close-repair-options-modal-btn');
+
+            if (openRepairOptionsBtn && repairOptionsModal && closeRepairOptionsBtn) {
+                openRepairOptionsBtn.addEventListener('click', () => {
+                    repairOptionsModal.classList.remove('hidden');
+                });
+
+                closeRepairOptionsBtn.addEventListener('click', () => {
+                    repairOptionsModal.classList.add('hidden');
+                });
+
+                repairOptionsModal.addEventListener('click', (e) => {
+                    if (e.target === repairOptionsModal) {
+                        repairOptionsModal.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

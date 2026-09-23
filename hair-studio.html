@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Studio for Women - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page-wrapper">
+        <!-- Top title row -->
+        <div class="top-section">
+            <div>
+                <h1 class="page-title">Hair Studio for Women</h1>
+                <div class="page-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>4.78</strong>
+                    <span>(2.2 M bookings)</span>
+                </div>
+            </div>
+            <div style="background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 6px; text-align: center; border: 1px solid #c8e6c9;">
+                <div style="font-size: 10px; font-weight: bold;"><i class="fa-solid fa-clock" style="margin-right: 3px;"></i> Earliest</div>
+                <div style="font-size: 12px; margin-top: 2px; font-weight: bold;">Wed, 11:30 AM</div>
+            </div>
+        </div>
+
+        <!-- 3-Column Layout -->
+        <div class="three-col-layout">
+            <!-- LEFT SIDEBAR -->
+            <div class="left-sidebar">
+                <div class="select-service-card">
+                    <h3>Select a service</h3>
+                    <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                        <a href="#packages" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px; background: #e0f2f1; color: #00897b; font-size: 20px;">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Packages</span>
+                        </a>
+                        <a href="#blow-dry" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/classic_hair.jpg" alt="Blow-dry & style" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Blow-dry & style</span>
+                        </a>
+                        <a href="#cut-trim" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/advance_hair.jpg" alt="Cut & trim" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Cut & trim</span>
+                        </a>
+                        <a href="#hair-care" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/salon_head_massage.jpg" alt="Hair care" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Hair care</span>
+                        </a>
+                        <a href="#keratin" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/beauty.jpg" alt="Keratin & botox" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Keratin & botox</span>
+                        </a>
+                        <a href="#hair-colour" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/hairstyling_duo.jpg" alt="Hair colour" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Hair colour</span>
+                        </a>
+                        <a href="#fashion-color" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/party_makeup_single.jpg" alt="Fashion color" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Fashion color</span>
+                        </a>
+                        <a href="#extensions" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+                            <div class="service-item-img" style="margin-bottom:6px;">
+                                <img src="images/hd_finish.jpg" alt="Hair extensions" style="width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Hair extensions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER CONTENT -->
+            <div class="center-content">
+                <!-- HERO BANNER -->
+                <div style="margin-bottom: 30px; border-radius: 12px; overflow: hidden; position: relative; width: 100%; height: 250px; background: #333;">
+                    <!-- Placeholder for banner since quota is exhausted -->
+                    <img src="images/hairstyling_duo.jpg" alt="Hair Studio Banner" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                    <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(182, 115, 126, 0.9); padding: 8px 20px; border-radius: 30px;">
+                        <span style="color: white; font-weight: 700; font-size: 24px;">Unmatched Experience</span>
+                    </div>
+                </div>
+
+                <div id="packages" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Packages</h2>
+                    
+                    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> VALUE-SAVER</div>
+                                    <h4>Cut, trim, spa & style</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (376K reviews)</a>
+                                    </div>
+                                    <div class="service-price">
+                                        <span>₹1,698</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹1,848</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 45 mins</span>
+                                    </div>
+                                </div>
+                                <div style="width: 140px; text-align: right; display: flex; flex-direction: column; align-items: center;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; background: #e8f5e9; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #1e7045; text-align: center; line-height: 1.1; margin-bottom: -15px; position: relative; z-index: 1; border: 1px solid #c8e6c9;">
+                                        <span style="font-size: 28px; font-weight: 800;">10%</span>
+                                        <span style="font-size: 16px; font-weight: 800;">OFF</span>
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Cut, trim, spa & style', 1698)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li><strong>Haircut or trim:</strong> Haircut</li>
+                                <li><strong>Hair spa:</strong> Ayurvedic strengthening spa</li>
+                            </ul>
+                            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> VALUE-SAVER</div>
+                                    <h4>Cut, trim & style</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (309K reviews)</a>
+                                    </div>
+                                    <div class="service-price">
+                                        <span>₹998</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹1,098</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 30 mins</span>
+                                    </div>
+                                </div>
+                                <div style="width: 140px; text-align: right; display: flex; flex-direction: column; align-items: center;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #1e7045; text-align: center; line-height: 1.1; margin-bottom: -15px; position: relative; z-index: 1;">
+                                        <span style="font-size: 28px; font-weight: 800;">10%</span>
+                                        <span style="font-size: 16px; font-weight: 800;">OFF</span>
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Cut, trim & style', 998)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li><strong>Haircut or trim:</strong> Haircut</li>
+                                <li><strong>Hair styling:</strong> Straightening</li>
+                            </ul>
+                            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> VALUE-SAVER</div>
+                                    <h4>Cut, trim, spa, style, colour (roots touch up)</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (405K reviews)</a>
+                                    </div>
+                                    <div class="service-price">
+                                        <span>₹2,172</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹2,397</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 2 hrs 30 mins</span>
+                                    </div>
+                                </div>
+                                <div style="width: 140px; text-align: right; display: flex; flex-direction: column; align-items: center;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #1e7045; text-align: center; line-height: 1.1; margin-bottom: -15px; position: relative; z-index: 1;">
+                                        <span style="font-size: 28px; font-weight: 800;">15%</span>
+                                        <span style="font-size: 16px; font-weight: 800;">OFF</span>
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Cut, trim, spa, style, colour', 2172)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li><strong>Haircut or trim:</strong> Haircut</li>
+                                <li><strong>Hair spa:</strong> L'Oreal hair spa</li>
+                                <li><strong>Hair styling:</strong> Straightening / Curling</li>
+                            </ul>
+                            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> VALUE-SAVER</div>
+                                    <h4>Haircut & botox/keratin</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (181K reviews)</a>
+                                    </div>
+                                    <div class="service-price">
+                                        <span>₹5,248</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹5,548</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 3 hrs 45 mins</span>
+                                    </div>
+                                </div>
+                                <div style="width: 140px; text-align: right; display: flex; flex-direction: column; align-items: center;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1;">
+                                        <img src="images/salon_head_massage.jpg" alt="Haircut & botox/keratin" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Haircut & botox/keratin', 5248)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li><strong>Keratin:</strong> Long-length</li>
+                                <li><strong>Haircut or trim:</strong> Haircut</li>
+                            </ul>
+                            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> VALUE-SAVER</div>
+                                    <h4>Haircut & color</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.79 (169K reviews)</a>
+                                    </div>
+                                    <div class="service-price">
+                                        <span>₹2,697</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹2,847</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 45 mins</span>
+                                    </div>
+                                </div>
+                                <div style="width: 140px; text-align: right; display: flex; flex-direction: column; align-items: center;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #1e7045; text-align: center; line-height: 1.1; margin-bottom: -15px; position: relative; z-index: 1;">
+                                        <span style="font-size: 28px; font-weight: 800;">15%</span>
+                                        <span style="font-size: 16px; font-weight: 800;">OFF</span>
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Haircut & color', 2697)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li><strong>Roots: Color (L'Oréal Inoa):</strong> Shade 2: Darkest Brown</li>
+                                <li><strong>Roots: Color (L'Oréal Majriel):</strong> Shade 3: Dark Brown</li>
+                                <li><strong>Haircut or trim:</strong> Haircut</li>
+                            </ul>
+                            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOW-DRY & STYLE SECTION -->
+                <div id="blow-dry" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Blow-dry &amp; style</h2>
+
+                    <!-- Service 1: In curl/out curl blow-dry -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">In curl/out curl blow-dry</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.78 (68K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹449</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Beautiful curls, styled in or out, with a perfect blow-dry finish</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="Curl blow-dry" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('In curl/out curl blow-dry', 449)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Straight & smooth blow-dry -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Straight &amp; smooth blow-dry</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.85 (63K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹399</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Sleek, smooth &amp; straight hair with a professional blow-dry</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/advance_hair.jpg" alt="Straight blow-dry" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Straight & smooth blow-dry', 399)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Advanced Styling -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Advanced Styling</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.65 (1K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,000</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/hairstyling_duo.jpg" alt="Advanced Styling" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Advanced Styling', 1000)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Hair straightening -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Hair straightening</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.86 (20K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹549</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Transform your hair into a sleek, straight look with long-lasting results</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/advance_hair.jpg" alt="Hair straightening" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hair straightening', 549)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Curls & waves -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Curls &amp; waves</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.73 (17K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹549</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Soft curls or waves for a natural, voluminous hairstyle</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="Curls and waves" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Curls & waves', 549)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CUT & TRIM SECTION -->
+                <div id="cut-trim" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Cut &amp; trim</h2>
+
+                    <!-- Video placeholder -->
+                    <div style="background: #f0f0f0; border-radius: 12px; height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; position: relative;">
+                        <div style="width: 52px; height: 52px; background: rgba(0,0,0,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-play" style="color: white; font-size: 20px; margin-left: 4px;"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 1: Haircut for women -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Haircut for women</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (141K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹549</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Expert haircut tailored to your style. Blow-dry not included.</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 10px;">
+                                        <button class="add-btn" onclick="addToCart('Haircut for women', 549)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Haircut for girls -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Haircut for girls</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (8K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹649</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>A gentle, stylish haircut with care &amp; precision. For girls aged 6-15.</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/advance_hair.jpg" alt="Haircut for girls" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Haircut for girls', 649)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Haircut for mom & daughter -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Haircut for mom &amp; daughter</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (7K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,049</span>
+                                        <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹1,299</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 2 hrs</span>
+                                    </div>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/salon_head_massage.jpg" alt="Haircut for mom and daughter" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Haircut for mom & daughter', 1049)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Hair trim -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Hair trim</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (149K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹449</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Split-end removal with minimal length reduction. Blow-dry not included.</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="Hair trim" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hair trim', 449)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- HAIR CARE SECTION -->
+                <div id="hair-care" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Hair care</h2>
+
+                    <!-- Service 1: Hair Spa (BESTSELLER) -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-trophy"></i> BESTSELLER</div>
+                                    <h4 style="margin-bottom: 6px;">Hair Spa</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.78 (32K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,299</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 8px;">
+                                        <li>Steam therapy to deeply nourish hair from scalp to ends, restoring natural shine</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/salon_head_massage.jpg" alt="Hair Spa" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hair Spa', 1299)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: L'Oréal hair repair mask -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal hair repair mask</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.76 (4K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹649</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 40 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Intensive repair mask therapy to strengthen &amp; restore hair</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/beauty.jpg" alt="L'Oréal hair repair mask" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal hair repair mask', 649)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Head massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Head massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.78 (5K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹349</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Gentle massage to help promote blood flow, reduce stress &amp; nourish the scalp</li>
+                                        <li>Hair wash &amp; blow-dry not included</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/salon_head_massage.jpg" alt="Head massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Head massage', 349)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- KERATIN & BOTOX SECTION -->
+                <div id="keratin" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Keratin &amp; botox</h2>
+
+                    <!-- Service 1: Hair keratin -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Hair keratin</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.61 (2K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹3,999</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Keratin treatment smoothens hair for a shiny, frizz-free look</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/advance_hair.jpg" alt="Hair keratin" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hair keratin', 3999)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Hair botox (BESTSELLER) -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-trophy"></i> BESTSELLER</div>
+                                    <h4 style="margin-bottom: 6px;">Hair botox</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.54 (3K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹5,499</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 3 hrs</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Single-session treatment to repair damaged, frizzy hair &amp; promote healthy scalp</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="Hair botox" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hair botox', 5499)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- HAIR COLOUR SECTION -->
+                <div id="hair-colour" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Hair colour</h2>
+
+                    <!-- Video placeholder -->
+                    <div style="background: #f0f0f0; border-radius: 12px; height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; position: relative;">
+                        <div style="width: 52px; height: 52px; background: rgba(0,0,0,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-play" style="color: white; font-size: 20px; margin-left: 4px;"></i>
+                        </div>
+                    </div>
+
+                    <!-- Service 1: Hair colour (application only) -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Hair colour (application only)</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (54K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹399</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Even application of the chosen shade from root to tip</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 10px;">
+                                        <button class="add-btn" onclick="addToCart('Hair colour (application only)', 399)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: L'Oréal Global color -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal Global color</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.64 (9K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹2,399</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Even application of the chosen shade from root to tip</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/hairstyling_duo.jpg" alt="L'Oréal Global color" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal Global color', 2399)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: L'Oréal Global fashion hair colour -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal Global fashion hair colour</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.56 (1K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹2,599</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 2 hrs</span>
+                                    </div>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; padding-top: 10px;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal Global fashion hair colour', 2599)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: L'Oréal root touch up -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal root touch up</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.71 (30K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹999</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 30 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Gentle, long-lasting root touch-up with L'Oreal Inoa and Majirel shades</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/advance_hair.jpg" alt="L'Oréal root touch up" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal root touch up', 999)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: L'Oréal Majirel root touch-up -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal Majirel root touch-up</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.65 (658 reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,299</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Hair wash not included</li>
+                                        <li>Base hair color of Loreal Inoa or Loreal Majirel will be used with fashion shade</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="L'Oréal Majirel root touch-up" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal Majirel root touch-up', 1299)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: L'Oréal Inoa root touch-up -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal Inoa root touch-up</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.60 (1K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,499</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Hair wash not included</li>
+                                        <li>Base hair color of Loreal Inoa or Loreal Majirel will be used with fashion shade</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/classic_hair.jpg" alt="L'Oréal Inoa root touch-up" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal Inoa root touch-up', 1499)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- FASHION COLOR SECTION -->
+                <div id="fashion-color" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Fashion color</h2>
+
+                    <!-- Service 1: Loreal Hair Highlights -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Loreal Hair Highlights</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.58 (1K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹3,499</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Precise application of chosen shade on closely spaced sections</li>
+                                        <li>Blow-dry &amp; hair wash is not included</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/hairstyling_duo.jpg" alt="Loreal Hair Highlights" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Loreal Hair Highlights', 3499)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: L'Oréal balayage/ombre color -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">L'Oréal balayage/ombre color</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.51 (1K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹3,899</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Seamless application of the chosen shade with a soft color transition</li>
+                                        <li>Blow-dry &amp; hair wash is not included</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/party_makeup_single.jpg" alt="L'Oréal balayage/ombre color" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('L\'Oréal balayage/ombre color', 3899)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- HAIR EXTENSIONS SECTION -->
+                <div id="extensions" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Hair extensions</h2>
+
+                    <!-- Service 1: Scalp toppers -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Scalp toppers</h4>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹6,499</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Conceals thinning &amp; bald patches on your scalp</li>
+                                        <li>100% human hair &amp; silk base toppers by Hair Originals</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/hd_finish.jpg" alt="Scalp toppers" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Scalp toppers', 6499)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="right-sidebar">
+                <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 32px; height: 32px; background: #e8f5e9; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                        %
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; font-weight: 700; color: #111;">HAIRSTUDIO25</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 2px;">25% off on hair services</div>
+                    </div>
+                </div>
+
+                <div class="uc-promise-card">
+                    <div>
+                        <h3>Joamex Promise</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                            <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
+                            <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                        </ul>
+                    </div>
+                    <img src="images/security.jpg" alt="Promise" class="promise-badge">
+                </div>
+                
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

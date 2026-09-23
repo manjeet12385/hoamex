@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpenter - Joamex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
+.page-wrapper { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px; }
+.page-title { font-size: 32px; font-weight: 700; color: #111; margin: 0 0 6px; }
+.page-rating { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #444; margin-bottom: 24px; }
+.page-rating i { color: #7b1fa2; font-size: 13px; }
+
+/* 3-column layout */
+.three-col-layout { display: grid; grid-template-columns: 230px 1fr 260px; gap: 20px; align-items: start; }
+
+/* LEFT SIDEBAR */
+.left-sidebar { position: sticky; top: 80px; }
+.select-service-card { background: #fff; border-radius: 14px; padding: 16px 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.select-service-card h3 { font-size: 11px; font-weight: 400; color: #888; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid #eee; text-transform: uppercase; letter-spacing: .5px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 6px; }
+.service-item-sidebar { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 6px 2px; border-radius: 10px; border: 1.5px solid transparent; transition: all 0.2s; text-decoration: none; cursor: pointer; }
+.service-item-sidebar:hover { border-color: #e9d5ff; background: #faf5ff; }
+.service-item-sidebar.active { border-color: #7b1fa2; background: #faf5ff; }
+.service-item-img { background: #f5f5f5; border-radius: 10px; padding: 9px; margin-bottom: 6px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.service-item-img img { width: 32px; height: 32px; object-fit: contain; }
+.service-item-sidebar span { font-size: 10px; font-weight: 500; color: #475569; line-height: 1.3; }
+
+/* CENTER - each section stacked vertically */
+.center-content { min-width: 0; display: block; width: 100%; }
+.section-block { display: block; width: 100%; margin-bottom: 0; padding: 24px 0 20px; border-bottom: 1px solid #eee; box-sizing: border-box; }
+.section-block:last-child { border-bottom: none; }
+.section-heading { font-size: 22px; font-weight: 700; color: #111; margin: 0 0 18px; }
+
+/* Service card row */
+.svc-row { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #f0f0f0; width: 100%; box-sizing: border-box; }
+.svc-row:last-child { border-bottom: none; }
+.svc-info { flex: 1; padding-right: 16px; }
+.svc-info h4 { font-size: 16px; font-weight: 600; color: #111; margin: 0 0 6px; }
+.svc-rating { display: flex; align-items: center; gap: 5px; font-size: 13px; margin-bottom: 6px; }
+.svc-rating i { color: #7b1fa2; font-size: 12px; }
+.svc-rating a { color: #555; text-decoration: underline dotted; }
+.svc-price { font-size: 13px; color: #333; font-weight: 600; margin-bottom: 10px; }
+.svc-price span { font-weight: 400; color: #777; }
+.view-details { color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none; }
+.view-details:hover { text-decoration: underline; }
+.svc-media { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px; flex-shrink: 0; }
+.svc-img { width: 88px; height: 80px; border-radius: 10px; object-fit: cover; background: #eee; }
+.add-btn { width: 80px; padding: 7px 0; background: #fff; color: #6366f1; border: 1.5px solid #d0d5ff; border-radius: 7px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.15s; box-shadow: 0 2px 6px rgba(99,102,241,0.08); }
+.add-btn:hover { background: #6366f1; color: #fff; }
+.options-text { font-size: 11px; color: #999; text-align: center; }
+.discount-badge { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; border-radius: 8px; text-align: center; padding: 12px 8px; font-weight: 800; font-size: 15px; line-height: 1.3; width: 80px; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* RIGHT SIDEBAR */
+.right-sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 14px; }
+.promo-card { background: #fff; border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: flex; align-items: flex-start; gap: 12px; }
+.promo-icon { width: 36px; height: 36px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.promo-icon i { color: #16a34a; font-size: 14px; }
+.promo-text strong { font-size: 13px; color: #111; display: block; }
+.promo-text small { font-size: 12px; color: #777; }
+.promise-card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.promise-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.promise-card-header span { font-size: 15px; font-weight: 700; color: #111; }
+.promise-badge-img { width: 44px; height: 44px; object-fit: contain; }
+.promise-list { list-style: none; padding: 0; margin: 0; font-size: 13px; color: #444; display: flex; flex-direction: column; gap: 8px; }
+.promise-list li { display: flex; align-items: center; gap: 8px; }
+.promise-list li i { color: #111; font-size: 12px; }
+.view-cart-btn { background: #7b1fa2; color: #fff; border: none; border-radius: 10px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; box-sizing: border-box; transition: background 0.2s; }
+.view-cart-btn:hover { background: #6a1b9a; }
+
+/* FOOTER */
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+@media (max-width: 900px) { .three-col-layout { grid-template-columns: 1fr; } .left-sidebar, .right-sidebar { position: static; } }
+</style>
+</head>
+<body style="background-color: #fdfbf7;">
+<header class="header">
+    <div style="display:flex;align-items:center;gap:15px;">
+        <button id="back-btn" onclick="history.back()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-arrow-left"></i></button>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">J</div>
+            <div><span class="logo-text">Joamex</span><span class="logo-sub">Home Services Simplified</span></div>
+        </a>
+    </div>
+    <div class="search-container" id="header-search" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search for services">
+    </div>
+    <div class="header-actions">
+        <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+        <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+        <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+        <div class="icon-btn" id="open-cart-btn" style="position:relative;">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-badge" style="position:absolute;top:-5px;right:-5px;background:#e53935;color:#fff;font-size:10px;font-weight:bold;padding:2px 5px;border-radius:10px;display:none;">0</span>
+        </div>
+    </div>
+</header>
+
+<div class="page-wrapper">
+    <!-- PAGE HEADER -->
+    <h1 class="page-title">Carpenter</h1>
+    <div class="page-rating"><i class="fa-solid fa-star"></i> 4.78 (5.2 M bookings)</div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="three-col-layout">
+        <!-- LEFT SIDEBAR -->
+        <div class="left-sidebar">
+            <div class="select-service-card">
+                <h3>Select a service</h3>
+            <div class="service-grid">
+                <a href="#hanger" class="service-item-sidebar active">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Clothes hanger"></div>
+                    <span>Clothes hanger</span>
+                </a>
+                <a href="#bed" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Bed"></div>
+                    <span>Bed</span>
+                </a>
+                <a href="#cupboard" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Cupboard & drawer"></div>
+                    <span>Cupboard &<br>drawer</span>
+                </a>
+                <a href="#door" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Door"></div>
+                    <span>Door</span>
+                </a>
+                <a href="#drill" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Drill & hang"></div>
+                    <span>Drill & hang</span>
+                </a>
+                <a href="#repair" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Furniture repair"></div>
+                    <span>Furniture repair</span>
+                </a>
+                <a href="#window" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Window & curtain"></div>
+                    <span>Window &<br>curtain</span>
+                </a>
+                <a href="#consultation" class="service-item-sidebar">
+                    <div class="service-item-img"><img src="images/carpenter_icon.jpg" alt="Book a consultation"></div>
+                    <span>Book a consultation</span>
+                </a>
+            </div>
+        </div>
+
+            </div>
+        <!-- CENTER CONTENT -->
+        <div class="center-content">
+            
+            <div id="hanger" class="section-block">
+                <h2 class="section-heading">Clothes hanger</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Ceiling-mounted hanger installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (10K reviews)</a></div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Ceiling-mounted hanger">
+                        <button class="add-btn" onclick="addToCart('Ceiling-mounted hanger installation', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall/door hanger installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (7K reviews)</a></div>
+                        <div class="svc-price">&#8377;139 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wall/door hanger">
+                        <button class="add-btn" onclick="addToCart('Wall/door hanger installation', 139)">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="bed" class="section-block">
+                <h2 class="section-heading">Bed</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bed support repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.84 (11K reviews)</a></div>
+                        <div class="svc-price">&#8377;319 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed support repair">
+                        <button class="add-btn" onclick="addToCart('Bed support repair', 319)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bed legs/Headboard repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (9K reviews)</a></div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed legs/Headboard repair">
+                        <button class="add-btn" onclick="addToCart('Bed legs/Headboard repair', 199)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div id="cupboard" class="section-block">
+                <h2 class="section-heading">Cupboard & drawer</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cupboard hinge installation (upto 2)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (42K reviews)</a></div>
+                        <div class="svc-price">&#8377;129 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard hinge installation">
+                        <button class="add-btn" onclick="addToCart('Cupboard hinge installation (upto 2)', 129)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Channel repair (one set)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (24K reviews)</a></div>
+                        <div class="svc-price">&#8377;109 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Channel repair">
+                        <button class="add-btn" onclick="addToCart('Channel repair (one set)', 109)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Drawer channel replacement (one set)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (19K reviews)</a></div>
+                        <div class="svc-price">&#8377;149 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Drawer channel replacement">
+                        <button class="add-btn" onclick="addToCart('Drawer channel replacement (one set)', 149)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cupboard handle installation/replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (19K reviews)</a></div>
+                        <div class="svc-price">&#8377;49 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard handle installation">
+                        <button class="add-btn" onclick="addToCart('Cupboard handle installation/replacement', 49)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cupboard lock installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.76 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock installation">
+                        <button class="add-btn" onclick="addToCart('Cupboard lock installation', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cupboard lock replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (7K reviews)</a></div>
+                        <div class="svc-price">&#8377;89 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock replacement">
+                        <button class="add-btn" onclick="addToCart('Cupboard lock replacement', 89)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cupboard lock repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;139 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock repair">
+                        <button class="add-btn" onclick="addToCart('Cupboard lock repair', 139)">Add</button>
+                    </div>
+                </div>
+            </div>
+<div id="door" class="section-block">
+                <h2 class="section-heading">Door</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door accessory installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (21K reviews)</a></div>
+                        <div class="svc-price">&#8377;79 <span>&bull; 30 mins</span></div>
+                        <ul style="margin: 12px 0; padding-left: 20px; font-size: 13px; color: #555;">
+                            <li>Applicable for one door latch, chain, stopper or magnet</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door accessory installation">
+                        <button class="add-btn" onclick="addToCart('Door accessory installation', 79)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Peephole installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (3K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Peephole installation">
+                        <button class="add-btn" onclick="addToCart('Peephole installation', 99)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wooden door installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (5K reviews)</a></div>
+                        <div class="svc-price">&#8377;549 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden door installation">
+                        <button class="add-btn" onclick="addToCart('Wooden door installation', 549)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Major wooden door repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (16K reviews)</a></div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 30 mins</span></div>
+                        <ul style="margin: 12px 0; padding-left: 20px; font-size: 13px; color: #555;">
+                            <li>Adjusting & trimming of completely stuck door</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Major wooden door repair">
+                        <button class="add-btn" onclick="addToCart('Major wooden door repair', 199)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Minor wooden door repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (42K reviews)</a></div>
+                        <div class="svc-price">&#8377;129 <span>&bull; 30 mins</span></div>
+                        <ul style="margin: 12px 0; padding-left: 20px; font-size: 13px; color: #555;">
+                            <li>Repair of minor issues like door sticking or slight misalignment</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Minor wooden door repair">
+                        <button class="add-btn" onclick="addToCart('Minor wooden door repair', 129)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door hinge installation (upto 4 hinges)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (6K reviews)</a></div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 30 mins</span></div>
+                        <ul style="margin: 12px 0; padding-left: 20px; font-size: 13px; color: #555;">
+                            <li>Applicable for wooden door only</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door hinge installation (upto 4 hinges)">
+                        <button class="add-btn" onclick="addToCart('Door hinge installation (upto 4 hinges)', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door hinge installation (with dismantle)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;239 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door hinge installation (with dismantle)">
+                        <button class="add-btn" onclick="addToCart('Door hinge installation (with dismantle)', 239)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door lock installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (6K reviews)</a></div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock installation">
+                        <button class="add-btn" onclick="addToCart('Door lock installation', 399)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door lock replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (15K reviews)</a></div>
+                        <div class="svc-price">&#8377;319 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock replacement">
+                        <button class="add-btn" onclick="addToCart('Door lock replacement', 319)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door lock repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (39K reviews)</a></div>
+                        <div class="svc-price">&#8377;149 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock repair">
+                        <button class="add-btn" onclick="addToCart('Door lock repair', 149)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mesh grill door repair/replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.61 (493 reviews)</a></div>
+                        <div class="svc-price">&#8377;329 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Mesh grill door repair/replacement">
+                        <button class="add-btn" onclick="addToCart('Mesh grill door repair/replacement (Option 1)', 329)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mesh grill door repair/replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.69 (2K reviews)</a></div>
+                        <div class="svc-price">&#8377;209 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Mesh grill door repair/replacement">
+                        <button class="add-btn" onclick="addToCart('Mesh grill door repair/replacement (Option 2)', 209)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Overhead door closer installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (8K reviews)</a></div>
+                        <div class="svc-price">&#8377;179 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Overhead door closer installation">
+                        <button class="add-btn" onclick="addToCart('Overhead door closer installation', 179)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Door closer installation (wall-mounted)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.80 (731 reviews)</a></div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door closer installation (wall-mounted)">
+                        <button class="add-btn" onclick="addToCart('Door closer installation (wall-mounted)', 349)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wooden sliding door repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (9K reviews)</a></div>
+                        <div class="svc-price">&#8377;269 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden sliding door repair">
+                        <button class="add-btn" onclick="addToCart('Wooden sliding door repair', 269)">Add</button>
+                    </div>
+                </div>
+            </div>
+<div id="drill" class="section-block">
+                <h2 class="section-heading">Drill & hang</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom holder & hanger installations</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.80 (15K reviews)</a></div>
+                        <div class="svc-price">&#8377;69 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bathroom holder & hanger installations">
+                        <button class="add-btn" onclick="addToCart('Bathroom holder & hanger installations', 69)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Drill & hang (wall decor)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.84 (101K reviews)</a></div>
+                        <div class="svc-price">&#8377;49 <span>&bull; 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Drill & hang (wall decor)">
+                        <button class="add-btn" onclick="addToCart('Drill & hang (wall decor)', 49)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom mirror installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (16K reviews)</a></div>
+                        <div class="svc-price">&#8377;79 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bathroom mirror installation">
+                        <button class="add-btn" onclick="addToCart('Bathroom mirror installation', 79)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass shelf installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (12K reviews)</a></div>
+                        <div class="svc-price">&#8377;89 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Glass shelf installation">
+                        <button class="add-btn" onclick="addToCart('Glass shelf installation', 89)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wooden shelf installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.84 (19K reviews)</a></div>
+                        <div class="svc-price">&#8377;179 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden shelf installation">
+                        <button class="add-btn" onclick="addToCart('Wooden shelf installation', 179)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Corner guard/ safety lock installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (186 reviews)</a></div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Corner guard/ safety lock installation">
+                        <button class="add-btn" onclick="addToCart('Corner guard/ safety lock installation', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bed fence installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.86 (421 reviews)</a></div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed fence installation">
+                        <button class="add-btn" onclick="addToCart('Bed fence installation', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Safety gate installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.85 (143 reviews)</a></div>
+                        <div class="svc-price">&#8377;699 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Safety gate installation">
+                        <button class="add-btn" onclick="addToCart('Safety gate installation', 699)">Add</button>
+                    </div>
+                </div>
+            </div>
+<div id="repair" class="section-block">
+                <h2 class="section-heading">Furniture repair</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Plastic buffer installation (upto 4)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.84 (2K reviews)</a></div>
+                        <div class="svc-price">&#8377;79 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Plastic buffer installation">
+                        <button class="add-btn" onclick="addToCart('Plastic buffer installation (upto 4)', 79)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Chair wheels fitting</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (3K reviews)</a></div>
+                        <div class="svc-price">&#8377;89 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Chair wheels fitting">
+                        <button class="add-btn" onclick="addToCart('Chair wheels fitting', 89)">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div id="window" class="section-block">
+                <h2 class="section-heading">Window & curtain</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Curtain blinds' measurement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.90 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;69 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Curtain blinds measurement">
+                        <button class="add-btn" onclick="addToCart('Curtain blinds measurement', 69)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Curtain rod installation (2 brackets)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (39K reviews)</a></div>
+                        <div class="svc-price">&#8377;129 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Curtain rod installation (2 brackets)">
+                        <button class="add-btn" onclick="addToCart('Curtain rod installation (2 brackets)', 129)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower curtain rod installation (2 brackets)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (1K reviews)</a></div>
+                        <div class="svc-price">&#8377;139 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Shower curtain rod installation (2 brackets)">
+                        <button class="add-btn" onclick="addToCart('Shower curtain rod installation (2 brackets)', 139)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Motorised blinds fitting (upto 5ft)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (796 reviews)</a></div>
+                        <div class="svc-price">&#8377;209 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Motorised blinds fitting (upto 5ft)">
+                        <button class="add-btn" onclick="addToCart('Motorised blinds fitting (upto 5ft)', 209)">Add</button>
+                    </div>
+                </div>
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Non-motorised blinds fitting (upto 5ft)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.76 (5K reviews)</a></div>
+                        <div class="svc-price">&#8377;159 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Non-motorised blinds fitting (upto 5ft)">
+                        <button class="add-btn" onclick="addToCart('Non-motorised blinds fitting (upto 5ft)', 159)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Window AC frame installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.68 (2K reviews)</a></div>
+                        <div class="svc-price">&#8377;269 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window AC frame installation">
+                        <button class="add-btn" onclick="addToCart('Window AC frame installation', 269)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Window closing (post AC removal)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;139 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window closing (post AC removal)">
+                        <button class="add-btn" onclick="addToCart('Window closing (post AC removal)', 139)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Window hinge installation (upto 4)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.76 (2K reviews)</a></div>
+                        <div class="svc-price">&#8377;169 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window hinge installation (upto 4)">
+                        <button class="add-btn" onclick="addToCart('Window hinge installation (upto 4)', 169)">Add</button>
+                    </div>
+                </div>
+            </div>
+<div id="consultation" class="section-block">
+                <h2 class="section-heading">Book a consultation</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Carpenter consultation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.70 (104K reviews)</a></div>
+                        <div class="svc-price">&#8377;49 <span>&bull; 45 mins</span></div>
+                        <ul style="margin: 12px 0; padding-left: 20px; font-size: 13px; color: #555;">
+                            <li>A carpenter will assess your needs upon arrival at your home</li>
+                            <li>A quote will be provided before the service begins</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Carpenter consultation">
+                        <button class="add-btn" onclick="addToCart('Carpenter consultation', 49)">Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDEBAR -->
+        <div class="right-sidebar">
+            <div class="uc-promise-card" style="margin-bottom: 20px; border: 1px solid #4caf50; background: #f0fdf4; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
+                <div style="background: #4caf50; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">%</div>
+                <div>
+                    <h4 style="margin: 0; font-size: 14px; font-weight: 600; color: #111;">Get visitation fee off</h4>
+                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #555;">On orders above &#8377;500</p>
+                </div>
+            </div>
+        
+            <div class="uc-promise-card">
+                <div>
+                    <h3>UC Promise</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                        <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
+                        <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                    </ul>
+                </div>
+                <img src="images/security.jpg" alt="Promise" class="promise-badge">
+            </div>
+            
+            <div class="cart-card">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>No items in your cart</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page-wrapper">
+        <!-- Top title row -->
+        <div class="top-section">
+            <div>
+                <h1 class="page-title">Painting</h1>
+                <div class="page-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>4.82</strong>
+                    <span>(3.9 M bookings)</span>
+                </div>
+            </div>
+            <div style="background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 6px; text-align: center; border: 1px solid #c8e6c9;">
+                <div style="font-size: 10px; font-weight: bold;"><i class="fa-solid fa-clock" style="margin-right: 3px;"></i> Earliest</div>
+                <div style="font-size: 12px; margin-top: 2px; font-weight: bold;">Mon, 3:30 PM</div>
+            </div>
+        </div>
+
+        <!-- 3-Column Layout -->
+        <div class="three-col-layout">
+            <!-- LEFT SIDEBAR -->
+            <div class="left-sidebar">
+                <div class="select-service-card">
+                    <h3>Select a service</h3>
+                    <div class="service-grid">
+                        
+                        <a href="#interior" class="service-item-sidebar">
+                            <div class="service-item-img">
+                                <img src="images/painting_icon.jpg" alt="Interior">
+                            </div>
+                            <span>Interior</span>
+                        </a>
+                        <a href="#exterior" class="service-item-sidebar">
+                            <div class="service-item-img">
+                                <img src="images/painting_icon.jpg" alt="Exterior">
+                            </div>
+                            <span>Exterior</span>
+                        </a>
+                        <a href="#texture" class="service-item-sidebar">
+                            <div class="service-item-img">
+                                <img src="images/painting_icon.jpg" alt="Texture">
+                            </div>
+                            <span>Texture</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER CONTENT -->
+            <div class="center-content">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px;">
+                    <img src="images/painting_icon.jpg" alt="Painting" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
+                        <h2 style="color: #fff; font-size: 34px; font-weight: 700; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin: 0;">Painting</h2>
+                    </div>
+                </div>
+                
+                <div id="interior" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading">Interior</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-card-info">
+                            <h4>1 BHK Painting</h4>
+                            <div class="service-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <a href="#">4.85 (8K reviews)</a>
+                            </div>
+                            <div class="service-price">
+                                <span>₹8000</span>
+                            </div>
+                            <ul class="service-features">
+                                <li>Tractor emulsion</li>
+                            </ul>
+                            <a href="#" class="view-details">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="service-img-wrap">
+                                <img src="images/painting_icon.jpg" alt="1 BHK Painting">
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="exterior" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading">Exterior</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-card-info">
+                            <h4>Wall Painting</h4>
+                            <div class="service-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <a href="#">4.85 (8K reviews)</a>
+                            </div>
+                            <div class="service-price">
+                                <span>₹12</span>
+                            </div>
+                            <ul class="service-features">
+                                <li>Per sqft</li>
+                            </ul>
+                            <a href="#" class="view-details">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="service-img-wrap">
+                                <img src="images/painting_icon.jpg" alt="Wall Painting">
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="texture" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading">Texture</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-card-info">
+                            <h4>Accent Wall</h4>
+                            <div class="service-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <a href="#">4.85 (8K reviews)</a>
+                            </div>
+                            <div class="service-price">
+                                <span>₹3000</span>
+                            </div>
+                            <ul class="service-features">
+                                <li>Royale play texture</li>
+                            </ul>
+                            <a href="#" class="view-details">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="service-img-wrap">
+                                <img src="images/painting_icon.jpg" alt="Accent Wall">
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="right-sidebar">
+                <div class="uc-promise-card">
+                    <div>
+                        <h3>Joamex Promise</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                            <li><i class="fa-solid fa-check"></i> Hassle Free Service</li>
+                            <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                        </ul>
+                    </div>
+                    <img src="images/security.jpg" alt="Promise" class="promise-badge">
+                </div>
+                
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+        </div>
+</main>
+    
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

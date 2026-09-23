@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup & Styling - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page-wrapper">
+        <!-- Top title row -->
+        <div class="top-section">
+            <div>
+                <h1 class="page-title">Makeup, Saree & Styling</h1>
+                <div class="page-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>4.75</strong>
+                    <span>(326K bookings)</span>
+                </div>
+            </div>
+            <div style="background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 6px; text-align: center; border: 1px solid #c8e6c9;">
+                <div style="font-size: 10px; font-weight: bold;"><i class="fa-solid fa-clock" style="margin-right: 3px;"></i> Earliest</div>
+                <div style="font-size: 12px; margin-top: 2px; font-weight: bold;">Tue, 6:00 PM</div>
+            </div>
+        </div>
+
+        <!-- 3-Column Layout -->
+        <div class="three-col-layout">
+            <!-- LEFT SIDEBAR -->
+            <div class="left-sidebar">
+<div class="select-service-card">
+    <h3>Select a service</h3>
+    <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+        <a href="#packages" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px; background: #e0f2f1; color: #00897b; font-size: 20px;">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Packages</span>
+        </a>
+        <a href="#group-deals" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px; background: #e8f5e9; color: #2e7d32; font-size: 16px; font-weight: bold;">
+                10%
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Group deals</span>
+        </a>
+        <a href="#saree" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px;">
+                <img src="images/luxe_makeup.jpg" alt="Saree draping" style="width:36px; height:36px; border-radius:8px;">
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Saree draping</span>
+        </a>
+        <a href="#wedding" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px;">
+                <img src="images/beauty.jpg" alt="Wedding combos" style="width:36px; height:36px; border-radius:8px;">
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Wedding combos</span>
+        </a>
+        <a href="#party" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px;">
+                <img src="images/party_makeup.jpg" alt="Party makeup" style="width:36px; height:36px; border-radius:8px;">
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Party makeup</span>
+        </a>
+        <a href="#hair" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s;">
+            <div class="service-item-img" style="margin-bottom:6px;">
+                <img src="images/luxe_makeup.jpg" alt="Hair styling" style="width:36px; height:36px; border-radius:8px;">
+            </div>
+            <span style="font-size:10px; font-weight:600; color:#475569; line-height:1.2; word-break:break-word;">Hair styling</span>
+        </a>
+    </div>
+</div>
+</div>
+
+<!-- CENTER CONTENT -->
+            <div class="center-content">
+<div id="packages" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Packages</h2>
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Party makeup package</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.72 (12K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹2,099</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 30 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Ideal for daytime events, office occasions & brunches</li>
+                <li>Includes party makeup & classic hairstyling</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/party_makeup.jpg" alt="Party makeup package" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Party makeup package', 2099)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Luxe makeup package</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.67 (2K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹3,799</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 2 hrs</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Ideal for festive gatherings, parties & wedding celebrations</li>
+                <li>Includes Luxury makeup & advance hairstyling</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/luxe_makeup.jpg" alt="Luxe makeup package" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Luxe makeup package', 3799)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>HD makeup package</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (1K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹3,299</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 45 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Ideal for formal events, evening functions & photoshoots</li>
+                <li>Includes HD makeup & advance hairstyling</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/hd_makeup.jpg" alt="HD makeup package" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('HD makeup package', 3299)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+        <div class="service-card-info" style="width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> Package</div>
+                    <h4>Saree draping & hair styling</h4>
+                    <div class="service-rating">
+                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                        <a href="#">4.73 (84K reviews)</a>
+                    </div>
+                    <div class="service-price">
+                        <span>₹1,498</span>
+                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 20 mins</span>
+                    </div>
+                </div>
+                <div style="width: 90px; text-align: right;">
+                    <button class="add-btn" style="width: auto; padding: 6px 20px;" onclick="addToCart('Saree draping & hair styling', 1498)">Add</button>
+                </div>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li><strong>saree draping:</strong> Basic saree draping</li>
+                <li><strong>Hair styling:</strong> Advance hairstyling</li>
+            </ul>
+            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px; display: flex; justify-content: space-between; align-items: flex-start;">
+        <div class="service-card-info" style="width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <div style="color: #00897b; font-size: 10px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase;"><i class="fa-solid fa-box"></i> Package</div>
+                    <h4>Saree draping & basic makeup</h4>
+                    <div class="service-rating">
+                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                        <a href="#">4.73 (61K reviews)</a>
+                    </div>
+                    <div class="service-price">
+                        <span>₹2,098</span>
+                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 5 mins</span>
+                    </div>
+                </div>
+                <div style="width: 90px; text-align: right;">
+                    <button class="add-btn" style="width: auto; padding: 6px 20px;" onclick="addToCart('Saree draping & basic makeup', 2098)">Add</button>
+                </div>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li><strong>Makeup:</strong> Basic makeup</li>
+                <li><strong>Saree draping:</strong> Basic saree draping</li>
+            </ul>
+            <button style="background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">Edit your package</button>
+        </div>
+    </div>
+</div>
+
+<div id="group-deals" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Group deals</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Makeup pack duo</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.91 (87 reviews)</a>
+            </div>
+            <div class="service-price">
+                <span style="font-size: 14px; font-weight: 700;">Starts at ₹3,198</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Makeup for 2, perfect for parties & celebrations</li>
+                <li>Enjoy a special price with this duo deal</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 140px; width: 140px; border-radius: 12px; background: #eaeaea; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #1e7045; text-align: center; line-height: 1.1; margin-bottom: -20px; position: relative; z-index: 1;">
+                <span style="font-size: 38px; font-weight: 800;">10%</span>
+                <span style="font-size: 22px; font-weight: 800;">OFF</span>
+            </div>
+            <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <button class="add-btn" onclick="addToCart('Makeup pack duo', 3198)" style="width: 100px;">Add</button>
+                <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Advanced hair styling duo</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.77 (143 reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹1,898</span>
+                <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹1,998</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 2 hrs</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Advanced hairstyling for 2 – perfect for parties & events</li>
+                <li>Get ₹100 off with this duo deal</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/hairstyling_duo.jpg" alt="Advanced hair styling duo" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Advanced hair styling duo', 1898)">Add</button>
+        </div>
+    </div>
+</div>
+
+<div id="saree" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Saree draping</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Basic saree draping</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (40K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹499</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 20 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Choose any saree/sari or lehenga draping style</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/basic_saree.jpg" alt="Basic saree draping" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Basic saree draping', 499)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Advanced saree draping</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.77 (2K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹699</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 30 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Choose from double-pallu, heavy dupatta, or a lehenga style draping</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/advanced_saree.jpg" alt="Advanced saree draping" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Advanced saree draping', 699)">Add</button>
+        </div>
+    </div>
+</div>
+
+<div id="wedding-combos" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Wedding combos</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Premium wedding combo</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (66K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹4,249</span>
+                <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹4,497</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 2 hrs 40 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Luxe full-glam glow with high-end products for radiant, long-lasting perfection</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/premium_wedding.jpg" alt="Premium wedding combo" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Premium wedding combo', 4249)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Complete event combo</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (68K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹3,749</span>
+                <span style="color: #666; font-size: 13px; text-decoration: line-through; margin-left: 8px;">₹3,997</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 2 hrs 20 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>A flawless, high-definition finish that's picture-perfect for every camera angle</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/complete_event.jpg" alt="Complete event combo" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Complete event combo', 3749)">Add</button>
+        </div>
+    </div>
+</div>
+
+<div id="party" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Party makeup</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Party makeup</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.74 (13K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹1,599</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 45 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Get a natural, everyday glow with lightweight formula</li>
+                <li>Ideal for daytime events, office occasions & brunches</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/party_makeup_single.jpg" alt="Party makeup" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Party makeup', 1599)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>HD finish makeup</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.71 (4K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹2,499</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 60 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Photo-ready HD finish for non-bridal looks</li>
+                <li>Ideal for events, functions & photoshoots</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/hd_finish.jpg" alt="HD finish makeup" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('HD finish makeup', 2499)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Luxe glam-up makeup</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.68 (2K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹2,999</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 1 hr 20 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Premium full-glam finish for non-bridal looks</li>
+                <li>Ideal for parties, festivities & wedding guests</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/luxe_glam.jpg" alt="Luxe glam-up makeup" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Luxe glam-up makeup', 2999)">Add</button>
+        </div>
+    </div>
+</div>
+
+<div id="hair" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Hair styling</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Classic hairstyling</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (18K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹599</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 45 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Neat, elegant hairstyles with a polished finish.</li>
+                <li>Includes straightening, soft curls, ponytails & simple braids</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/classic_hair.jpg" alt="Classic hairstyling" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Classic hairstyling', 599)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Advance hairstyling</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.73 (24K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹999</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 60 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Designer-inspired styles with a voluminous finish</li>
+                <li>Includes messy braids, up-dos, judas & styled ponytails</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/advance_hair.jpg" alt="Advance hairstyling" style="border-radius: 12px;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Advance hairstyling', 999)">Add</button>
+        </div>
+    </div>
+</div>
+
+<div id="addons" style="margin-bottom: 36px; padding-top: 20px; border-top: 1px solid #eee;">
+    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Add-ons</h2>
+    
+    <div class="service-card">
+        <div class="service-card-info">
+            <h4>Basic eye makeup</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.72 (5K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹599</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 20 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Pick your style from 1-shade wash, soft smokey, classic blend</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/party_makeup_single.jpg" alt="Basic eye makeup" style="border-radius: 12px; object-fit: cover; width: 100%; height: 100%;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Basic eye makeup', 599)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Advanced Eye Makeup</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.75 (1K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹799</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 30 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Pick your look from cut crease, smokey, spotlight or glitter</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/hd_finish.jpg" alt="Advanced Eye Makeup" style="border-radius: 12px; object-fit: cover; width: 100%; height: 100%;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Advanced Eye Makeup', 799)">Add</button>
+        </div>
+    </div>
+
+    <div class="service-card" style="margin-top: 30px;">
+        <div class="service-card-info">
+            <h4>Blast dry</h4>
+            <div class="service-rating">
+                <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                <a href="#">4.85 (1K reviews)</a>
+            </div>
+            <div class="service-price">
+                <span>₹159</span>
+                <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">&bull; 15 mins</span>
+            </div>
+            <ul class="service-features" style="margin-top: 15px; margin-bottom: 15px;">
+                <li>Fast blow-dry to remove excess moisture after your hair wash</li>
+            </ul>
+            <a href="#" class="view-details" style="color: #6366f1; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+        </div>
+        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="service-img-wrap" style="height: 120px; border-radius: 12px;">
+                <img src="images/classic_hair.jpg" alt="Blast dry" style="border-radius: 12px; object-fit: cover; width: 100%; height: 100%;">
+            </div>
+            <button class="add-btn" onclick="addToCart('Blast dry', 159)">Add</button>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+            <div class="right-sidebar">
+                <div class="uc-promise-card">
+                    <div>
+                        <h3>Joamex Promise</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                            <li><i class="fa-solid fa-check"></i> Hassle Free Service</li>
+                            <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                        </ul>
+                    </div>
+                    <img src="images/security.jpg" alt="Promise" class="promise-badge">
+                </div>
+                
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+        </div>
+</main>
+    
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

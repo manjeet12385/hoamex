@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrician Services - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="page-wrapper">
+        <!-- Top title row -->
+        <div class="top-section">
+            <div>
+                <h1 class="page-title">Electrician</h1>
+                <div class="page-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>4.81</strong>
+                    <span>(3.1 M bookings)</span>
+                </div>
+            </div>
+            <div style="background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 6px; text-align: center; border: 1px solid #c8e6c9;">
+                <div style="font-size: 10px; font-weight: bold;"><i class="fa-solid fa-clock" style="margin-right: 3px;"></i> Earliest</div>
+                <div style="font-size: 12px; margin-top: 2px; font-weight: bold;">Wed, 9:00 AM</div>
+            </div>
+        </div>
+
+        <!-- 3-Column Layout -->
+        <div class="three-col-layout">
+            <!-- LEFT SIDEBAR -->
+            <div class="left-sidebar">
+                <div class="select-service-card" style="padding: 15px;">
+                    <h3 style="font-size: 12px; font-weight: normal; color: #666; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Select a service</h3>
+                    <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px 10px;">
+                        <a href="#switch" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/switch_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Switch & socket" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Switch & socket</span>
+                        </a>
+                        <a href="#fan" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/fan_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Fan" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Fan</span>
+                        </a>
+                        <a href="#light" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/light_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Light" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Light</span>
+                        </a>
+                        <a href="#wiring" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/wiring_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Wiring" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Wiring</span>
+                        </a>
+                        <a href="#doorbell" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/doorbell_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Doorbell & security" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Doorbell & security</span>
+                        </a>
+                        <a href="#mcb" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/mcb_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">MCB/fuse</span>
+                        </a>
+                        <a href="#appliances" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
+                                <img src="images/appliances_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Appliances" style="width:36px; height:36px; object-fit:contain;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Appliances</span>
+                        </a>
+                        <a href="#consultation" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
+                            <div class="service-item-img" style="margin-bottom:6px; border-radius:8px; overflow:hidden;">
+                                <img src="images/consultation.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Book a consultation" style="width:36px; height:36px; object-fit:cover;">
+                            </div>
+                            <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Book a consultation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER CONTENT -->
+            <div class="center-content">
+                <!-- 30-day warranty banner -->
+                <div style="background: #f9f9f9; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; padding: 30px; margin-bottom: 30px; overflow: hidden; position: relative;">
+                    <button style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:white; border:1px solid #ddd; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2;"><i class="fa-solid fa-chevron-left" style="font-size:12px;"></i></button>
+                    <div style="margin-left: 20px; z-index: 1;">
+                        <h2 style="font-size: 32px; font-weight: 700; color: #111; margin: 0 0 15px 0; line-height: 1.2;">30-day warranty<br>included</h2>
+                        <p style="font-size: 18px; color: #333; margin: 0;">On every Electrician service</p>
+                    </div>
+                    <div style="width: 200px; height: 180px; position: relative; z-index: 1;">
+                        <!-- Using a generic shield icon or image if available -->
+                        <div style="width:100%; height:100%; background:#4db6ac; border-radius:20px; display:flex; align-items:center; justify-content:center; position:relative;">
+                             <i class="fa-solid fa-check" style="color:white; font-size:40px; position:absolute; top:30px; right:30px;"></i>
+                             <div style="position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:100px solid transparent; border-right:100px solid transparent; border-top:50px solid #4db6ac;"></div>
+                        </div>
+                    </div>
+                    <button style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:white; border:1px solid #ddd; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2;"><i class="fa-solid fa-chevron-right" style="font-size:12px;"></i></button>
+                    <!-- Indicators -->
+                    <div style="position:absolute; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:5px; z-index:2;">
+                        <div style="width:20px; height:3px; background:rgba(0,0,0,0.8); border-radius:2px;"></div>
+                        <div style="width:20px; height:3px; background:rgba(0,0,0,0.2); border-radius:2px;"></div>
+                    </div>
+                </div>
+
+                <div id="switch" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Switch & socket</h2>
+
+                    <!-- Service 1: Switchboard repair & replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Switchboard repair & replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.83 (99K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹99</span>
+                                    </div>
+                                    <ul style="margin: 12px 0 16px; padding-left: 18px; color: #555; font-size: 13px; line-height: 1.5;">
+                                        <li>Repair or replacement using existing in-wall wiring</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/switch-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="Switchboard repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Switchboard repair & replacement', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Plug replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Plug replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.82 (15K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹69</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/plug.png" onerror="this.src='images/electrician_icon.jpg'" alt="Plug replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Plug replacement', 69)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: New switchbox installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">New switchbox installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.79 (99K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹149</span>
+                                    </div>
+                                    <ul style="margin: 12px 0 16px; padding-left: 18px; color: #555; font-size: 13px; line-height: 1.5;">
+                                        <li>Installed in specified area for new power outlet</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/switchbox.png" onerror="this.src='images/electrician_icon.jpg'" alt="New switchbox installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('New switchbox installation', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fan" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Fan</h2>
+
+                    <!-- Service 1: Fan repair -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Fan repair</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.80 (201K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹149</span>
+                                    </div>
+                                    <ul style="margin: 12px 0 16px; padding-left: 18px; color: #555; font-size: 13px; line-height: 1.5;">
+                                        <li>BLDC/Smart fan repair service is not provided.</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/fan-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fan repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Fan repair', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Regular ceiling fan installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Regular ceiling fan installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.85 (97K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹99</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/fan-install.png" onerror="this.src='images/electrician_icon.jpg'" alt="Regular ceiling fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Regular ceiling fan installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Decorative fan installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Decorative fan installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.77 (1K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹99</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/fan-decorative.png" onerror="this.src='images/electrician_icon.jpg'" alt="Decorative fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Decorative fan installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Exhaust/pedestal/tower fan installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Exhaust/pedestal/tower fan installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.81 (40K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹99</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/exhaust-fan.png" onerror="this.src='images/electrician_icon.jpg'" alt="Exhaust fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Exhaust/pedestal/tower fan installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Fan regulator replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <div style="color: #22c55e; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; text-transform: uppercase;">SUPER SAVER</div>
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Fan regulator replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.82 (60K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹79</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 30 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/fan-regulator.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fan regulator replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="light" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Light</h2>
+
+                    <!-- Service 1: Fancy light installation/replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Fancy light installation/replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.82 (60K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹149</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 30 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/fancy-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fancy light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Fancy light installation/replacement', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Tubelight repair & Installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Tubelight repair & Installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.86 (132K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹99</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 30 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/tubelight.png" onerror="this.src='images/electrician_icon.jpg'" alt="Tubelight repair & Installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Tubelight repair & Installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Bulb installation/replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Bulb installation/replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.84 (51K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹49</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/bulb.png" onerror="this.src='images/electrician_icon.jpg'" alt="Bulb installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Bulb installation/replacement', 49)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Ceiling light installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Ceiling light installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.82 (82K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹89</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/ceiling-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Ceiling light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Ceiling light installation', 89)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Hanging light installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Hanging light installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.80 (17K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹199</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/hanging-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Hanging light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hanging light installation', 199)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Chandelier installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Chandelier installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.72 (2K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹499</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/chandelier.png" onerror="this.src='images/electrician_icon.jpg'" alt="Chandelier installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wiring" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Wiring</h2>
+
+                    <!-- Service 1: New internal wiring (per 5m) -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">New internal wiring (per 5m)</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.73 (19K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹199</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 15 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/internal-wiring.png" onerror="this.src='images/electrician_icon.jpg'" alt="New internal wiring" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('New internal wiring (per 5m)', 199)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: New external wiring (per 5m) -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">New external wiring (per 5m)</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.75 (31K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹119</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/external-wiring.png" onerror="this.src='images/electrician_icon.jpg'" alt="New external wiring" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="doorbell" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Doorbell & security</h2>
+
+                    <!-- Service 1: Regular doorbell installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Regular doorbell installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.84 (20K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹99</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/doorbell.png" onerror="this.src='images/electrician_icon.jpg'" alt="Regular doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Regular doorbell installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Video doorbell installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Video doorbell installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.71 (1K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹600</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/video-doorbell.png" onerror="this.src='images/electrician_icon.jpg'" alt="Video doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Video doorbell installation', 600)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Wireless CCTV installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Wireless CCTV installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.71 (26K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹299</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 30 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/cctv.png" onerror="this.src='images/electrician_icon.jpg'" alt="Wireless CCTV installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Wireless CCTV installation', 299)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mcb" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">MCB/fuse</h2>
+
+                    <!-- Service 1: MCB/fuse repair -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">MCB/fuse repair</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.77 (19K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹149</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/mcb-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('MCB/fuse repair', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: MCB/fuse replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">MCB/fuse replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.79 (14K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹149</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/mcb-replacement.png" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('MCB/fuse replacement', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Submeter installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Submeter installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.77 (2K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹249</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 60 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/submeter.png" onerror="this.src='images/electrician_icon.jpg'" alt="Submeter installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Submeter installation', 249)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="appliances" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Appliances</h2>
+
+                    <!-- Service 1: Home theatre installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Home theatre installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.76 (6K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹399</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 1 hr 20 mins</span>
+                                    </div>
+                                    <ul style="margin: 12px 0; padding-left: 18px; color: #666; font-size: 13px; line-height: 1.5;">
+                                        <li>Installation of 2 speakers, 1 sound bar & 1 subwoofer</li>
+                                    </ul>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/home-theatre.png" onerror="this.src='images/electrician_icon.jpg'" alt="Home theatre installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Home theatre installation', 399)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: TV installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">TV installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.85 (43K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹399</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/tv-installation.png" onerror="this.src='images/electrician_icon.jpg'" alt="TV installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('TV installation', 399)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">5 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: TV uninstallation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">TV uninstallation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.87 (6K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹249</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/tv-uninstallation.png" onerror="this.src='images/electrician_icon.jpg'" alt="TV uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('TV uninstallation', 249)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">4 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Sound bar installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Sound bar installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.89 (7K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹99</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 60 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/sound-bar.png" onerror="this.src='images/electrician_icon.jpg'" alt="Sound bar installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Sound bar installation', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Karban Airzone installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Karban Airzone installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.67 (47 reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹399</span>
+                                    </div>
+                                    <ul style="margin: 12px 0; padding-left: 18px; color: #666; font-size: 13px; line-height: 1.5;">
+                                        <li>Includes electrical connection and remote testing</li>
+                                    </ul>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/karban-airzone.png" onerror="this.src='images/electrician_icon.jpg'" alt="Karban Airzone installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Karban Airzone installation', 399)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">1 option</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Inverter installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Inverter installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.74 (9K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px;">
+                                        <span>Starts at ₹485</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/inverter.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Inverter installation', 485)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                        <span style="font-size: 11px; color: #666; margin-top: 6px;">2 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 7: Stabiliser installation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Stabiliser installation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.84 (7K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹149</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 45 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/stabiliser.png" onerror="this.src='images/electrician_icon.jpg'" alt="Stabiliser installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Stabiliser installation', 149)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 8: Inverter fuse replacement -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Inverter fuse replacement</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.67 (2K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹99</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 15 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/inverter-fuse.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Inverter fuse replacement', 99)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 9: Inverter servicing -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Inverter servicing</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.76 (15K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹249</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 60 mins</span>
+                                    </div>
+                                    <ul style="margin: 12px 0; padding-left: 18px; color: #666; font-size: 13px; line-height: 1.5;">
+                                        <li>Terminal dust removal & distilled water top-up</li>
+                                    </ul>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/inverter-servicing.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter servicing" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Inverter servicing', 249)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 10: Inverter check-up -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Inverter check-up</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.71 (19K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹159</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 40 mins</span>
+                                    </div>
+                                    <ul style="margin: 12px 0; padding-left: 18px; color: #666; font-size: 13px; line-height: 1.5;">
+                                        <li>Complete check-up to identify issues before repair</li>
+                                    </ul>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/inverter-checkup.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter check-up" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Inverter check-up', 159)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 11: Inverter uninstallation -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Inverter uninstallation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.92 (2K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹499</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 30 mins</span>
+                                    </div>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
+                                        <img src="images/inverter-uninstallation.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Inverter uninstallation', 499)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="consultation" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Book a consultation</h2>
+
+                    <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; background: #f8f8f8; display: flex; flex-direction: column; position: relative;">
+                        <img src="images/consultation-banner.png" onerror="this.src='images/electrician_icon.jpg'" alt="Consultation Banner" style="width: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(245,245,245,0.95) 40%, rgba(245,245,245,0) 100%); display: flex; flex-direction: column; justify-content: center; padding: 24px;">
+                            <h3 style="font-size: 24px; color: #111; margin-bottom: 8px;">Know what you need?</h3>
+                            <p style="font-size: 15px; color: #444; margin-bottom: 24px;">Choose services directly & save 10%</p>
+                            <p style="font-size: 13px; color: #888;">Valid on booking above ₹300</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1; padding-right: 20px;">
+                                    <h4 style="margin-bottom: 6px; font-size: 16px; color: #111;">Electrician consultation</h4>
+                                    <div class="service-rating" style="display: flex; align-items: center; font-size: 13px; margin-bottom: 8px;">
+                                        <i class="fa-solid fa-star" style="color: #6366f1; margin-right: 4px;"></i>
+                                        <span style="color: #666; text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">4.75 (180K reviews)</span>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0; color: #111; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+                                        <span>₹49</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: 400;">• 35 mins</span>
+                                    </div>
+                                    <ul style="margin: 12px 0; padding-left: 18px; color: #666; font-size: 13px; line-height: 1.5;">
+                                        <li>An electrician will assess your needs upon arrival at your home</li>
+                                        <li>A quote will be provided before the service begins</li>
+                                    </ul>
+                                    <div style="margin: 20px 0;"></div> <!-- Spacer -->
+                                    <a href="#" style="color: #6366f1; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 10px;">
+                                        <button class="add-btn" onclick="addToCart('Electrician consultation', 49)" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="right-sidebar">
+                <div style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                    <div style="width: 24px; height: 24px; background: #e8f5e9; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 12px;">
+                        %
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; font-weight: 700; color: #111;">Get visitation fee off</div>
+                        <div style="font-size: 11px; color: #666; margin-top: 2px;">On orders above ₹499</div>
+                    </div>
+                </div>
+
+                <div class="uc-promise-card" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; position: relative; margin-bottom: 20px;">
+                    <div>
+                        <h3 style="margin-top:0; font-size:14px; font-weight: 700;">UC Promise</h3>
+                        <ul style="list-style:none; padding:0; margin:0; font-size:12px; color:#555;">
+                            <li style="margin-bottom:8px;"><i class="fa-solid fa-check" style="color:black; margin-right:8px;"></i> Verified Professionals</li>
+                            <li style="margin-bottom:8px;"><i class="fa-solid fa-check" style="color:black; margin-right:8px;"></i> Hassle Free Booking</li>
+                            <li><i class="fa-solid fa-check" style="color:black; margin-right:8px;"></i> Transparent Pricing</li>
+                        </ul>
+                    </div>
+                    <div style="position: absolute; right: 20px; top: 20px; width: 40px; height:40px; border-radius:50%; background:#e0f2fe; display:flex; align-items:center; justify-content:center;">
+                        <i class="fa-solid fa-medal" style="color:#0284c7;"></i>
+                    </div>
+                </div>
+                
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

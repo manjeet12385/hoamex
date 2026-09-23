@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbers - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
+.page-wrapper { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px; }
+.page-title { font-size: 32px; font-weight: 700; color: #111; margin: 0 0 6px; }
+.page-rating { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #444; margin-bottom: 24px; }
+.page-rating i { color: #7b1fa2; font-size: 13px; }
+
+/* 3-column layout */
+.three-col-layout { display: grid; grid-template-columns: 230px 1fr 260px; gap: 20px; align-items: start; }
+
+/* LEFT SIDEBAR */
+.left-sidebar { position: sticky; top: 80px; }
+.select-service-card { background: #fff; border-radius: 14px; padding: 16px 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.select-service-card h3 { font-size: 11px; font-weight: 400; color: #888; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid #eee; text-transform: uppercase; letter-spacing: .5px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 6px; }
+.service-item-sidebar { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 6px 2px; border-radius: 10px; border: 1.5px solid transparent; transition: all 0.2s; text-decoration: none; cursor: pointer; }
+.service-item-sidebar:hover { border-color: #e9d5ff; background: #faf5ff; }
+.service-item-sidebar.active { border-color: #7b1fa2; background: #faf5ff; }
+.service-item-img { background: #f5f5f5; border-radius: 10px; padding: 9px; margin-bottom: 6px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.service-item-img img { width: 32px; height: 32px; object-fit: contain; }
+.service-item-sidebar span { font-size: 10px; font-weight: 500; color: #475569; line-height: 1.3; }
+
+/* CENTER - each section stacked vertically */
+.center-content { min-width: 0; display: block; width: 100%; }
+.section-block { display: block; width: 100%; margin-bottom: 0; padding: 24px 0 20px; border-bottom: 1px solid #eee; box-sizing: border-box; }
+.section-block:last-child { border-bottom: none; }
+.section-heading { font-size: 22px; font-weight: 700; color: #111; margin: 0 0 18px; }
+
+/* Service card row */
+.svc-row { display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #f0f0f0; width: 100%; box-sizing: border-box; }
+.svc-row:last-child { border-bottom: none; }
+.svc-info { flex: 1; padding-right: 16px; }
+.svc-info h4 { font-size: 16px; font-weight: 600; color: #111; margin: 0 0 6px; }
+.svc-rating { display: flex; align-items: center; gap: 5px; font-size: 13px; margin-bottom: 6px; }
+.svc-rating i { color: #7b1fa2; font-size: 12px; }
+.svc-rating a { color: #555; text-decoration: underline dotted; }
+.svc-price { font-size: 13px; color: #333; font-weight: 600; margin-bottom: 10px; }
+.svc-price span { font-weight: 400; color: #777; }
+.view-details { color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none; }
+.view-details:hover { text-decoration: underline; }
+.svc-media { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px; flex-shrink: 0; }
+.svc-img { width: 88px; height: 80px; border-radius: 10px; object-fit: cover; background: #eee; }
+.add-btn { width: 80px; padding: 7px 0; background: #fff; color: #6366f1; border: 1.5px solid #d0d5ff; border-radius: 7px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.15s; box-shadow: 0 2px 6px rgba(99,102,241,0.08); }
+.add-btn:hover { background: #6366f1; color: #fff; }
+.options-text { font-size: 11px; color: #999; text-align: center; }
+.discount-badge { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; border-radius: 8px; text-align: center; padding: 12px 8px; font-weight: 800; font-size: 15px; line-height: 1.3; width: 80px; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* RIGHT SIDEBAR */
+.right-sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 14px; }
+.promo-card { background: #fff; border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: flex; align-items: flex-start; gap: 12px; }
+.promo-icon { width: 36px; height: 36px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.promo-icon i { color: #16a34a; font-size: 14px; }
+.promo-text strong { font-size: 13px; color: #111; display: block; }
+.promo-text small { font-size: 12px; color: #777; }
+.promise-card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.promise-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.promise-card-header span { font-size: 15px; font-weight: 700; color: #111; }
+.promise-badge-img { width: 44px; height: 44px; object-fit: contain; }
+.promise-list { list-style: none; padding: 0; margin: 0; font-size: 13px; color: #444; display: flex; flex-direction: column; gap: 8px; }
+.promise-list li { display: flex; align-items: center; gap: 8px; }
+.promise-list li i { color: #111; font-size: 12px; }
+.view-cart-btn { background: #7b1fa2; color: #fff; border: none; border-radius: 10px; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; box-sizing: border-box; transition: background 0.2s; }
+.view-cart-btn:hover { background: #6a1b9a; }
+
+/* FOOTER */
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+@media (max-width: 900px) { .three-col-layout { grid-template-columns: 1fr; } .left-sidebar, .right-sidebar { position: static; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div style="display:flex;align-items:center;gap:15px;">
+        <button id="back-btn" onclick="history.back()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-arrow-left"></i></button>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">J</div>
+            <div><span class="logo-text">Joamex</span><span class="logo-sub">Home Services Simplified</span></div>
+        </a>
+    </div>
+    <div class="search-container" id="header-search" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Search for services">
+    </div>
+    <div class="header-actions">
+        <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+        <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+        <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+        <div class="icon-btn" id="open-cart-btn" style="position:relative;">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-badge" style="position:absolute;top:-5px;right:-5px;background:#e53935;color:#fff;font-size:10px;font-weight:bold;padding:2px 5px;border-radius:10px;display:none;">0</span>
+        </div>
+    </div>
+</header>
+
+<main class="page-wrapper">
+    <h1 class="page-title">Plumbers</h1>
+    <div class="page-rating">
+        <i class="fa-solid fa-star"></i>
+        <strong>4.73</strong>
+        <span>(5.5 M bookings)</span>
+    </div>
+
+    <div class="three-col-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <div class="left-sidebar">
+            <div class="select-service-card">
+                <h3>Select a service</h3>
+                <div class="service-grid">
+                    <a href="#tap" class="service-item-sidebar active">
+                        <div class="service-item-img"><img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap"></div>
+                        <span>Tap &amp; mixer</span>
+                    </a>
+                    <a href="#toilet" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Toilet"></div>
+                        <span>Toilet</span>
+                    </a>
+                    <a href="#bath" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Bath"></div>
+                        <span>Bath &amp; Shower</span>
+                    </a>
+                    <a href="#accessories" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Bath accessories"></div>
+                        <span>Bath accessories</span>
+                    </a>
+                    <a href="#basin" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Basin"></div>
+                        <span>Basin &amp; sink</span>
+                    </a>
+                    <a href="#drainage" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drainage"></div>
+                        <span>Drainage &amp; blockage</span>
+                    </a>
+                    <a href="#leakage" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Leakage"></div>
+                        <span>Leakage &amp; connections</span>
+                    </a>
+                    <a href="#grouting" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Grouting"></div>
+                        <span>Grouting</span>
+                    </a>
+                    <a href="#tank" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tank"></div>
+                        <span>Water tank</span>
+                    </a>
+                    <a href="#motor" class="service-item-sidebar">
+                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Motor"></div>
+                        <span>Motor</span>
+                    </a>
+                    <a href="#consultation" class="service-item-sidebar">
+                        <div class="service-item-img" style="border-radius:10px;overflow:hidden;padding:0;"><img src="images/consultation.jpg" onerror="this.src='images/plumber.jpg'" alt="Consultation" style="width:50px;height:50px;object-fit:cover;border-radius:10px;"></div>
+                        <span>Book a consultation</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER CONTENT -->
+        <div class="center-content">
+
+<div id="tap" class="section-block">
+    <h2 class="section-heading">Tap &amp; mixer</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for tap &amp; mixer</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.80 (297K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;49 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for tap & mixer',49)">Add</button>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Tap repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.80 (268K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;49</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap repair">
+                        <button class="add-btn" onclick="addToCart('Tap repair',49)">Add</button>
+                        <div class="options-text">5 options</div>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Tap accessory installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (21K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;69</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/plumber.jpg" alt="Tap accessory installation" style="border-radius:50%;">
+                        <button class="add-btn" onclick="addToCart('Tap accessory installation',69)">Add</button>
+                        <div class="options-text">4 options</div>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Tap installation/replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (2K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;59</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap installation/replacement">
+                        <button class="add-btn" onclick="addToCart('Tap installation/replacement',59)">Add</button>
+                        <div class="options-text">6 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="toilet" class="section-block">
+    <h2 class="section-heading">Toilet</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for toilet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (374K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;89 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for toilet',89)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Flush tank repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.75 (163K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;129</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Flush tank repair">
+                        <button class="add-btn" onclick="addToCart('Flush tank repair',129)">Add</button>
+                        <div class="options-text">4 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Toilet seat cover installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (46K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Toilet seat cover installation" style="border-radius:50%;">
+                        <button class="add-btn" onclick="addToCart('Toilet seat cover installation',99)">Add</button>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>External flush tank replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (8K reviews)</a></div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="External flush tank replacement">
+                        <button class="add-btn" onclick="addToCart('External flush tank replacement',449)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Indian toilet repair/installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.83 (58 reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;599</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Indian toilet repair/installation">
+                        <button class="add-btn" onclick="addToCart('Indian toilet repair/installation',599)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Western toilet repair (wall-mounted)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.49 (220 reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;599</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Western toilet repair wall-mounted">
+                        <button class="add-btn" onclick="addToCart('Western toilet repair (wall-mounted)',599)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Western toilet repair (floor-mounted)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (528 reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;599</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Western toilet repair floor-mounted">
+                        <button class="add-btn" onclick="addToCart('Western toilet repair (floor-mounted)',599)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Jet spray repair/replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (158K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;89</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Jet spray repair/replacement">
+                        <button class="add-btn" onclick="addToCart('Jet spray repair/replacement',89)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="bath" class="section-block">
+    <h2 class="section-heading">Bath &amp; Shower</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for bath &amp; shower</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (71K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for bath & shower',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower mixer tap installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (9K reviews)</a></div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower mixer tap installation">
+                        <button class="add-btn" onclick="addToCart('Shower mixer tap installation',349)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.82 (23K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower installation">
+                        <button class="add-btn" onclick="addToCart('Shower installation',99)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower filter installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.87 (12K reviews)</a></div>
+                        <div class="svc-price">&#8377;129 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower filter installation">
+                        <button class="add-btn" onclick="addToCart('Shower filter installation',129)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (27K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower repair">
+                        <button class="add-btn" onclick="addToCart('Shower repair',99)">Add</button>
+                    </div>
+                </div>
+</div>
+
+<div id="accessories" class="section-block">
+    <h2 class="section-heading">Bath accessories</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for bath accessories</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.72 (30K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;79 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for bath accessories',79)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Soap holder installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (7K reviews)</a></div>
+                        <div class="svc-price">&#8377;79 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Soap holder installation">
+                        <button class="add-btn" onclick="addToCart('Soap holder installation',79)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Towel holder installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.71 (15K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Towel holder installation">
+                        <button class="add-btn" onclick="addToCart('Towel holder installation',99)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shelf installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.71 (8K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;79</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shelf installation">
+                        <button class="add-btn" onclick="addToCart('Shelf installation',79)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="basin" class="section-block">
+    <h2 class="section-heading">Basin &amp; sink</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for Basin &amp; Sink</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (140K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for Basin & Sink',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash basin leakage repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (71K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin leakage repair">
+                        <button class="add-btn" onclick="addToCart('Wash basin leakage repair',99)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash basin blockage removal</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.79 (42K reviews)</a></div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin blockage removal">
+                        <button class="add-btn" onclick="addToCart('Wash basin blockage removal',199)">Add</button>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash basin installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.75 (15K reviews)</a></div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin installation">
+                        <button class="add-btn" onclick="addToCart('Wash basin installation',399)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Waste coupling installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (12K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;149</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Waste coupling installation">
+                        <button class="add-btn" onclick="addToCart('Waste coupling installation',149)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="drainage" class="section-block">
+    <h2 class="section-heading">Drainage &amp; blockage</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for drainage &amp; blockage</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.77 (107K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;149 <span>&bull; 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for drainage & blockage',149)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Drain cover installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.77 (15K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drain cover installation">
+                        <button class="add-btn" onclick="addToCart('Drain cover installation',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Drain blockage removal</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.77 (91K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;199</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drain blockage removal">
+                        <button class="add-btn" onclick="addToCart('Drain blockage removal',199)">Add</button>
+                        <div class="options-text">4 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="leakage" class="section-block">
+    <h2 class="section-heading">Leakage &amp; connections</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>External pipeline leakage repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (160 reviews)</a></div>
+                        <div class="svc-price">&#8377;149 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="External pipeline leakage repair">
+                        <button class="add-btn" onclick="addToCart('External pipeline leakage repair',149)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Connection hose installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (68K reviews)</a></div>
+                        <div class="svc-price">&#8377;89 <span>&bull; 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Connection hose installation">
+                        <button class="add-btn" onclick="addToCart('Connection hose installation',89)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Washing machine filter installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (3K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Washing machine filter installation">
+                        <button class="add-btn" onclick="addToCart('Washing machine filter installation',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Washing machine inlet installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.81 (60K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Washing machine inlet installation">
+                        <button class="add-btn" onclick="addToCart('Washing machine inlet installation',99)">Add</button>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Geyser connection leakage repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.73 (23K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Geyser connection leakage repair">
+                        <button class="add-btn" onclick="addToCart('Geyser connection leakage repair',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>RO water connection installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.64 (13K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="RO water connection installation">
+                        <button class="add-btn" onclick="addToCart('RO water connection installation',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shut-off valve leakage repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.78 (43K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shut-off valve leakage repair">
+                        <button class="add-btn" onclick="addToCart('Shut-off valve leakage repair',99)">Add</button>
+                    </div>
+                </div>
+</div>
+
+<div id="grouting" class="section-block">
+    <h2 class="section-heading">Grouting</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Kitchen tile grouting</h4>
+                        <div class="svc-price">Starts at &#8377;999</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/grouting_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Kitchen tile grouting">
+                        <button class="add-btn" onclick="addToCart('Kitchen tile grouting',999)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="tank" class="section-block">
+    <h2 class="section-heading">Water tank</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Combo for water tank &amp; motor</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.64 (28K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;599 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <div class="discount-badge">10%<br>OFF</div>
+                        <button class="add-btn" onclick="addToCart('Combo for water tank & motor',599)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Water tank cleaning (loft placed)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.63 (2K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;1,199</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water tank cleaning (loft placed)">
+                        <button class="add-btn" onclick="addToCart('Water tank cleaning (loft placed)',1199)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Overhead tank cleaning (open placed)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.71 (16K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;899</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Overhead tank cleaning (open placed)">
+                        <button class="add-btn" onclick="addToCart('Overhead tank cleaning (open placed)',899)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                </div>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Overhead water tank installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.67 (1K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;599</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Overhead water tank installation">
+                        <button class="add-btn" onclick="addToCart('Overhead water tank installation',599)">Add</button>
+                        <div class="options-text">2 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Water tank repair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.64 (9K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;99</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water tank repair">
+                        <button class="add-btn" onclick="addToCart('Water tank repair',99)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Water meter installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.71 (214 reviews)</a></div>
+                        <div class="svc-price">&#8377;319 <span>&bull; 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water meter installation">
+                        <button class="add-btn" onclick="addToCart('Water meter installation',319)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Underground tank cleaning</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.51 (2K reviews)</a></div>
+                        <div class="svc-price">Starts at &#8377;1,299</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Underground tank cleaning">
+                        <button class="add-btn" onclick="addToCart('Underground tank cleaning',1299)">Add</button>
+                        <div class="options-text">3 options</div>
+                    </div>
+                </div>
+</div>
+
+<div id="motor" class="section-block">
+    <h2 class="section-heading">Motor</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Motor installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.65 (4K reviews)</a></div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor installation">
+                        <button class="add-btn" onclick="addToCart('Motor installation',349)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Motor air cavity removal</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.64 (13K reviews)</a></div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor air cavity removal">
+                        <button class="add-btn" onclick="addToCart('Motor air cavity removal',99)">Add</button>
+                    </div>
+                    <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Motor replacement</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.73 (24 reviews)</a></div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor replacement">
+                        <button class="add-btn" onclick="addToCart('Motor replacement',449)">Add</button>
+                    </div>
+                </div>
+</div>
+
+<div id="consultation" class="section-block">
+    <h2 class="section-heading">Book a consultation</h2>
+
+<div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Plumber consultation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i><a href="#">4.74 (218K reviews)</a></div>
+                        <div class="svc-price">&#8377;49 <span>&bull; 30 mins</span></div>
+                        <ul style="color: #666; font-size: 13px; margin: 12px 0 12px 20px; padding: 0;">
+                            <li style="margin-bottom: 6px;">A plumber will assess your needs upon arrival at your home</li>
+                            <li>A quote will be provided before the service begins</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/consultation.jpg" onerror="this.src='images/plumber.jpg'" alt="Plumber consultation">
+                        <button class="add-btn" onclick="addToCart('Plumber consultation',49)">Add</button>
+                    </div>
+                </div>
+</div>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+        <div class="right-sidebar">
+            <!-- This will be populated dynamically by script -->
+        </div>
+
+    </div>
+
+    <!-- Modal for Location/DateTime selection -->
+    <div id="locationModal" class="modal">
+        <!-- Modal content omitted for brevity -->
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="common.js"></script>
+    <script>
+        document.querySelectorAll('.service-item-sidebar').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.service-item-sidebar').forEach(el => {
+                    el.style.border = '1px solid #e2e8f0';
+                    el.style.backgroundColor = '#fff';
+                });
+                this.style.border = '2px solid #6b21a8';
+                this.style.backgroundColor = '#f3e8ff';
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Lights Installation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .three-col-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr 280px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .left-col {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+        }
+        .center-col {
+            padding: 0 10px;
+        }
+        .right-col {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+        }
+        
+        .page-header {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .page-rating {
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .instant-badge {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #c8e6c9;
+        }
+        .instant-badge span:first-child {
+            background-color: #2e7d32;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .service-cat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px 10px;
+            margin-bottom: 25px;
+        }
+        .service-cat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        .service-cat-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            border: 1px solid #eaeaea;
+        }
+        .service-cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .service-cat-item p {
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .svc-category {
+            margin-bottom: 40px;
+        }
+        .svc-category h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .svc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .svc-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .svc-info h4 {
+            font-size: 16px;
+            margin: 0 0 8px 0;
+        }
+        .svc-price {
+            font-size: 13px;
+            margin: 8px 0;
+            color: #333;
+        }
+        .svc-meta {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+        .svc-action {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .svc-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .add-btn {
+            position: absolute;
+            bottom: -15px;
+            background: #fff;
+            color: #6a1b9a;
+            border: 1px solid #e0e0e0;
+            padding: 6px 0;
+            width: 80px;
+            border-radius: 6px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+        .options-text {
+            font-size: 10px;
+            color: #666;
+            margin-top: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
+        </div>
+        <div class="search-container" id="header-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="three-col-layout">
+        <!-- Left Sidebar -->
+        <div class="left-col">
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Festival<br>Lights ...</h1>
+                    <div class="page-rating"><i class="fa-solid fa-star"></i> 4.69 (34K bookings)</div>
+                </div>
+                <div class="instant-badge">
+                    <span><i class="fa-solid fa-bolt"></i> Instant</span>
+                    In 19 mins
+                </div>
+            </div>
+
+            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 15px;">
+                <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 13px; color: #666; font-weight: normal;">Select a service</h3>
+                <div class="service-cat-grid">
+                    <a href="#uninstallation" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/electrician_icon.jpg" alt="Light uninstallations"></div>
+                        <p>Light<br>uninstallations</p>
+                    </a>
+                    <a href="#balcony" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/renovation.jpg" alt="Balcony lights"></div>
+                        <p>Balcony lights</p>
+                    </a>
+                    <a href="#railing" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/electrician_icon.jpg" alt="Railing lights"></div>
+                        <p>Railing lights</p>
+                    </a>
+                    <a href="#room" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/renovation.jpg" alt="Room lights"></div>
+                        <p>Room lights</p>
+                    </a>
+                    <a href="#mandir" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/electrician_icon.jpg" alt="Mandir lights"></div>
+                        <p>Mandir lights</p>
+                    </a>
+                    <a href="#outdoor" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/renovation.jpg" alt="Outdoor lights"></div>
+                        <p>Outdoor lights</p>
+                    </a>
+                    <a href="#garden" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/electrician_icon.jpg" alt="Garden lights"></div>
+                        <p>Garden lights</p>
+                    </a>
+                    <a href="#xmas" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/renovation.jpg" alt="Xmas light decor"></div>
+                        <p>Xmas light decor</p>
+                    </a>
+                    <a href="#custom" class="service-cat-item">
+                        <div class="service-cat-img"><img src="images/electrician_icon.jpg" alt="Custom services"></div>
+                        <p>Custom services</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="center-col" id="center-col">
+            
+            <!-- Light uninstallations -->
+            <div class="svc-category" id="uninstallation">
+                <h2>Light uninstallations</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Light uninstallation (per light)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (4K reviews)</p>
+                        <p class="svc-price">₹124 &nbsp;&bull;&nbsp; <span style="font-weight: normal; color: #666;">30 mins</span></p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be upto 12m</li>
+                            <li>Uninstallation charges for 1 light string</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Light uninstallation (per light)', 124)">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Balcony lights -->
+            <div class="svc-category" id="balcony">
+                <h2>Balcony lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Balcony lights installation (Starry)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.66 (3K reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be upto 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Balcony lights installation (Starry)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Balcony lights installation (Starry)', 248)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Balcony lights installation (String)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.69 (6K reviews)</p>
+                        <p class="svc-price">Starts at ₹495</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be upto 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Balcony lights installation (String)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Balcony lights installation (String)', 495)">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Railing lights -->
+            <div class="svc-category" id="railing">
+                <h2>Railing lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Railing lights installation (Rope)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.55 (800 reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Railing lights installation (Rope)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Railing lights installation (Rope)', 248)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Railing lights installation (String)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.63 (523 reviews)</p>
+                        <p class="svc-price">Starts at ₹495</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Railing lights installation (String)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Railing lights installation (String)', 495)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Railing lights installation (Starry)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.68 (219 reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Railing lights installation (Starry)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Railing lights installation (Starry)', 248)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Room lights -->
+            <div class="svc-category" id="room">
+                <h2>Room lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Room lights installation (Starry)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.86 (348 reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Room lights installation (Starry)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Room lights installation (Starry)', 248)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Room lights installation (String)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.72 (497 reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/cleaning.jpg" alt="Room lights installation (String)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Room lights installation (String)', 248)">Add</button>
+                        <p class="options-text">3 options</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Mandir lights -->
+            <div class="svc-category" id="mandir">
+                <h2>Mandir lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mandir lights installation</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.66 (1K reviews)</p>
+                        <p class="svc-price">Starts at ₹124</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Mandir lights installation" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Mandir lights installation', 124)">Add</button>
+                        <p class="options-text">3 options</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Outdoor lights -->
+            <div class="svc-category" id="outdoor">
+                <h2>Outdoor lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Outdoor lights installation</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.56 (490 reviews)</p>
+                        <p class="svc-price">Starts at ₹1,950</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Outdoor lights installation" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Outdoor lights installation', 1950)">Add</button>
+                        <p class="options-text">2 options</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        <!-- Right Sidebar (Cart) -->
+        <div class="right-col">
+            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 20px; background: #fff; position: sticky; top: 20px;">
+                <h3 style="margin-top: 0;">Cart</h3>
+                <div id="cart-items-container" style="min-height: 100px; font-size: 14px; color: #666;">
+                    Your cart is empty
+                </div>
+                <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; display: flex; justify-content: space-between; font-weight: bold;">
+                    <span>Total</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px;">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

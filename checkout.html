@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .checkout-container { max-width: 800px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+        .checkout-form { background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; }
+        .checkout-summary { background: #f9f9f9; padding: 30px; border-radius: 12px; border: 1px solid #eee; height: fit-content; position: sticky; top: 80px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #333; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #f39c12; }
+        
+        .payment-methods { display: flex; gap: 15px; margin-bottom: 25px; }
+        .payment-method { flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.2s; }
+        .payment-method.active { border-color: #27ae60; background: #eaf8f1; color: #27ae60; font-weight: bold; }
+        
+        .order-btn { width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .order-btn:hover { background: #333; }
+        
+        @media (max-width: 768px) {
+            .checkout-container { grid-template-columns: 1fr; }
+            .checkout-summary { position: static; order: -1; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <!-- Form -->
+        <div class="checkout-form">
+            <h2 style="font-size: 24px; margin-bottom: 25px;">Complete your booking</h2>
+            
+            <h3 style="font-size: 18px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">1. Service Address</h3>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter 10-digit number">
+            </div>
+            <div class="form-group">
+                <label>Address line 1</label>
+                <input type="text" placeholder="House/Flat No., Building Name">
+            </div>
+            <div class="form-group">
+                <label>Landmark</label>
+                <input type="text" placeholder="Any nearby landmark">
+            </div>
+            
+            <h3 style="font-size: 18px; margin-bottom: 15px; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">2. Date & Time</h3>
+            <div style="display: flex; gap: 15px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>Date</label>
+                    <input type="date" id="booking-date">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Time Slot</label>
+                    <select>
+                        <option>10:00 AM - 12:00 PM</option>
+                        <option>12:00 PM - 02:00 PM</option>
+                        <option>02:00 PM - 04:00 PM</option>
+                        <option>04:00 PM - 06:00 PM</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3 style="font-size: 18px; margin-bottom: 15px; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">3. Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-method active" onclick="selectPayment(this)">
+                    <i class="fa-solid fa-money-bill-wave" style="font-size: 24px; margin-bottom: 10px; display: block;"></i>
+                    Cash after service
+                </div>
+                <div class="payment-method" onclick="selectPayment(this)">
+                    <i class="fa-brands fa-google-pay" style="font-size: 24px; margin-bottom: 10px; display: block;"></i>
+                    Pay online
+                </div>
+            </div>
+            
+            <button class="order-btn" onclick="placeOrder()">Place Booking</button>
+        </div>
+
+        <!-- Summary -->
+        <div class="checkout-summary">
+            <h3 style="font-size: 18px; margin-bottom: 20px;">Booking Summary</h3>
+            <div id="checkout-items" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+                <!-- Items injected here by JS -->
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;">
+                <span style="color: #666;">Item Total</span>
+                <span id="checkout-subtotal">₹0</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;">
+                <span style="color: #666;">Taxes & Fee</span>
+                <span>₹49</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 18px; font-weight: bold;">
+                <span>Total to pay</span>
+                <span id="checkout-total">₹0</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal-overlay hidden" style="z-index: 2000;">
+        <div class="modal-content" style="text-align: center; max-width: 400px; padding: 40px 30px;">
+            <div style="width: 80px; height: 80px; background: #eaf8f1; color: #27ae60; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 20px;">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 style="font-size: 24px; margin-bottom: 10px;">Booking Confirmed!</h2>
+            <p style="color: #666; margin-bottom: 25px; line-height: 1.5;">Your professional has been assigned. You can track your booking in the My Bookings section.</p>
+            <a href="index.html" class="order-btn" style="text-decoration: none; display: inline-block;">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        // Set minimum date to today
+        const dateInput = document.getElementById('booking-date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            dateInput.value = today;
+        }
+
+        function selectPayment(element) {
+            document.querySelectorAll('.payment-method').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function placeOrder() {
+            const cart = JSON.parse(localStorage.getItem('hoamexCart')) || [];
+            if(cart.length === 0) {
+                alert("Your cart is empty!");
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Show success modal
+            document.getElementById('success-modal').classList.remove('hidden');
+            
+            // Clear cart
+            localStorage.removeItem('hoamexCart');
+        }
+
+        // Render Cart Items
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('hoamexCart')) || [];
+            const itemsContainer = document.getElementById('checkout-items');
+            
+            if(cart.length === 0) {
+                itemsContainer.innerHTML = '<p style="color: #999; text-align: center;">Cart is empty</p>';
+                return;
+            }
+
+            let subtotal = 0;
+            let html = '';
+            
+            cart.forEach(item => {
+                const priceMatch = item.price.match(/\d+/);
+                const priceNum = priceMatch ? parseInt(priceMatch[0]) : 0;
+                subtotal += priceNum;
+                
+                html += `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <div style="flex: 1;">
+                        <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">${item.name}</div>
+                        <div style="font-size: 12px; color: #666;">Qty: 1</div>
+                    </div>
+                    <div style="font-weight: 600; font-size: 14px;">${item.price}</div>
+                </div>`;
+            });
+            
+            itemsContainer.innerHTML = html;
+            document.getElementById('checkout-subtotal').innerText = '₹' + subtotal;
+            document.getElementById('checkout-total').innerText = '₹' + (subtotal + 49);
+        });
+    </script>
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

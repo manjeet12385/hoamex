@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Royale - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="ac-service-layout">
+            
+            <!-- Left Column: Title -->
+            <div class="ac-left-col">
+                <div class="ac-page-header">
+                    <h1 class="ac-page-title">Salon<br>Royale</h1>
+                </div>
+                
+                <div class="ac-rating">
+                    <i class="fa-solid fa-star"></i> 4.87 <span>(1.3 M bookings)</span>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="ac-right-col" style="display: flex; align-items: center; justify-content: flex-end; padding-right: 20px;">
+                <div style="background: #e8f5e9; color: #00875a; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-align: center;">
+                    <div style="font-size: 12px; margin-bottom: 2px;"><i class="fa-regular fa-clock"></i> Earliest</div>
+                    <div>Mon, 3:00 PM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider" style="margin: 40px auto; max-width: 1200px;"></div>
+
+        <!-- 3-Column Detailed Section -->
+        <div class="ac-details-section" id="ac-details-section">
+            
+            <!-- Left Sidebar -->
+            <div class="ac-sidebar">
+                <div class="ac-select-service-card" style="margin-top: 0;">
+                    <h3 style="font-size: 14px; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Select a service</h3>
+                    <div class="ac-service-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <div class="ac-service-card-item" style="border: 2px solid #000; padding: 5px; border-radius: 8px;">
+                            <div style="width: 50px; height: 50px; background: #e0f2f1; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px;">
+                                <i class="fa-solid fa-box-open" style="font-size: 20px; color: #00897b;"></i>
+                            </div>
+                            <p style="font-size: 11px;">Packages</p>
+                        </div>
+                        <div class="ac-service-card-item" id="pedicure-btn" style="cursor: pointer;">
+                            <img src="images/beauty.jpg" alt="Pedicure" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Pedicure</p>
+                        </div>
+                        <div class="ac-service-card-item" id="haircare-btn" style="cursor: pointer;">
+                            <img src="images/grooming.jpg" alt="Hair care" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Hair care</p>
+                        </div>
+                        <div class="ac-service-card-item" id="facecare-btn" style="cursor: pointer;">
+                            <img src="images/grooming.jpg" alt="Face care" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Face care</p>
+                        </div>
+                        <div class="ac-service-card-item" id="shave-btn" style="cursor: pointer;">
+                            <img src="images/grooming.jpg" alt="Shave/beard" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Shave/beard<br>grooming</p>
+                        </div>
+                        <div class="ac-service-card-item" id="haircolor-btn" style="cursor: pointer;">
+                            <img src="images/grooming.jpg" alt="Hair color" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Hair color</p>
+                        </div>
+                        <div class="ac-service-card-item" id="massage-btn" style="cursor: pointer;">
+                            <img src="images/grooming.jpg" alt="Massage" style="border-radius: 8px;">
+                            <p style="font-size: 11px;">Massage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Content -->
+            <div class="ac-main-content">
+                <h2 class="section-heading">Packages</h2>
+
+                <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; position: relative;">
+                    <div style="color: #00875a; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-box"></i> PACKAGE</div>
+                    <div class="plan-header" style="align-items: flex-start;">
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Grooming essentials</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span style="color: #666; font-weight: 400;">(255K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹758 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 15 mins</span></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" style="padding: 8px 30px; background: transparent; color: #7d33ff; border: 1px solid #7d33ff; font-weight: 600;">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul class="plan-features" style="margin-top: 15px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px;"><strong>Haircut:</strong> Haircut for men</li>
+                        <li style="margin-bottom: 8px;"><strong>Shave/beard grooming:</strong> Beard trimming & styling</li>
+                    </ul>
+                    
+                    <button style="margin-top: 15px; padding: 10px 20px; border: 1px solid #e0e0e0; background: #fff; border-radius: 8px; font-weight: 600; color: #333; cursor: pointer;">Edit your package</button>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc; position: relative;">
+                    <div style="color: #00875a; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-box"></i> PACKAGE</div>
+                    <div class="plan-header" style="align-items: flex-start;">
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Complete care</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(212K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,158 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 15 mins</span></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" style="padding: 8px 30px; background: transparent; color: #7d33ff; border: 1px solid #7d33ff; font-weight: 600;">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul class="plan-features" style="margin-top: 15px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px;"><strong>Haircut:</strong> Haircut for men</li>
+                        <li style="margin-bottom: 8px;"><strong>Detan (O3+):</strong> Face & neck detan</li>
+                    </ul>
+                    
+                    <button style="margin-top: 15px; padding: 10px 20px; border: 1px solid #e0e0e0; background: #fff; border-radius: 8px; font-weight: 600; color: #333; cursor: pointer;">Edit your package</button>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc; position: relative;">
+                    <div style="color: #00875a; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-box"></i> PACKAGE</div>
+                    <div class="plan-header" style="align-items: flex-start;">
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Glow getter</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span style="color: #666; font-weight: 400;">(215K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹2,798 <strike style="color: #666; font-weight: 400;">₹2,850</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 2 hrs 15 mins</span></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" style="padding: 8px 30px; background: transparent; color: #7d33ff; border: 1px solid #7d33ff; font-weight: 600;">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul class="plan-features" style="margin-top: 15px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px;"><strong>Face care:</strong> Repechage skin brightening facial</li>
+                        <li style="margin-bottom: 8px;"><strong>Shave/beard grooming:</strong> Beard trimming & styling</li>
+                        <li style="margin-bottom: 8px;"><strong>Haircut:</strong> Haircut for men</li>
+                    </ul>
+                    
+                    <button style="margin-top: 15px; padding: 10px 20px; border: 1px solid #e0e0e0; background: #fff; border-radius: 8px; font-weight: 600; color: #333; cursor: pointer;">Edit your package</button>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc; position: relative;">
+                    <div style="color: #00875a; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-box"></i> PACKAGE</div>
+                    <div class="plan-header" style="align-items: flex-start;">
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Haircut & color</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(152K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,108 <strike style="color: #666; font-weight: 400;">₹1,200</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 15 mins</span></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" style="padding: 8px 30px; background: transparent; color: #7d33ff; border: 1px solid #7d33ff; font-weight: 600;">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul class="plan-features" style="margin-top: 15px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px;"><strong>Haircut:</strong> Haircut for men</li>
+                        <li style="margin-bottom: 8px;"><strong>Inoa colors (L'Oreal):</strong> Dark brown (shade 3)</li>
+                    </ul>
+                    
+                    <button style="margin-top: 15px; padding: 10px 20px; border: 1px solid #e0e0e0; background: #fff; border-radius: 8px; font-weight: 600; color: #333; cursor: pointer;">Edit your package</button>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc; position: relative;">
+                    <div style="color: #00875a; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><i class="fa-solid fa-box"></i> PACKAGE</div>
+                    <div class="plan-header" style="align-items: flex-start;">
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Hair & care</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span style="color: #666; font-weight: 400;">(194K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,977 <strike style="color: #666; font-weight: 400;">₹2,027</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 2 hrs 15 mins</span></div>
+                        </div>
+                        <div class="add-btn-container">
+                            <button class="add-btn" style="padding: 8px 30px; background: transparent; color: #7d33ff; border: 1px solid #7d33ff; font-weight: 600;">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul class="plan-features" style="margin-top: 15px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 8px;"><strong>Haircut:</strong> Haircut for men</li>
+                        <li style="margin-bottom: 8px;"><strong>Massage:</strong> 15 mins head massage</li>
+                        <li style="margin-bottom: 8px;"><strong>Pedicure:</strong> Aroma bomb pedicure</li>
+                    </ul>
+                    
+                    <button style="margin-top: 15px; padding: 10px 20px; border: 1px solid #e0e0e0; background: #fff; border-radius: 8px; font-weight: 600; color: #333; cursor: pointer;">Edit your package</button>
+                </div>
+
+                <!-- Pedicure Section -->
+                <div id="pedicure-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Pedicure</h2>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Aroma bomb pedicure</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.82 <span style="color: #666; font-weight: 400;">(14K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹1,299 <strike style="color: #666; font-weight: 400;">₹1,349</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 15 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Revitalise your feet with a soothing aroma bomb pedicure for fresh, soft soles</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/beauty.jpg" alt="Aroma bomb pedicure" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Express pedicure</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.83 <span style="color: #666; font-weight: 400;">(274 reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹900 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 40 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li style="margin-bottom: 5px;">Foot care using natural ingredients to leave your feet soft, smooth & refreshed</li>
+                                    <li>Gentle exfoliation & a relaxing massage for deep hydration</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/beauty.jpg" alt="Express pedicure" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Nail cut & file (feet)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.86 <span style="color: #666; font-weight: 400;">(3K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹120 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 10 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Quick & basic nail grooming of your feet</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/beauty.jpg" alt="Nail cut feet" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Nail cut & file (hands)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.85 <span style="color: #666; font-weight: 400;">(3K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹100 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 10 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Quick & basic nail grooming of your hands</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/beauty.jpg" alt="Nail cut hands" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hair care Section -->
+                <div id="haircare-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Hair care</h2>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Haircut for men</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(134K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹459 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 45 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Bespoke haircut with hairspray, blow dry & a dry head massage</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Haircut for men" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Haircut for boys</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(20K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹459 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 45 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Specially trained stylists for boys aged 2 years & above</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Haircut for boys" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Face care Section -->
+                <div id="facecare-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Face care</h2>
+
+                    <!-- Promotional Banner -->
+                    <div style="background-color: #f1ebd8; border-radius: 12px; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; overflow: hidden; position: relative;">
+                        <div style="flex: 1; z-index: 2;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 14px; margin-bottom: 10px; letter-spacing: 1px;">BEARDO</h3>
+                            <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Golden glowing<br>& hydrated skin</h2>
+                            <p style="color: #666; font-size: 16px; margin-bottom: 0;">Powered with turmeric &<br>citrus lemon peel</p>
+                        </div>
+                        <div style="width: 250px; position: absolute; right: 0; bottom: 0; top: 0; z-index: 1;">
+                            <img src="images/beauty.jpg" alt="Beardo facial" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Beardo golden glow facial</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.80 <span style="color: #666; font-weight: 400;">(3K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹1,599 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 5 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Instant glow & boosted collagen, leaving skin bright, supple & hydrated</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <button style="padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">O3+ skin brightening facial</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.79 <span style="color: #666; font-weight: 400;">(10K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹2,000 <strike style="color: #666; font-weight: 400;">₹2,100</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 1 hr 5 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Enhances the skin texture & boosting the glow of the skin for a longer period</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="O3+ skin brightening facial" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Repechage skin brightening facial</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.81 <span style="color: #666; font-weight: 400;">(6K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹2,000 <strike style="color: #666; font-weight: 400;">₹2,100</strike> <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 60 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Power-packed seaweed to improve skin texture & fight ageing</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Repechage skin brightening facial" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">O3+ face & neck detan</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.83 <span style="color: #666; font-weight: 400;">(11K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹699 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 30 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Tan removal with reduction of dark spots, blemishes & pigmentation</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="O3+ face & neck detan" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-top: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px; padding-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">O3+ cleanup</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.83 <span style="color: #666; font-weight: 400;">(6K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹1,299 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 40 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>A routine deep cleansing ritual to remove dirt, oil & toxins</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center; padding-top: 20px;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="O3+ cleanup" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shave/beard grooming Section -->
+                <div id="shave-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Shave/beard grooming</h2>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Clean shave</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(15K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹299 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 30 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Effortless shave with pre-shave oil, face cleansing & a relaxing face massage</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Clean shave" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Beard trimming & styling</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(60K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹299 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 30 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Bespoke beard styling, pre & post-shave conditioning with relaxing face massage</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Beard trimming & styling" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Beard colour (only application)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(4K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹199 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 25 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Please provide your own hair colour, we'll bring everything else.</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Beard colour application" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hair color Section -->
+                <div id="haircolor-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Hair color</h2>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Hair colour (only application)</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.87 <span style="color: #666; font-weight: 400;">(8K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹349 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 30 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Please provide your own hair colour, we'll bring everything else.</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Hair colour application" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">L`Oreal Inoa hair colour</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.74 <span style="color: #666; font-weight: 400;">(9K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">Starts at ₹749</div>
+                                
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; height: 110px;">
+                                    <h3 style="font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 400; color: #000;">iN<span style="color: #8cc63f;">O</span>A</h3>
+                                </div>
+                                <button id="loreal-add-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                                <div style="font-size: 10px; color: #666; margin-top: 5px;">4 options</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Massage Section -->
+                <div id="massage-section" style="margin-top: 50px;">
+                    <h2 class="section-heading" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">Massage</h2>
+
+                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Head massage</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(27K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">Starts at ₹219</div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Revitalising ritual to stimulate the scalp & nourish the hair with premium oil</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Head massage" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button id="head-massage-add-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                                <div style="font-size: 10px; color: #666; margin-top: 5px;">2 options</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-details-card" style="padding-top: 10px; padding-bottom: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div style="flex: 1; padding-right: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Head, neck & shoulder massage</h4>
+                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.86 <span style="color: #666; font-weight: 400;">(20K reviews)</span></div>
+                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 15px; color: #000;">₹449 <span style="color: #666; font-weight: 400; font-size: 13px;">&bull; 40 mins</span></div>
+                                
+                                <ul class="plan-features" style="padding-left: 20px; list-style-type: disc; margin-bottom: 15px; color: #444; font-size: 13px; line-height: 1.5;">
+                                    <li>Head oil massage along with neck and shoulder dry massage</li>
+                                    <li>Perfect to maintain upper body health for people who sit & work for longer hours</li>
+                                </ul>
+                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                            </div>
+                            <div style="width: 140px; display: flex; flex-direction: column; align-items: center;">
+                                <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: -15px;">
+                                    <img src="images/grooming.jpg" alt="Neck & shoulder massage" style="width: 100%; height: 110px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; width: 80%;">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="ac-right-sidebar">
+                <div class="uc-promise-card">
+                    <h3 style="margin-bottom: 15px; font-size: 18px;">UC Promise</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check" style="color: #000;"></i> Verified Professionals</li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check" style="color: #000;"></i> Hassle Free Booking</li>
+                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-check" style="color: #000;"></i> Transparent Pricing</li>
+                    </ul>
+                    <img src="images/beauty.jpg" class="promise-badge" alt="Quality Assured" style="position: absolute; right: 20px; top: 20px; width: 40px; height: 40px; border-radius: 50%;">
+                </div>
+
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal for Head massage options -->
+    <div id="head-massage-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 400px; max-width: 90%;">
+            <button id="head-massage-close-btn" style="position: absolute; top: -40px; right: 0; background: #fff; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1001;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="background: #fff; border-radius: 12px; width: 100%; overflow: hidden; padding-bottom: 20px;">
+                <img src="images/grooming.jpg" alt="Head massage" style="width: 100%; height: 200px; object-fit: cover;">
+                
+                <div style="padding: 20px;">
+                    <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 5px;">Head massage</h2>
+                    <div class="plan-rating" style="margin-bottom: 20px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(27K reviews)</span></div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dashed #ccc;">
+                        <div>
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">15 mins</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.90 <span style="color: #666; font-weight: 400;">(23K reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000;">₹219 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 15 mins</span></div>
+                        </div>
+                        <button style="padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">25 mins</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span style="color: #666; font-weight: 400;">(4K reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000;">₹349 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 25 mins</span></div>
+                        </div>
+                        <button style="padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for L'Oreal Inoa hair colour -->
+    <div id="loreal-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 500px; max-width: 90%; max-height: 90vh; display: flex; flex-direction: column;">
+            <button id="loreal-close-btn" style="position: absolute; top: -40px; right: 0; background: #fff; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1001;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="background: #fff; border-radius: 12px; width: 100%; overflow-y: auto; padding-bottom: 20px;">
+                
+                <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                    <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 5px;">L`Oreal Inoa hair colour</h2>
+                    <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.74 <span style="color: #666; font-weight: 400;">(9K reviews)</span></div>
+                </div>
+
+                <div style="padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="flex: 1; padding-right: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Dark brown (shade 3)</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.76 <span style="color: #666; font-weight: 400;">(5K reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000;">₹749 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 30 mins</span></div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/grooming.jpg" alt="Dark brown" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <button style="position: relative; z-index: 2; padding: 6px 20px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; font-size: 12px;">Add</button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="flex: 1; padding-right: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Darkest brown (shade 2)</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.73 <span style="color: #666; font-weight: 400;">(3K reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000; margin-bottom: 5px;">₹749 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 30 mins</span></div>
+                            <ul style="padding-left: 20px; margin: 0; font-size: 11px; color: #666;"><li>Recommended for black shade</li></ul>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/grooming.jpg" alt="Darkest brown" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <button style="position: relative; z-index: 2; padding: 6px 20px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; font-size: 12px;">Add</button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px dashed #ccc;">
+                        <div style="flex: 1; padding-right: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Light brown (shade 5)</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.68 <span style="color: #666; font-weight: 400;">(192 reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000;">₹749 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 30 mins</span></div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/grooming.jpg" alt="Light brown" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <button style="position: relative; z-index: 2; padding: 6px 20px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; font-size: 12px;">Add</button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; padding-right: 15px;">
+                            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Medium brown (shade 4)</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px; font-size: 11px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.66 <span style="color: #666; font-weight: 400;">(667 reviews)</span></div>
+                            <div style="font-weight: 600; font-size: 14px; color: #000;">₹749 <span style="color: #666; font-weight: 400; font-size: 12px;">&bull; 30 mins</span></div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/grooming.jpg" alt="Medium brown" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <button style="position: relative; z-index: 2; padding: 6px 20px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; font-size: 12px;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pedicureBtn = document.getElementById('pedicure-btn');
+            const pedicureSection = document.getElementById('pedicure-section');
+            if(pedicureBtn && pedicureSection) {
+                pedicureBtn.addEventListener('click', () => {
+                    pedicureSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const haircareBtn = document.getElementById('haircare-btn');
+            const haircareSection = document.getElementById('haircare-section');
+            if(haircareBtn && haircareSection) {
+                haircareBtn.addEventListener('click', () => {
+                    haircareSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const facecareBtn = document.getElementById('facecare-btn');
+            const facecareSection = document.getElementById('facecare-section');
+            if(facecareBtn && facecareSection) {
+                facecareBtn.addEventListener('click', () => {
+                    facecareSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const shaveBtn = document.getElementById('shave-btn');
+            const shaveSection = document.getElementById('shave-section');
+            if(shaveBtn && shaveSection) {
+                shaveBtn.addEventListener('click', () => {
+                    shaveSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const haircolorBtn = document.getElementById('haircolor-btn');
+            const haircolorSection = document.getElementById('haircolor-section');
+            if(haircolorBtn && haircolorSection) {
+                haircolorBtn.addEventListener('click', () => {
+                    haircolorSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const massageBtn = document.getElementById('massage-btn');
+            const massageSection = document.getElementById('massage-section');
+            if(massageBtn && massageSection) {
+                massageBtn.addEventListener('click', () => {
+                    massageSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            const headMassageAddBtn = document.getElementById('head-massage-add-btn');
+            const headMassageModal = document.getElementById('head-massage-modal');
+            const headMassageCloseBtn = document.getElementById('head-massage-close-btn');
+
+            if (headMassageAddBtn && headMassageModal && headMassageCloseBtn) {
+                headMassageAddBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    headMassageModal.style.display = 'flex';
+                });
+
+                headMassageCloseBtn.addEventListener('click', () => {
+                    headMassageModal.style.display = 'none';
+                });
+
+                headMassageModal.addEventListener('click', (e) => {
+                    if (e.target === headMassageModal) {
+                        headMassageModal.style.display = 'none';
+                    }
+                });
+            }
+            const lorealAddBtn = document.getElementById('loreal-add-btn');
+            const lorealModal = document.getElementById('loreal-modal');
+            const lorealCloseBtn = document.getElementById('loreal-close-btn');
+
+            if (lorealAddBtn && lorealModal && lorealCloseBtn) {
+                lorealAddBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    lorealModal.style.display = 'flex';
+                });
+
+                lorealCloseBtn.addEventListener('click', () => {
+                    lorealModal.style.display = 'none';
+                });
+
+                lorealModal.addEventListener('click', (e) => {
+                    if (e.target === lorealModal) {
+                        lorealModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

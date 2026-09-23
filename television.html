@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrigerator - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="search-container" id="header-search" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="ac-service-layout">
+            
+            <!-- Left Column: Title and Services -->
+            <div class="ac-left-col">
+                <div class="ac-page-header" style="align-items: flex-start;">
+                    <h1 class="ac-page-title" style="line-height: 1.2;">Television<br>Repair</h1>
+                    <div class="ac-instant-badge" style="background-color: #e5f6ed; color: #00875a; display: flex; flex-direction: column; align-items: flex-start; padding: 4px 8px;">
+                        <div><i class="fa-solid fa-clock" style="font-size: 10px;"></i> <span style="font-size: 12px; font-weight: 600;">Earliest</span></div>
+                        <div style="font-size: 11px; font-weight: 500; margin-top: 2px;">Sat, 1:30 PM</div>
+                    </div>
+                </div>
+                
+                <div class="ac-rating">
+                    <i class="fa-solid fa-star"></i> 4.82 <span>(1.2M bookings)</span>
+                </div>
+
+                <div style="margin-top: 25px; padding: 12px 15px; background: #f8f9fa; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-shield-halved" style="color: #444;"></i>
+                        <span style="font-size: 13px; color: #444; font-weight: 500;">Up to 180 days warranty</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #000; font-size: 12px;"></i>
+                </div>
+
+                <button style="margin-top: 20px; background: #6b46c1; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer;">
+                    View Services
+                </button>
+            </div>
+            
+            <!-- Right Column is empty for washing machine top section -->
+            <div class="ac-right-col" style="display: flex; justify-content: flex-end;">
+                <!-- Could place something here if needed -->
+            </div>
+        </div>
+
+        <div class="divider" style="margin: 40px auto; max-width: 1200px;"></div>
+
+        <!-- 3-Column Detailed Section -->
+        <div class="ac-details-section" id="ac-details-section">
+            
+            <!-- Left Sidebar -->
+            <div class="ac-sidebar">
+                <!-- Intentionally left blank to maintain spacing -->
+            </div>
+
+            <!-- Center Content -->
+            <div class="ac-main-content">
+                <h2 class="section-heading" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Select a service</h2>
+                
+                <div class="plan-details-card" style="padding-top: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">TV check-up</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span style="color: #666; font-weight: 400;">(164K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 13px; margin-bottom: 10px; color: #000;">Starts at ₹249</div>
+                            <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li>Visitation fee will be adjusted in the final repair quote</li>
+                                <li>CRT TVs, sound bars & set-top boxes not covered</li>
+                            </ul>
+                            <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                            <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
+                                <img src="images/image%20copy%204.png" alt="TV check-up" style="width: 100%; height: 90px; object-fit: cover;">
+                            </div>
+                            <button id="open-tv-checkup-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            <span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">TV installation</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(63K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 13px; margin-bottom: 10px; color: #000;">Starts at ₹399</div>
+                            <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li>The TV will be installed with care.</li>
+                                <li>The area will be cleaned once work is done.</li>
+                            </ul>
+                            <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                            <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
+                                <img src="images/image%20copy%204.png" alt="TV installation" style="width: 100%; height: 90px; object-fit: cover;">
+                            </div>
+                            <button id="open-tv-install-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            <span style="font-size: 12px; color: #666; margin-top: 5px;">5 options</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">TV uninstallation</h4>
+                            <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(14K reviews)</span></div>
+                            <div class="plan-price" style="font-weight: 600; font-size: 13px; margin-bottom: 10px; color: #000;">Starts at ₹349</div>
+                            <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+                                <li>The TV will be uninstalled with care.</li>
+                                <li>The area will be cleaned once work is done.</li>
+                            </ul>
+                            <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+                            <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
+                                <img src="images/image%20copy%204.png" alt="TV uninstallation" style="width: 100%; height: 90px; object-fit: cover;">
+                            </div>
+                            <button id="open-tv-uninstall-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                            <span style="font-size: 12px; color: #666; margin-top: 5px;">3 options</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="ac-right-sidebar">
+                <div class="uc-promise-card">
+                    <h3>UC Promise</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                        <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
+                        <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                    </ul>
+                    <img src="images/beauty.jpg" class="promise-badge" alt="Quality Assured">
+                </div>
+
+                <div class="cart-card">
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    <p>No items in your cart</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- TV Check-up Modal -->
+    <div id="tv-checkup-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
+            <button id="close-tv-checkup-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner" style="position: relative; height: 200px;">
+                <img src="images/real_33.jpg" alt="TV check-up" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div class="options-modal-body" style="padding: 20px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">TV check-up</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span style="color: #666; font-weight: 400;">(164K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div style="position: relative; margin: 0 -5px;">
+                    <button id="scroll-left-tv-btn" style="position: absolute; left: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                    <button id="scroll-right-tv-btn" style="position: absolute; right: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                    
+                    <div id="modal-carousel-tv" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Display issue</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.78 <span>(79K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Power issue</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.76 <span>(23K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Unknown issue</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span>(41K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Sound issue</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span>(12K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    </div>
+                </div>
+                <div style="margin-top: 20px;"><h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Our process</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TV Install Modal -->
+    <div id="tv-install-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
+            <button id="close-tv-install-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner" style="position: relative; height: 200px;">
+                <img src="images/real_2.jpg" alt="TV installation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            
+            <div class="options-modal-body" style="padding: 20px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">TV installation</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(63K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div style="position: relative; margin: 0 -5px;">
+                    <button id="scroll-left-install-btn" style="position: absolute; left: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                    <button id="scroll-right-install-btn" style="position: absolute; right: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                    
+                    <div id="modal-carousel-install" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">30 inch or under</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.81 <span>(6K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹399</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">32 to 43 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span>(28K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹599</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">46 to 55 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span>(23K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹749</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">56 - 65 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.85 <span>(5K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹949</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Over 75 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.89 <span>(418 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1999</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    </div>
+                </div>
+                <div style="margin-top: 20px;"><h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Our process</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TV Uninstall Modal -->
+    <div id="tv-uninstall-modal" class="modal-overlay hidden">
+        <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
+            <button id="close-tv-uninstall-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
+            <div class="options-modal-banner" style="position: relative; height: 200px;">
+                <img src="images/real_2.jpg" alt="TV uninstallation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            
+            <div class="options-modal-body" style="padding: 20px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">TV uninstallation</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span style="color: #666; font-weight: 400;">(14K reviews)</span></div>
+
+                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+                </div>
+
+                <div style="position: relative; margin: 0 -5px;">
+                    <button id="scroll-left-uninstall-btn" style="position: absolute; left: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                    <button id="scroll-right-uninstall-btn" style="position: absolute; right: -15px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                    
+                    <div id="modal-carousel-uninstall" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Under 46 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span>(6K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹349</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">46 - 55 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.88 <span>(6K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹399</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 150px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px;">Over 65 inch</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.86 <span>(2K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹599</div>
+                        <button class="option-add-btn" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    </div>
+                </div>
+                <div style="margin-top: 20px;"><h3 style="font-size: 18px; font-weight: 700; margin-bottom: 15px;">Our process</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function setupModal(openBtnId, modalId, closeBtnId) {
+                const openBtn = document.getElementById(openBtnId);
+                const modal = document.getElementById(modalId);
+                const closeBtn = document.getElementById(closeBtnId);
+
+                if (openBtn && modal && closeBtn) {
+                    openBtn.addEventListener('click', () => {
+                        modal.classList.remove('hidden');
+                    });
+                    closeBtn.addEventListener('click', () => {
+                        modal.classList.add('hidden');
+                    });
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.classList.add('hidden');
+                        }
+                    });
+                }
+            }
+
+            setupModal('open-tv-checkup-modal-btn', 'tv-checkup-modal', 'close-tv-checkup-modal-btn');
+            setupModal('open-tv-install-modal-btn', 'tv-install-modal', 'close-tv-install-modal-btn');
+            setupModal('open-tv-uninstall-modal-btn', 'tv-uninstall-modal', 'close-tv-uninstall-modal-btn');
+
+            // Carousel Scrolling Logic for TV checkup
+            const carouselCheckup = document.getElementById('modal-carousel-tv');
+            const leftBtnCheckup = document.getElementById('scroll-left-tv-btn');
+            const rightBtnCheckup = document.getElementById('scroll-right-tv-btn');
+
+            if (carouselCheckup && leftBtnCheckup && rightBtnCheckup) {
+                leftBtnCheckup.addEventListener('click', () => {
+                    carouselCheckup.scrollBy({ left: -165, behavior: 'smooth' });
+                });
+                rightBtnCheckup.addEventListener('click', () => {
+                    carouselCheckup.scrollBy({ left: 165, behavior: 'smooth' });
+                });
+            }
+
+            // Carousel Scrolling Logic for TV install
+            const carouselInstall = document.getElementById('modal-carousel-install');
+            const leftBtnInstall = document.getElementById('scroll-left-install-btn');
+            const rightBtnInstall = document.getElementById('scroll-right-install-btn');
+
+            if (carouselInstall && leftBtnInstall && rightBtnInstall) {
+                leftBtnInstall.addEventListener('click', () => {
+                    carouselInstall.scrollBy({ left: -165, behavior: 'smooth' });
+                });
+                rightBtnInstall.addEventListener('click', () => {
+                    carouselInstall.scrollBy({ left: 165, behavior: 'smooth' });
+                });
+            }
+
+            // Carousel Scrolling Logic for TV uninstall
+            const carouselUninstall = document.getElementById('modal-carousel-uninstall');
+            const leftBtnUninstall = document.getElementById('scroll-left-uninstall-btn');
+            const rightBtnUninstall = document.getElementById('scroll-right-uninstall-btn');
+
+            if (carouselUninstall && leftBtnUninstall && rightBtnUninstall) {
+                leftBtnUninstall.addEventListener('click', () => {
+                    carouselUninstall.scrollBy({ left: -165, behavior: 'smooth' });
+                });
+                rightBtnUninstall.addEventListener('click', () => {
+                    carouselUninstall.scrollBy({ left: 165, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+<style>
+.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col ul li a:hover { color: #000; }
+.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
+.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
+.social-icons a:hover { color: #6366f1; }
+@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
+@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
+</style>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col" style="grid-column: span 2;">
+            <a href="index.html" class="footer-logo">Joamex</a>
+            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>For Customers</h3>
+            <ul>
+                <li><a href="#">UC Reviews</a></li>
+                <li><a href="#">Categories near you</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Assembly - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #fdfaf4; }
+        .header { display: flex; align-items: center; justify-content: space-between; padding: 12px 30px; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
+        .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-icon { background: #f5a623; color: white; font-weight: 700; font-size: 16px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+        .logo-text { font-weight: 700; font-size: 18px; color: #222; display: block; }
+        .logo-sub { font-size: 11px; color: #999; display: block; }
+        
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .location-btn { background: none; border: none; color: #555; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 5px; }
+        .partner-btn { background: #00875a; color: white; border: none; padding: 9px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        .icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #555; }
+        
+        /* Layout */
+        .page-wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        
+        .three-col-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr 280px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar { position: sticky; top: 100px; }
+        .page-title { font-size: 30px; font-weight: 700; line-height: 1.2; margin: 0 0 10px 0; color: #111; }
+        .page-rating { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #333; margin-bottom: 25px; }
+        .page-rating i { color: #222; font-size: 12px; }
+        .page-rating span { color: #666; }
+        .instant-badge { display: inline-flex; flex-direction: column; align-items: center; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px 8px; font-size: 11px; float: right; }
+        .instant-badge span:first-child { background: #00875a; color: white; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-bottom: 2px; }
+        
+        .uc-cover-banner { background: #fdfaf4; border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .uc-cover-banner .text { font-size: 13px; font-weight: 600; color: #111; }
+        .uc-cover-banner .text span { color: #00875a; display: flex; align-items: center; gap: 5px; margin-bottom: 4px; font-size: 12px; font-weight: 700; }
+        
+        .select-service-card { border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; background: white; }
+        .select-service-card h3 { font-size: 13px; color: #666; font-weight: 500; margin: 0 0 15px 0; }
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px 10px; }
+        .service-item { text-align: center; cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .service-item-img { width: 50px; height: 50px; border-radius: 8px; overflow: hidden; margin-bottom: 6px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; }
+        .service-item-img img { width: 100%; height: 100%; object-fit: cover; }
+        .service-item span { font-size: 10px; font-weight: 500; line-height: 1.2; }
+
+        /* Center Content */
+        .center-content { background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee; }
+        .section-heading { font-size: 24px; font-weight: 700; margin: 0 0 20px 0; padding-bottom: 15px; border-bottom: 1px solid #eee; color: #111; }
+        
+        .svc-row { display: flex; justify-content: space-between; padding: 24px 0; border-bottom: 1px solid #eee; gap: 20px; }
+        .svc-row:last-child { border-bottom: none; }
+        .svc-info { flex: 1; }
+        .svc-info h4 { font-size: 17px; font-weight: 600; margin: 0 0 8px 0; color: #111; }
+        .svc-rating { font-size: 13px; color: #666; margin-bottom: 6px; display: flex; align-items: center; gap: 5px; }
+        .svc-rating i { color: #7d33ff; font-size: 11px; }
+        .svc-price { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #111; }
+        .view-details { color: #7d33ff; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 8px; }
+        
+        .svc-media { width: 120px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .svc-img { width: 100px; height: 100px; border-radius: 12px; object-fit: cover; margin-bottom: -15px; position: relative; z-index: 1; background: #f4efeb; border: 1px solid #eee; padding: 10px; box-sizing: border-box; }
+        .add-btn { background: white; border: 1px solid #e2e8f0; color: #7d33ff; font-weight: 700; padding: 8px 30px; border-radius: 8px; cursor: pointer; font-size: 14px; position: relative; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .add-btn:hover { background: #f8f5ff; }
+        .options-text { font-size: 11px; color: #888; margin-top: 6px; }
+
+        /* Right Sidebar */
+        .right-sidebar { position: sticky; top: 100px; }
+        .promo-banner { border: 1px solid #e2f0e9; background: #f6fcf8; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
+        .promo-banner i { color: #00875a; font-size: 20px; }
+        .promo-banner .text { font-size: 12px; font-weight: 600; color: #111; }
+        .promo-banner .text span { font-size: 11px; font-weight: 400; color: #666; display: block; margin-top: 2px; }
+
+        .uc-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: white; }
+        .uc-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
+        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        
+        .cart-summary { border: 1px solid #eee; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
+        .cart-summary .total { font-weight: 700; font-size: 16px; color: #111; }
+        .view-cart-btn { background: #7d33ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-left"></i></button>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">J</div>
+                <div>
+                    <span class="logo-text">Joamex</span>
+                    <span class="logo-sub">Home Services Simplified</span>
+                </div>
+            </a>
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <div class="three-col-layout">
+            
+            <!-- Left Sidebar -->
+            <div class="left-sidebar">
+                <div style="position: relative;">
+                    <div class="instant-badge">
+                        <span><i class="fa-solid fa-bolt" style="font-size: 9px;"></i> Instant</span>
+                        <span>In 59 mins</span>
+                    </div>
+                    <h1 class="page-title">IKEA Furniture<br>Assembly</h1>
+                    <div class="page-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.87</strong>
+                        <span>(412K bookings)</span>
+                    </div>
+                </div>
+
+                <div class="uc-cover-banner">
+                    <div class="text">
+                        <span><i class="fa-solid fa-shield"></i> UC COVER</span>
+                        60 days warranty on all services
+                    </div>
+                    <i class="fa-solid fa-chevron-right" style="color: #999; font-size: 12px;"></i>
+                </div>
+
+                <div class="select-service-card">
+                    <h3>Select a service</h3>
+                    <div class="service-grid">
+                        <a href="#wardrobes" class="service-item">
+                            <div class="service-item-img"><img src="images/carpenter.jpg" alt="Wardrobes"></div>
+                            <span>Wardrobes</span>
+                        </a>
+                        <a href="#tables" class="service-item">
+                            <div class="service-item-img"><img src="images/carpenter_icon.jpg" alt="Tables & drawers"></div>
+                            <span>Tables & drawers</span>
+                        </a>
+                        <a href="#children" class="service-item">
+                            <div class="service-item-img"><img src="images/cleaning.jpg" alt="Children"></div>
+                            <span>Children</span>
+                        </a>
+                        <a href="#beds" class="service-item">
+                            <div class="service-item-img"><img src="images/pest_control_icon.jpg" alt="Beds & dining"></div>
+                            <span>Beds & dining</span>
+                        </a>
+                        <a href="#seating" class="service-item">
+                            <div class="service-item-img"><img src="images/renovation.jpg" alt="Seating"></div>
+                            <span>Seating</span>
+                        </a>
+                        <a href="#outdoor" class="service-item">
+                            <div class="service-item-img"><img src="images/tools.jpg" alt="Outdoor"></div>
+                            <span>Outdoor</span>
+                        </a>
+                        <a href="#storage" class="service-item">
+                            <div class="service-item-img"><img src="images/kitchen.jpg" alt="Storage"></div>
+                            <span>Storage</span>
+                        </a>
+                        <a href="#furnishing" class="service-item">
+                            <div class="service-item-img"><img src="images/carpenter.jpg" alt="Furnishing"></div>
+                            <span>Furnishing</span>
+                        </a>
+                        <a href="#bathroom" class="service-item">
+                            <div class="service-item-img"><img src="images/cleaning.jpg" alt="Bathroom"></div>
+                            <span>Bathroom</span>
+                        </a>
+                        <a href="#washbasin" class="service-item">
+                            <div class="service-item-img"><img src="images/plumber.jpg" alt="Washbasin cabinets"></div>
+                            <span>Washbasin cabinets</span>
+                        </a>
+                        <a href="#tv" class="service-item">
+                            <div class="service-item-img"><img src="images/electrician_icon.jpg" alt="TV furniture"></div>
+                            <span>TV furniture</span>
+                        </a>
+                        <a href="#kitchen" class="service-item">
+                            <div class="service-item-img"><img src="images/kitchen.jpg" alt="Kitchen"></div>
+                            <span>Kitchen</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Content -->
+            <div class="center-content">
+                
+                <h2 class="section-heading" id="wardrobes">Wardrobes</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Single wardrobe</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (2K reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Single wardrobe">
+                        <button class="add-btn" onclick="addToCart('Single wardrobe', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Double door wardrobe</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (6K reviews)</div>
+                        <div class="svc-price">&#8377;849 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Double door wardrobe">
+                        <button class="add-btn" onclick="addToCart('Double door wardrobe', 849)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Three door wardrobe</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (6K reviews)</div>
+                        <div class="svc-price">&#8377;899 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Three door wardrobe">
+                        <button class="add-btn" onclick="addToCart('Three door wardrobe', 899)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Sliding door wardrobe</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (682 reviews)</div>
+                        <div class="svc-price">&#8377;749 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Sliding door wardrobe">
+                        <button class="add-btn" onclick="addToCart('Sliding door wardrobe', 749)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Sliding door wardrobe with drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.73 (693 reviews)</div>
+                        <div class="svc-price">&#8377;799 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Sliding door wardrobe with drawers">
+                        <button class="add-btn" onclick="addToCart('Sliding door wardrobe with drawers', 799)">Add</button>
+                    </div>
+                </div>
+
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Single hinge door (per frame)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (219 reviews)</div>
+                        <div class="svc-price">&#8377;849 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Single hinge door">
+                        <button class="add-btn" onclick="addToCart('Single hinge door (per frame)', 849)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Double hinge door (per frame)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.77 (529 reviews)</div>
+                        <div class="svc-price">&#8377;1,299 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Double hinge door">
+                        <button class="add-btn" onclick="addToCart('Double hinge door (per frame)', 1299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Double sliding door (per frame)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.75 (863 reviews)</div>
+                        <div class="svc-price">&#8377;1,569 <span>&bull; 3 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Double sliding door">
+                        <button class="add-btn" onclick="addToCart('Double sliding door (per frame)', 1569)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Frame without door (per frame)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (157 reviews)</div>
+                        <div class="svc-price">&#8377;749 <span>&bull; 60 mins</span></div>
+                        <ul class="svc-desc" style="color: #666; font-size: 13px; margin: 10px 0; padding-left: 20px;">
+                            <li>Inclusive of all interiors</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Frame without door">
+                        <button class="add-btn" onclick="addToCart('Frame without door (per frame)', 749)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Standard wardrobe (Upto 3 frames)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.72 (349 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 2 hrs</span></div>
+                        <ul class="svc-desc" style="color: #666; font-size: 13px; margin: 10px 0; padding-left: 20px;">
+                            <li>90 minutes</li>
+                            <li>Inclusive of all interiors</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Standard wardrobe">
+                        <button class="add-btn" onclick="addToCart('Standard wardrobe (Upto 3 frames)', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Additional frame</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.98 (3K reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 1 hr 30 mins</span></div>
+                        <ul class="svc-desc" style="color: #666; font-size: 13px; margin: 10px 0; padding-left: 20px;">
+                            <li>Inclusive of all interiors</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Additional frame">
+                        <button class="add-btn" onclick="addToCart('Additional frame', 199)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="tables" style="margin-top: 30px;">Tables & drawers</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bedside table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (2K reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Bedside table">
+                        <button class="add-btn" onclick="addToCart('Bedside table', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Side table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (2K reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Side table">
+                        <button class="add-btn" onclick="addToCart('Side table', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Coffee table (foldable)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (419 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 35 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Coffee table (foldable)">
+                        <button class="add-btn" onclick="addToCart('Coffee table (foldable)', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Coffee table (nest of tables)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (558 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Coffee table (nest of tables)">
+                        <button class="add-btn" onclick="addToCart('Coffee table (nest of tables)', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>2 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (2K reviews)</div>
+                        <div class="svc-price">&#8377;329 <span>&bull; 1 hr 50 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="2 drawer chest">
+                        <button class="add-btn" onclick="addToCart('2 drawer chest', 329)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>3 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (3K reviews)</div>
+                        <div class="svc-price">&#8377;339 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="3 drawer chest">
+                        <button class="add-btn" onclick="addToCart('3 drawer chest', 339)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>4 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (2K reviews)</div>
+                        <div class="svc-price">&#8377;429 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="4 drawer chest">
+                        <button class="add-btn" onclick="addToCart('4 drawer chest', 429)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>5 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (2K reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="5 drawer chest">
+                        <button class="add-btn" onclick="addToCart('5 drawer chest', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>6 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (4K reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="6 drawer chest">
+                        <button class="add-btn" onclick="addToCart('6 drawer chest', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>8 drawer chest</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (218 reviews)</div>
+                        <div class="svc-price">&#8377;699 <span>&bull; 1 hr 35 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="8 drawer chest">
+                        <button class="add-btn" onclick="addToCart('8 drawer chest', 699)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Workspace table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (5K reviews)</div>
+                        <div class="svc-price">&#8377;429 <span>&bull; 1 hr 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Workspace table">
+                        <button class="add-btn" onclick="addToCart('Workspace table', 429)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Workspace table with drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (2K reviews)</div>
+                        <div class="svc-price">&#8377;679 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Workspace table with drawers">
+                        <button class="add-btn" onclick="addToCart('Workspace table with drawers', 679)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Office chair (with arm support)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (2K reviews)</div>
+                        <div class="svc-price">&#8377;419 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Office chair (with arm support)">
+                        <button class="add-btn" onclick="addToCart('Office chair (with arm support)', 419)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Office chair (without arm support)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (634 reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 5 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Office chair (without arm support)">
+                        <button class="add-btn" onclick="addToCart('Office chair (without arm support)', 299)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="children" style="margin-top: 30px;">Children</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Changing table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.95 (337 reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 1 hr 5 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Changing table">
+                        <button class="add-btn" onclick="addToCart('Changing table', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Cot</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (462 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Cot">
+                        <button class="add-btn" onclick="addToCart('Cot', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Highchair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.77 (142 reviews)</div>
+                        <div class="svc-price">&#8377;249</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Highchair">
+                        <button class="add-btn" onclick="addToCart('Highchair', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children's bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.75 (87 reviews)</div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Children's bed">
+                        <button class="add-btn" onclick="addToCart('Children\'s bed', 449)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children's extendable bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (73 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Children's extendable bed">
+                        <button class="add-btn" onclick="addToCart('Children\'s extendable bed', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children's bunk bed with drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.95 (77 reviews)</div>
+                        <div class="svc-price">&#8377;1,499 <span>&bull; 4 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Children's bunk bed with drawers">
+                        <button class="add-btn" onclick="addToCart('Children\'s bunk bed with drawers', 1499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children's desks and chair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (659 reviews)</div>
+                        <div class="svc-price">&#8377;729 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Children's desks and chair">
+                        <button class="add-btn" onclick="addToCart('Children\'s desks and chair', 729)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children's storage furniture</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (665 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Children's storage furniture">
+                        <button class="add-btn" onclick="addToCart('Children\'s storage furniture', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Furniture for small children</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (125 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Furniture for small children">
+                        <button class="add-btn" onclick="addToCart('Furniture for small children', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Play kitchen</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.66 (38 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Play kitchen">
+                        <button class="add-btn" onclick="addToCart('Play kitchen', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Childrens high chair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.90 (36 reviews)</div>
+                        <div class="svc-price">&#8377;279 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Childrens high chair">
+                        <button class="add-btn" onclick="addToCart('Childrens high chair', 279)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Children 3 drawer chest of drawer</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.96 (103 reviews)</div>
+                        <div class="svc-price">&#8377;419 <span>&bull; 50 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Children 3 drawer chest of drawer">
+                        <button class="add-btn" onclick="addToCart('Children 3 drawer chest of drawer', 419)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="beds" style="margin-top: 30px;">Beds & dining</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Single bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (1K reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Single bed">
+                        <button class="add-btn" onclick="addToCart('Single bed', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Single bed with storage</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (1K reviews)</div>
+                        <div class="svc-price">&#8377;549 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Single bed with storage">
+                        <button class="add-btn" onclick="addToCart('Single bed with storage', 549)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Double bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (5K reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Double bed">
+                        <button class="add-btn" onclick="addToCart('Double bed', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Double bed with storage</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (4K reviews)</div>
+                        <div class="svc-price">&#8377;929 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Double bed with storage">
+                        <button class="add-btn" onclick="addToCart('Double bed with storage', 929)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Loft bed and bunk bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.81 (729 reviews)</div>
+                        <div class="svc-price">&#8377;899 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Loft bed and bunk bed">
+                        <button class="add-btn" onclick="addToCart('Loft bed and bunk bed', 899)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Day bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (317 reviews)</div>
+                        <div class="svc-price">&#8377;699</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Day bed">
+                        <button class="add-btn" onclick="addToCart('Day bed', 699)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Day bed with 2 drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (2K reviews)</div>
+                        <div class="svc-price">&#8377;919 <span>&bull; 1 hr 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Day bed with 2 drawers">
+                        <button class="add-btn" onclick="addToCart('Day bed with 2 drawers', 919)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Day bed with 3 drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (1K reviews)</div>
+                        <div class="svc-price">&#8377;1,049 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Day bed with 3 drawers">
+                        <button class="add-btn" onclick="addToCart('Day bed with 3 drawers', 1049)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Hydraulic bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (1K reviews)</div>
+                        <div class="svc-price">&#8377;1,499 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Hydraulic bed">
+                        <button class="add-btn" onclick="addToCart('Hydraulic bed', 1499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Stool</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (107 reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Stool">
+                        <button class="add-btn" onclick="addToCart('Stool', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bench</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (93 reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Bench">
+                        <button class="add-btn" onclick="addToCart('Bench', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Chair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (734 reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Chair">
+                        <button class="add-btn" onclick="addToCart('Chair', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Dining table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (1K reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 55 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Dining table">
+                        <button class="add-btn" onclick="addToCart('Dining table', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Extendable dining table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.80 (384 reviews)</div>
+                        <div class="svc-price">&#8377;649 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Extendable dining table">
+                        <button class="add-btn" onclick="addToCart('Extendable dining table', 649)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Dining table & 2 chairs</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (294 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 55 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Dining table & 2 chairs">
+                        <button class="add-btn" onclick="addToCart('Dining table & 2 chairs', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Dining table with 2 chairs & bench</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.94 (71 reviews)</div>
+                        <div class="svc-price">&#8377;549 <span>&bull; 2 hrs 15 mins</span></div>
+                        <ul class="svc-desc" style="color: #666; font-size: 13px; margin: 10px 0; padding-left: 20px;">
+                            <li>135 minutes</li>
+                        </ul>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Dining table with 2 chairs & bench">
+                        <button class="add-btn" onclick="addToCart('Dining table with 2 chairs & bench', 549)">Add</button>
+                    </div>
+                </div>
+
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Dining chair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (851 reviews)</div>
+                        <div class="svc-price">&#8377;219 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Dining chair">
+                        <button class="add-btn" onclick="addToCart('Dining chair', 219)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Loft bed with mesh</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (111 reviews)</div>
+                        <div class="svc-price">&#8377;1,599 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Loft bed with mesh">
+                        <button class="add-btn" onclick="addToCart('Loft bed with mesh', 1599)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="seating" style="margin-top: 30px;">Seating</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Armchair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.90 (1K reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Armchair">
+                        <button class="add-btn" onclick="addToCart('Armchair', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Footstool</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.99 (3K reviews)</div>
+                        <div class="svc-price">&#8377;139 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Footstool">
+                        <button class="add-btn" onclick="addToCart('Footstool', 139)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>2 seat sofa</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (1K reviews)</div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="2 seat sofa">
+                        <button class="add-btn" onclick="addToCart('2 seat sofa', 449)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>3 seat sofa</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (2K reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="3 seat sofa">
+                        <button class="add-btn" onclick="addToCart('3 seat sofa', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>4 seat sofa</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (620 reviews)</div>
+                        <div class="svc-price">&#8377;749 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="4 seat sofa">
+                        <button class="add-btn" onclick="addToCart('4 seat sofa', 749)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Corner sofa</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (141 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 50 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Corner sofa">
+                        <button class="add-btn" onclick="addToCart('Corner sofa', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>3 seat sofa bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (781 reviews)</div>
+                        <div class="svc-price">&#8377;699 <span>&bull; 3 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="3 seat sofa bed">
+                        <button class="add-btn" onclick="addToCart('3 seat sofa bed', 699)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Corner sofa bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (1K reviews)</div>
+                        <div class="svc-price">&#8377;869 <span>&bull; 1 hr 35 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Corner sofa bed">
+                        <button class="add-btn" onclick="addToCart('Corner sofa bed', 869)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Chaise lounge</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (64 reviews)</div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 1 hr 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Chaise lounge">
+                        <button class="add-btn" onclick="addToCart('Chaise lounge', 449)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Reclining chair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.74 (252 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Reclining chair">
+                        <button class="add-btn" onclick="addToCart('Reclining chair', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Storage foot bench</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.92 (70 reviews)</div>
+                        <div class="svc-price">&#8377;319 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Storage foot bench">
+                        <button class="add-btn" onclick="addToCart('Storage foot bench', 319)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="outdoor" style="margin-top: 30px;">Outdoor</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Outdoor armchair</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (234 reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 1 hr 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Outdoor armchair">
+                        <button class="add-btn" onclick="addToCart('Outdoor armchair', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Outdoor dining table</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (133 reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Outdoor dining table">
+                        <button class="add-btn" onclick="addToCart('Outdoor dining table', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Outdoor sofa</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.92 (97 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Outdoor sofa">
+                        <button class="add-btn" onclick="addToCart('Outdoor sofa', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Outdoor storage</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (76 reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Outdoor storage">
+                        <button class="add-btn" onclick="addToCart('Outdoor storage', 299)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="storage" style="margin-top: 30px;">Storage</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shelving unit (4 shelves)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (1K reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Shelving unit (4 shelves)">
+                        <button class="add-btn" onclick="addToCart('Shelving unit (4 shelves)', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shelving unit (16 shelves)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (349 reviews)</div>
+                        <div class="svc-price">&#8377;699 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Shelving unit (16 shelves)">
+                        <button class="add-btn" onclick="addToCart('Shelving unit (16 shelves)', 699)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shoe cabinet (2 compartments)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (1K reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Shoe cabinet (2 compartments)">
+                        <button class="add-btn" onclick="addToCart('Shoe cabinet (2 compartments)', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shoe cabinet (3 compartments)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (2K reviews)</div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Shoe cabinet (3 compartments)">
+                        <button class="add-btn" onclick="addToCart('Shoe cabinet (3 compartments)', 349)">Add</button>
+                    </div>
+                </div>
+
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shoe cabinet (4 compartments)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (1K reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Shoe cabinet (4 compartments)">
+                        <button class="add-btn" onclick="addToCart('Shoe cabinet (4 compartments)', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Trolley</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (699 reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Trolley">
+                        <button class="add-btn" onclick="addToCart('Trolley', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Metal cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (670 reviews)</div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Metal cabinet">
+                        <button class="add-btn" onclick="addToCart('Metal cabinet', 99)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (968 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Glass cabinet">
+                        <button class="add-btn" onclick="addToCart('Glass cabinet', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass door cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.81 (447 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Glass door cabinet">
+                        <button class="add-btn" onclick="addToCart('Glass door cabinet', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Pegboard</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (771 reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Pegboard">
+                        <button class="add-btn" onclick="addToCart('Pegboard', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Open storage solution (big)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.75 (61 reviews)</div>
+                        <div class="svc-price">&#8377;799 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Open storage solution (big)">
+                        <button class="add-btn" onclick="addToCart('Open storage solution (big)', 799)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Open storage solution (small)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (725 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 2 hrs 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Open storage solution (small)">
+                        <button class="add-btn" onclick="addToCart('Open storage solution (small)', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>3 shelf bookcase</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (707 reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="3 shelf bookcase">
+                        <button class="add-btn" onclick="addToCart('3 shelf bookcase', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>6 shelf bookcase</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (1K reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="6 shelf bookcase">
+                        <button class="add-btn" onclick="addToCart('6 shelf bookcase', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>9 shelf bookcase</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.90 (184 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="9 shelf bookcase">
+                        <button class="add-btn" onclick="addToCart('9 shelf bookcase', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>12 shelf bookcase</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.70 (82 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="12 shelf bookcase">
+                        <button class="add-btn" onclick="addToCart('12 shelf bookcase', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass door bookcase (6 shelves)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (711 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Glass door bookcase (6 shelves)">
+                        <button class="add-btn" onclick="addToCart('Glass door bookcase (6 shelves)', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass door bookcase (12 shelves)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (567 reviews)</div>
+                        <div class="svc-price">&#8377;769 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Glass door bookcase (12 shelves)">
+                        <button class="add-btn" onclick="addToCart('Glass door bookcase (12 shelves)', 769)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Glass door bookcase (24 shelves)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.94 (254 reviews)</div>
+                        <div class="svc-price">&#8377;1,199 <span>&bull; 5 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Glass door bookcase (24 shelves)">
+                        <button class="add-btn" onclick="addToCart('Glass door bookcase (24 shelves)', 1199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bookcase with door</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (689 reviews)</div>
+                        <div class="svc-price">&#8377;519 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Bookcase with door">
+                        <button class="add-btn" onclick="addToCart('Bookcase with door', 519)">Add</button>
+                    </div>
+                </div>
+
+            
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bookcase with 2 doors/drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (2K reviews)</div>
+                        <div class="svc-price">&#8377;749 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Bookcase with 2 doors/drawers">
+                        <button class="add-btn" onclick="addToCart('Bookcase with 2 doors/drawers', 749)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Eket storage</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.84 (187 reviews)</div>
+                        <div class="svc-price">&#8377;479 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Eket storage">
+                        <button class="add-btn" onclick="addToCart('Eket storage', 479)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Eket storage with drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (713 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Eket storage with drawers">
+                        <button class="add-btn" onclick="addToCart('Eket storage with drawers', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Eket storage with door</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.76 (817 reviews)</div>
+                        <div class="svc-price">&#8377;519 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Eket storage with door">
+                        <button class="add-btn" onclick="addToCart('Eket storage with door', 519)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Lonset-bed</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (263 reviews)</div>
+                        <div class="svc-price">&#8377;329 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Lonset-bed">
+                        <button class="add-btn" onclick="addToCart('Lonset-bed', 329)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="furnishing" style="margin-top: 30px;">Furnishing</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Curtain rod</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (3K reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Curtain rod">
+                        <button class="add-btn" onclick="addToCart('Curtain rod', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Hat rack</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (238 reviews)</div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 5 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Hat rack">
+                        <button class="add-btn" onclick="addToCart('Hat rack', 99)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall shelf (per unit)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (3K reviews)</div>
+                        <div class="svc-price">&#8377;249 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Wall shelf (per unit)">
+                        <button class="add-btn" onclick="addToCart('Wall shelf (per unit)', 249)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Storage box with lid</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 5.00 (74 reviews)</div>
+                        <div class="svc-price">&#8377;99 <span>&bull; 10 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Storage box with lid">
+                        <button class="add-btn" onclick="addToCart('Storage box with lid', 99)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall shelf (combination)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.91 (201 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Wall shelf (combination)">
+                        <button class="add-btn" onclick="addToCart('Wall shelf (combination)', 499)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="bathroom" style="margin-top: 30px;">Bathroom</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash-stand with sink installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.62 (108 reviews)</div>
+                        <div class="svc-price">&#8377;1,029 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Wash-stand with sink installation">
+                        <button class="add-btn" onclick="addToCart('Wash-stand with sink installation', 1029)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash-stand without sink installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (68 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Wash-stand without sink installation">
+                        <button class="add-btn" onclick="addToCart('Wash-stand without sink installation', 399)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shelving unit</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (1K reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Shelving unit">
+                        <button class="add-btn" onclick="addToCart('Shelving unit', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mirror cabinet (2 doors)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.77 (238 reviews)</div>
+                        <div class="svc-price">&#8377;699 <span>&bull; 1 hr 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Mirror cabinet (2 doors)">
+                        <button class="add-btn" onclick="addToCart('Mirror cabinet (2 doors)', 699)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mirror cabinet (1 door)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (274 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 50 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Mirror cabinet (1 door)">
+                        <button class="add-btn" onclick="addToCart('Mirror cabinet (1 door)', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall cabinet (1 door)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.98 (10K reviews)</div>
+                        <div class="svc-price">&#8377;199 <span>&bull; 2 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Wall cabinet (1 door)">
+                        <button class="add-btn" onclick="addToCart('Wall cabinet (1 door)', 199)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>High cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (217 reviews)</div>
+                        <div class="svc-price">&#8377;399 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="High cabinet">
+                        <button class="add-btn" onclick="addToCart('High cabinet', 399)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Single mirror</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (3K reviews)</div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Single mirror">
+                        <button class="add-btn" onclick="addToCart('Single mirror', 349)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mirror cabinet (1 door)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (473 reviews)</div>
+                        <div class="svc-price">&#8377;299 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Mirror cabinet (1 door)">
+                        <button class="add-btn" onclick="addToCart('Mirror cabinet (1 door)', 299)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Mirror cabinet (2 doors)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.73 (132 reviews)</div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 1 hr 15 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Mirror cabinet (2 doors)">
+                        <button class="add-btn" onclick="addToCart('Mirror cabinet (2 doors)', 349)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower screen installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (43 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Shower screen installation">
+                        <button class="add-btn" onclick="addToCart('Shower screen installation', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Shower door installation</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.75 (69 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Shower door installation">
+                        <button class="add-btn" onclick="addToCart('Shower door installation', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom high cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (70 reviews)</div>
+                        <div class="svc-price">&#8377;629 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Bathroom high cabinet">
+                        <button class="add-btn" onclick="addToCart('Bathroom high cabinet', 629)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom shelving unit</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.63 (112 reviews)</div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Bathroom shelving unit">
+                        <button class="add-btn" onclick="addToCart('Bathroom shelving unit', 449)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom lights</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.64 (110 reviews)</div>
+                        <div class="svc-price">&#8377;219 <span>&bull; 20 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Bathroom lights">
+                        <button class="add-btn" onclick="addToCart('Bathroom lights', 219)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Bathroom shelf</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (260 reviews)</div>
+                        <div class="svc-price">&#8377;469 <span>&bull; 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Bathroom shelf">
+                        <button class="add-btn" onclick="addToCart('Bathroom shelf', 469)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="washbasin-cabinets" style="margin-top: 30px;">Washbasin cabinets</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash basin cabinet with 2 drawers</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.41 (295 reviews)</div>
+                        <div class="svc-price">Starts at &#8377;419</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Wash basin cabinet with 2 drawers">
+                        <button class="add-btn" onclick="addToCart('Wash basin cabinet with 2 drawers', 419)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wash basin cabinet with shelf</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.64 (119 reviews)</div>
+                        <div class="svc-price">Starts at &#8377;429</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Wash basin cabinet with shelf">
+                        <button class="add-btn" onclick="addToCart('Wash basin cabinet with shelf', 429)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Base frame for washbasin (60x40x60 cm)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.89 (37 reviews)</div>
+                        <div class="svc-price">&#8377;369 <span>&bull; 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Base frame for washbasin (60x40x60 cm)">
+                        <button class="add-btn" onclick="addToCart('Base frame for washbasin (60x40x60 cm)', 369)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Base frame with shelves</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (121 reviews)</div>
+                        <div class="svc-price">Starts at &#8377;209</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Base frame with shelves">
+                        <button class="add-btn" onclick="addToCart('Base frame with shelves', 209)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>High cabinet with 4 shelves (30x30x180 cm)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (200 reviews)</div>
+                        <div class="svc-price">&#8377;419 <span>&bull; 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="High cabinet with 4 shelves (30x30x180 cm)">
+                        <button class="add-btn" onclick="addToCart('High cabinet with 4 shelves (30x30x180 cm)', 419)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>High frame with shelves (30x30x180 cm)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (134 reviews)</div>
+                        <div class="svc-price">&#8377;349 <span>&bull; 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="High frame with shelves (30x30x180 cm)">
+                        <button class="add-btn" onclick="addToCart('High frame with shelves (30x30x180 cm)', 349)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall cabinet with 2 shelves</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.77 (413 reviews)</div>
+                        <div class="svc-price">Starts at &#8377;259</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Wall cabinet with 2 shelves">
+                        <button class="add-btn" onclick="addToCart('Wall cabinet with 2 shelves', 259)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Wall frame with shelves</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.88 (208 reviews)</div>
+                        <div class="svc-price">Starts at &#8377;249</div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Wall frame with shelves">
+                        <button class="add-btn" onclick="addToCart('Wall frame with shelves', 249)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="tv-furniture" style="margin-top: 30px;">TV furniture</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV bench</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (382 reviews)</div>
+                        <div class="svc-price">&#8377;449 <span>&bull; 1 hr 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="TV bench">
+                        <button class="add-btn" onclick="addToCart('TV bench', 449)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV bench (2 drawers)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.83 (941 reviews)</div>
+                        <div class="svc-price">&#8377;549 <span>&bull; 1 hr 45 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="TV bench (2 drawers)">
+                        <button class="add-btn" onclick="addToCart('TV bench (2 drawers)', 549)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV bench (3 drawers)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.82 (1K reviews)</div>
+                        <div class="svc-price">&#8377;719 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="TV bench (3 drawers)">
+                        <button class="add-btn" onclick="addToCart('TV bench (3 drawers)', 719)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV unit (bench, cabinet & storage)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.90 (88 reviews)</div>
+                        <div class="svc-price">&#8377;1,499 <span>&bull; 3 hrs</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="TV unit (bench, cabinet & storage)">
+                        <button class="add-btn" onclick="addToCart('TV unit (bench, cabinet & storage)', 1499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV unit (bench & cabinet)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.79 (276 reviews)</div>
+                        <div class="svc-price">&#8377;899 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="TV unit (bench & cabinet)">
+                        <button class="add-btn" onclick="addToCart('TV unit (bench & cabinet)', 899)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>TV unit (bench & storage)</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.73 (263 reviews)</div>
+                        <div class="svc-price">&#8377;999 <span>&bull; 2 hrs 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="TV unit (bench & storage)">
+                        <button class="add-btn" onclick="addToCart('TV unit (bench & storage)', 999)">Add</button>
+                    </div>
+                </div>
+
+            
+                <h2 class="section-heading" id="kitchen" style="margin-top: 30px;">Kitchen</h2>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>1 door cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.86 (289 reviews)</div>
+                        <div class="svc-price">&#8377;499 <span>&bull; 1 hr 25 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="1 door cabinet">
+                        <button class="add-btn" onclick="addToCart('1 door cabinet', 499)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>2 door cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.85 (957 reviews)</div>
+                        <div class="svc-price">&#8377;549 <span>&bull; 1 hr 30 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="2 door cabinet">
+                        <button class="add-btn" onclick="addToCart('2 door cabinet', 549)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>3 door cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.73 (473 reviews)</div>
+                        <div class="svc-price">&#8377;599 <span>&bull; 1 hr 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="3 door cabinet">
+                        <button class="add-btn" onclick="addToCart('3 door cabinet', 599)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Enhet base kitchen cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.76 (94 reviews)</div>
+                        <div class="svc-price">&#8377;509 <span>&bull; 40 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Enhet base kitchen cabinet">
+                        <button class="add-btn" onclick="addToCart('Enhet base kitchen cabinet', 509)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Enhet wall kitchen cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.78 (275 reviews)</div>
+                        <div class="svc-price">&#8377;629 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Enhet wall kitchen cabinet">
+                        <button class="add-btn" onclick="addToCart('Enhet wall kitchen cabinet', 629)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Enhet base kitchen sink cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.38 (28 reviews)</div>
+                        <div class="svc-price">&#8377;669 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Enhet base kitchen sink cabinet">
+                        <button class="add-btn" onclick="addToCart('Enhet base kitchen sink cabinet', 669)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Enhet open base kitchen cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.92 (32 reviews)</div>
+                        <div class="svc-price">&#8377;559 <span>&bull; 60 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter.jpg" alt="Enhet open base kitchen cabinet">
+                        <button class="add-btn" onclick="addToCart('Enhet open base kitchen cabinet', 559)">Add</button>
+                    </div>
+                </div>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Enhet open wall kitchen cabinet</h4>
+                        <div class="svc-rating"><i class="fa-solid fa-star"></i> 4.87 (90 reviews)</div>
+                        <div class="svc-price">&#8377;669 <span>&bull; 50 mins</span></div>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="svc-media">
+                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Enhet open wall kitchen cabinet">
+                        <button class="add-btn" onclick="addToCart('Enhet open wall kitchen cabinet', 669)">Add</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="right-sidebar">
+                <div class="promo-banner">
+                    <i class="fa-solid fa-percent" style="background: #e2f0e9; padding: 6px; border-radius: 50%;"></i>
+                    <div class="text">
+                        Get visitation fee off
+                        <span>On orders above ₹200</span>
+                    </div>
+                </div>
+
+                <div class="uc-promise-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <h3 style="margin: 0;">UC Promise</h3>
+                        <img src="images/beauty.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
+                        <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
+                        <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
+                    </ul>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="total">&#8377;758</div>
+                    <button class="view-cart-btn" onclick="document.getElementById('cart-sidebar').classList.remove('hidden')">View Cart</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
