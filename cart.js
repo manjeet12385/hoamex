@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make sure add buttons work on the page
     document.querySelectorAll('.add-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
+            // If this button opens a modal, skip cart logic — modal handles it
+            const onclickAttr = btn.getAttribute('onclick') || '';
+            if (onclickAttr.includes('modal')) return;
+
             const card = e.target.closest('.service-card');
             if (card) {
                 const title = card.querySelector('h4').innerText;

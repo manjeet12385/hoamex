@@ -3,27 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Home Cleaning - Joamex</title>
+    <title>Full Home / By Room Cleaning - Joamex</title>
     <link rel="stylesheet" href="style.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <style>
+        .kitchen-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .kitchen-left {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .kitchen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .kitchen-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .kitchen-rating {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .instant-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .instant-top {
+            background: #fdfbf7;
+            color: #1e8f52;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .instant-bottom {
+            font-size: 11px;
+            color: #334155;
+            padding: 4px 12px;
+            font-weight: 500;
+        }
+
+        .select-service-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .select-service-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .service-grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            row-gap: 25px;
+        }
+
+        .service-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-option-icon {
+            width: 60px;
+            height: 60px;
+            background: #fdfbf7;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+
+        .service-option-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-option-text {
+            font-size: 11px;
+            font-weight: 500;
+            color: #334155;
+            line-height: 1.3;
+        }
+
+        .kitchen-right {
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 450px;
+        }
+
+        .kitchen-banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .kitchen-banner-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .kitchen-banner-text {
+            font-size: 38px;
+            color: white;
+            font-weight: 700;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            max-width: 600px;
+        }
+
+        .slider-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .slider-progress {
+            height: 100%;
+            width: 25%;
+            background: white;
+            border-radius: 2px;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: #fdfbf7;">
 
     <!-- Header -->
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
-        <div class="search-container" id="header-search" style="display: none;">
+        <div class="search-container" id="header-search">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="text" placeholder="Search for services">
         </div>
@@ -38,259 +221,264 @@
         </div>
     </header>
 
-    <!-- Main -->
-    <main class="page-wrapper">
-        <!-- Top title row -->
-        <div class="top-section">
-            <div>
-                <h1 class="page-title">Full Home Cleaning</h1>
-                <div class="page-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <strong>4.82</strong>
-                    <span>(3.9 M bookings)</span>
+    <!-- Main Content -->
+    <main class="kitchen-page">
+        <!-- Left Sidebar -->
+        <div class="kitchen-left">
+            <div class="kitchen-header">
+                <div>
+                    <h1 class="kitchen-title">Full Home/<br>By Room ...</h1>
+                    <div class="kitchen-rating">
+                        <i class="fa-solid fa-star" style="font-size: 11px;"></i>
+                        <strong>4.80</strong> (1.8 M bookings)
+                    </div>
+                </div>
+                <div class="instant-badge">
+                    <div class="instant-top"><i class="fa-solid fa-clock"></i> Earliest</div>
+                    <div class="instant-bottom">Fri, 8:00 AM</div>
                 </div>
             </div>
-            <div style="background: #e8f5e9; color: #2e7d32; padding: 5px 10px; border-radius: 6px; text-align: center; border: 1px solid #c8e6c9;">
-                <div style="font-size: 10px; font-weight: bold;"><i class="fa-solid fa-clock" style="margin-right: 3px;"></i> Earliest</div>
-                <div style="font-size: 12px; margin-top: 2px; font-weight: bold;">Mon, 3:30 PM</div>
+
+            <div class="select-service-box">
+                <h3 class="select-service-title">Select a service</h3>
+                <div class="service-grid-box">
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('full-apartment').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Full apartment">
+                        </div>
+                        <div class="service-option-text">Full apartment</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('full-bungalow').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/homecare.jpg" alt="Full bungalow/duplex">
+                        </div>
+                        <div class="service-option-text">Full bungalow/duplex</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('partial-home').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon" style="background: #f0fdf4;">
+                            <span style="color: #16a34a; font-weight: 800; font-size: 16px; text-align: center; line-height: 1.1;">10%<br>OFF</span>
+                        </div>
+                        <div class="service-option-text">Partial home cleaning</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- 3-Column Layout -->
-        <div class="three-col-layout">
-            <!-- LEFT SIDEBAR -->
-            <div class="left-sidebar">
-                <div class="select-service-card">
-                    <h3>Select a service</h3>
-                    <div class="service-grid">
-                        
-                        <a href="#furnished" class="service-item-sidebar">
-                            <div class="service-item-img">
-                                <img src="images/cleaning.jpg" alt="Furnished">
-                            </div>
-                            <span>Furnished</span>
-                        </a>
-                        <a href="#unfurnished" class="service-item-sidebar">
-                            <div class="service-item-img">
-                                <img src="images/cleaning.jpg" alt="Unfurnished">
-                            </div>
-                            <span>Unfurnished</span>
-                        </a>
-                        <a href="#sofa" class="service-item-sidebar">
-                            <div class="service-item-img">
-                                <img src="images/cleaning.jpg" alt="Sofa">
-                            </div>
-                            <span>Sofa</span>
-                        </a>
+        <!-- Right Content -->
+        <div class="kitchen-right">
+            <!-- Default Banner -->
+            <div id="default-banner" style="display: block; width: 100%; height: 100%; position: relative;">
+                <img src="images/cleaning.jpg" alt="Banner" class="kitchen-banner-img">
+                <div style="position: absolute; top: 20px; left: 20px; z-index: 3; background: #000; color: #fff; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 14px;">UC</div>
+                <div class="kitchen-banner-content">
+                    <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                        <i class="fa-solid fa-play" style="color: white; font-size: 24px; margin-left: 5px;"></i>
                     </div>
                 </div>
+                <div class="slider-indicator">
+                    <div class="slider-progress"></div>
+                </div>
             </div>
+            
+            <!-- All Services Container -->
+            <div id="all-services-container" style="display: none; padding: 20px;">
+                
+                <!-- Full Apartment Section -->
+                <div id="full-apartment" style="display: block; padding-bottom: 30px;">
+                    <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Full apartment</h2>
+                    
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px; background: #fdf2f8; min-height: 220px; display: flex; flex-direction: column; justify-content: center; padding: 25px;">
+                        <img src="images/cleaning.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Full home cleaning banner">
+                        <div style="position: relative; z-index: 2; max-width: 60%;">
+                            <div style="background: #1e8f52; color: white; display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 15px;">Best value</div>
+                            <h3 style="font-size: 26px; font-weight: 700; margin-bottom: 10px; color: #000;">Full home cleaning</h3>
+                            <div style="font-size: 22px; font-weight: 700; color: #000; margin-bottom: 10px;">Starts at ₹3,199 <span style="text-decoration: line-through; color: #64748b; font-size: 16px; margin-left: 5px;">₹4,795</span></div>
+                            <p style="font-size: 14px; color: #334155; margin: 0; font-weight: 500;">More affordable than picking services one by one</p>
+                        </div>
+                    </div>
 
-            <!-- CENTER CONTENT -->
-            <div class="center-content">
-                <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px;">
-                    <img src="images/cleaning.jpg" alt="Full Home Cleaning" style="width: 100%; height: 250px; object-fit: cover; display: block;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-                        <h2 style="color: #fff; font-size: 34px; font-weight: 700; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin: 0;">Full Home Cleaning</h2>
+                    <!-- Unfurnished apartment -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Unfurnished apartment - Home deep cleaning</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.80</span>
+                                <span style="text-decoration: underline dashed;">(470K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹3,199 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 3 hrs</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Cleaning & stain removal from rooms, kitchen, bathroom & balcony</li>
+                                <li>Machine floor scrubbing & dusting of walls & ceilings</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="text-align: center;">
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 5px;">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Furnished apartment -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Furnished apartment - Home deep cleaning</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.79</span>
+                                <span style="text-decoration: underline dashed;">(899K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹3,499 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 3 hrs 45 mins</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Cleaning & stain removal from rooms, kitchen, bathroom & balcony</li>
+                                <li>Machine floor scrubbing & dusting of walls & ceilings</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 140px; position: relative;">
+                            <img src="images/cleaning.jpg" alt="Furnished apartment" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover;">
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Bungalow Section -->
+                <div id="full-bungalow" style="display: block; padding-bottom: 30px;">
+                    <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Full bungalow/duplex</h2>
+                    
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px; background: #fdf2f8; min-height: 220px; display: flex; flex-direction: column; justify-content: center; padding: 25px;">
+                        <img src="images/cleaning.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Full home cleaning banner">
+                        <div style="position: relative; z-index: 2; max-width: 60%;">
+                            <div style="background: #1e8f52; color: white; display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 15px;">Best value</div>
+                            <h3 style="font-size: 26px; font-weight: 700; margin-bottom: 10px; color: #000;">Full home cleaning</h3>
+                            <div style="font-size: 22px; font-weight: 700; color: #000; margin-bottom: 10px;">starts at ₹4,199 <span style="text-decoration: line-through; color: #64748b; font-size: 16px; margin-left: 5px;">₹6,242</span></div>
+                            <p style="font-size: 14px; color: #334155; margin: 0; font-weight: 500;">More affordable than picking services one by one</p>
+                        </div>
+                    </div>
+
+                    <!-- Unfurnished bungalow -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Unfurnished bungalow - Home deep cleaning</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.79</span>
+                                <span style="text-decoration: underline dashed;">(279K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹4,199 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 5 hrs</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Ideal for vacant, unoccupied homes.</li>
+                                <li>Machine floor scrubbing & stain removal across rooms, kitchen, baths & balcony.</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="text-align: center;">
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 5px;">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Furnished bungalow -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Furnished bungalow - Home deep cleaning</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.79</span>
+                                <span style="text-decoration: underline dashed;">(589K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹4,699 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 5 hrs 50 mins</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Ideal for furnished, occupied homes.</li>
+                                <li>Machine floor scrubbing & stain removal across rooms, kitchen, baths & balcony.</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 140px; position: relative;">
+                            <img src="images/cleaning.jpg" alt="Furnished bungalow" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover;">
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partial Home Cleaning Section -->
+                <div id="partial-home" style="display: block; padding-bottom: 30px;">
+                    <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Partial home cleaning</h2>
+
+                    <!-- Partial home cleaning package -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <div style="color: #16a34a; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; text-transform: uppercase;">
+                                <i class="fa-solid fa-box"></i> MAKE YOUR PACKAGE
+                            </div>
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Partial home cleaning</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.81</span>
+                                <span style="text-decoration: underline dashed;">(284K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹2,548 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 2 hrs 45 mins</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Choose from bathroom, bedroom, kitchen, living room & balcony</li>
+                                <li>Pick from upholstery & sofa, appliance cleaning</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 140px; position: relative;">
+                            <div style="background: #fdf2e9; border-radius: 12px; height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <div style="color: #16a34a; font-size: 26px; font-weight: 800; line-height: 1.1; text-align: center;">10%<br>OFF</div>
+                                <div style="color: #16a34a; font-size: 12px; font-weight: 600; margin-top: 5px;">Above ₹3,500</div>
+                            </div>
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);">Add</button>
+                        </div>
+                    </div>
+
+                    <!-- Customise combo -->
+                    <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Customise: living, bedroom, balcony cleaning combo</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.81</span>
+                                <span style="text-decoration: underline dashed;">(116K reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹2,799 <span style="color: #94a3b8; font-weight: 400; margin-left: 5px;">• 2 hrs 15 mins</span>
+                            </div>
+                            <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                                <li>Create a cleaning package tailored to your home's needs.</li>
+                                <li>Suitable for both regular upkeep & deep cleaning.</li>
+                            </ul>
+                            <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                        </div>
+                        <div style="width: 140px; position: relative;">
+                            <img src="images/cleaning.jpg" alt="Living room" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover;">
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);">Add</button>
+                        </div>
                     </div>
                 </div>
                 
-                <div id="furnished" style="margin-bottom: 36px; padding-top: 20px;">
-                    <h2 class="section-heading">Furnished</h2>
-                    
-                    <div class="service-card">
-                        <div class="service-card-info">
-                            <h4>1 BHK Cleaning</h4>
-                            <div class="service-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <a href="#">4.85 (8K reviews)</a>
-                            </div>
-                            <div class="service-price">
-                                <span>₹2499</span>
-                            </div>
-                            <ul class="service-features">
-                                <li>Deep clean including bathroom</li>
-                            </ul>
-                            <a href="#" class="view-details">View details</a>
-                        </div>
-                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <div class="service-img-wrap">
-                                <img src="images/cleaning.jpg" alt="1 BHK Cleaning">
-                            </div>
-                            <button class="add-btn">Add</button>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-card-info">
-                            <h4>2 BHK Cleaning</h4>
-                            <div class="service-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <a href="#">4.85 (8K reviews)</a>
-                            </div>
-                            <div class="service-price">
-                                <span>₹3499</span>
-                            </div>
-                            <ul class="service-features">
-                                <li>Deep clean</li>
-                            </ul>
-                            <a href="#" class="view-details">View details</a>
-                        </div>
-                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <div class="service-img-wrap">
-                                <img src="images/cleaning.jpg" alt="2 BHK Cleaning">
-                            </div>
-                            <button class="add-btn">Add</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="unfurnished" style="margin-bottom: 36px; padding-top: 20px;">
-                    <h2 class="section-heading">Unfurnished</h2>
-                    
-                    <div class="service-card">
-                        <div class="service-card-info">
-                            <h4>Move-in Cleaning</h4>
-                            <div class="service-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <a href="#">4.85 (8K reviews)</a>
-                            </div>
-                            <div class="service-price">
-                                <span>₹1999</span>
-                            </div>
-                            <ul class="service-features">
-                                <li>Empty house deep clean</li>
-                            </ul>
-                            <a href="#" class="view-details">View details</a>
-                        </div>
-                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <div class="service-img-wrap">
-                                <img src="images/cleaning.jpg" alt="Move-in Cleaning">
-                            </div>
-                            <button class="add-btn">Add</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="sofa" style="margin-bottom: 36px; padding-top: 20px;">
-                    <h2 class="section-heading">Sofa</h2>
-                    
-                    <div class="service-card">
-                        <div class="service-card-info">
-                            <h4>Sofa Cleaning (per seat)</h4>
-                            <div class="service-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <a href="#">4.85 (8K reviews)</a>
-                            </div>
-                            <div class="service-price">
-                                <span>₹249</span>
-                            </div>
-                            <ul class="service-features">
-                                <li>Shampoo and vacuum</li>
-                            </ul>
-                            <a href="#" class="view-details">View details</a>
-                        </div>
-                        <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <div class="service-img-wrap">
-                                <img src="images/cleaning.jpg" alt="Sofa Cleaning (per seat)">
-                            </div>
-                            <button class="add-btn">Add</button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- RIGHT SIDEBAR -->
-            <div class="right-sidebar">
-                <div class="uc-promise-card">
-                    <div>
-                        <h3>Joamex Promise</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
-                            <li><i class="fa-solid fa-check"></i> Hassle Free Service</li>
-                            <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
-                        </ul>
-                    </div>
-                    <img src="images/security.jpg" alt="Promise" class="promise-badge">
-                </div>
-                
-                <div class="cart-card">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p>No items in your cart</p>
-                </div>
-            </div>
         </div>
-</main>
-    
+    </main>
+
     <script src="common.js"></script>
     <script src="cart.js"></script>
-
-    <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
-        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
-            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
-            <div style="padding: 20px; border-bottom: 1px solid #eee;">
-                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
-            </div>
-            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
-                <!-- Items will be injected here -->
-            </div>
-            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
-                    <span>Total:</span>
-                    <span id="cart-total-price">₹0</span>
-                </div>
-                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
-            </div>
-        </div>
-    </div>
-
-<style>
-.footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
-.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-.footer-col h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111; }
-.footer-col ul { list-style: none; padding: 0; margin: 0; }
-.footer-col ul li { margin-bottom: 12px; }
-.footer-col ul li a { color: #666; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-.footer-col ul li a:hover { color: #000; }
-.footer-logo { font-size: 28px; font-weight: 800; color: #000; text-decoration: none; display: block; margin-bottom: 20px; }
-.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #666; }
-.social-icons a { color: #333; font-size: 18px; margin-left: 15px; text-decoration: none; }
-.social-icons a:hover { color: #6366f1; }
-@media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
-@media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
-</style>
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col" style="grid-column: span 2;">
-            <a href="index.html" class="footer-logo">Joamex</a>
-            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
-        </div>
-        <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h3>For Customers</h3>
-            <ul>
-                <li><a href="#">UC Reviews</a></li>
-                <li><a href="#">Categories near you</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </div>
-</footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('default-banner').style.display = sectionId === 'default-banner' ? 'block' : 'none';
+            document.getElementById('all-services-container').style.display = sectionId === 'all-services-container' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>

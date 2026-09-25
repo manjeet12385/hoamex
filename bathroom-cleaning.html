@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Cleaning - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .bathroom-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bathroom-left {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .bathroom-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .bathroom-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .bathroom-rating {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .instant-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .instant-top {
+            background: #1e8f52;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .instant-bottom {
+            font-size: 11px;
+            color: #334155;
+            padding: 4px 12px;
+            font-weight: 500;
+        }
+
+        .select-service-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .select-service-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .service-grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .service-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-option-icon {
+            width: 60px;
+            height: 60px;
+            background: #fdfbf7;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .service-option-icon img {
+            max-width: 40px;
+            max-height: 40px;
+            object-fit: contain;
+        }
+
+        .service-option-text {
+            font-size: 11px;
+            font-weight: 500;
+            color: #334155;
+            line-height: 1.3;
+        }
+
+        .bathroom-right {
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 450px;
+        }
+
+        .bathroom-banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bathroom-banner-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 40px;
+            background: linear-gradient(to right, rgba(253,251,247,0.95) 0%, rgba(253,251,247,0.8) 40%, rgba(253,251,247,0) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bathroom-banner-text {
+            font-size: 32px;
+            color: #1e293b;
+            max-width: 350px;
+            line-height: 1.3;
+        }
+
+        .bathroom-banner-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 10px;
+        }
+
+        .slider-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+        }
+
+        .slider-progress {
+            height: 100%;
+            width: 33%;
+            background: white;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body style="background-color: #fdfbf7;">
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
+        </div>
+        <div class="search-container" id="header-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bathroom-page">
+        <!-- Left Sidebar -->
+        <div class="bathroom-left">
+            <div class="bathroom-header">
+                <div>
+                    <h1 class="bathroom-title">Bathroom<br>Cleaning</h1>
+                    <div class="bathroom-rating">
+                        <i class="fa-solid fa-star" style="font-size: 11px;"></i>
+                        <strong>4.83</strong> (9.5 M bookings)
+                    </div>
+                </div>
+                <div class="instant-badge">
+                    <div class="instant-top"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    <div class="instant-bottom">In 24 mins</div>
+                </div>
+            </div>
+
+            <div class="select-service-box">
+                <h3 class="select-service-title">Select a service</h3>
+                <div class="service-grid-box">
+                    <div class="service-option" onclick="showSection('weekly-plans')">
+                        <div class="service-option-icon" style="border-color: #e2e8f0; background: #fff;">
+                            <img src="images/cleaning.jpg" alt="Weekly plans" style="border-radius: 8px;">
+                        </div>
+                        <div class="service-option-text">Weekly plans: Best value</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('value-deals')">
+                        <div class="service-option-icon">
+                            <span style="color: #1e8f52; font-weight: 800; font-size: 14px; text-align: center; line-height: 1.1;">COMBO<br>DEALS</span>
+                        </div>
+                        <div class="service-option-text">Value deals</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('one-time-service')">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="One time service" style="border-radius: 8px;">
+                        </div>
+                        <div class="service-option-text">One time service</div>
+                    </div>
+                    <div class="service-option" style="grid-column: 1 / 2; margin-top: 10px;" onclick="showSection('mini-services')">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Mini services" style="border-radius: 8px;">
+                        </div>
+                        <div class="service-option-text">Mini services</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="bathroom-right">
+            
+            <!-- Default Banner -->
+            <div id="default-banner" style="position: relative; border-radius: 16px; overflow: hidden; min-height: 450px;">
+                <img src="images/living_bedroom.jpg" alt="Bathroom Cleaning Banner" class="bathroom-banner-img">
+                <div class="bathroom-banner-content">
+                    <div class="bathroom-banner-text">Weekly plans starting</div>
+                    <div class="bathroom-banner-price">at ₹215/service</div>
+                </div>
+                <div class="slider-indicator">
+                    <div class="slider-progress"></div>
+                </div>
+            </div>
+
+            <!-- Weekly Plans Section (Hidden by default) -->
+            <div id="weekly-plans" style="display: none; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Weekly plans: Best value</h2>
+                
+                <!-- Subscription Banner -->
+                <div style="background: #eaddd3; border-radius: 12px; overflow: hidden; display: flex; position: relative; margin-bottom: 30px;">
+                    <div style="position: absolute; top: 0; left: 20px; background: #6b0f3c; color: white; padding: 6px 12px; font-size: 13px; font-weight: 600; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">Subscription</div>
+                    <div style="padding: 50px 30px 30px 30px; flex: 1;">
+                        <h3 style="font-size: 26px; font-weight: 700; color: #1e293b; margin: 0 0 10px 0; line-height: 1.2;">Weekly<br>bathroom cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 30px;">
+                            <span style="font-size: 22px; color: #94a3b8; text-decoration: line-through; font-weight: 600;">₹550</span>
+                            <span style="font-size: 26px; color: #1e8f52; font-weight: 700;">₹215/service</span>
+                        </div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 700; color: #334155; margin-bottom: 2px;">Flexible weekly cleaning</div>
+                            <div style="font-size: 14px; color: #475569;">Skip, reschedule, pause or cancel when needed</div>
+                        </div>
+                    </div>
+                    <div style="width: 200px; background: url('images/cleaning.jpg') no-repeat center right; background-size: cover;">
+                        <!-- Using placeholder image from existing images, actual image can be swapped -->
+                    </div>
+                </div>
+
+                <!-- Service Item -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 20px;">
+                    <div style="color: #1e8f52; font-size: 12px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;">
+                        <i class="fa-solid fa-tag"></i> 50% OFF
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <div style="max-width: 300px;">
+                            <h4 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; line-height: 1.3;">Weekly bathroom cleaning<br>subscription</h4>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.76</span>
+                                <span style="text-decoration: underline dashed;">(934K reviews)</span>
+                            </div>
+                        </div>
+                        <button style="border: 1px solid #e2e8f0; background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 24px; border-radius: 8px; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">Add</button>
+                    </div>
+                    <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 20px;">
+                        Starts at ₹215 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹550</span> <span style="color: #94a3b8; font-weight: 400;">• 30 mins</span>
+                    </div>
+                    <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                        <li>Best for regular upkeep between deep cleans</li>
+                        <li>Preferred professional hand scrubs the same bathroom every visit</li>
+                    </ul>
+                    <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                </div>
+            </div>
+
+            <!-- Value Deals Section (Hidden by default) -->
+            <div id="value-deals" style="display: none; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Value deals</h2>
+
+                <!-- Item 1: Intense cleaning (4 bathroom) -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Intense cleaning (4 bathroom)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(7.3M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 8px;">
+                            ₹1,596 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹2,196</span> <span style="color: #475569; font-weight: 400;">• 4 hrs</span>
+                        </div>
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-tag"></i> ₹399 per bathroom
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Floor & tile cleaning with a scrub machine</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">4 bathrooms</div>
+                        <img src="images/cleaning.jpg" alt="4 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Intense cleaning (2 bathroom) -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Intense cleaning (2 bathroom)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(7.3M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 8px;">
+                            ₹958 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹1,098</span> <span style="color: #475569; font-weight: 400;">• 2 hrs</span>
+                        </div>
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-tag"></i> ₹479 per bathroom
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Floor & tile cleaning with a scrub machine</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">2 BATHROOMS</div>
+                        <img src="images/cleaning.jpg" alt="2 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Intense cleaning (3 bathroom) -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Intense cleaning (3 bathroom)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(7.3M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 8px;">
+                            ₹1,377 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹1,647</span> <span style="color: #475569; font-weight: 400;">• 3 hrs</span>
+                        </div>
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-tag"></i> ₹459 per bathroom
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Floor & tile cleaning with a scrub machine</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">3 BATHROOMS</div>
+                        <img src="images/cleaning.jpg" alt="3 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Intense Bathroom & ceiling fan cleaning (pack of 2) -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Intense Bathroom & ceiling fan cleaning (pack of 2)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(7.4M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹1,156 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹1,296</span> <span style="color: #475569; font-weight: 400;">• 2 hrs 20 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Includes 2 intense bathroom & 2 ceiling fans cleaning</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Bathroom and fan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- One Time Service Section (Hidden by default) -->
+            <div id="one-time-service" style="display: none; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">One time service</h2>
+
+                <!-- Item 1: Intense bathroom cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-bookmark"></i> BESTSELLER
+                        </div>
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Intense bathroom cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(7.7M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹549 <span style="color: #475569; font-weight: 400;">• 60 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Floor & tile cleaning with scrubbing machine</li>
+                            <li>Recommended for deep-cleaning and tough stains</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Intense cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 2: Move-in bathroom cleaning -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Move-in bathroom cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.82</span>
+                            <span style="text-decoration: underline dashed;">(1.7M reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹629 <span style="color: #475569; font-weight: 400;">• 1 hr 30 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Extra 30 mins of machine scrubbing of floor and tiles</li>
+                            <li>Recommended before moving into a new or unused bathroom</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: center; z-index: 1;">
+                            <span style="background: #1e8f52; color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">Extra 30 mins</span>
+                        </div>
+                        <img src="images/cleaning.jpg" alt="Move-in cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Services Section (Hidden by default) -->
+            <div id="mini-services" style="display: none; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Mini services</h2>
+
+                <!-- Item 1: Balcony cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Balcony cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.80</span>
+                            <span style="text-decoration: underline dashed;">(60K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹549
+                        </div>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Balcony cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">2 options</div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Bathroom exhaust fan cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bathroom exhaust fan cleaning (additional)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.79</span>
+                            <span style="text-decoration: underline dashed;">(116K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹89 <span style="color: #475569; font-weight: 400;">• 15 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Additional, one fan is already covered in bathroom service</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Exhaust fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 3: Door cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Door cleaning (additional)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.79</span>
+                            <span style="text-decoration: underline dashed;">(47K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹89 <span style="color: #475569; font-weight: 400;">• 10 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Additional, bathroom door is covered in bathroom service</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Door cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 4: Mirror cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Mirror cleaning (additional)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.83</span>
+                            <span style="text-decoration: underline dashed;">(53K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹59 <span style="color: #475569; font-weight: 400;">• 10 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Additional, one mirror is already covered in bathroom service</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Mirror cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <!-- Item 5: Drain Cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Drain Cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.56</span>
+                            <span style="text-decoration: underline dashed;">(122 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹59
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Clears buildup inside floor drains for free-flowing water and no odour</li>
+                            <li>Not covered in bathroom service</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Drain Cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">5 options</div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Ceiling fan cleaning -->
+                <div style="border-bottom: 1px dashed #cbd5e1; padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Ceiling fan cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.86</span>
+                            <span style="text-decoration: underline dashed;">(102K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹99
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Not covered in bathroom service</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Ceiling fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">6 options</div>
+                    </div>
+                </div>
+
+                <!-- Item 7: Bathroom disinfection -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bathroom disinfection</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">5.00</span>
+                            <span style="text-decoration: underline dashed;">(16 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹129 <span style="color: #475569; font-weight: 400;">• 15 mins</span>
+                        </div>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Bathroom disinfection" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('default-banner').style.display = 'none';
+            document.getElementById('weekly-plans').style.display = 'none';
+            const valueDeals = document.getElementById('value-deals');
+            if (valueDeals) valueDeals.style.display = 'none';
+            const oneTimeService = document.getElementById('one-time-service');
+            if (oneTimeService) oneTimeService.style.display = 'none';
+            const miniServices = document.getElementById('mini-services');
+            if (miniServices) miniServices.style.display = 'none';
+            
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

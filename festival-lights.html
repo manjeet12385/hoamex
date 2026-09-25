@@ -7,6 +7,68 @@
     <title>Festival Lights Installation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    
+    <!-- Railing Rope Modal -->
+    <div id="railing-rope-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-rope-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-rope-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-rope" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(609 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.43 <span style="color: #777;">(191 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 4 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Railing String Modal -->
+    <div id="railing-string-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-string-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-string-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-string" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 <span style="color: #777;">(523 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 2 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(280 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹990</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 4 lights',990)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <style>
         .three-col-layout {
             display: grid;
@@ -298,7 +360,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/renovation.jpg" alt="Balcony lights installation (Starry)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Balcony lights installation (Starry)', 248)">Add</button>
+                        <button id="open-balcony-starry-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
@@ -339,7 +401,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/electrician_icon.jpg" alt="Railing lights installation (Rope)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Railing lights installation (Rope)', 248)">Add</button>
+                        <button id="open-railing-rope-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
@@ -357,7 +419,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/renovation.jpg" alt="Railing lights installation (String)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Railing lights installation (String)', 495)">Add</button>
+                        <button id="open-railing-string-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
@@ -375,7 +437,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/electrician_icon.jpg" alt="Railing lights installation (Starry)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Railing lights installation (Starry)', 248)">Add</button>
+                        <button class="add-btn" onclick="addToCart('Railing lights installation (Starry)',248)">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
@@ -399,7 +461,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/renovation.jpg" alt="Room lights installation (Starry)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Room lights installation (Starry)', 248)">Add</button>
+                        <button class="add-btn" onclick="addToCart('Room lights installation (Starry)',248)">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
@@ -417,7 +479,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/cleaning.jpg" alt="Room lights installation (String)" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Room lights installation (String)', 248)">Add</button>
+                        <button class="add-btn" onclick="addToCart('Room lights installation (String)',248)">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
                 </div>
@@ -441,7 +503,7 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/electrician_icon.jpg" alt="Mandir lights installation" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Mandir lights installation', 124)">Add</button>
+                        <button class="add-btn" onclick="addToCart('Mandir lights installation',124)">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
                 </div>
@@ -465,15 +527,129 @@
                     </div>
                     <div class="svc-action">
                         <img src="images/renovation.jpg" alt="Outdoor lights installation" class="svc-img">
-                        <button class="add-btn" onclick="addToCart('Outdoor lights installation', 1950)">Add</button>
+                        <button class="add-btn" onclick="addToCart('Outdoor lights installation',1950)">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
                 </div>
 
             </div>
 
+            <!-- Garden lights -->
+            <div class="svc-category" id="garden">
+                <h2>Garden lights</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Garden lights installation</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.64 (540 reviews)</p>
+                        <p class="svc-price">Starts at ₹248</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Garden lights installation" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Garden lights installation',248)">Add</button>
+                        <p class="options-text">3 options</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Xmas light decor -->
+            <div class="svc-category" id="xmas">
+                <h2>Xmas light decor</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Xmas tree lights installation</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 5.00 (36 reviews)</p>
+                        <p class="svc-price">Starts at ₹124</p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/cleaning.jpg" alt="Xmas tree lights installation" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Xmas tree lights installation',124)">Add</button>
+                        <p class="options-text">3 options</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Custom services -->
+            <div class="svc-category" id="custom">
+                <h2>Custom services</h2>
+                
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Xmas lantern installation</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.92 (257 reviews)</p>
+                        <p class="svc-price">₹99 &nbsp;&bull;&nbsp; <span style="font-weight: normal; color: #666;">30 mins</span></p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Xmas lantern installation" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Xmas lantern installation', 99)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Lantern installation (per lantern)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.78 (1K reviews)</p>
+                        <p class="svc-price">₹124 &nbsp;&bull;&nbsp; <span style="font-weight: normal; color: #666;">30 mins</span></p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li>Charges cover installation only</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Lantern installation (per lantern)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Lantern installation (per lantern)', 124)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Light installation (per string)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.67 (7K reviews)</p>
+                        <p class="svc-price">₹124 &nbsp;&bull;&nbsp; <span style="font-weight: normal; color: #666;">30 mins</span></p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Installation charges for 1 light string</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/renovation.jpg" alt="Light installation (per string)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Light installation (per string)', 124)">Add</button>
+                    </div>
+                </div>
+
+                <div class="svc-row">
+                    <div class="svc-info">
+                        <h4>Light uninstallation (per light)</h4>
+                        <p class="svc-meta"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (4K reviews)</p>
+                        <p class="svc-price">₹124 &nbsp;&bull;&nbsp; <span style="font-weight: normal; color: #666;">30 mins</span></p>
+                        <ul style="padding-left: 20px; color: #666; font-size: 13px; margin: 15px 0;">
+                            <li style="margin-bottom: 5px;">1 string length can be up to 12m</li>
+                            <li>Uninstallation charges for 1 light string</li>
+                        </ul>
+                        <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
+                    </div>
+                    <div class="svc-action">
+                        <img src="images/electrician_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
+                        <button class="add-btn" onclick="addToCart('Light uninstallation (per light)', 124)">Add</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -495,5 +671,200 @@
 
     <script src="common.js"></script>
     <script src="cart.js"></script>
-</body>
-</html>
+
+
+    <!-- Railing Rope Modal -->
+    <div id="railing-rope-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-rope-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-rope-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-rope" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(609 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.43 <span style="color: #777;">(191 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 4 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Railing String Modal -->
+    <div id="railing-string-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-string-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-string-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-string" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 <span style="color: #777;">(523 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 2 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(280 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹990</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 4 lights',990)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+.hidden { display: none !important; }
+.wm-options-carousel::-webkit-scrollbar { display: none; }
+</style>
+
+    
+    <!-- Balcony Starry Modal -->
+    <div id="balcony-starry-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-balcony-starry-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Balcony lights installation (Starry)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.66 (3K reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-balcony-starry-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-balcony-starry-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-balcony-starry" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Starry lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.67 <span style="color: #777;">(2K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
+                        <button class="option-add-btn" onclick="addToCart('Balcony lights installation (Starry) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Starry lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.64 <span style="color: #777;">(617 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Balcony lights installation (Starry) - 4 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Railing Rope Modal -->
+    <div id="railing-rope-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-rope-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-rope-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-rope" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(609 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Rope lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.43 <span style="color: #777;">(191 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (Rope) - 4 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Railing String Modal -->
+    <div id="railing-string-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/renovation.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-railing-string-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-railing-string-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-railing-string" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 <span style="color: #777;">(523 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 2 lights',495)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 String lights</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.59 <span style="color: #777;">(280 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹990</div>
+                        <button class="option-add-btn" onclick="addToCart('Railing lights installation (String) - 4 lights',990)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .hidden { display: none !important; }
+    .wm-options-carousel::-webkit-scrollbar { display: none; }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function setupModal(openBtnId, modalId, closeBtnId, carouselId, leftBtnId, rightBtnId) {
+                const openBtn = document.getElementById(openBtnId);
+                const modal = document.getElementById(modalId);
+                const closeBtn = document.getElementById(closeBtnId);
+
+                if (openBtn && modal && closeBtn) {
+                    openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+                    closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) modal.classList.add('hidden');
+                    });
+                }
+
+                const carousel = document.getElementById(carouselId);
+                const leftBtn = document.getElementById(leftBtnId);
+                const rightBtn = document.getElementById(rightBtnId);
+
+                if (carousel && leftBtn && rightBtn) {
+                    leftBtn.addEventListener('click', () => carousel.scrollBy({ left: -175, behavior: 'smooth' }));
+                    rightBtn.addEventListener('click', () => carousel.scrollBy({ left: 175, behavior: 'smooth' }));
+                }
+            }
+
+            setupModal('open-balcony-starry-modal-btn', 'balcony-starry-modal', 'close-balcony-starry-modal-btn', 'modal-carousel-balcony-starry', 'scroll-left-balcony-starry-btn', 'scroll-right-balcony-starry-btn');
+
+            setupModal('open-railing-rope-modal-btn', 'railing-rope-modal', 'close-railing-rope-modal-btn', 'modal-carousel-railing-rope', 'scroll-left-railing-rope-btn', 'scroll-right-railing-rope-btn');
+
+            setupModal('open-railing-string-modal-btn', 'railing-string-modal', 'close-railing-string-modal-btn', 'modal-carousel-railing-string', 'scroll-left-railing-string-btn', 'scroll-right-railing-string-btn');
+        });
+    </script>

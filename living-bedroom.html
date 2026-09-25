@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living & Bedroom Cleaning - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .kitchen-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .kitchen-left {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .kitchen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .kitchen-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .kitchen-rating {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .instant-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .instant-top {
+            background: #1e8f52;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .instant-bottom {
+            font-size: 11px;
+            color: #334155;
+            padding: 4px 12px;
+            font-weight: 500;
+        }
+
+        .select-service-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .select-service-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .service-grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            row-gap: 25px;
+        }
+
+        .service-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-option-icon {
+            width: 60px;
+            height: 60px;
+            background: #fdfbf7;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+
+        .service-option-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-option-text {
+            font-size: 11px;
+            font-weight: 500;
+            color: #334155;
+            line-height: 1.3;
+        }
+
+        .kitchen-right {
+            flex-grow: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 450px;
+        }
+
+        .kitchen-banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .kitchen-banner-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .kitchen-banner-text {
+            font-size: 38px;
+            color: white;
+            font-weight: 700;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            max-width: 400px;
+        }
+
+        .slider-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .slider-progress {
+            height: 100%;
+            width: 25%;
+            background: white;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body style="background-color: #fdfbf7;">
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
+        </div>
+        <div class="search-container" id="header-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="kitchen-page">
+        <!-- Left Sidebar -->
+        <div class="kitchen-left">
+            <div class="kitchen-header">
+                <div>
+                    <h1 class="kitchen-title">Living &amp;<br>Bedroom...</h1>
+                    <div class="kitchen-rating">
+                        <i class="fa-solid fa-star" style="font-size: 11px;"></i>
+                        <strong>4.81</strong> (2.7 M bookings)
+                    </div>
+                </div>
+                <div class="instant-badge">
+                    <div class="instant-top"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    <div class="instant-bottom">In 54 mins</div>
+                </div>
+            </div>
+
+            <div class="select-service-box">
+                <h3 class="select-service-title">Select a service</h3>
+                <div class="service-grid-box">
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('super-saver').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <span style="color: #1e8f52; font-weight: 800; font-size: 24px; text-align: center; line-height: 1.1;">%</span>
+                        </div>
+                        <div class="service-option-text">Super saver deals</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('cleaning-stain').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Cleaning & stain protection">
+                        </div>
+                        <div class="service-option-text">Cleaning & stain protection</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('sofa-carpet').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Sofa & carpet">
+                        </div>
+                        <div class="service-option-text">Sofa & carpet</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('curtain').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Curtain">
+                        </div>
+                        <div class="service-option-text">Curtain</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('living-care').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Living room care">
+                        </div>
+                        <div class="service-option-text">Living room care</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('bedroom-care').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Bedroom care">
+                        </div>
+                        <div class="service-option-text">Bedroom care</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('mattress-bed').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Mattress & bed">
+                        </div>
+                        <div class="service-option-text">Mattress & bed</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('dining-table').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Dining table & chairs">
+                        </div>
+                        <div class="service-option-text">Dining table & chairs</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('other-furniture').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Other furniture">
+                        </div>
+                        <div class="service-option-text">Other furniture</div>
+                    </div>
+                    <div class="service-option" onclick="showSection('all-services-container'); setTimeout(() => document.getElementById('windows-fan').scrollIntoView({behavior: 'smooth', block: 'start'}), 100);">
+                        <div class="service-option-icon">
+                            <img src="images/cleaning.jpg" alt="Windows & fan">
+                        </div>
+                        <div class="service-option-text">Windows & fan</div>
+                    </div>
+</div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+        <div class="kitchen-right">
+            
+            
+            <!-- Default Banner -->
+            <div id="default-banner" style="position: relative; border-radius: 16px; overflow: hidden; min-height: 450px; background: #000;">
+                <img src="images/cleaning.jpg" alt="Living & Bedroom Banner" class="kitchen-banner-img" style="opacity: 0.6; height: 450px;">
+                <div style="position: absolute; bottom: 120px; left: 30px;">
+                    <h2 style="color: #fff; font-size: 36px; font-weight: 700;">No stain tough to clean</h2>
+                </div>
+            </div>
+
+            <!-- Super Saver Deals Section -->
+            <div id="all-services-container" style="display: none;">
+            <div id="super-saver" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Super saver deals</h2>
+                
+                <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px; background: #2f4f4f; color: white; padding: 20px; min-height: 200px;">
+                    <div style="background: #1e8f52; display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 15px;">20% OFF</div>
+                    <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 15px; max-width: 50%; line-height: 1.2;">2-visits sofa cleaning pack</h3>
+                    <div style="font-size: 16px;">Starts at <br><span style="text-decoration: line-through; margin-right: 5px;">₹398</span> <span style="font-size: 24px; font-weight: bold;">₹319</span> per visit</div>
+                    <img src="images/cleaning.jpg" style="position: absolute; right: 0; bottom: 0; width: 50%; height: 100%; object-fit: cover; opacity: 0.9;" alt="Dog on sofa">
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">2 visits: Fabric sofa cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.87</span>
+                            <span style="text-decoration: underline dashed;">(209K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 10px;">
+                            Starts at ₹638 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹798</span>
+                        </div>
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 4px;">
+                            <i class="fa-solid fa-tag"></i> Starts at ₹319/service
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Suitable for houses with toddlers and pets</li>
+                            <li>Avail first visit now and the remaining within 6 months.</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 5px;">Add</button>
+                        <div style="font-size: 12px; color: #64748b;">10 options</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Cleaning & Stain Protection Section -->
+            <div id="cleaning-stain" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Cleaning & stain protection</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 15px; background: #eaddd3; height: 200px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Sofa cleaning video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div style="width: 50px; height: 50px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2;">
+                            <i class="fa-solid fa-play" style="color: white; font-size: 20px; margin-left: 4px;"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Sofa cleaning & stain protection coating</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.84</span>
+                                <span style="text-decoration: underline dashed;">(56 reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹1,499 <span style="color: #475569; font-weight: 400;">• 45 mins</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                        <li>Nano-coating that repels spills & resists stains up to 12 months</li>
+                        <li>Includes vacuuming & foam-based shampooing before coating</li>
+                    </ul>
+                    <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                </div>
+            </div>
+
+            <!-- Sofa & Carpet Section -->
+            <div id="sofa-carpet" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Sofa & carpet</h2>
+                
+                <!-- Card 1 -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Fabric sofa cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.87</span>
+                            <span style="text-decoration: underline dashed;">(261K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹399 <span style="color: #475569; font-weight: 400;">• 45 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Vacuuming & foam based shampooing for stain removal</li>
+                            <li>Recliner is not included & to be booked separately</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Fabric sofa cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 15px; background: #eaddd3; height: 200px; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Sofa cleaning video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div style="width: 50px; height: 50px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2;">
+                            <i class="fa-solid fa-play" style="color: white; font-size: 20px; margin-left: 4px;"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="flex: 1; padding-right: 20px;">
+                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Sofa cleaning & stain protection coating</h3>
+                            <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                                <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                                <span style="font-weight: 500; color: #475569;">4.84</span>
+                                <span style="text-decoration: underline dashed;">(56 reviews)</span>
+                            </div>
+                            <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                                Starts at ₹1,499 <span style="color: #475569; font-weight: 400;">• 45 mins</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                        </div>
+                    </div>
+                    
+                    <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                        <li>Nano-coating that repels spills & resists stains up to 12 months</li>
+                        <li>Includes vacuuming & foam-based shampooing before coating</li>
+                    </ul>
+                    <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Leather sofa cleaning & polishing</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.87</span>
+                            <span style="text-decoration: underline dashed;">(60K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹399 <span style="color: #475569; font-weight: 400;">• 45 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Recliner is not included & to be booked separately</li>
+                            <li>Leather moisturization to enhance appearance</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Leather sofa cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Sofa cum bed</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.88</span>
+                            <span style="text-decoration: underline dashed;">(58K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹399 <span style="color: #475569; font-weight: 400;">• 40 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Vacuuming & foam based shampooing for stain removal</li>
+                            <li>Applying shiner to wooden surface for a fresh look</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Sofa cum bed" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Card 5 -->
+                <div style="padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Carpet cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.83</span>
+                            <span style="text-decoration: underline dashed;">(41K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹399 <span style="color: #475569; font-weight: 400;">• 45 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Vacuuming & foam based shampooing for stain removal</li>
+                            <li>2-3 hrs of dry time under the fan</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Carpet cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curtain Section -->
+            <div id="curtain" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Curtain</h2>
+                
+                <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px; background: #faebd7; height: 250px; display: flex; align-items: center; padding: 30px;">
+                    <div style="z-index: 2; width: 60%;">
+                        <h3 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; line-height: 1.1;">Fresh,<br>clean curtains</h3>
+                        <p style="font-size: 16px; color: #4a4a4a; margin: 0;">Steam cleaned in place to<br>remove dust & allergens</p>
+                    </div>
+                    <img src="images/cleaning.jpg" alt="Curtain cleaning" style="position: absolute; right: 0; top: 0; width: 50%; height: 100%; object-fit: cover; border-radius: 12px; clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);">
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Curtain refresh</h3>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹400
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Curtain cleaning at home, without any unhooking hassle</li>
+                            <li>Steam and vacuum based cleaning for refreshed and clean curtains</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <button style="background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 5px;">Add</button>
+                        <div style="font-size: 12px; color: #64748b;">7 options</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Living Room Care Section -->
+            <div id="living-care" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Living room care</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <div style="color: #1e8f52; font-size: 12px; font-weight: 700; margin-bottom: 8px;"><i class="fa-solid fa-tag"></i> 20% OFF</div>
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Sofa, windows & cobweb cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.87</span>
+                            <span style="text-decoration: underline dashed;">(232K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹742 <span style="text-decoration: line-through; color: #94a3b8; font-weight: 400; margin: 0 5px;">₹928</span> <span style="color: #475569; font-weight: 400;">• 1 hr 45 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Deep cleaning of sofa, windows, cobweb and fans</li>
+                            <li>Excludes cleaning of bathroom and kitchen windows</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Living room care" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bedroom Care Section -->
+            <div id="bedroom-care" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Bedroom care</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bedroom deep cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.85</span>
+                            <span style="text-decoration: underline dashed;">(150K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹699 <span style="color: #475569; font-weight: 400;">• 1 hr 30 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Deep cleaning of mattress, windows, and floors</li>
+                            <li>Includes dusting and cobweb removal</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Bedroom care" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mattress & bed Section -->
+            <div id="mattress-bed" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Mattress & bed</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Mattress cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.85</span>
+                            <span style="text-decoration: underline dashed;">(43K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹399 <span style="color: #475569; font-weight: 400;">• 25 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Vacuuming & foam based shampooing on both sides</li>
+                            <li>Minimal water usage, mattress ready to use in 1 to 2 hours</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Mattress cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bed cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.83</span>
+                            <span style="text-decoration: underline dashed;">(11K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹449 <span style="color: #475569; font-weight: 400;">• 40 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Includes mattress, headboard & bedframe cleaning</li>
+                            <li>Vacuuming and foam based shampooing to remove stains</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Bed cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Fabric headboard</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.83</span>
+                            <span style="text-decoration: underline dashed;">(7K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹249 <span style="color: #475569; font-weight: 400;">• 25 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Vacuuming & foam based shampooing on headboard</li>
+                            <li>Minimal water usage, headboard ready to use in 1 to 2 hours</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Fabric headboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dining table & chairs Section -->
+            <div id="dining-table" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Dining table & chairs</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Dining table & chairs cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.84</span>
+                            <span style="text-decoration: underline dashed;">(16K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹499
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Includes fabric shampooing, surface cleaning & shining</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible; margin-bottom: 20px;">
+                            <img src="images/cleaning.jpg" alt="Dining table & chairs" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                            <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        </div>
+                        <div style="font-size: 12px; color: #64748b;">7 options</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other furniture Section -->
+            <div id="other-furniture" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Other furniture</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Ottoman</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.86</span>
+                            <span style="text-decoration: underline dashed;">(9K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹119 <span style="color: #475569; font-weight: 400;">• 15 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Dry & wet vacuuming to remove stains & spillage</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Ottoman" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Showcase/ cabinet</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.78</span>
+                            <span style="text-decoration: underline dashed;">(6K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹199 <span style="color: #475569; font-weight: 400;">• 20 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Dry dusting & wet wiping of exterior surface & glass</li>
+                            <li>Includes applying wood shiner to give fresh look</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Showcase/ cabinet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Sofa center table</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(1K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹199 <span style="color: #475569; font-weight: 400;">• 30 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Dry & wet vacuuming to remove stain & spillage</li>
+                            <li>Applying shiner to wooden surface for a fresh look</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Sofa center table" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Study table & chair</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.86</span>
+                            <span style="text-decoration: underline dashed;">(4K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹249 <span style="color: #475569; font-weight: 400;">• 30 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Dry dusting & wet wiping of study table & chairs</li>
+                            <li>Includes applying wood shiner to give fresh look</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Study table & chair" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Recliner/ lounge chair</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.86</span>
+                            <span style="text-decoration: underline dashed;">(7K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹249
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Dry & wet vacuuming to remove stains & spillage</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Recliner/ lounge chair" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Windows & fan Section -->
+            <div id="windows-fan" style="display: block; padding: 10px 0;">
+                <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Windows & fan</h2>
+                
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Windows (without grill) & glass doors cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(18K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹449 <span style="color: #475569; font-weight: 400;">• 55 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Removal of smudge, stains and watermarks from glass</li>
+                            <li>Cleaning of window body to eliminate dust & dirt</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Windows (without grill)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Windows (with grills) & glass doors cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(20K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹599 <span style="color: #475569; font-weight: 400;">• 1 hr 20 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Deep cleaning of metal grill & window nets for dust & dirt</li>
+                            <li>Removal of smudges, stains & watermarks from glass</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Windows (with grills)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px dashed #cbd5e1; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Mirror cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.84</span>
+                            <span style="text-decoration: underline dashed;">(5K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹49 <span style="color: #475569; font-weight: 400;">• 15 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Cleaning of mirror to remove smudges, stains and watermarks</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Mirror cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 30px; margin-bottom: 30px; display: flex; justify-content: space-between;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Fan cleaning</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.88</span>
+                            <span style="text-decoration: underline dashed;">(98K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            ₹89 <span style="color: #475569; font-weight: 400;">• 10 mins</span>
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Cleaning of fan blades to remove surface dust & dirt</li>
+                            <li>Stain removal from fan using professional chemicals</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
+                        <img src="images/cleaning.jpg" alt="Fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                    </div>
+                </div>
+            </div>
+</div><!-- END all-services-container -->
+
+
+            </div>
+            
+        </div>
+    </main>
+
+        <script>
+        function showSection(sectionId) {
+            const allSections = ['default-banner', 'all-services-container'];
+            
+            allSections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) targetSection.style.display = 'block';
+        }
+    </script>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

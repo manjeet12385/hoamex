@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ants & Bed Bugs Control - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .kitchen-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .kitchen-left {
+            width: 320px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .kitchen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .kitchen-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .kitchen-rating {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 25px;
+        }
+
+        .instant-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .instant-top {
+            background: #fdfbf7;
+            color: #1e8f52;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .instant-bottom {
+            font-size: 11px;
+            color: #334155;
+            padding: 4px 12px;
+            font-weight: 500;
+        }
+
+        .view-services-btn {
+            background: #9333ea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(147, 51, 234, 0.3);
+            transition: background 0.2s;
+        }
+
+        .view-services-btn:hover {
+            background: #7e22ce;
+        }
+
+        .kitchen-right {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .kitchen-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 450px;
+            margin-bottom: 40px;
+        }
+
+        .kitchen-banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-text-bottom {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            text-align: left;
+            z-index: 2;
+            color: white;
+        }
+
+        .banner-text-bottom h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .banner-text-bottom .warranty-tag {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 10px;
+            background-color: #0f766e; /* Dark teal to match the image closely */
+        }
+
+        .slider-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .slider-progress {
+            height: 100%;
+            width: 30%;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .section-box {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body style="background-color: #fdfbf7;">
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
+        </div>
+        <div class="search-container" id="header-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="kitchen-page">
+        <!-- Left Sidebar -->
+        <div class="kitchen-left">
+            <div class="kitchen-header">
+                <div>
+                    <h1 class="kitchen-title">Ants &<br>Bed ...</h1>
+                    <div class="kitchen-rating">
+                        <i class="fa-solid fa-star" style="font-size: 11px;"></i>
+                        <strong>4.79</strong> (96K bookings)
+                    </div>
+                </div>
+                <div class="instant-badge">
+                    <div class="instant-top"><i class="fa-solid fa-clock"></i> Earliest</div>
+                    <div class="instant-bottom">Thu, 4:30 PM</div>
+                </div>
+            </div>
+
+            <button class="view-services-btn" onclick="document.getElementById('services-section').scrollIntoView({behavior: 'smooth'})">View Services</button>
+        </div>
+
+        <!-- Right Content -->
+        <div class="kitchen-right">
+            <!-- Video Banner -->
+            <div class="kitchen-banner">
+                <img src="images/cleaning.jpg" alt="Banner" class="kitchen-banner-img">
+                
+                <div class="banner-text-bottom">
+                    <h1>Here's how the<br>service is done</h1>
+                    
+                </div>
+
+                <div class="slider-indicator">
+                    <div class="slider-progress"></div>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <div id="services-section" class="section-box">
+
+                <h2 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 25px;">Bed Bugs Control</h2>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bed bugs control</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.77</span>
+                            <span style="text-decoration: underline dashed;">(40K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,899
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Essential pre-service inspection of the entire home</li>
+                            <li>Unique 2-visit treatment to target eggs, nymphs & adult pests</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Bed Bugs Control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('bedbug-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">5 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 25px 0;">
+
+                <h2 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 25px;">Ant Control</h2>
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Apartment ant control (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.80</span>
+                            <span style="text-decoration: underline dashed;">(1K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,849
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Complete ant treatment for confined spaces</li>
+                            <li>Includes thorough inspection, chemical spray & hole sealing</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Apartment Ant Control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('ant-control-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">5 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Apartment ant control (without utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.83</span>
+                            <span style="text-decoration: underline dashed;">(1K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,549
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Complete ant treatment for confined spaces</li>
+                            <li>Includes thorough inspection, chemical spray & hole sealing</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Apartment Ant Control Without Utensil Removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('ant-control-without-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">5 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bungalow ant control (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.66</span>
+                            <span style="text-decoration: underline dashed;">(69 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹2,398
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Extensive ant protection for larger areas</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Bungalow Ant Control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('bungalow-ant-control-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">4 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bungalow ant control (without utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.81</span>
+                            <span style="text-decoration: underline dashed;">(83 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹2,097
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Extensive ant protection for larger areas</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Bungalow Ant Control Without Utensil Removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('bungalow-ant-control-without-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">4 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Ant control &ndash; kitchen/bathroom (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.87</span>
+                            <span style="text-decoration: underline dashed;">(742 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,249
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Complete ant treatment for confined spaces</li>
+                            <li>We'll remove utensils before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Ant Control Kitchen Bathroom" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('kitchen-bathroom-ant-control-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">6 options</div>
+                    </div>
+                </div>
+
+                <hr style="border: none; border-top: 1px dashed #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 10px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Ant control &ndash; kitchen/bathroom (without utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.86</span>
+                            <span style="text-decoration: underline dashed;">(934 reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹998
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Complete ant treatment for confined spaces</li>
+                            <li>Excludes removal of utensils & objects before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Ant Control Kitchen Bathroom Without Utensil Removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">6 options</div>
+                    </div>
+                </div>
+
+</div>
+
+        </div>
+    </main>
+
+    <!-- Bed bugs control modal -->
+    <div id="bedbug-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 85vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('bedbug-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 200px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                <div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+                    <h3 style="font-size: 20px; font-weight: 600; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">Bed bugs making your life<br>miserable?</h3>
+                    <div style="width: 40px; height: 2px; background: white; margin-top: 10px;"></div>
+                </div>
+            </div>
+            
+            <div style="padding: 25px;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000;">Bed bugs control</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.77 (40K reviews)</div>
+                
+                <div style="position: relative;">
+                    <!-- Left Arrow -->
+                    <button onclick="document.getElementById('bedbug-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    
+                    <!-- Right Arrow -->
+                    <button onclick="document.getElementById('bedbug-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="bedbug-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        
+                        <!-- 1 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.78 (22K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1899</div>
+                            <button onclick="addToCart('Bed bugs control - 1 bhk', 1899); document.getElementById('bedbug-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+
+                        <!-- 2 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.77 (14K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2197</div>
+                            <button onclick="addToCart('Bed bugs control - 2 bhk', 2197); document.getElementById('bedbug-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+
+                        <!-- 3 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.74 (4K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2799</div>
+                            <button onclick="addToCart('Bed bugs control - 3 bhk', 2799); document.getElementById('bedbug-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        
+                        <!-- 4 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.72 (387 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3397</div>
+                            <button onclick="addToCart('Bed bugs control - 4 bhk', 3397); document.getElementById('bedbug-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        
+                        <!-- 5 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.64 (83 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3899</div>
+                            <button onclick="addToCart('Bed bugs control - 5 bhk', 3899); document.getElementById('bedbug-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Apartment ant control modal -->
+    <div id="ant-control-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('ant-control-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Complete<br>elimination<br>of Pests</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Apartment ant control (with<br>utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (1K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('ant-control-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('ant-control-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="ant-control-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.86 (180 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1849</div>
+                            <button onclick="addToCart('Apartment ant control (with utensil removal) - 1 bhk', 1849); document.getElementById('ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.85 (504 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1899</div>
+                            <button onclick="addToCart('Apartment ant control (with utensil removal) - 2 bhk', 1899); document.getElementById('ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.76 (512 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1999</div>
+                            <button onclick="addToCart('Apartment ant control (with utensil removal) - 3 bhk', 1999); document.getElementById('ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.74 (112 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2199</div>
+                            <button onclick="addToCart('Apartment ant control (with utensil removal) - 4 bhk', 2199); document.getElementById('ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Apartment ant control (without utensil removal) modal -->
+    <div id="ant-control-without-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('ant-control-without-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Complete<br>elimination<br>of Pests</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Apartment ant control (without<br>utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.83 (1K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('ant-control-without-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('ant-control-without-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="ant-control-without-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.88 (290 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1549</div>
+                            <button onclick="addToCart('Apartment ant control (without utensil removal) - 1 bhk', 1549); document.getElementById('ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.83 (499 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1647</div>
+                            <button onclick="addToCart('Apartment ant control (without utensil removal) - 2 bhk', 1647); document.getElementById('ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.82 (541 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1747</div>
+                            <button onclick="addToCart('Apartment ant control (without utensil removal) - 3 bhk', 1747); document.getElementById('ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (300 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1847</div>
+                            <button onclick="addToCart('Apartment ant control (without utensil removal) - 4 bhk', 1847); document.getElementById('ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 bhk -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.75 (150 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1947</div>
+                            <button onclick="addToCart('Apartment ant control (without utensil removal) - 5 bhk', 1947); document.getElementById('ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bungalow ant control (with utensil removal) modal -->
+    <div id="bungalow-ant-control-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('bungalow-ant-control-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Complete<br>elimination<br>of Pests</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Bungalow ant control (with<br>utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.66 (69 reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('bungalow-ant-control-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('bungalow-ant-control-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="bungalow-ant-control-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2000-3000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.75 (54 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2398</div>
+                            <button onclick="addToCart('Bungalow ant control (with utensil removal) - 2000-3000 sq. ft.', 2398); document.getElementById('bungalow-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3000-4000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.33 (15 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2598</div>
+                            <button onclick="addToCart('Bungalow ant control (with utensil removal) - 3000-4000 sq. ft.', 2598); document.getElementById('bungalow-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4000-5000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 3 hrs 10 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2898</div>
+                            <button onclick="addToCart('Bungalow ant control (with utensil removal) - 4000-5000 sq. ft.', 2898); document.getElementById('bungalow-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5000+ sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 3 hrs 35 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3099</div>
+                            <button onclick="addToCart('Bungalow ant control (with utensil removal) - 5000+ sq. ft.', 3099); document.getElementById('bungalow-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bungalow ant control (without utensil removal) modal -->
+    <div id="bungalow-ant-control-without-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('bungalow-ant-control-without-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Complete<br>elimination<br>of Pests</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Bungalow ant control (without<br>utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.81 (83 reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('bungalow-ant-control-without-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('bungalow-ant-control-without-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="bungalow-ant-control-without-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2000-3000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (62 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2097</div>
+                            <button onclick="addToCart('Bungalow ant control (without utensil removal) - 2000-3000 sq. ft.', 2097); document.getElementById('bungalow-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3000-4000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.83 (21 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2297</div>
+                            <button onclick="addToCart('Bungalow ant control (without utensil removal) - 3000-4000 sq. ft.', 2297); document.getElementById('bungalow-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4000-5000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 2 hrs 45 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2598</div>
+                            <button onclick="addToCart('Bungalow ant control (without utensil removal) - 4000-5000 sq. ft.', 2598); document.getElementById('bungalow-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5000+ sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 3 hrs 10 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2899</div>
+                            <button onclick="addToCart('Bungalow ant control (without utensil removal) - 5000+ sq. ft.', 2899); document.getElementById('bungalow-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ant control kitchen/bathroom (with utensil removal) modal -->
+    <div id="kitchen-bathroom-ant-control-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Professionals<br>trained<br>under WHO<br>guidelines</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Ant control &ndash; kitchen/bathroom (with utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.87 (742 reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('kitchen-bathroom-ant-control-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('kitchen-bathroom-ant-control-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="kitchen-bathroom-ant-control-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">Only kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.95 (499 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1249</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - Only kitchen', 1249); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bathroom &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.68 (139 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1349</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - 1 bathroom & kitchen', 1349); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.73 (73 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1449</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - 2 bathrooms & kitchen', 1449); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.77 (31 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1497</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - 3 bathrooms & kitchen', 1497); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 1 hr 55 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1548</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - 4 bathrooms & kitchen', 1548); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 6 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 2 hrs 5 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1599</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (with utensil removal) - 5 bathrooms & kitchen', 1599); document.getElementById('kitchen-bathroom-ant-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ant control kitchen/bathroom (without utensil removal) modal -->
+    <div id="kitchen-bathroom-ant-control-without-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: -20px; left: -20px; background: black; color: white; padding: 40px 40px 40px 40px; border-radius: 50%; width: 220px; height: 220px; display: flex; align-items: center; justify-content: flex-start; text-align: left; z-index: 1;">
+                    <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.2; padding-left: 10px; margin-top: -30px;">Complete<br>elimination<br>of Pests</h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Ant control &ndash; kitchen/bathroom (without utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.86 (934 reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('kitchen-bathroom-ant-control-without-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('kitchen-bathroom-ant-control-without-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="kitchen-bathroom-ant-control-without-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">Only kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.89 (564 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹998</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - Only kitchen', 998); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bathroom &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.81 (246 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1098</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - 1 bathroom & kitchen', 1098); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.81 (88 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1198</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - 2 bathrooms & kitchen', 1198); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.99 (36 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1247</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - 3 bathrooms & kitchen', 1247); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 1 hr 25 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1297</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - 4 bathrooms & kitchen', 1297); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 6 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-clock"></i> 1 hr 35 mins</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1347</div>
+                            <button onclick="addToCart('Ant control – kitchen/bathroom (without utensil removal) - 5 bathrooms & kitchen', 1347); document.getElementById('kitchen-bathroom-ant-control-without-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .hidden { display: none !important; }
+        .modal-overlay { transition: opacity 0.3s ease; }
+    </style>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

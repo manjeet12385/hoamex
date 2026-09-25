@@ -404,7 +404,7 @@
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative; display: flex; flex-direction: column; align-items: center;">
                         <img src="images/kitchen.jpg" alt="Kitchen countertop grouting" class="svc-img" style="border-radius: 12px;">
-                        <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Kitchen countertop grouting', 699)">Add</button>
+                        <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="document.getElementById('countertop-grouting-modal').classList.remove('hidden')">Add</button>
                         <p style="font-size: 10px; color: #666; margin-top: 25px; text-align: center;">2 options</p>
                     </div>
                 </div>
@@ -421,7 +421,7 @@
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative; display: flex; flex-direction: column; align-items: center;">
                         <img src="images/kitchen.jpg" alt="Full kitchen grouting" class="svc-img" style="border-radius: 12px;">
-                        <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Full kitchen grouting', 1799)">Add</button>
+                        <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="document.getElementById('kitchen-grouting-modal').classList.remove('hidden')">Add</button>
                         <p style="font-size: 10px; color: #666; margin-top: 25px; text-align: center;">2 options</p>
                     </div>
                 </div>
@@ -627,6 +627,127 @@
         </div>
     </div>
 
+    <!-- Full Kitchen Grouting Modal -->
+    <div id="kitchen-grouting-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative;">
+            <button onclick="document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 220px; width: 100%; display: flex;">
+                <div style="flex: 1; position: relative; background: #e6dfcc;">
+                    <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                    <div style="position: absolute; top: 20px; left: 0; width: 100%; text-align: center; font-weight: 600; font-size: 15px; color: #000;">Old grouting</div>
+                </div>
+                <div style="width: 2px; background: #000; z-index: 2;"></div>
+                <div style="flex: 1; position: relative; background: #cce0d6;">
+                    <img src="images/kitchen.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                    <div style="position: absolute; top: 20px; left: 0; width: 100%; text-align: center; font-weight: 600; font-size: 15px; color: #000;">New grouting</div>
+                </div>
+            </div>
+            
+            <div style="padding: 25px;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 30px; color: #000;">Full kitchen grouting</h2>
+                
+                <!-- Option 1 -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed #ddd;">
+                    <div style="flex: 1; padding-right: 15px;">
+                        <h4 style="font-size: 16px; margin: 0 0 8px 0; color: #003b5c;">Full Kitchen Grouting (Epoxy)</h4>
+                        <div style="font-size: 13px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2799 &nbsp;<span style="color: #666; font-weight: 400;">• 5 hrs</span></div>
+                        <ul style="padding-left: 15px; color: #555; font-size: 12px; margin: 0; line-height: 1.6;">
+                            <li>Lasts 5+ Years</li>
+                            <li>Suitable for wet areas/surfaces</li>
+                        </ul>
+                    </div>
+                    <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <img src="images/renovation.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                        </div>
+                        <button onclick="addToCart('Full Kitchen Grouting (Epoxy)', 2799); document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Option 2 -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    <div style="flex: 1; padding-right: 15px;">
+                        <h4 style="font-size: 16px; margin: 0 0 8px 0; color: #003b5c;">Full Kitchen Grouting (White cement)</h4>
+                        <div style="font-size: 13px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1799 &nbsp;<span style="color: #666; font-weight: 400;">• 4 hrs</span></div>
+                        <ul style="padding-left: 15px; color: #555; font-size: 12px; margin: 0; line-height: 1.6;">
+                            <li>Lasts 1 year</li>
+                            <li>Suitable for less used areas</li>
+                        </ul>
+                    </div>
+                    <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <img src="images/plumber.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                        </div>
+                        <button onclick="addToCart('Full Kitchen Grouting (White cement)', 1799); document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Kitchen Countertop Grouting Modal -->
+    <div id="countertop-grouting-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative;">
+            <button onclick="document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 220px; width: 100%; display: flex; align-items: center; justify-content: center; background: #334e68;">
+                <img src="images/renovation.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+                <div style="position: absolute; top: 30px; left: 30px; color: white; text-align: left;">
+                    <h3 style="font-size: 26px; font-weight: 700; margin: 0 0 10px 0; line-height: 1.2;">Choose the<br>best material</h3>
+                    <p style="font-size: 14px; margin: 0; opacity: 0.9; max-width: 200px;">Our guide will help you decide which works best for you</p>
+                </div>
+            </div>
+            
+            <div style="padding: 25px;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000;">Kitchen countertop grouting</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 30px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.64 (68 reviews)</div>
+                
+                <!-- Option 1 -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed #ddd;">
+                    <div style="flex: 1; padding-right: 15px;">
+                        <h4 style="font-size: 16px; margin: 0 0 8px 0; color: #003b5c;">Kitchen slab/ countertop (Epoxy)</h4>
+                        <div style="font-size: 12px; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #666;"></i> 4.68 (54 reviews)</div>
+                        <div style="font-size: 13px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1299 &nbsp;<span style="color: #666; font-weight: 400;">• 2 hrs</span></div>
+                        <ul style="padding-left: 15px; color: #555; font-size: 12px; margin: 0; line-height: 1.6;">
+                            <li>Lasts 5+ Years</li>
+                            <li>Suitable for wet areas/surfaces</li>
+                        </ul>
+                    </div>
+                    <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <img src="images/renovation.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                        </div>
+                        <button onclick="addToCart('Kitchen slab/ countertop (Epoxy)', 1299); document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                    </div>
+                </div>
+                
+                <!-- Option 2 -->
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    <div style="flex: 1; padding-right: 15px;">
+                        <h4 style="font-size: 16px; margin: 0 0 8px 0; color: #003b5c;">Kitchen Only slab/ countertop (White cement)</h4>
+                        <div style="font-size: 12px; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #666;"></i> 4.50 (14 reviews)</div>
+                        <div style="font-size: 13px; font-weight: 700; margin-bottom: 15px; color: #000;">₹699 &nbsp;<span style="color: #666; font-weight: 400;">• 1 hr 30 mins</span></div>
+                        <ul style="padding-left: 15px; color: #555; font-size: 12px; margin: 0; line-height: 1.6;">
+                            <li>Lasts 1 year</li>
+                            <li>Suitable for less used areas</li>
+                        </ul>
+                    </div>
+                    <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
+                            <img src="images/plumber.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                        </div>
+                        <button onclick="addToCart('Kitchen Only slab/ countertop (White cement)', 699); document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <style>
+        .hidden { display: none !important; }
+        .modal-overlay { transition: opacity 0.3s ease; }
+    </style>
     <script src="common.js"></script>
     <script src="cart.js"></script>
 </body>

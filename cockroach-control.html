@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockroach Control - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .kitchen-page {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .kitchen-left {
+            width: 320px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .kitchen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .kitchen-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .kitchen-rating {
+            font-size: 13px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .instant-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .instant-top {
+            background: #1e8f52;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .instant-bottom {
+            font-size: 11px;
+            color: #334155;
+            padding: 4px 12px;
+            font-weight: 500;
+        }
+
+        .warranty-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fdf2e9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .view-services-btn {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+            transition: background 0.2s;
+        }
+
+        .view-services-btn:hover {
+            background: #7c3aed;
+        }
+
+        .kitchen-right {
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .kitchen-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 450px;
+            margin-bottom: 40px;
+        }
+
+        .kitchen-banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .kitchen-banner-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .banner-text-bottom {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            text-align: left;
+            z-index: 2;
+            color: white;
+        }
+
+        .banner-text-bottom h2 {
+            font-size: 32px;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.2;
+            opacity: 0.9;
+        }
+
+        .banner-text-bottom h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 5px 0 0 0;
+            line-height: 1.2;
+        }
+
+        .slider-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        .slider-progress {
+            height: 100%;
+            width: 80%;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .section-box {
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body style="background-color: #fdfbf7;">
+
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
+        </div>
+        <div class="search-container" id="header-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search for services">
+        </div>
+        <div class="header-actions">
+            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+            <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="kitchen-page">
+        <!-- Left Sidebar -->
+        <div class="kitchen-left">
+            <div class="kitchen-header">
+                <div>
+                    <h1 class="kitchen-title">Cockroach<br>Control</h1>
+                    <div class="kitchen-rating">
+                        <i class="fa-solid fa-star" style="font-size: 11px;"></i>
+                        <strong>4.84</strong> (1.5 M bookings)
+                    </div>
+                </div>
+                <div class="instant-badge">
+                    <div class="instant-top"><i class="fa-solid fa-bolt"></i> Instant</div>
+                    <div class="instant-bottom">In 78 mins</div>
+                </div>
+            </div>
+
+            <div class="warranty-box">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>60 days warranty</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <button class="view-services-btn" onclick="document.getElementById('services-section').scrollIntoView({behavior: 'smooth'})">View Services</button>
+        </div>
+
+        <!-- Right Content -->
+        <div class="kitchen-right">
+            <!-- Video Banner -->
+            <div class="kitchen-banner">
+                <img src="images/cleaning.jpg" alt="Banner" class="kitchen-banner-img">
+                <div style="position: absolute; top: 20px; left: 20px; z-index: 3; background: #000; color: #fff; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 14px;">UC</div>
+                
+                <div class="kitchen-banner-content">
+                    <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; position: absolute; top: 40%; left: 85%; transform: translate(-50%, -50%);">
+                        <i class="fa-solid fa-play" style="color: white; font-size: 24px; margin-left: 5px;"></i>
+                    </div>
+                </div>
+
+                <div class="banner-text-bottom">
+                    <h2>Book Urban Company</h2>
+                    <h1>Smart Pest Control</h1>
+                </div>
+
+                <div class="slider-indicator">
+                    <div class="slider-progress"></div>
+                </div>
+            </div>
+            
+            <!-- Services Section -->
+            <div id="services-section" class="section-box">
+                <h2 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 25px;">Kitchen/Bathroom</h2>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Cockroach control (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.79</span>
+                            <span style="text-decoration: underline dashed;">(168K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,249
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Treatment will be completed in 2 visits with 2 weeks of gap</li>
+                            <li>We'll remove utensils before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Cockroach Control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">6 options</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-top: 20px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Cockroach control (no utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.80</span>
+                            <span style="text-decoration: underline dashed;">(97K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹999
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Treatment will be completed in 2 visits with 2 weeks of gap</li>
+                            <li>Excludes removal of utensils & objects before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Cockroach Control no utensil removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">6 options</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apartment/Bunglow Section -->
+            <div id="apartment-bunglow-section" class="section-box">
+                <h2 style="font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 25px;">Apartment/Bunglow</h2>
+                
+                <!-- Service 1 -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Apartment cockroach control (Utensil removal by customer)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.80</span>
+                            <span style="text-decoration: underline dashed;">(75K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,549
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Spray treatment followed by gel treatment after 2 weeks</li>
+                            <li>Excludes removal of utensils & objects before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Apartment cockroach control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('apartment-cockroach-control-utensil-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">5 options</div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px 0; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bungalow cockroach control (Utensil removal by customer)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.75</span>
+                            <span style="text-decoration: underline dashed;">(2K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹2,249
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Spray treatment followed by gel treatment after 2 weeks</li>
+                            <li>Excludes removal of utensils & objects before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Bungalow cockroach control" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('bungalow-cockroach-control-utensil-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">4 options</div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px 0; border-bottom: 1px dashed #cbd5e1;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Apartment cockroach control (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.79</span>
+                            <span style="text-decoration: underline dashed;">(104K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹1,799
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Spray treatment followed by gel treatment after 2 weeks</li>
+                            <li>We'll remove utensils before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Apartment cockroach control with utensil removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">5 options</div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-top: 20px;">
+                    <div style="flex: 1; padding-right: 20px;">
+                        <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">Bungalow cockroach control (with utensil removal)</h3>
+                        <div style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #64748b; margin-bottom: 10px;">
+                            <i class="fa-solid fa-star" style="color: #6b21a8;"></i>
+                            <span style="font-weight: 500; color: #475569;">4.72</span>
+                            <span style="text-decoration: underline dashed;">(3K reviews)</span>
+                        </div>
+                        <div style="font-size: 13px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+                            Starts at ₹2,499
+                        </div>
+                        <ul style="margin: 0; padding: 0 0 0 18px; color: #475569; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+                            <li>Spray treatment followed by gel treatment after 2 weeks</li>
+                            <li>We'll remove utensils before the service begins</li>
+                        </ul>
+                        <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
+                    </div>
+                    <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
+                        <img src="images/cleaning.jpg" alt="Bungalow cockroach control with utensil removal" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <button onclick="document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.remove('hidden')" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
+                        <div style="font-size: 11px; color: #64748b; margin-top: 5px;">4 options</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Cockroach control (with utensil removal) modal -->
+    <div id="kitchen-bathroom-cockroach-control-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; justify-content: center; align-items: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <i class="fa-solid fa-play" style="color: white; font-size: 24px; margin-left: 5px;"></i>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Cockroach control (with utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (168K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="kitchen-bathroom-cockroach-control-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">Only kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (111K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1249</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - Only kitchen', 1249); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bathroom &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.78 (20K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1399</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - 1 bathroom & kitchen', 1399); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.78 (27K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1499</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - 2 bathrooms & kitchen', 1499); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.83 (7K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1599</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - 3 bathrooms & kitchen', 1599); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.65 (876 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1699</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - 4 bathrooms & kitchen', 1699); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 6 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.57 (591 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1799</div>
+                            <button onclick="addToCart('Cockroach control (with utensil removal) - 5 bathrooms & kitchen', 1799); document.getElementById('kitchen-bathroom-cockroach-control-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cockroach control (no utensil removal) modal -->
+    <div id="kitchen-bathroom-cockroach-control-no-utensil-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 20px; left: 20px; z-index: 1;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: white; margin: 0; line-height: 1.2; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">Want long lasting relief<br><span style="background-color: #4a8f82; padding: 2px 5px; border-radius: 4px; display: inline-block; margin-top: 5px;">from cockroaches & ants?</span></h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Cockroach control (no utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (97K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="kitchen-bathroom-cockroach-control-no-utensil-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">Only kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.81 (61K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹999</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - Only kitchen', 999); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bathroom &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (13K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1149</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - 1 bathroom & kitchen', 1149); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (17K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1249</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - 2 bathrooms & kitchen', 1249); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.83 (7K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1349</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - 3 bathrooms & kitchen', 1349); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.65 (876 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1449</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - 4 bathrooms & kitchen', 1449); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 6 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bathrooms &amp; kitchen</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.57 (591 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1549</div>
+                            <button onclick="addToCart('Cockroach control (no utensil removal) - 5 bathrooms & kitchen', 1549); document.getElementById('kitchen-bathroom-cockroach-control-no-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Apartment cockroach control (Utensil removal by customer) modal -->
+    <div id="apartment-cockroach-control-utensil-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Apartment cockroach control (Utensil removal by customer)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (75K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('apartment-cockroach-control-utensil-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('apartment-cockroach-control-utensil-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="apartment-cockroach-control-utensil-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.82 (14K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1549</div>
+                            <button onclick="addToCart('Apartment cockroach control (Utensil removal) - 1 bhk', 1549); document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (35K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1649</div>
+                            <button onclick="addToCart('Apartment cockroach control (Utensil removal) - 2 bhk', 1649); document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (23K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1749</div>
+                            <button onclick="addToCart('Apartment cockroach control (Utensil removal) - 3 bhk', 1749); document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.75 (4K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1849</div>
+                            <button onclick="addToCart('Apartment cockroach control (Utensil removal) - 4 bhk', 1849); document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.68 (1K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1949</div>
+                            <button onclick="addToCart('Apartment cockroach control (Utensil removal) - 5 bhk', 1949); document.getElementById('apartment-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bungalow cockroach control (Utensil removal by customer) modal -->
+    <div id="bungalow-cockroach-control-utensil-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('bungalow-cockroach-control-utensil-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 20px; left: 20px; z-index: 1;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: white; margin: 0; line-height: 1.2; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">Want long lasting relief<br><span style="background-color: #4a8f82; padding: 2px 5px; border-radius: 4px; display: inline-block; margin-top: 5px;">from cockroaches & ants?</span></h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Bungalow cockroach control (Utensil removal by customer)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.75 (2K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('bungalow-cockroach-control-utensil-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('bungalow-cockroach-control-utensil-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="bungalow-cockroach-control-utensil-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2000-3000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.77 (2K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2249</div>
+                            <button onclick="addToCart('Bungalow cockroach control (Utensil removal) - 2000-3000 sq. ft.', 2249); document.getElementById('bungalow-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3000-4000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.69 (348 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2448</div>
+                            <button onclick="addToCart('Bungalow cockroach control (Utensil removal) - 3000-4000 sq. ft.', 2448); document.getElementById('bungalow-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4000-5000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (109 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2849</div>
+                            <button onclick="addToCart('Bungalow cockroach control (Utensil removal) - 4000-5000 sq. ft.', 2849); document.getElementById('bungalow-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5000+ sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.75 (45 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3249</div>
+                            <button onclick="addToCart('Bungalow cockroach control (Utensil removal) - 5000+ sq. ft.', 3249); document.getElementById('bungalow-cockroach-control-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Apartment cockroach control (with utensil removal) modal -->
+    <div id="apartment-cockroach-control-with-utensil-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 20px; left: 20px; z-index: 1;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: white; margin: 0; line-height: 1.2; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">Book Urban Company<br><span style="background-color: #4a8f82; padding: 2px 5px; border-radius: 4px; display: inline-block; margin-top: 5px;">Smart Pest Control</span></h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Apartment cockroach control (with utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (104K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('apartment-cockroach-control-with-utensil-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('apartment-cockroach-control-with-utensil-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="apartment-cockroach-control-with-utensil-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">1 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.80 (20K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1799</div>
+                            <button onclick="addToCart('Apartment cockroach control (with utensil removal) - 1 bhk', 1799); document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.79 (50K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1899</div>
+                            <button onclick="addToCart('Apartment cockroach control (with utensil removal) - 2 bhk', 1899); document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.78 (31K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹1999</div>
+                            <button onclick="addToCart('Apartment cockroach control (with utensil removal) - 3 bhk', 1999); document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.76 (5K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2099</div>
+                            <button onclick="addToCart('Apartment cockroach control (with utensil removal) - 4 bhk', 2099); document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 5 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5 bhk</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.70 (1K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2199</div>
+                            <button onclick="addToCart('Apartment cockroach control (with utensil removal) - 5 bhk', 2199); document.getElementById('apartment-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bungalow cockroach control (with utensil removal) modal -->
+    <div id="bungalow-cockroach-control-with-utensil-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: flex-end; justify-content: center;">
+        <div class="modal-content" style="background: #fdfcf7; width: 100%; max-width: 500px; height: 90vh; border-radius: 20px 20px 0 0; overflow-y: auto; position: relative; padding-bottom: 30px;">
+            <button onclick="document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="position: relative; height: 260px; width: 100%;">
+                <img src="images/cleaning.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 20px; left: 20px; z-index: 1;">
+                    <h3 style="font-size: 20px; font-weight: 700; color: white; margin: 0; line-height: 1.2; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">Want long lasting relief<br><span style="background-color: #4a8f82; padding: 2px 5px; border-radius: 4px; display: inline-block; margin-top: 5px;">from cockroaches & ants?</span></h3>
+                </div>
+            </div>
+            
+            <div style="padding: 25px; position: relative; z-index: 2;">
+                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #000; line-height: 1.3;">Bungalow cockroach control (with utensil removal)</h2>
+                <div style="font-size: 13px; color: #666; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.72 (3K reviews)</div>
+                
+                <div style="position: relative;">
+                    <button onclick="document.getElementById('bungalow-cockroach-control-with-utensil-options').scrollBy({left: -160, behavior: 'smooth'})" style="position: absolute; left: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="document.getElementById('bungalow-cockroach-control-with-utensil-options').scrollBy({left: 160, behavior: 'smooth'})" style="position: absolute; right: -15px; top: 40%; transform: translateY(-50%); background: white; border: 1px solid #e0e0e0; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <div id="bungalow-cockroach-control-with-utensil-options" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; scrollbar-width: none; scroll-behavior: smooth;">
+                        <!-- 1 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">2000-3000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.73 (2K reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2499</div>
+                            <button onclick="addToCart('Bungalow cockroach control (with utensil removal) - 2000-3000 sq. ft.', 2499); document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 2 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">3000-4000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.73 (493 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹2849</div>
+                            <button onclick="addToCart('Bungalow cockroach control (with utensil removal) - 3000-4000 sq. ft.', 2849); document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 3 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">4000-5000 sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.77 (101 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3149</div>
+                            <button onclick="addToCart('Bungalow cockroach control (with utensil removal) - 4000-5000 sq. ft.', 3149); document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                        <!-- 4 -->
+                        <div style="min-width: 140px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            <h4 style="font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #000;">5000+ sq. ft.</h4>
+                            <div style="font-size: 11px; color: #666; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6a1b9a;"></i> 4.70 (45 reviews)</div>
+                            <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px; color: #000;">₹3449</div>
+                            <button onclick="addToCart('Bungalow cockroach control (with utensil removal) - 5000+ sq. ft.', 3449); document.getElementById('bungalow-cockroach-control-with-utensil-modal').classList.add('hidden')" style="width: 100%; padding: 8px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .hidden { display: none !important; }
+        .modal-overlay { transition: opacity 0.3s ease; }
+    </style>
+    <script src="common.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
