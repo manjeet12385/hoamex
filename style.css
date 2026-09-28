@@ -2518,3 +2518,18 @@ p, h1, h2, h3, h4, h5, h6, span, div {
     font-size: 14px;
     background: transparent;
 }
+
+
+/* Persistent Fixed Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+/* Ensure body content starts below header */
+body {
+    padding-top: 70px; /* adjust based on header height */
+}
