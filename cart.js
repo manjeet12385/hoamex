@@ -168,8 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (!qtyCtrl) {
                     qtyCtrl = document.createElement('div');
-                    qtyCtrl.className = 'qty-control-inline';
-                    qtyCtrl.style.cssText = 'display: flex; align-items: center; justify-content: space-between; width: 80px; background: #fdf5ff; border: 1.5px solid #d0d5ff; border-radius: 7px; overflow: hidden; height: 35px; margin: 0 auto;';
+                    let extraStyles = '';
+                    if (btn.style.position === 'absolute') {
+                        extraStyles = `position: absolute; bottom: ${btn.style.bottom}; left: ${btn.style.left}; transform: ${btn.style.transform}; z-index: ${btn.style.zIndex || 2}; margin: ${btn.style.margin};`;
+                    }
+                    qtyCtrl.style.cssText = `display: flex; align-items: center; justify-content: space-between; width: 90px; background: #fdf5ff; border: 1.5px solid #d0d5ff; border-radius: 7px; overflow: hidden; height: 35px; margin: 0 auto; box-shadow: 0 2px 4px rgba(0,0,0,0.05); ${extraStyles}`;
                     // We insert it right after the button
                     btn.parentNode.insertBefore(qtyCtrl, btn.nextSibling);
                 }
