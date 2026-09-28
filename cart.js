@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (!qtyCtrl) {
                     qtyCtrl = document.createElement('div');
+                    qtyCtrl.className = 'qty-control-inline';
                     let extraStyles = '';
                     if (btn.style.position === 'absolute') {
                         extraStyles = `position: absolute; bottom: ${btn.style.bottom}; left: ${btn.style.left}; transform: ${btn.style.transform}; z-index: ${btn.style.zIndex || 2}; margin: ${btn.style.margin};`;
