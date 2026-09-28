@@ -2107,25 +2107,26 @@ img {
     }
     .services-grid {
         display: grid !important;
-        grid-template-rows: repeat(2, 1fr) !important;
-        grid-template-columns: none !important;
-        grid-auto-columns: 35% !important; /* 35% means they see almost 3 items horizontally, allowing sliding */
-        grid-auto-flow: column !important;
-        overflow-x: auto !important;
-        scrollbar-width: none !important; /* Firefox */
-        gap: 15px !important;
-        padding-bottom: 15px !important;
-        scroll-snap-type: x mandatory;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+        overflow-x: visible !important;
     }
     .services-grid::-webkit-scrollbar {
         display: none !important; /* Chrome/Safari */
     }
     .service-item {
-        scroll-snap-align: start;
-        border: 1px solid #eee; /* optional: adding a small border to make cards distinct while sliding */
         border-radius: 12px;
         padding: 10px;
         background: #fff;
+    }
+    .service-item .service-name,
+    .service-item-sidebar span,
+    .service-item p {
+        font-size: 10px !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
     }
     .service-icon img {
         width: 60px !important; /* Make icons slightly smaller for 2-column grid to fit well */
@@ -2671,5 +2672,18 @@ html, body {
     }
     .section-heading {
         font-size: 18px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .service-name {
+        font-size: 11px !important;
+        word-break: break-word !important;
+        line-height: 1.3 !important;
+    }
+    .service-icon {
+        width: 55px !important;
+        height: 55px !important;
     }
 }
