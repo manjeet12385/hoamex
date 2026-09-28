@@ -119,7 +119,7 @@
                             <div class="plan-price">Starts at ₹1,198 <strike>₹1,290</strike></div>
                         </div>
                         <div class="add-btn-container">
-                            <button class="add-btn" id="open-options-modal-btn">Add</button>
+                            <button onclick="addToCart('Annual plan [2 times/year]', 1290)" class="add-btn" id="open-options-modal-btn">Add</button>
                             <span>10 options</span>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                                 <div class="plan-price">₹1,198 <strike>₹1,290</strike> &bull; <span style="font-weight: 400; color: #666; font-size: 13px;">2 hrs</span></div>
                             </div>
                             <div class="add-btn-container">
-                                <button class="add-btn" style="padding: 8px 30px;">Add</button>
+                                <button onclick="addToCart('Foam-jet service (2 ACs)', 1290)" class="add-btn" style="padding: 8px 30px;">Add</button>
                             </div>
                         </div>
                         
@@ -206,7 +206,7 @@
                                     <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
                                     <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
                                 </div>
-                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('Foam-jet service (3 ACs)', 549)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                                     <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
                                     <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
                                 </div>
-                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('Foam-jet service (4 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                                     <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
                                     <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
                                 </div>
-                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('Foam-jet service (5 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             </div>
                         </div>
                     </div>
@@ -269,7 +269,7 @@
                                 <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
                                     <img src="images/slider_ac.png" alt="AC Repair" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
                                 </div>
-                                <button id="add-ac-repair-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('AC repair', 299)" id="add-ac-repair-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                                 <span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
                             </div>
                         </div>
@@ -287,7 +287,7 @@
                                 <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
                                     <img src="images/ac.jpg" alt="Gas Refill" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px; background: #f8f8f8;">
                                 </div>
-                                <button style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('Gas refill & check-up', 3000)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             </div>
                         </div>
                     </div>
@@ -312,7 +312,7 @@
                                 <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
                                     <img src="images/slider_ac.png" alt="AC Installation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
                                 </div>
-                                <button id="open-install-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('AC installation', 1599)" id="open-install-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                                 <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
                             </div>
                         </div>
@@ -333,7 +333,7 @@
                                 <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
                                     <img src="images/slider_ac.png" alt="AC Uninstallation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
                                 </div>
-                                <button id="open-uninstall-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+                                <button onclick="addToCart('AC uninstallation', 699)" id="open-uninstall-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                                 <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
                             </div>
                         </div>
@@ -384,61 +384,61 @@
                         <h4>1 AC</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹1198 <strike>₹1298</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('1 AC', 1298)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>2 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹2196 <strike>₹2596</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('2 ACs', 2596)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>3 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹2994 <strike>₹3894</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('3 ACs', 3894)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>4 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹3592 <strike>₹5192</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('4 ACs', 5192)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>5 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹4490 <strike>₹6490</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('5 ACs', 6490)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>6 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹5388 <strike>₹7788</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('6 ACs', 7788)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>7 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹6286 <strike>₹9086</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('7 ACs', 9086)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>8 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹7184 <strike>₹10384</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('8 ACs', 10384)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>9 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹8082 <strike>₹11682</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('9 ACs', 11682)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>10 ACs</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
                         <div class="option-price">₹8980 <strike>₹12980</strike></div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('10 ACs', 12980)" class="option-add-btn">Add</button>
                     </div>
                 </div>
             </div>
@@ -474,13 +474,13 @@
                         <h4>Split AC</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(141K reviews)</span></div>
                         <div class="option-price">₹2499</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Split AC', 2499)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>Window AC</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(11K reviews)</span></div>
                         <div class="option-price">₹1599</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Window AC', 1599)" class="option-add-btn">Add</button>
                     </div>
                 </div>
             </div>
@@ -516,13 +516,13 @@
                         <h4>Split AC</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(132K reviews)</span></div>
                         <div class="option-price">₹899</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Split AC', 899)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>Window AC</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.82 <span>(9K reviews)</span></div>
                         <div class="option-price">₹699</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Window AC', 699)" class="option-add-btn">Add</button>
                     </div>
                 </div>
             </div>
@@ -559,19 +559,19 @@
                         <h4>Less/no cooling</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(496K reviews)</span></div>
                         <div class="option-price">₹299</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Less/no cooling', 299)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>Power issue</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.72 <span>(142K reviews)</span></div>
                         <div class="option-price">₹299</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Power issue', 299)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card">
                         <h4>Unwanted noise/smell</h4>
                         <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(42K reviews)</span></div>
                         <div class="option-price">₹499</div>
-                        <button class="option-add-btn">Add</button>
+                        <button onclick="addToCart('Unwanted noise/smell', 499)" class="option-add-btn">Add</button>
                     </div>
                     <div class="option-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
                         <h4>Water leakage</h4>
