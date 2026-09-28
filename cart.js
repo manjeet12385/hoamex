@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function syncButtonsOnPage() {
-        document.querySelectorAll('.add-btn, .option-add-btn').forEach(btn => {
+        document.querySelectorAll('.add-btn, .option-add-btn, button[onclick^="addToCart"]').forEach(btn => {
             const onclickAttr = btn.getAttribute('onclick') || '';
             let title = '';
             
