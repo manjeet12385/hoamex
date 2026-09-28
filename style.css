@@ -2360,3 +2360,34 @@ p, h1, h2, h3, h4, h5, h6, span, div {
         min-width: 200px !important;
     }
 }
+
+
+/* SLIDER SCROLL FIX */
+.service-grid, .services-grid, .scroll-container {
+    -webkit-overflow-scrolling: touch !important;
+}
+.service-item, .service-item-sidebar {
+    flex-shrink: 0 !important;
+}
+@media (max-width: 768px) {
+    .service-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 15px !important;
+        padding-bottom: 10px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .service-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+    .select-service-card {
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+        overflow: hidden !important;
+    }
+    .select-service-card h3 {
+        display: none !important;
+    }
+}
