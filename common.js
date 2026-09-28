@@ -440,3 +440,73 @@ if (!window.hoamexFeaturesLoaded) {
         });
     });
 }
+
+
+// Global Location Modal Functions
+window.triggerGpsLocation = function() {
+    const locationBtn = document.querySelector('.location-btn');
+    if (!locationBtn) return;
+    
+    locationBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Locating...';
+    
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const city = data.address.city || data.address.town || data.address.state_district || 'Unknown Location';
+                        locationBtn.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${city}`;
+                        document.getElementById('location-modal').style.display = 'none';
+                        localStorage.setItem('user_location', city);
+                    })
+                    .catch(() => {
+                        locationBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Use Current Location';
+                        alert('Could not determine city from coordinates.');
+                    });
+            },
+            (error) => {
+                locationBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Use Current Location';
+                alert('Location access denied or unavailable.');
+            }
+        );
+    } else {
+        alert('Geolocation is not supported by your browser.');
+    }
+};
+
+window.setManualLocation = function() {
+    const input = document.getElementById('manual-loc-input').value.trim();
+    if (input) {
+        const locationBtn = document.querySelector('.location-btn');
+        if (locationBtn) {
+            locationBtn.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${input}`;
+            localStorage.setItem('user_location', input);
+        }
+        document.getElementById('location-modal').style.display = 'none';
+    }
+};
+
+// Check for saved location on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLoc = localStorage.getItem('user_location');
+    if (savedLoc) {
+        const locationBtn = document.querySelector('.location-btn');
+        if (locationBtn) {
+            locationBtn.innerHTML = `<i class="fa-solid fa-location-dot"></i> ${savedLoc}`;
+        }
+    }
+});
+
+// Open location modal on click
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.location-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modal = document.getElementById('location-modal');
+            if (modal) modal.style.display = 'flex';
+        });
+    });
+});

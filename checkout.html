@@ -143,7 +143,7 @@
         </div>
     </div>
 
-    <script src="common.js?v=2003"></script>
+    <script src="common.js?v=3002"></script>
     <script>
         // Set minimum date to today
         const dateInput = document.getElementById('booking-date');
@@ -346,6 +346,36 @@
         <div>managed by <strong style="color: #111; font-weight: 700;">Indian Export Webmart</strong></div>
     </div>
 </footer>
+
+    <!-- Location Modal -->
+    <div id="location-modal">
+        <div class="location-modal-box">
+            <div class="loc-modal-header">
+                <h2><i class="fa-solid fa-location-dot"></i> Select Your Location</h2>
+                <button class="loc-close-btn" onclick="document.getElementById('location-modal').style.display='none'"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="loc-gps-box" onclick="triggerGpsLocation()">
+                <div class="loc-gps-icon">
+                    <i class="fa-solid fa-location-arrow"></i>
+                </div>
+                <div class="loc-gps-text">
+                    <h4>Use Current Location</h4>
+                    <p>Using GPS for accurate address</p>
+                </div>
+            </div>
+            
+            <div class="loc-divider">
+                <span>OR ENTER MANUALLY</span>
+            </div>
+            
+            <div class="loc-input-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="manual-loc-input" placeholder="Type area, street, city or 6-digit pincode" onkeypress="if(event.key === 'Enter') setManualLocation()">
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 
