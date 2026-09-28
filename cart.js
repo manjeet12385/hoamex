@@ -28,19 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.getElementById('checkout-btn');
 
     // Make sure basic add buttons (without onclick) work on the page
-    document.querySelectorAll('.add-btn').forEach(btn => {
+    document.querySelectorAll('.add-btn, .option-add-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const onclickAttr = btn.getAttribute('onclick') || '';
             if (onclickAttr.includes('modal') || onclickAttr.includes('addToCart')) return;
 
-            const card = e.target.closest('.service-card') || e.target.closest('.svc-row');
+            const card = e.target.closest('.service-card') || e.target.closest('.svc-row') || e.target.closest('.plan-card') || e.target.closest('.option-card') || e.target.closest('.most-booked-item');
             if (card) {
-                const titleEl = card.querySelector('h4');
+                const titleEl = card.querySelector('h4, h3');
                 if (!titleEl) return;
                 const title = titleEl.innerText;
                 
                 let price = 0;
-                const priceEl = card.querySelector('.service-price span') || card.querySelector('.price span');
+                const priceEl = card.querySelector('.service-price span, .price span, .plan-price, .option-price');
                 if (priceEl) {
                     const priceText = priceEl.innerText;
                     const priceMatch = priceText.match(/\d+(,\d+)?/);
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function syncButtonsOnPage() {
-        document.querySelectorAll('.add-btn').forEach(btn => {
+        document.querySelectorAll('.add-btn, .option-add-btn').forEach(btn => {
             const onclickAttr = btn.getAttribute('onclick') || '';
             let title = '';
             
@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 title = match[1];
             } else {
                 // If it relies on DOM structure
-                const card = btn.closest('.service-card') || btn.closest('.svc-row');
+                const card = btn.closest('.service-card') || btn.closest('.svc-row') || btn.closest('.plan-card') || btn.closest('.option-card') || btn.closest('.most-booked-item');
                 if (card) {
-                    const titleEl = card.querySelector('h4');
+                    const titleEl = card.querySelector('h4, h3');
                     if (titleEl) title = titleEl.innerText;
                 }
             }
