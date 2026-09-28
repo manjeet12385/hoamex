@@ -39,9 +39,9 @@
         .instant-badge { display: inline-flex; flex-direction: column; align-items: center; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px 8px; font-size: 11px; float: right; }
         .instant-badge span:first-child { background: #00875a; color: white; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-bottom: 2px; }
         
-        .uc-cover-banner { background: #fdfaf4; border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .uc-cover-banner .text { font-size: 13px; font-weight: 600; color: #111; }
-        .uc-cover-banner .text span { color: #00875a; display: flex; align-items: center; gap: 5px; margin-bottom: 4px; font-size: 12px; font-weight: 700; }
+        .joamex-cover-banner { background: #fdfaf4; border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .joamex-cover-banner .text { font-size: 13px; font-weight: 600; color: #111; }
+        .joamex-cover-banner .text span { color: #00875a; display: flex; align-items: center; gap: 5px; margin-bottom: 4px; font-size: 12px; font-weight: 700; }
         
         .select-service-card { border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; background: white; }
         .select-service-card h3 { font-size: 13px; color: #666; font-weight: 500; margin: 0 0 15px 0; }
@@ -77,11 +77,11 @@
         .promo-banner .text { font-size: 12px; font-weight: 600; color: #111; }
         .promo-banner .text span { font-size: 11px; font-weight: 400; color: #666; display: block; margin-top: 2px; }
 
-        .uc-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: white; }
-        .uc-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
-        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
-        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        .joamex-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: white; }
+        .joamex-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
+        .joamex-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .joamex-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .joamex-promise-card ul li i { color: #00875a; font-size: 12px; }
         
         .cart-summary { border: 1px solid #eee; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
         .cart-summary .total { font-weight: 700; font-size: 16px; color: #111; }
@@ -94,12 +94,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="header-actions">
@@ -131,9 +128,9 @@
                     </div>
                 </div>
 
-                <div class="uc-cover-banner">
+                <div class="joamex-cover-banner">
                     <div class="text">
-                        <span><i class="fa-solid fa-shield"></i> UC COVER</span>
+                        <span><i class="fa-solid fa-shield"></i> Joamex COVER</span>
                         60 days warranty on all services
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: #999; font-size: 12px;"></i>
@@ -143,27 +140,27 @@
                     <h3>Select a service</h3>
                     <div class="service-grid">
                         <a href="#wooden-bed" class="service-item">
-                            <div class="service-item-img"><img src="images/carpenter.jpg" alt="Wooden bed"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Wooden bed"></div>
                             <span>Wooden bed</span>
                         </a>
                         <a href="#wardrobe" class="service-item">
-                            <div class="service-item-img"><img src="images/carpenter_icon.jpg" alt="Wardrobe"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Wardrobe"></div>
                             <span>Wardrobe</span>
                         </a>
                         <a href="#dining" class="service-item">
-                            <div class="service-item-img"><img src="images/kitchen.jpg" alt="Dining & kitchen"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Dining & kitchen"></div>
                             <span>Dining & kitchen</span>
                         </a>
                         <a href="#tables" class="service-item">
-                            <div class="service-item-img"><img src="images/carpenter.jpg" alt="Tables & chairs"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Tables & chairs"></div>
                             <span>Tables & chairs</span>
                         </a>
                         <a href="#children" class="service-item">
-                            <div class="service-item-img"><img src="images/renovation.jpg" alt="Children"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Children"></div>
                             <span>Children</span>
                         </a>
                         <a href="#living" class="service-item">
-                            <div class="service-item-img"><img src="images/cleaning.jpg" alt="Living & TV"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Living & TV"></div>
                             <span>Living & TV</span>
                         </a>
                         <a href="#outdoor" class="service-item">
@@ -171,11 +168,11 @@
                             <span>Outdoor</span>
                         </a>
                         <a href="#religious" class="service-item">
-                            <div class="service-item-img"><img src="images/carpenter.jpg" alt="Religious"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Religious"></div>
                             <span>Religious</span>
                         </a>
                         <a href="#cabinet" class="service-item">
-                            <div class="service-item-img"><img src="images/carpenter_icon.jpg" alt="Cabinet/shelving unit"></div>
+                            <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Cabinet/shelving unit"></div>
                             <span>Cabinet/shelving unit</span>
                         </a>
                     </div>
@@ -194,8 +191,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Single bed">
-                        <button class="add-btn" onclick="addToCart('Single bed assembly',449)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Single bed">
+                        <button id="open-single-bed-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -208,8 +205,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Double bed">
-                        <button class="add-btn" onclick="addToCart('Double bed assembly',599)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Double bed">
+                        <button id="open-double-bed-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -222,8 +219,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Hydraulic bed">
-                        <button class="add-btn" onclick="addToCart('Hydraulic bed assembly',1299)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Hydraulic bed">
+                        <button id="open-hydraulic-bed-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -236,8 +233,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Day/diwan bed">
-                        <button class="add-btn" onclick="addToCart('Day/diwan bed assembly',549)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Day/diwan bed">
+                        <button id="open-day-bed-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -250,7 +247,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Loft/bunk bed">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Loft/bunk bed">
                         <button class="add-btn" onclick="addToCart('Loft/bunk bed assembly', 929)">Add</button>
                     </div>
                 </div>
@@ -265,7 +262,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Single door wardrobe">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Single door wardrobe">
                         <button class="add-btn" onclick="addToCart('Single door wardrobe assembly', 599)">Add</button>
                     </div>
                 </div>
@@ -278,7 +275,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Double door wardrobe">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Double door wardrobe">
                         <button class="add-btn" onclick="addToCart('Double door wardrobe assembly', 849)">Add</button>
                     </div>
                 </div>
@@ -291,7 +288,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Three door wardrobe">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Three door wardrobe">
                         <button class="add-btn" onclick="addToCart('Three door wardrobe assembly', 949)">Add</button>
                     </div>
                 </div>
@@ -304,7 +301,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Four door wardrobe">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Four door wardrobe">
                         <button class="add-btn" onclick="addToCart('Four door wardrobe assembly', 1049)">Add</button>
                     </div>
                 </div>
@@ -317,7 +314,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" alt="Sliding door wardrobe">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Sliding door wardrobe">
                         <button class="add-btn" onclick="addToCart('Sliding door wardrobe assembly', 799)">Add</button>
                     </div>
                 </div>
@@ -332,8 +329,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Wooden dining table">
-                        <button class="add-btn" onclick="addToCart('Wooden dining table assembly',349)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Wooden dining table">
+                        <button id="open-wooden-table-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -346,8 +343,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Extendable dining table">
-                        <button class="add-btn" onclick="addToCart('Extendable dining table assembly',499)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Extendable dining table">
+                        <button id="open-extendable-table-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -360,7 +357,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Dining chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Dining chair">
                         <button class="add-btn" onclick="addToCart('Dining chair assembly',199)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -374,7 +371,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Dining table with chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Dining table with chair">
                         <button class="add-btn" onclick="addToCart('Dining table with chair assembly',699)">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
@@ -388,7 +385,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Utensil rack">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Utensil rack">
                         <button class="add-btn" onclick="addToCart('Utensil rack assembly', 269)">Add</button>
                     </div>
                 </div>
@@ -401,7 +398,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bar trolley">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bar trolley">
                         <button class="add-btn" onclick="addToCart('Bar trolley assembly', 699)">Add</button>
                     </div>
                 </div>
@@ -414,7 +411,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bar cabinet">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bar cabinet">
                         <button class="add-btn" onclick="addToCart('Bar cabinet assembly', 449)">Add</button>
                     </div>
                 </div>
@@ -427,7 +424,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bar stool">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bar stool">
                         <button class="add-btn" onclick="addToCart('Bar stool assembly', 399)">Add</button>
                     </div>
                 </div>
@@ -440,7 +437,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bar table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bar table">
                         <button class="add-btn" onclick="addToCart('Bar table assembly', 699)">Add</button>
                     </div>
                 </div>
@@ -452,7 +449,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bar table set">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bar table set">
                         <button class="add-btn" onclick="addToCart('Bar table set assembly',1099)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -468,7 +465,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Study table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Study table">
                         <button class="add-btn" onclick="addToCart('Study table assembly',449)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -482,7 +479,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Standing table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Standing table">
                         <button class="add-btn" onclick="addToCart('Standing table assembly', 999)">Add</button>
                     </div>
                 </div>
@@ -495,7 +492,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Coffee table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Coffee table">
                         <button class="add-btn" onclick="addToCart('Coffee table assembly',269)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -509,7 +506,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Side table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Side table">
                         <button class="add-btn" onclick="addToCart('Side table assembly',199)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -523,7 +520,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Office chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Office chair">
                         <button class="add-btn" onclick="addToCart('Office chair assembly',249)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -537,7 +534,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Gaming chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Gaming chair">
                         <button class="add-btn" onclick="addToCart('Gaming chair assembly', 799)">Add</button>
                     </div>
                 </div>
@@ -550,7 +547,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Chair">
                         <button class="add-btn" onclick="addToCart('Chair assembly', 249)">Add</button>
                     </div>
                 </div>
@@ -563,7 +560,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Wheels fitting">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Wheels fitting">
                         <button class="add-btn" onclick="addToCart('Table/chair wheels fitting', 199)">Add</button>
                     </div>
                 </div>
@@ -576,7 +573,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Stool">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Stool">
                         <button class="add-btn" onclick="addToCart('Stool assembly',179)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -590,7 +587,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bench">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bench">
                         <button class="add-btn" onclick="addToCart('Bench assembly',249)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -606,7 +603,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Changing table">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Changing table">
                         <button class="add-btn" onclick="addToCart('Changing table assembly', 299)">Add</button>
                     </div>
                 </div>
@@ -619,7 +616,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Cot">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Cot">
                         <button class="add-btn" onclick="addToCart('Cot assembly', 399)">Add</button>
                     </div>
                 </div>
@@ -632,7 +629,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="High chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="High chair">
                         <button class="add-btn" onclick="addToCart('High chair assembly', 279)">Add</button>
                     </div>
                 </div>
@@ -645,7 +642,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Children bed">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Children bed">
                         <button class="add-btn" onclick="addToCart('Children's bed assembly',449)">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
@@ -659,7 +656,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Children desk & chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Children desk & chair">
                         <button class="add-btn" onclick="addToCart('Children\'s desk & chair assembly', 729)">Add</button>
                     </div>
                 </div>
@@ -674,7 +671,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Sofa">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Sofa">
                         <button class="add-btn" onclick="addToCart('Sofa assembly',449)">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
@@ -688,7 +685,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Chaise lounger">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Chaise lounger">
                         <button class="add-btn" onclick="addToCart('Chaise lounger assembly', 449)">Add</button>
                     </div>
                 </div>
@@ -701,7 +698,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="L-shaped sofa">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="L-shaped sofa">
                         <button class="add-btn" onclick="addToCart('L-shaped sofa assembly',599)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -715,7 +712,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Corner sofa">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Corner sofa">
                         <button class="add-btn" onclick="addToCart('Corner sofa assembly',599)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -729,7 +726,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Sofa cum bed">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Sofa cum bed">
                         <button class="add-btn" onclick="addToCart('Sofa cum bed assembly',549)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -743,7 +740,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Recliner">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Recliner">
                         <button class="add-btn" onclick="addToCart('Recliner assembly',399)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -757,7 +754,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="TV bench">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="TV bench">
                         <button class="add-btn" onclick="addToCart('TV bench assembly',449)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -771,7 +768,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="TV unit">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="TV unit">
                         <button class="add-btn" onclick="addToCart('TV unit assembly',699)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -787,7 +784,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Swing chair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Swing chair">
                         <button class="add-btn" onclick="addToCart('Swing chair assembly & installation',449)">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
@@ -801,7 +798,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Outdoor table & chairs">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Outdoor table & chairs">
                         <button class="add-btn" onclick="addToCart('Outdoor table & chairs assembly',219)">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
@@ -815,7 +812,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Patio dining set">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Patio dining set">
                         <button class="add-btn" onclick="addToCart('Patio dining set assembly', 749)">Add</button>
                     </div>
                 </div>
@@ -830,7 +827,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Mandir">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Mandir">
                         <button class="add-btn" onclick="addToCart('Mandir assembly & installation', 199)">Add</button>
                     </div>
                 </div>
@@ -843,7 +840,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Pooja shelf">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Pooja shelf">
                         <button class="add-btn" onclick="addToCart('Pooja shelf assembly & installation', 279)">Add</button>
                     </div>
                 </div>
@@ -858,8 +855,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Cabinet">
-                        <button class="add-btn" onclick="addToCart('Cabinet assembly',499)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Cabinet">
+                        <button id="open-cabinet-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
                 </div>
@@ -872,7 +869,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Wall shelf">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Wall shelf">
                         <button class="add-btn" onclick="addToCart('Wall shelf installation', 249)">Add</button>
                     </div>
                 </div>
@@ -885,8 +882,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Shelving unit">
-                        <button class="add-btn" onclick="addToCart('Shelving unit assembly & installation',199)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Shelving unit">
+                        <button id="open-shelving-unit-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -899,8 +896,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Wall cabinet">
-                        <button class="add-btn" onclick="addToCart('Wall cabinet assembly & installation',249)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Wall cabinet">
+                        <button id="open-wall-cabinet-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -913,8 +910,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Mirror cabinet">
-                        <button class="add-btn" onclick="addToCart('Mirror cabinet assembly & installation',499)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Mirror cabinet">
+                        <button id="open-mirror-cabinet-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -927,8 +924,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Wash basin cabinet">
-                        <button class="add-btn" onclick="addToCart('Wash basin cabinet assembly & installation',449)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Wash basin cabinet">
+                        <button id="open-wash-basin-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -941,7 +938,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Dresser cabinet">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Dresser cabinet">
                         <button class="add-btn" onclick="addToCart('Dresser/dressing cabinet assembly & installation', 499)">Add</button>
                     </div>
                 </div>
@@ -954,7 +951,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Magazine rack">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Magazine rack">
                         <button class="add-btn" onclick="addToCart('Magazine & newspaper rack assembly', 299)">Add</button>
                     </div>
                 </div>
@@ -967,7 +964,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Hanging screen">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Hanging screen">
                         <button class="add-btn" onclick="addToCart('Hanging screen & dividers assembly & installation', 649)">Add</button>
                     </div>
                 </div>
@@ -980,8 +977,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Shoe rack">
-                        <button class="add-btn" onclick="addToCart('Shoe rack assembly',199)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Shoe rack">
+                        <button id="open-shoe-rack-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -994,8 +991,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Shoe cabinet">
-                        <button class="add-btn" onclick="addToCart('Shoe cabinet assembly',299)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Shoe cabinet">
+                        <button id="open-shoe-cabinet-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
                 </div>
@@ -1008,8 +1005,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Book shelf">
-                        <button class="add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation',249)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Book shelf">
+                        <button id="open-bookshelf-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">5 options</div>
                     </div>
                 </div>
@@ -1022,8 +1019,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" alt="Bookcase with door">
-                        <button class="add-btn" onclick="addToCart('Bookcase with door assembly & installation',499)">Add</button>
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" alt="Bookcase with door">
+                        <button id="open-bookcase-modal-btn" class="add-btn">Add</button>
                         <div class="options-text">5 options</div>
                     </div>
                 </div>
@@ -1039,10 +1036,10 @@
                     </div>
                 </div>
 
-                <div class="uc-promise-card">
+                <div class="joamex-promise-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <h3 style="margin: 0;">UC Promise</h3>
-                        <img src="images/beauty.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
+                        <h3 style="margin: 0;">Joamex Promise</h3>
+                        <img src="images/new_carpenter_icon.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
@@ -1060,11 +1057,11 @@
         </div>
     </main>
     
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -1083,9 +1080,823 @@
         </div>
     </div>
 
+    <!-- Single Bed Assembly Modal -->
+    <div id="single-bed-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-single-bed-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Single bed assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 (4K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-single-bed" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Without storage</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(3K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹449</div>
+                        <button class="option-add-btn" onclick="addToCart('Single bed assembly - Without storage', 449)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">With storage</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(1K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Single bed assembly - With storage', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one single bed with/without storage</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of metal bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+    </div>
+</div>
+
+    <!-- Double Bed Assembly Modal -->
+    <div id="double-bed-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-double-bed-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Double bed assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 (17K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-right-double-bed-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-double-bed" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Without storage</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 <span style="color: #777;">(10K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹599</div>
+                        <button class="option-add-btn" onclick="addToCart('Double bed assembly - Without storage', 599)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">With storage</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 <span style="color: #777;">(7K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹899</div>
+                        <button class="option-add-btn" onclick="addToCart('Double bed assembly - With storage', 899)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one double bed with/without storage</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of metal bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hydraulic Bed Assembly Modal -->
+    <div id="hydraulic-bed-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-hydraulic-bed-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Hydraulic bed assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 (4K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-right-hydraulic-bed-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-hydraulic-bed" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Single bed</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 <span style="color: #777;">(89 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹1299</div>
+                        <button class="option-add-btn" onclick="addToCart('Hydraulic bed assembly - Single bed', 1299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Double bed</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(4K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹1499</div>
+                        <button class="option-add-btn" onclick="addToCart('Hydraulic bed assembly - Double bed', 1499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one hydraulic bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of metal bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Day/Diwan Bed Assembly Modal -->
+    <div id="day-bed-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-day-bed-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Day/diwan bed assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 (539 reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-right-day-bed-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-day-bed" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Day bed</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(303 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Day/diwan bed assembly - Day bed', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Day bed with 2 drawers</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.78 <span style="color: #777;">(168 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹919</div>
+                        <button class="option-add-btn" onclick="addToCart('Day/diwan bed assembly - Day bed with 2 drawers', 919)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Day bed with 3+ drawers</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.71 <span style="color: #777;">(68 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹1049</div>
+                        <button class="option-add-btn" onclick="addToCart('Day/diwan bed assembly - Day bed with 3+ drawers', 1049)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one day bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of metal bed</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Wooden Dining Table Assembly Modal -->
+    <div id="wooden-table-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-wooden-table-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Wooden dining table assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 (2K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-right-wooden-table-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-wooden-table" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 seater table</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(472 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹349</div>
+                        <button class="option-add-btn" onclick="addToCart('Wooden dining table assembly - 2 seater table', 349)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 seater table</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 <span style="color: #777;">(981 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹449</div>
+                        <button class="option-add-btn" onclick="addToCart('Wooden dining table assembly - 4 seater table', 449)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">6+ seater table</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 <span style="color: #777;">(459 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Wooden dining table assembly - 6+ seater table', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular dining table</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of dining chairs not included</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Extendable Dining Table Assembly Modal -->
+    <div id="extendable-table-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-extendable-table-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Extendable dining table assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.78 (298 reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-right-extendable-table-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-extendable-table" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 seater table</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.83 <span style="color: #777;">(74 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹499</div>
+                        <button class="option-add-btn" onclick="addToCart('Extendable dining table assembly - 2 seater table', 499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4+ seater table</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(224 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹649</div>
+                        <button class="option-add-btn" onclick="addToCart('Extendable dining table assembly - 4+ seater table', 649)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular dining table</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of dining chairs not included</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bookcase Assembly Modal -->
+    <div id="bookcase-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-bookcase-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Bookcase with door assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 (1K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-bookcase-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-bookcase-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                
+                <div id="modal-carousel-bookcase" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 shelves with single door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(254 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹519</div>
+                        <button class="option-add-btn" onclick="addToCart('Bookcase with door assembly - 2 shelves with single door', 519)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 shelves with double door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(331 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹749</div>
+                        <button class="option-add-btn" onclick="addToCart('Bookcase with door assembly - 4 shelves with double door', 749)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">6 shelves with glass door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(395 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹499</div>
+                        <button class="option-add-btn" onclick="addToCart('Bookcase with door assembly - 6 shelves with glass door', 499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">12 shelves with glass door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.74 <span style="color: #777;">(102 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹769</div>
+                        <button class="option-add-btn" onclick="addToCart('Bookcase with door assembly - 12 shelves with glass door', 769)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">24 shelves with glass door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.96 <span style="color: #777;">(24 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹1199</div>
+                        <button class="option-add-btn" onclick="addToCart('Bookcase with door assembly - 24 shelves with glass door', 1199)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one bookcase with door</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Clean-up after service</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Assembly of metal bookcase</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bookshelf Assembly Modal -->
+    <div id="bookshelf-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-bookshelf-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Book shelf/bookcase assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 (4K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-bookshelf-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-bookshelf-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                
+                <div id="modal-carousel-bookshelf" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Single shelf</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.72 <span style="color: #777;">(194 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹249</div>
+                        <button class="option-add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation - Single shelf', 249)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">3 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 <span style="color: #777;">(1K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹299</div>
+                        <button class="option-add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation - 3 shelves', 299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">6 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 <span style="color: #777;">(2K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹399</div>
+                        <button class="option-add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation - 6 shelves', 399)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">9 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 <span style="color: #777;">(139 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹499</div>
+                        <button class="option-add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation - 9 shelves', 499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">12 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(71 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹599</div>
+                        <button class="option-add-btn" onclick="addToCart('Book shelf/bookcase assembly & installation - 12 shelves', 599)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Shoe Cabinet Assembly Modal -->
+    <div id="shoe-cabinet-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-shoe-cabinet-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Shoe cabinet assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 (3K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-shoe-cabinet-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-shoe-cabinet-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-shoe-cabinet" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 compartments</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(775 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹299</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe cabinet assembly - 2 compartments', 299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">3 compartments</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.85 <span style="color: #777;">(1K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹349</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe cabinet assembly - 3 compartments', 349)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 compartments</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.91 <span style="color: #777;">(511 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹449</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe cabinet assembly - 4 compartments', 449)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4+ compartments</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.88 <span style="color: #777;">(139 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe cabinet assembly - 4+ compartments', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Shoe Rack Assembly Modal -->
+    <div id="shoe-rack-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-shoe-rack-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Shoe rack assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 (3K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-shoe-rack" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Regular</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(3K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹199</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe rack assembly - Regular', 199)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Tilt out</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(561 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹349</div>
+                        <button class="option-add-btn" onclick="addToCart('Shoe rack assembly - Tilt out', 349)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Wash Basin Cabinet Assembly Modal -->
+    <div id="wash-basin-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-wash-basin-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Wash basin cabinet assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.72 (293 reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-wash-basin" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">With 2 drawers</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.73 <span style="color: #777;">(254 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹449</div>
+                        <button class="option-add-btn" onclick="addToCart('Wash basin cabinet assembly & installation - With 2 drawers', 449)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">With shelf</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.68 <span style="color: #777;">(39 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹519</div>
+                        <button class="option-add-btn" onclick="addToCart('Wash basin cabinet assembly & installation - With shelf', 519)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mirror Cabinet Assembly Modal -->
+    <div id="mirror-cabinet-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-mirror-cabinet-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Mirror cabinet assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 (520 reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-mirror-cabinet" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">1 door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.83 <span style="color: #777;">(422 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹499</div>
+                        <button class="option-add-btn" onclick="addToCart('Mirror cabinet assembly & installation - 1 door', 499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 doors</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 <span style="color: #777;">(98 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹699</div>
+                        <button class="option-add-btn" onclick="addToCart('Mirror cabinet assembly & installation - 2 doors', 699)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cabinet Assembly Modal -->
+    <div id="cabinet-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-cabinet-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Cabinet assembly</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 (6K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-cabinet-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-cabinet-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-cabinet" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 doors</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.88 <span style="color: #777;">(3K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Cabinet assembly - 2 doors', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">3 doors</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 <span style="color: #777;">(2K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹599</div>
+                        <button class="option-add-btn" onclick="addToCart('Cabinet assembly - 3 doors', 599)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Glass door</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 <span style="color: #777;">(173 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹549</div>
+                        <button class="option-add-btn" onclick="addToCart('Cabinet assembly - Glass door', 549)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 doors</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.89 <span style="color: #777;">(100 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹749</div>
+                        <button class="option-add-btn" onclick="addToCart('Cabinet assembly - 4 doors', 749)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Shelving Unit Assembly Modal -->
+    <div id="shelving-unit-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-shelving-unit-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Shelving unit assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 (6K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-shelving-unit-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-shelving-unit-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-shelving-unit" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Shelving unit</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.83 <span style="color: #777;">(3K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹199</div>
+                        <button class="option-add-btn" onclick="addToCart('Shelving unit assembly & installation - Shelving unit', 199)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 <span style="color: #777;">(3K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹299</div>
+                        <button class="option-add-btn" onclick="addToCart('Shelving unit assembly & installation - 4 shelves', 299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">16 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.69 <span style="color: #777;">(140 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹699</div>
+                        <button class="option-add-btn" onclick="addToCart('Shelving unit assembly & installation - 16 shelves', 699)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Wall Cabinet Assembly Modal -->
+    <div id="wall-cabinet-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-wall-cabinet-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111; margin-top: 10px;">Wall cabinet assembly & installation</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 (2K reviews)</p>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-wall-cabinet-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-wall-cabinet-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-wall-cabinet" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 20px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">Single shelf</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.71 <span style="color: #777;">(912 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹249</div>
+                        <button class="option-add-btn" onclick="addToCart('Wall cabinet assembly & installation - Single shelf', 249)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">2 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(704 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹309</div>
+                        <button class="option-add-btn" onclick="addToCart('Wall cabinet assembly & installation - 2 shelves', 309)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <img src="images/new_carpenter_icon.jpg" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <h4 style="font-size: 14px; margin-bottom: 5px; color: #111;">4 shelves</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(617 reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹369</div>
+                        <button class="option-add-btn" onclick="addToCart('Wall cabinet assembly & installation - 4 shelves', 369)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #ddd; margin: 5px 0 20px 0;">
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Included</h4>
+            <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Assembly of one modular unit</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Procurement of spare parts (at extra cost)</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> 30-day Joamex warranty & up to INR 10,000 damage cover</li>
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-check" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided or sourced by Joamex</li>
+            </ul>
+
+            <h4 style="font-size: 18px; margin-bottom: 15px;">Excluded</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                <li style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="margin-top: 4px; color: #333;"></i> Warranty on spare parts provided by customers</li>
+            </ul>
+        </div>
+    </div>
+
 <style>
 .hidden { display: none !important; }
 .wm-options-carousel::-webkit-scrollbar { display: none; }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function setupModal(openBtnId, modalId, closeBtnId, carouselId, leftBtnId, rightBtnId) {
+            const openBtn = document.getElementById(openBtnId);
+            const modal = document.getElementById(modalId);
+            const closeBtn = document.getElementById(closeBtnId);
+
+            if (openBtn && modal && closeBtn) {
+                openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+                closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+            }
+
+            if (carouselId) {
+                const carousel = document.getElementById(carouselId);
+                const leftBtn = leftBtnId ? document.getElementById(leftBtnId) : null;
+                const rightBtn = rightBtnId ? document.getElementById(rightBtnId) : null;
+
+                if (carousel) {
+                    if (leftBtn) leftBtn.addEventListener('click', () => carousel.scrollBy({ left: -175, behavior: 'smooth' }));
+                    if (rightBtn) rightBtn.addEventListener('click', () => carousel.scrollBy({ left: 175, behavior: 'smooth' }));
+                }
+            }
+        }
+        setupModal('open-single-bed-modal-btn', 'single-bed-modal', 'close-single-bed-modal-btn', null, null, null);
+        setupModal('open-double-bed-modal-btn', 'double-bed-modal', 'close-double-bed-modal-btn', 'modal-carousel-double-bed', null, 'scroll-right-double-bed-btn');
+        setupModal('open-hydraulic-bed-modal-btn', 'hydraulic-bed-modal', 'close-hydraulic-bed-modal-btn', 'modal-carousel-hydraulic-bed', null, 'scroll-right-hydraulic-bed-btn');
+        setupModal('open-day-bed-modal-btn', 'day-bed-modal', 'close-day-bed-modal-btn', 'modal-carousel-day-bed', null, 'scroll-right-day-bed-btn');
+        setupModal('open-wooden-table-modal-btn', 'wooden-table-modal', 'close-wooden-table-modal-btn', 'modal-carousel-wooden-table', null, 'scroll-right-wooden-table-btn');
+        setupModal('open-extendable-table-modal-btn', 'extendable-table-modal', 'close-extendable-table-modal-btn', 'modal-carousel-extendable-table', null, 'scroll-right-extendable-table-btn');
+        setupModal('open-bookcase-modal-btn', 'bookcase-modal', 'close-bookcase-modal-btn', 'modal-carousel-bookcase', 'scroll-left-bookcase-btn', 'scroll-right-bookcase-btn');
+        setupModal('open-bookshelf-modal-btn', 'bookshelf-modal', 'close-bookshelf-modal-btn', 'modal-carousel-bookshelf', 'scroll-left-bookshelf-btn', 'scroll-right-bookshelf-btn');
+        setupModal('open-shoe-cabinet-modal-btn', 'shoe-cabinet-modal', 'close-shoe-cabinet-modal-btn', 'modal-carousel-shoe-cabinet', 'scroll-left-shoe-cabinet-btn', 'scroll-right-shoe-cabinet-btn');
+        setupModal('open-shoe-rack-modal-btn', 'shoe-rack-modal', 'close-shoe-rack-modal-btn', null, null, null);
+        setupModal('open-wash-basin-modal-btn', 'wash-basin-modal', 'close-wash-basin-modal-btn', null, null, null);
+        setupModal('open-mirror-cabinet-modal-btn', 'mirror-cabinet-modal', 'close-mirror-cabinet-modal-btn', null, null, null);
+        setupModal('open-cabinet-modal-btn', 'cabinet-modal', 'close-cabinet-modal-btn', 'modal-carousel-cabinet', 'scroll-left-cabinet-btn', 'scroll-right-cabinet-btn');
+        setupModal('open-shelving-unit-modal-btn', 'shelving-unit-modal', 'close-shelving-unit-modal-btn', 'modal-carousel-shelving-unit', 'scroll-left-shelving-unit-btn', 'scroll-right-shelving-unit-btn');
+        setupModal('open-wall-cabinet-modal-btn', 'wall-cabinet-modal', 'close-wall-cabinet-modal-btn', 'modal-carousel-wall-cabinet', 'scroll-left-wall-cabinet-btn', 'scroll-right-wall-cabinet-btn');
+    });
+</script>
 
     

@@ -15,12 +15,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="search-container" id="header-search" style="display: none;">
@@ -65,49 +62,49 @@
                     <div class="service-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px 10px;">
                         <a href="#switch" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/switch_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Switch & socket" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Switch & socket" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Switch & socket</span>
                         </a>
                         <a href="#fan" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/fan_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Fan" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Fan" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Fan</span>
                         </a>
                         <a href="#light" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/light_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Light" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Light" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Light</span>
                         </a>
                         <a href="#wiring" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/wiring_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Wiring" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Wiring" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Wiring</span>
                         </a>
                         <a href="#doorbell" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/doorbell_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Doorbell & security" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Doorbell & security" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Doorbell & security</span>
                         </a>
                         <a href="#mcb" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/mcb_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="MCB/fuse" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">MCB/fuse</span>
                         </a>
                         <a href="#appliances" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; background:#f5f5f5; border-radius:8px; padding:10px;">
-                                <img src="images/appliances_icon.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Appliances" style="width:36px; height:36px; object-fit:contain;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Appliances" style="width:36px; height:36px; object-fit:contain;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Appliances</span>
                         </a>
                         <a href="#consultation" class="service-item-sidebar" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:4px; border-radius:8px; border:1px solid transparent; transition:all 0.2s; text-decoration:none;">
                             <div class="service-item-img" style="margin-bottom:6px; border-radius:8px; overflow:hidden;">
-                                <img src="images/consultation.jpg" onerror="this.src='images/electrician_icon.jpg'" alt="Book a consultation" style="width:36px; height:36px; object-fit:cover;">
+                                <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Book a consultation" style="width:36px; height:36px; object-fit:cover;">
                             </div>
                             <span style="font-size:10px; font-weight:500; color:#475569; line-height:1.2; word-break:break-word;">Book a consultation</span>
                         </a>
@@ -162,7 +159,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/switch-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="Switchboard repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Switchboard repair" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('switchboard-repair-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -191,7 +188,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/plug.png" onerror="this.src='images/electrician_icon.jpg'" alt="Plug replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Plug replacement" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('plug-replacement-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -222,7 +219,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/switchbox.png" onerror="this.src='images/electrician_icon.jpg'" alt="New switchbox installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="New switchbox installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('new-switchbox-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -257,7 +254,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/fan-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fan repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Fan repair" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('fan-repair-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -286,7 +283,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/fan-install.png" onerror="this.src='images/electrician_icon.jpg'" alt="Regular ceiling fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Regular ceiling fan installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('ceiling-fan-install-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -315,7 +312,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/fan-decorative.png" onerror="this.src='images/electrician_icon.jpg'" alt="Decorative fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Decorative fan installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('decorative-fan-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -344,7 +341,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/exhaust-fan.png" onerror="this.src='images/electrician_icon.jpg'" alt="Exhaust fan installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Exhaust fan installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('exhaust-fan-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -375,7 +372,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/fan-regulator.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fan regulator replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Fan regulator replacement" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                     </div>
@@ -407,7 +404,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/fancy-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Fancy light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Fancy light installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('fancy-light-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -436,7 +433,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/tubelight.png" onerror="this.src='images/electrician_icon.jpg'" alt="Tubelight repair & Installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Tubelight repair & Installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('tubelight-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -464,7 +461,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/bulb.png" onerror="this.src='images/electrician_icon.jpg'" alt="Bulb installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Bulb installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('bulb-install-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -493,7 +490,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/ceiling-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Ceiling light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Ceiling light installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('ceiling-light-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -522,7 +519,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/hanging-light.png" onerror="this.src='images/electrician_icon.jpg'" alt="Hanging light installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Hanging light installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('hanging-light-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -551,7 +548,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/chandelier.png" onerror="this.src='images/electrician_icon.jpg'" alt="Chandelier installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Chandelier installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                     </div>
@@ -583,7 +580,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/internal-wiring.png" onerror="this.src='images/electrician_icon.jpg'" alt="New internal wiring" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="New internal wiring" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('internal-wiring-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -611,7 +608,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/external-wiring.png" onerror="this.src='images/electrician_icon.jpg'" alt="New external wiring" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="New external wiring" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                     </div>
@@ -642,7 +639,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/doorbell.png" onerror="this.src='images/electrician_icon.jpg'" alt="Regular doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Regular doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('doorbell-regular-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -671,7 +668,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/video-doorbell.png" onerror="this.src='images/electrician_icon.jpg'" alt="Video doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Video doorbell installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('video-doorbell-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -701,7 +698,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/cctv.png" onerror="this.src='images/electrician_icon.jpg'" alt="Wireless CCTV installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Wireless CCTV installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('wireless-cctv-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -733,7 +730,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/mcb-repair.png" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse repair" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="MCB/fuse repair" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('mcb-repair-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -762,7 +759,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/mcb-replacement.png" onerror="this.src='images/electrician_icon.jpg'" alt="MCB/fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="MCB/fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('mcb-replacement-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -792,7 +789,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/submeter.png" onerror="this.src='images/electrician_icon.jpg'" alt="Submeter installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Submeter installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('submeter-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -828,7 +825,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/home-theatre.png" onerror="this.src='images/electrician_icon.jpg'" alt="Home theatre installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Home theatre installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('home-theatre-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -856,7 +853,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/tv-installation.png" onerror="this.src='images/electrician_icon.jpg'" alt="TV installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="TV installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('tv-installation-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -885,7 +882,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/tv-uninstallation.png" onerror="this.src='images/electrician_icon.jpg'" alt="TV uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="TV uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('tv-uninstallation-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -915,7 +912,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/sound-bar.png" onerror="this.src='images/electrician_icon.jpg'" alt="Sound bar installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Sound bar installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('sound-bar-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -946,7 +943,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/karban-airzone.png" onerror="this.src='images/electrician_icon.jpg'" alt="Karban Airzone installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Karban Airzone installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('karban-airzone-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -975,7 +972,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/inverter.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Inverter installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('inverter-install-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1005,7 +1002,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/stabiliser.png" onerror="this.src='images/electrician_icon.jpg'" alt="Stabiliser installation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Stabiliser installation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('stabiliser-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1034,7 +1031,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/inverter-fuse.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Inverter fuse replacement" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('inverter-fuse-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1066,7 +1063,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/inverter-servicing.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter servicing" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Inverter servicing" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('inverter-servicing-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1098,7 +1095,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/inverter-checkup.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter check-up" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Inverter check-up" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('inverter-checkup-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1127,7 +1124,7 @@
                                 </div>
                                 <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
                                     <div class="service-img-wrap" style="height: 110px; width: 110px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden; background: #f8f8f8; display:flex; align-items:center; justify-content:center;">
-                                        <img src="images/inverter-uninstallation.png" onerror="this.src='images/electrician_icon.jpg'" alt="Inverter uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
+                                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Inverter uninstallation" style="width: 80%; height: 80%; object-fit: contain;">
                                     </div>
                                     <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
                                         <button class="add-btn" onclick="document.getElementById('inverter-uninstall-modal').style.display='flex'" style="width: 80px; padding: 8px 0; background:white; color:#6366f1; border:1px solid #e0e0e0; border-radius:8px; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition:all 0.2s;">Add</button>
@@ -1142,7 +1139,7 @@
                     <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Book a consultation</h2>
 
                     <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; background: #f8f8f8; display: flex; flex-direction: column; position: relative;">
-                        <img src="images/consultation-banner.png" onerror="this.src='images/electrician_icon.jpg'" alt="Consultation Banner" style="width: 100%; object-fit: cover;">
+                        <img src="images/new_electrician_icon.jpg" onerror="this.src='images/new_electrician_icon.jpg'" alt="Consultation Banner" style="width: 100%; object-fit: cover;">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(245,245,245,0.95) 40%, rgba(245,245,245,0) 100%); display: flex; flex-direction: column; justify-content: center; padding: 24px;">
                             <h3 style="font-size: 24px; color: #111; margin-bottom: 8px;">Know what you need?</h3>
                             <p style="font-size: 15px; color: #444; margin-bottom: 24px;">Choose services directly & save 10%</p>
@@ -1194,9 +1191,9 @@
                     </div>
                 </div>
 
-                <div class="uc-promise-card" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; position: relative; margin-bottom: 20px;">
+                <div class="joamex-promise-card" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; position: relative; margin-bottom: 20px;">
                     <div>
-                        <h3 style="margin-top:0; font-size:14px; font-weight: 700;">UC Promise</h3>
+                        <h3 style="margin-top:0; font-size:14px; font-weight: 700;">Joamex Promise</h3>
                         <ul style="list-style:none; padding:0; margin:0; font-size:12px; color:#555;">
                             <li style="margin-bottom:8px;"><i class="fa-solid fa-check" style="color:black; margin-right:8px;"></i> Verified Professionals</li>
                             <li style="margin-bottom:8px;"><i class="fa-solid fa-check" style="color:black; margin-right:8px;"></i> Hassle Free Booking</li>
@@ -1216,8 +1213,8 @@
         </div>
     </main>
     
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     
     <!-- Plug replacement Modal -->
@@ -1234,7 +1231,7 @@
                     
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/plug_regular.png" onerror="this.src='images/plug.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/plug_regular.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Regular Plug Replacement</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.81 <span style="color: #666;">(3K reviews)</span></div>
@@ -1244,7 +1241,7 @@
 
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/plug_power.png" onerror="this.src='images/plug.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/plug_power.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Power Plug Replacement</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.83 <span style="color: #666;">(12K reviews)</span></div>
@@ -1288,7 +1285,7 @@
                     
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/switch_small.png" onerror="this.src='images/switch-repair.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/switch_small.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Small (upto 2 modules)</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.82 <span style="color: #666;">(17K reviews)</span></div>
@@ -1298,7 +1295,7 @@
 
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/switch_medium.png" onerror="this.src='images/switch-repair.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/switch_medium.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Medium (4-6 modules)</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.82 <span style="color: #666;">(30K reviews)</span></div>
@@ -1308,7 +1305,7 @@
                         
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/switch_large.png" onerror="this.src='images/switch-repair.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/switch_large.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Large (8-12 modules)</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.81 <span style="color: #666;">(602 reviews)</span></div>
@@ -1318,7 +1315,7 @@
                         
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/switch_xlarge.png" onerror="this.src='images/switch-repair.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/switch_xlarge.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Extra Large (12+ modules)</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.87 <span style="color: #666;">(123 reviews)</span></div>
@@ -1328,7 +1325,7 @@
 
                         <div class="option-card" style="min-width: 150px; flex: 1; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 16px; display: flex; flex-direction: column; background: #fff;">
                             <div style="width: 100%; height: 100px; margin-bottom: 15px; background: #f8f8f8; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                                <img src="images/switch_power_ac.png" onerror="this.src='images/switch-repair.png'" style="width: 80%; height: 80%; object-fit: contain;">
+                                <img src="images/switch_power_ac.png" onerror="this.src='images/new_electrician_icon.jpg'" style="width: 80%; height: 80%; object-fit: contain;">
                             </div>
                             <h4 style="font-size: 15px; margin-bottom: 5px; font-weight: 600;">Power / AC Switchboard</h4>
                             <div class="option-rating" style="font-size: 12px; margin-bottom: 10px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.86 <span style="color: #666;">(8K reviews)</span></div>
@@ -2540,7 +2537,7 @@
     </script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -2574,40 +2571,131 @@
 @media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
 @media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
 </style>
-<footer class="footer">
+<footer class="footer" style="padding: 60px 0 0; background-color: #fdfaf6; color: #333; font-family: 'Inter', sans-serif;">
     <div class="footer-container">
-        <div class="footer-col" style="grid-column: span 2;">
-            <a href="index.html" class="footer-logo">Joamex</a>
-            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
-        </div>
+        
+        <!-- Col 1: Brand -->
         <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
+            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
+            </a>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
+                Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
+            </p>
+        </div>
+        
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
             </ul>
         </div>
+
+        <!-- Col 3: For Customers -->
         <div class="footer-col">
-            <h3>For Customers</h3>
-            <ul>
-                <li><a href="#">UC Reviews</a></li>
-                <li><a href="#">Categories near you</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
             </ul>
+        </div>
+        
+        <!-- Col 4: For Professionals -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Social Media & Quick Contact -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
+            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFx4WC" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    
+    <!-- Cities Expandable Section -->
+    <div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
+            <div class="cities-grid">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+                </div>
+            </div>
         </div>
+    </div>
+    
+    <div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
+        <div style="margin-bottom: 5px;">&copy; 2026 Joamex | All Rights Reserved</div>
+        <div>managed by <strong style="color: #111; font-weight: 700;">Indian Export Webmart</strong></div>
     </div>
 </footer>
 </body>
 </html>
+

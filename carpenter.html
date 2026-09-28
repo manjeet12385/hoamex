@@ -88,10 +88,10 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
 <header class="header">
     <div style="display:flex;align-items:center;gap:15px;">
         <button id="back-btn" onclick="history.back()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-arrow-left"></i></button>
-        <a href="index.html" class="logo">
-            <div class="logo-icon">J</div>
-            <div><span class="logo-text">Joamex</span><span class="logo-sub">Home Services Simplified</span></div>
-        </a>
+        <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
     </div>
     <div class="search-container" id="header-search" style="display:none;">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -121,35 +121,35 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <h3>Select a service</h3>
             <div class="service-grid">
                 <a href="#hanger" class="service-item-sidebar active">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Clothes hanger"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Clothes hanger"></div>
                     <span>Clothes hanger</span>
                 </a>
                 <a href="#bed" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Bed"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Bed"></div>
                     <span>Bed</span>
                 </a>
                 <a href="#cupboard" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Cupboard & drawer"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Cupboard & drawer"></div>
                     <span>Cupboard &<br>drawer</span>
                 </a>
                 <a href="#door" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Door"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Door"></div>
                     <span>Door</span>
                 </a>
                 <a href="#drill" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Drill & hang"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Drill & hang"></div>
                     <span>Drill & hang</span>
                 </a>
                 <a href="#repair" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Furniture repair"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Furniture repair"></div>
                     <span>Furniture repair</span>
                 </a>
                 <a href="#window" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter.jpg" alt="Window & curtain"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Window & curtain"></div>
                     <span>Window &<br>curtain</span>
                 </a>
                 <a href="#consultation" class="service-item-sidebar">
-                    <div class="service-item-img"><img src="images/carpenter_icon.jpg" alt="Book a consultation"></div>
+                    <div class="service-item-img"><img src="images/new_carpenter_icon.jpg" alt="Book a consultation"></div>
                     <span>Book a consultation</span>
                 </a>
             </div>
@@ -170,7 +170,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Ceiling-mounted hanger">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Ceiling-mounted hanger">
                         <button class="add-btn" onclick="addToCart('Ceiling-mounted hanger installation', 399)">Add</button>
                     </div>
                 </div>
@@ -183,7 +183,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter_icon.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wall/door hanger">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Wall/door hanger">
                         <button class="add-btn" onclick="addToCart('Wall/door hanger installation', 139)">Add</button>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed support repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Bed support repair">
                         <button class="add-btn" onclick="addToCart('Bed support repair', 319)">Add</button>
                     </div>
                 </div>
@@ -213,7 +213,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed legs/Headboard repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Bed legs/Headboard repair">
                         <button class="add-btn" onclick="addToCart('Bed legs/Headboard repair', 199)">Add</button>
                     </div>
                 </div>
@@ -229,7 +229,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard hinge installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Cupboard hinge installation">
                         <button class="add-btn" onclick="addToCart('Cupboard hinge installation (upto 2)', 129)">Add</button>
                     </div>
                 </div>
@@ -242,7 +242,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Channel repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Channel repair">
                         <button class="add-btn" onclick="addToCart('Channel repair (one set)', 109)">Add</button>
                     </div>
                 </div>
@@ -255,7 +255,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Drawer channel replacement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Drawer channel replacement">
                         <button class="add-btn" onclick="addToCart('Drawer channel replacement (one set)', 149)">Add</button>
                     </div>
                 </div>
@@ -268,7 +268,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard handle installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Cupboard handle installation">
                         <button class="add-btn" onclick="addToCart('Cupboard handle installation/replacement', 49)">Add</button>
                     </div>
                 </div>
@@ -281,7 +281,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Cupboard lock installation">
                         <button class="add-btn" onclick="addToCart('Cupboard lock installation', 249)">Add</button>
                     </div>
                 </div>
@@ -294,7 +294,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock replacement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Cupboard lock replacement">
                         <button class="add-btn" onclick="addToCart('Cupboard lock replacement', 89)">Add</button>
                     </div>
                 </div>
@@ -307,7 +307,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Cupboard lock repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Cupboard lock repair">
                         <button class="add-btn" onclick="addToCart('Cupboard lock repair', 139)">Add</button>
                     </div>
                 </div>
@@ -326,7 +326,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door accessory installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door accessory installation">
                         <button class="add-btn" onclick="addToCart('Door accessory installation', 79)">Add</button>
                     </div>
                 </div>
@@ -339,7 +339,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Peephole installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Peephole installation">
                         <button class="add-btn" onclick="addToCart('Peephole installation', 99)">Add</button>
                     </div>
                 </div>
@@ -352,7 +352,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden door installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Wooden door installation">
                         <button class="add-btn" onclick="addToCart('Wooden door installation', 549)">Add</button>
                     </div>
                 </div>
@@ -368,7 +368,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Major wooden door repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Major wooden door repair">
                         <button class="add-btn" onclick="addToCart('Major wooden door repair', 199)">Add</button>
                     </div>
                 </div>
@@ -384,7 +384,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Minor wooden door repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Minor wooden door repair">
                         <button class="add-btn" onclick="addToCart('Minor wooden door repair', 129)">Add</button>
                     </div>
                 </div>
@@ -400,7 +400,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door hinge installation (upto 4 hinges)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door hinge installation (upto 4 hinges)">
                         <button class="add-btn" onclick="addToCart('Door hinge installation (upto 4 hinges)', 199)">Add</button>
                     </div>
                 </div>
@@ -413,7 +413,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door hinge installation (with dismantle)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door hinge installation (with dismantle)">
                         <button class="add-btn" onclick="addToCart('Door hinge installation (with dismantle)', 239)">Add</button>
                     </div>
                 </div>
@@ -426,7 +426,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door lock installation">
                         <button class="add-btn" onclick="addToCart('Door lock installation', 399)">Add</button>
                     </div>
                 </div>
@@ -439,7 +439,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock replacement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door lock replacement">
                         <button class="add-btn" onclick="addToCart('Door lock replacement', 319)">Add</button>
                     </div>
                 </div>
@@ -452,7 +452,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door lock repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door lock repair">
                         <button class="add-btn" onclick="addToCart('Door lock repair', 149)">Add</button>
                     </div>
                 </div>
@@ -465,7 +465,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Mesh grill door repair/replacement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Mesh grill door repair/replacement">
                         <button class="add-btn" onclick="addToCart('Mesh grill door repair/replacement (Option 1)', 329)">Add</button>
                     </div>
                 </div>
@@ -478,7 +478,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Mesh grill door repair/replacement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Mesh grill door repair/replacement">
                         <button class="add-btn" onclick="addToCart('Mesh grill door repair/replacement (Option 2)', 209)">Add</button>
                     </div>
                 </div>
@@ -491,7 +491,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Overhead door closer installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Overhead door closer installation">
                         <button class="add-btn" onclick="addToCart('Overhead door closer installation', 179)">Add</button>
                     </div>
                 </div>
@@ -504,7 +504,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Door closer installation (wall-mounted)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Door closer installation (wall-mounted)">
                         <button class="add-btn" onclick="addToCart('Door closer installation (wall-mounted)', 349)">Add</button>
                     </div>
                 </div>
@@ -517,7 +517,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden sliding door repair">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Wooden sliding door repair">
                         <button class="add-btn" onclick="addToCart('Wooden sliding door repair', 269)">Add</button>
                     </div>
                 </div>
@@ -533,7 +533,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bathroom holder & hanger installations">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Bathroom holder & hanger installations">
                         <button class="add-btn" onclick="addToCart('Bathroom holder & hanger installations', 69)">Add</button>
                     </div>
                 </div>
@@ -546,7 +546,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Drill & hang (wall decor)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Drill & hang (wall decor)">
                         <button class="add-btn" onclick="addToCart('Drill & hang (wall decor)', 49)">Add</button>
                     </div>
                 </div>
@@ -559,7 +559,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bathroom mirror installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Bathroom mirror installation">
                         <button class="add-btn" onclick="addToCart('Bathroom mirror installation', 79)">Add</button>
                     </div>
                 </div>
@@ -572,7 +572,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Glass shelf installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Glass shelf installation">
                         <button class="add-btn" onclick="addToCart('Glass shelf installation', 89)">Add</button>
                     </div>
                 </div>
@@ -585,7 +585,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Wooden shelf installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Wooden shelf installation">
                         <button class="add-btn" onclick="addToCart('Wooden shelf installation', 179)">Add</button>
                     </div>
                 </div>
@@ -598,7 +598,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Corner guard/ safety lock installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Corner guard/ safety lock installation">
                         <button class="add-btn" onclick="addToCart('Corner guard/ safety lock installation', 299)">Add</button>
                     </div>
                 </div>
@@ -611,7 +611,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Bed fence installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Bed fence installation">
                         <button class="add-btn" onclick="addToCart('Bed fence installation', 299)">Add</button>
                     </div>
                 </div>
@@ -624,7 +624,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Safety gate installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Safety gate installation">
                         <button class="add-btn" onclick="addToCart('Safety gate installation', 699)">Add</button>
                     </div>
                 </div>
@@ -640,7 +640,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Plastic buffer installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Plastic buffer installation">
                         <button class="add-btn" onclick="addToCart('Plastic buffer installation (upto 4)', 79)">Add</button>
                     </div>
                 </div>
@@ -653,7 +653,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Chair wheels fitting">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Chair wheels fitting">
                         <button class="add-btn" onclick="addToCart('Chair wheels fitting', 89)">Add</button>
                     </div>
                 </div>
@@ -669,7 +669,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Curtain blinds measurement">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Curtain blinds measurement">
                         <button class="add-btn" onclick="addToCart('Curtain blinds measurement', 69)">Add</button>
                     </div>
                 </div>
@@ -682,7 +682,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Curtain rod installation (2 brackets)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Curtain rod installation (2 brackets)">
                         <button class="add-btn" onclick="addToCart('Curtain rod installation (2 brackets)', 129)">Add</button>
                     </div>
                 </div>
@@ -695,7 +695,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Shower curtain rod installation (2 brackets)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Shower curtain rod installation (2 brackets)">
                         <button class="add-btn" onclick="addToCart('Shower curtain rod installation (2 brackets)', 139)">Add</button>
                     </div>
                 </div>
@@ -708,7 +708,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Motorised blinds fitting (upto 5ft)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Motorised blinds fitting (upto 5ft)">
                         <button class="add-btn" onclick="addToCart('Motorised blinds fitting (upto 5ft)', 209)">Add</button>
                     </div>
                 </div>
@@ -721,7 +721,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Non-motorised blinds fitting (upto 5ft)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Non-motorised blinds fitting (upto 5ft)">
                         <button class="add-btn" onclick="addToCart('Non-motorised blinds fitting (upto 5ft)', 159)">Add</button>
                     </div>
                 </div>
@@ -734,7 +734,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window AC frame installation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Window AC frame installation">
                         <button class="add-btn" onclick="addToCart('Window AC frame installation', 269)">Add</button>
                     </div>
                 </div>
@@ -747,7 +747,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window closing (post AC removal)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Window closing (post AC removal)">
                         <button class="add-btn" onclick="addToCart('Window closing (post AC removal)', 139)">Add</button>
                     </div>
                 </div>
@@ -760,7 +760,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Window hinge installation (upto 4)">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Window hinge installation (upto 4)">
                         <button class="add-btn" onclick="addToCart('Window hinge installation (upto 4)', 169)">Add</button>
                     </div>
                 </div>
@@ -780,7 +780,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/carpenter.jpg" onerror="this.src='images/carpenter.jpg'" alt="Carpenter consultation">
+                        <img class="svc-img" src="images/new_carpenter_icon.jpg" onerror="this.src='images/new_carpenter_icon.jpg'" alt="Carpenter consultation">
                         <button class="add-btn" onclick="addToCart('Carpenter consultation', 49)">Add</button>
                     </div>
                 </div>
@@ -790,7 +790,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
 
         <!-- RIGHT SIDEBAR -->
         <div class="right-sidebar">
-            <div class="uc-promise-card" style="margin-bottom: 20px; border: 1px solid #4caf50; background: #f0fdf4; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
+            <div class="joamex-promise-card" style="margin-bottom: 20px; border: 1px solid #4caf50; background: #f0fdf4; padding: 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
                 <div style="background: #4caf50; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">%</div>
                 <div>
                     <h4 style="margin: 0; font-size: 14px; font-weight: 600; color: #111;">Get visitation fee off</h4>
@@ -798,9 +798,9 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         
-            <div class="uc-promise-card">
+            <div class="joamex-promise-card">
                 <div>
-                    <h3>UC Promise</h3>
+                    <h3>Joamex Promise</h3>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
                         <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
@@ -818,8 +818,9 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
     </div>
 </div>
 
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
 </body>
 </html>
+

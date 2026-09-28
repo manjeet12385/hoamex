@@ -179,18 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (womensBeautyBtn && beautyModal && closeModalBtn) {
         // Open modal
         womensBeautyBtn.addEventListener('click', () => {
-            beautyModal.classList.remove('hidden');
+            beautyModal.style.display = 'flex';
         });
 
         // Close modal on X button click
         closeModalBtn.addEventListener('click', () => {
-            beautyModal.classList.add('hidden');
+            beautyModal.style.display = 'none';
         });
 
         // Close modal when clicking outside the content box
         beautyModal.addEventListener('click', (e) => {
             if (e.target === beautyModal) {
-                beautyModal.classList.add('hidden');
+                beautyModal.style.display = 'none';
             }
         });
     }
@@ -202,18 +202,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (salonOptionsTrigger && salonOptionsModal && closeSalonOptionsModalBtn) {
         salonOptionsTrigger.addEventListener('click', () => {
-            if(beautyModal) beautyModal.classList.add('hidden');
-            salonOptionsModal.classList.remove('hidden');
+            if(beautyModal) beautyModal.style.display = 'none';
+            salonOptionsModal.style.display = 'flex';
         });
 
         closeSalonOptionsModalBtn.addEventListener('click', () => {
-            salonOptionsModal.classList.add('hidden');
-            if(beautyModal) beautyModal.classList.remove('hidden');
+            salonOptionsModal.style.display = 'none';
+            if(beautyModal) beautyModal.style.display = 'flex';
         });
 
         salonOptionsModal.addEventListener('click', (e) => {
             if (e.target === salonOptionsModal) {
-                salonOptionsModal.classList.add('hidden');
+                salonOptionsModal.style.display = 'none';
             }
         });
     }
@@ -225,18 +225,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (spaForWomenTrigger && spaForWomenOptionsModal && closeSpaForWomenOptionsBtn) {
         spaForWomenTrigger.addEventListener('click', () => {
-            if(beautyModal) beautyModal.classList.add('hidden');
-            spaForWomenOptionsModal.classList.remove('hidden');
+            if(beautyModal) beautyModal.style.display = 'none';
+            spaForWomenOptionsModal.style.display = 'flex';
         });
 
         closeSpaForWomenOptionsBtn.addEventListener('click', () => {
-            spaForWomenOptionsModal.classList.add('hidden');
-            if(beautyModal) beautyModal.classList.remove('hidden');
+            spaForWomenOptionsModal.style.display = 'none';
+            if(beautyModal) beautyModal.style.display = 'flex';
         });
 
         spaForWomenOptionsModal.addEventListener('click', (e) => {
             if (e.target === spaForWomenOptionsModal) {
-                spaForWomenOptionsModal.classList.add('hidden');
+                spaForWomenOptionsModal.style.display = 'none';
             }
         });
     }
@@ -249,18 +249,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mensGroomingBtn && mensModal && closeMensModalBtn) {
         // Open modal
         mensGroomingBtn.addEventListener('click', () => {
-            mensModal.classList.remove('hidden');
+            mensModal.style.display = 'flex';
         });
 
         // Close modal on X button click
         closeMensModalBtn.addEventListener('click', () => {
-            mensModal.classList.add('hidden');
+            mensModal.style.display = 'none';
         });
 
         // Close modal when clicking outside the content box
         mensModal.addEventListener('click', (e) => {
             if (e.target === mensModal) {
-                mensModal.classList.add('hidden');
+                mensModal.style.display = 'none';
             }
         });
     }
@@ -272,18 +272,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (salonForMenTrigger && salonForMenOptionsModal && closeSalonForMenOptionsBtn) {
         salonForMenTrigger.addEventListener('click', () => {
-            if(mensModal) mensModal.classList.add('hidden');
-            salonForMenOptionsModal.classList.remove('hidden');
+            if(mensModal) mensModal.style.display = 'none';
+            salonForMenOptionsModal.style.display = 'flex';
         });
 
         closeSalonForMenOptionsBtn.addEventListener('click', () => {
-            salonForMenOptionsModal.classList.add('hidden');
-            if(mensModal) mensModal.classList.remove('hidden');
+            salonForMenOptionsModal.style.display = 'none';
+            if(mensModal) mensModal.style.display = 'flex';
         });
 
         salonForMenOptionsModal.addEventListener('click', (e) => {
             if (e.target === salonForMenOptionsModal) {
-                salonForMenOptionsModal.classList.add('hidden');
+                salonForMenOptionsModal.style.display = 'none';
             }
         });
     }
@@ -295,18 +295,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (massageForMenTrigger && massageForMenOptionsModal && closeMassageForMenOptionsBtn) {
         massageForMenTrigger.addEventListener('click', () => {
-            if(mensModal) mensModal.classList.add('hidden');
-            massageForMenOptionsModal.classList.remove('hidden');
+            if(mensModal) mensModal.style.display = 'none';
+            massageForMenOptionsModal.style.display = 'flex';
         });
 
         closeMassageForMenOptionsBtn.addEventListener('click', () => {
-            massageForMenOptionsModal.classList.add('hidden');
-            if(mensModal) mensModal.classList.remove('hidden');
+            massageForMenOptionsModal.style.display = 'none';
+            if(mensModal) mensModal.style.display = 'flex';
         });
 
         massageForMenOptionsModal.addEventListener('click', (e) => {
             if (e.target === massageForMenOptionsModal) {
-                massageForMenOptionsModal.classList.add('hidden');
+                massageForMenOptionsModal.style.display = 'none';
             }
         });
     }
@@ -318,16 +318,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (acRepairBtn && acModal && closeAcModalBtn) {
         acRepairBtn.addEventListener('click', () => {
-            acModal.classList.remove('hidden');
+            acModal.style.display = 'flex';
         });
 
         closeAcModalBtn.addEventListener('click', () => {
-            acModal.classList.add('hidden');
+            acModal.style.display = 'none';
         });
 
         acModal.addEventListener('click', (e) => {
             if (e.target === acModal) {
-                acModal.classList.add('hidden');
+                acModal.style.display = 'none';
             }
         });
     }
@@ -339,16 +339,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (epcBtn && epcModal && closeEpcModalBtn) {
         epcBtn.addEventListener('click', () => {
-            epcModal.classList.remove('hidden');
+            epcModal.style.display = 'flex';
         });
 
         closeEpcModalBtn.addEventListener('click', () => {
-            epcModal.classList.add('hidden');
+            epcModal.style.display = 'none';
         });
 
         epcModal.addEventListener('click', (e) => {
             if (e.target === epcModal) {
-                epcModal.classList.add('hidden');
+                epcModal.style.display = 'none';
             }
         });
     }
@@ -360,16 +360,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cleaningBtn && cleaningModal && closeCleaningModalBtn) {
         cleaningBtn.addEventListener('click', () => {
-            cleaningModal.classList.remove('hidden');
+            cleaningModal.style.display = 'flex';
         });
 
         closeCleaningModalBtn.addEventListener('click', () => {
-            cleaningModal.classList.add('hidden');
+            cleaningModal.style.display = 'none';
         });
 
         cleaningModal.addEventListener('click', (e) => {
             if (e.target === cleaningModal) {
-                cleaningModal.classList.add('hidden');
+                cleaningModal.style.display = 'none';
             }
         });
     }
@@ -381,16 +381,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (renovationBtn && renovationModal && closeRenovationModalBtn) {
         renovationBtn.addEventListener('click', () => {
-            renovationModal.classList.remove('hidden');
+            renovationModal.style.display = 'flex';
         });
 
         closeRenovationModalBtn.addEventListener('click', () => {
-            renovationModal.classList.add('hidden');
+            renovationModal.style.display = 'none';
         });
 
         renovationModal.addEventListener('click', (e) => {
             if (e.target === renovationModal) {
-                renovationModal.classList.add('hidden');
+                renovationModal.style.display = 'none';
             }
         });
     }
@@ -401,16 +401,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (securityTrigger && securityModal && closeSecurityBtn) {
         securityTrigger.addEventListener('click', () => {
-            securityModal.classList.remove('hidden');
+            securityModal.style.display = 'flex';
         });
 
         closeSecurityBtn.addEventListener('click', () => {
-            securityModal.classList.add('hidden');
+            securityModal.style.display = 'none';
         });
 
         securityModal.addEventListener('click', (e) => {
             if (e.target === securityModal) {
-                securityModal.classList.add('hidden');
+                securityModal.style.display = 'none';
             }
         });
     }
@@ -422,16 +422,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (logisticsTrigger && logisticsModal && closeLogisticsBtn) {
         logisticsTrigger.addEventListener('click', () => {
-            logisticsModal.classList.remove('hidden');
+            logisticsModal.style.display = 'flex';
         });
 
         closeLogisticsBtn.addEventListener('click', () => {
-            logisticsModal.classList.add('hidden');
+            logisticsModal.style.display = 'none';
         });
 
         logisticsModal.addEventListener('click', (e) => {
             if (e.target === logisticsModal) {
-                logisticsModal.classList.add('hidden');
+                logisticsModal.style.display = 'none';
             }
         });
     }
@@ -443,16 +443,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (fabricationTrigger && fabricationModal && closeFabricationBtn) {
         fabricationTrigger.addEventListener('click', () => {
-            fabricationModal.classList.remove('hidden');
+            fabricationModal.style.display = 'flex';
         });
 
         closeFabricationBtn.addEventListener('click', () => {
-            fabricationModal.classList.add('hidden');
+            fabricationModal.style.display = 'none';
         });
 
         fabricationModal.addEventListener('click', (e) => {
             if (e.target === fabricationModal) {
-                fabricationModal.classList.add('hidden');
+                fabricationModal.style.display = 'none';
             }
         });
     }
@@ -472,11 +472,55 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBtn = document.getElementById(m.close);
         
         if (trigger && modal && closeBtn) {
-            trigger.addEventListener('click', () => modal.classList.remove('hidden'));
-            closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+            trigger.addEventListener('click', () => modal.style.display = 'flex');
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
             modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.classList.add('hidden');
+                if (e.target === modal) modal.style.display = 'none';
             });
+        }
+    });
+});
+
+// Robust Modal Setup for all Grid Categories
+document.addEventListener('DOMContentLoaded', () => {
+    const categoryModals = [
+        { triggerId: 'ac-repair-btn', modalId: 'ac-modal' },
+        { triggerId: 'epc-btn', modalId: 'epc-modal' },
+        { triggerId: 'cleaning-btn', modalId: 'cleaning-modal' },
+        { triggerId: 'renovation-btn', modalId: 'renovation-modal' },
+        { triggerId: 'fabrication-modal-trigger', modalId: 'fabrication-modal' },
+        { triggerId: 'womens-beauty-btn', modalId: 'beauty-modal' },
+        { triggerId: 'mens-grooming-btn', modalId: 'grooming-modal' },
+        { triggerId: 'logistics-modal-trigger', modalId: 'logistics-modal' }, /* assuming home care is logistics */
+        { triggerId: 'security-modal-trigger', modalId: 'security-modal' }
+    ];
+
+    categoryModals.forEach(mapping => {
+        const trigger = document.getElementById(mapping.triggerId);
+        const modal = document.getElementById(mapping.modalId);
+        
+        if (trigger && modal) {
+            // Remove any old event listeners by cloning if necessary, or just add
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+            
+            // Allow clicking outside to close
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Find the close button inside the modal and attach click handler
+            const closeBtn = modal.querySelector('.modal-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = 'none';
+                });
+            }
         }
     });
 });

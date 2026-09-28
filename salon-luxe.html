@@ -47,7 +47,7 @@
         .center-content {}
 
         /* Banner */
-        .uc-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px 30px 30px 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: space-between; overflow: hidden; min-height: 180px; }
+        .joamex-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px 30px 30px 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: space-between; overflow: hidden; min-height: 180px; }
         .banner-text h2 { font-size: 28px; font-weight: 700; margin: 0 0 20px 0; }
         .banner-feature { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
         .feature-icon { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.12); flex-shrink: 0; }
@@ -83,11 +83,11 @@
 
         /* Right sidebar */
         .right-sidebar { position: sticky; top: 80px; }
-        .uc-promise-card { border: 1px solid #eee; border-radius: 10px; padding: 18px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; }
-        .uc-promise-card h3 { font-size: 15px; font-weight: 700; margin: 0 0 10px 0; }
-        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
-        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 6px; display: flex; align-items: center; gap: 7px; }
-        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        .joamex-promise-card { border: 1px solid #eee; border-radius: 10px; padding: 18px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .joamex-promise-card h3 { font-size: 15px; font-weight: 700; margin: 0 0 10px 0; }
+        .joamex-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .joamex-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 6px; display: flex; align-items: center; gap: 7px; }
+        .joamex-promise-card ul li i { color: #00875a; font-size: 12px; }
         .promise-badge { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
         .cart-card { border: 1px solid #eee; border-radius: 10px; padding: 20px; text-align: center; color: #999; }
         .cart-card i { font-size: 28px; margin-bottom: 8px; display: block; }
@@ -100,12 +100,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="search-container" id="header-search" style="display: none;">
@@ -161,50 +158,50 @@
                         </a>
                         <a href="#waxing" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Waxing">
+                                <img src="images/womens_salon.jpg" alt="Waxing">
                             </div>
                             <span style="font-size: 11px;">Waxing</span>
                         </a>
                         <a href="#korean-facial" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Korean facial">
+                                <img src="images/womens_salon.jpg" alt="Korean facial">
                             </div>
                             <span style="font-size: 11px;">Korean facial</span>
                         </a>
                         <a href="#japanese-rituals" class="service-item" style="position: relative;">
                             <span style="position: absolute; top: -5px; left: 5px; background: #900; color: white; font-size: 8px; padding: 2px 4px; border-radius: 4px; z-index: 2;">New</span>
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Japanese rituals">
+                                <img src="images/womens_salon.jpg" alt="Japanese rituals">
                             </div>
                             <span style="font-size: 11px;">Japanese rituals</span>
                         </a>
                         <a href="#signature-facials" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Signature facials">
+                                <img src="images/womens_salon.jpg" alt="Signature facials">
                             </div>
                             <span style="font-size: 11px;">Signature facials</span>
                         </a>
                         <a href="#cleanup" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Cleanup">
+                                <img src="images/womens_salon.jpg" alt="Cleanup">
                             </div>
                             <span style="font-size: 11px;">Cleanup</span>
                         </a>
                         <a href="#pedicure" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Pedicure & manicure">
+                                <img src="images/womens_salon.jpg" alt="Pedicure & manicure">
                             </div>
                             <span style="font-size: 11px;">Pedicure & manicure</span>
                         </a>
                         <a href="#threading" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Threading">
+                                <img src="images/womens_salon.jpg" alt="Threading">
                             </div>
                             <span style="font-size: 11px;">Threading & face wax</span>
                         </a>
                         <a href="#bleach" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Bleach">
+                                <img src="images/womens_salon.jpg" alt="Bleach">
                             </div>
                             <span style="font-size: 11px;">Bleach, detan & massage</span>
                         </a>
@@ -216,10 +213,10 @@
             <!-- CENTER CONTENT -->
             <div class="center-content">
 
-                <!-- UC Difference Banner -->
+                <!-- Joamex Difference Banner -->
                 <!-- Main Image Banner -->
                 <div style="margin-bottom: 30px; border-radius: 12px; overflow: hidden; position: relative;">
-                    <img src="images/beauty.jpg" alt="Desi Gulab Facial" style="width: 100%; display: block;">
+                    <img src="images/womens_salon.jpg" alt="Desi Gulab Facial" style="width: 100%; display: block;">
                     <button style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: white; border: none; border-radius: 50%; width: 30px; height: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer;"><i class="fa-solid fa-chevron-left"></i></button>
                     <button style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: white; border: none; border-radius: 50%; width: 30px; height: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer;"><i class="fa-solid fa-chevron-right"></i></button>
                     <div style="position: absolute; bottom: 15px; left: 0; width: 100%; display: flex; justify-content: center; gap: 5px;">
@@ -333,7 +330,7 @@
                     
                     <!-- Waxing Banner -->
                     <div style="margin-bottom: 25px; border-radius: 12px; overflow: hidden; position: relative;">
-                        <img src="images/beauty.jpg" alt="Spatula waxing" style="width: 100%; display: block; border-radius: 12px;">
+                        <img src="images/womens_salon.jpg" alt="Spatula waxing" style="width: 100%; display: block; border-radius: 12px;">
                         <div style="position: absolute; top: 20px; left: 20px; z-index: 10; color: #333;">
                             <h3 style="font-size: 22px; font-weight: 400; margin: 0; margin-bottom: 5px;">Spatula waxing</h3>
                             <h3 style="font-size: 22px; font-weight: 400; margin: 0; margin-bottom: 5px;">starting at</h3>
@@ -364,7 +361,7 @@
                             <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
+                            <button onclick="document.getElementById('spatula-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
                             <span style="font-size: 11px; color: #666;">3 options</span>
                         </div>
                     </div>
@@ -387,7 +384,7 @@
                             <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
+                            <button onclick="document.getElementById('rollon-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
                             <span style="font-size: 11px; color: #666;">3 options</span>
                         </div>
                     </div>
@@ -407,9 +404,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Full arms waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Full arms waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('full-arms-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">7 options</span>
                         </div>
                     </div>
@@ -432,9 +429,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Full legs waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Full legs waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('full-legs-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">7 options</span>
                         </div>
                     </div>
@@ -457,9 +454,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Back waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Back waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('back-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">7 options</span>
                         </div>
                     </div>
@@ -482,9 +479,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Stomach waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Stomach waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('stomach-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">7 options</span>
                         </div>
                     </div>
@@ -504,9 +501,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Underarms waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Underarms waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('underarms-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">2 options</span>
                         </div>
                     </div>
@@ -529,9 +526,9 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Full body waxing" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Full body waxing" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('full-body-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #666;">7 options</span>
                         </div>
                     </div>
@@ -563,7 +560,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Korean Glass skin facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Korean Glass skin facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -588,7 +585,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="KGlow age-rewind facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="KGlow age-rewind facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -613,7 +610,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Korean Sea-algae Hydra-boost facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Korean Sea-algae Hydra-boost facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -629,7 +626,7 @@
                         
                         <!-- Banner for Yuzu -->
                         <div style="margin-bottom: 15px; border-radius: 12px; overflow: hidden; position: relative; width: 100%;">
-                            <img src="images/beauty.jpg" alt="Glass-skin glow with Yuzu" style="width: 100%; display: block; border-radius: 12px; height: 180px; object-fit: cover;">
+                            <img src="images/womens_salon.jpg" alt="Glass-skin glow with Yuzu" style="width: 100%; display: block; border-radius: 12px; height: 180px; object-fit: cover;">
                             <div style="position: absolute; top: 15px; left: 15px; background: #6a1b9a; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
                                 New launch
                             </div>
@@ -668,7 +665,7 @@
                         
                         <!-- Banner for Rice water -->
                         <div style="margin-bottom: 15px; border-radius: 12px; overflow: hidden; position: relative; width: 100%;">
-                            <img src="images/beauty.jpg" alt="For a mochi-soft, bouncy finish" style="width: 100%; display: block; border-radius: 12px; height: 180px; object-fit: cover;">
+                            <img src="images/womens_salon.jpg" alt="For a mochi-soft, bouncy finish" style="width: 100%; display: block; border-radius: 12px; height: 180px; object-fit: cover;">
                             <div style="position: absolute; top: 15px; left: 15px; background: #6a1b9a; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
                                 New launch
                             </div>
@@ -726,7 +723,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Remy Laure eternal radiance treatment" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Remy Laure eternal radiance treatment" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -751,7 +748,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Signature brightening facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Signature brightening facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -776,7 +773,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Casmara brightening facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Casmara brightening facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -801,7 +798,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Hydraboost facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Hydraboost facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -826,7 +823,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Casmara hydration facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Casmara hydration facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -851,7 +848,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="O3 Kumkumadi ayurvedic facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="O3 Kumkumadi ayurvedic facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -876,7 +873,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="O3+ Radiance luxury facial" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="O3+ Radiance luxury facial" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -906,7 +903,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Hydra mud glow cleanup" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Hydra mud glow cleanup" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -931,7 +928,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Detox mud cleanup" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Detox mud cleanup" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -956,7 +953,7 @@
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 5px;">
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
-                                <img src="images/beauty.jpg" alt="Repechage brightening cleanup" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="images/womens_salon.jpg" alt="Repechage brightening cleanup" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                         </div>
@@ -972,7 +969,7 @@
                         
                         <!-- Banner image -->
                         <div style="margin-bottom: 15px; border-radius: 12px; overflow: hidden; position: relative; width: 100%;">
-                            <img src="images/beauty.jpg" alt="Signature mani-pedi combo" style="width: 100%; display: block; border-radius: 12px; height: 200px; object-fit: cover;">
+                            <img src="images/womens_salon.jpg" alt="Signature mani-pedi combo" style="width: 100%; display: block; border-radius: 12px; height: 200px; object-fit: cover;">
                             <div style="position: absolute; top: 20px; left: 20px; color: #333;">
                                 <h3 style="font-size: 24px; font-weight: 500; margin: 0; line-height: 1.2;">Nourishing<br>ritual for a<br>supple skin</h3>
                             </div>
@@ -997,7 +994,7 @@
                                 <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                             </div>
                             <div class="service-card-img" style="display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 5px; width: 100px;">
-                                <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
+                                <button class="add-btn" onclick="document.getElementById('mani-pedi-combo-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">Add</button>
                                 <span style="font-size: 11px; color: #888; margin-top: 4px; text-align: center; width: 100%;">2 options</span>
                             </div>
                         </div>
@@ -1023,7 +1020,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Ice cream delight pedicure" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('ice-cream-pedicure-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">2 options</span>
                         </div>
                     </div>
@@ -1046,7 +1043,7 @@
                             <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                         </div>
                         <div class="service-card-img" style="display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 5px; width: 100px;">
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('crystal-spa-pedicure-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px; width: 100%;">2 options</span>
                         </div>
                     </div>
@@ -1169,7 +1166,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Threading" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('threading-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">8 options</span>
                         </div>
                     </div>
@@ -1194,7 +1191,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Cirepil PR Visage face wax" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('face-wax-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">7 options</span>
                         </div>
                     </div>
@@ -1224,7 +1221,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Bleach" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('bleach-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">6 options</span>
                         </div>
                     </div>
@@ -1249,7 +1246,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Detan" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('detan-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">6 options</span>
                         </div>
                     </div>
@@ -1274,7 +1271,7 @@
                             <div class="service-img-wrap" style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
                                 <img src="images/beauty.jpg" alt="Head massage" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <button class="add-btn" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
+                            <button class="add-btn" onclick="document.getElementById('head-massage-modal').style.display='flex'" style="width: 90px; border: 1px solid #ddd; background: white; color: #6a1b9a; font-weight: 600; padding: 8px 0; border-radius: 8px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: -20px; position: relative; z-index: 10;">Add</button>
                             <span style="font-size: 11px; color: #888; text-align: center; margin-top: 2px;">2 options</span>
                         </div>
                     </div>
@@ -1308,9 +1305,9 @@
 
             <!-- RIGHT SIDEBAR -->
             <div class="right-sidebar">
-                <div class="uc-promise-card">
+                <div class="joamex-promise-card">
                     <div>
-                        <h3>UC Promise</h3>
+                        <h3>Joamex Promise</h3>
                         <ul>
                             <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
                             <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
@@ -1330,11 +1327,11 @@
 
     </main>
 
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -1368,40 +1365,1039 @@
 @media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
 @media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
 </style>
-<footer class="footer">
+<footer class="footer" style="padding: 60px 0 0; background-color: #fdfaf6; color: #333; font-family: 'Inter', sans-serif;">
     <div class="footer-container">
-        <div class="footer-col" style="grid-column: span 2;">
-            <a href="index.html" class="footer-logo">Joamex</a>
-            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
-        </div>
+        
+        <!-- Col 1: Brand -->
         <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
+            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
+            </a>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
+                Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
+            </p>
+        </div>
+        
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
             </ul>
         </div>
+
+        <!-- Col 3: For Customers -->
         <div class="footer-col">
-            <h3>For Customers</h3>
-            <ul>
-                <li><a href="#">UC Reviews</a></li>
-                <li><a href="#">Categories near you</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
             </ul>
+        </div>
+        
+        <!-- Col 4: For Professionals -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Social Media & Quick Contact -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
+            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFx4WC" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    
+    <!-- Cities Expandable Section -->
+    <div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
+            <div class="cities-grid">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+                </div>
+            </div>
         </div>
+    </div>
+    
+    <div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
+        <div style="margin-bottom: 5px;">&copy; 2026 Joamex | All Rights Reserved</div>
+        <div>managed by <strong style="color: #111; font-weight: 700;">Indian Export Webmart</strong></div>
     </div>
 </footer>
+
+<!-- Spatula Waxing Options Modal -->
+<div id="spatula-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Spatula waxing (Full arms &amp; legs, Underarm)</h2>
+            <button onclick="document.getElementById('spatula-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.89 (47K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Cirepil mojito -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Cirepil mojito" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cirepil mojito</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (17K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1259</div>
+                <button onclick="addToCart('Cirepil mojito', 1259); document.getElementById('spatula-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- RICA gold -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="RICA gold" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">RICA gold</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (16K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1499</div>
+                <button onclick="addToCart('RICA gold', 1499); document.getElementById('spatula-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Moroccon honey -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Moroccon honey" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Moroccon honey</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (14K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1039</div>
+                <button onclick="addToCart('Moroccon honey', 1039); document.getElementById('spatula-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Roll-on Waxing Options Modal -->
+<div id="rollon-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Roll-on waxing (Full arms &amp; legs, underarm)</h2>
+            <button onclick="document.getElementById('rollon-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.91 (48K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Cirepil mojito roll-on -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Cirepil mojito roll-on" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cirepil mojito roll-on</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.91 (13K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1949</div>
+                <button onclick="addToCart('Cirepil mojito roll-on', 1949); document.getElementById('rollon-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- RICA gold roll-on -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="RICA gold roll-on" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">RICA gold roll-on</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (25K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1699</div>
+                <button onclick="addToCart('RICA gold roll-on', 1699); document.getElementById('rollon-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Jasmine roll-on -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Jasmine roll-on" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Jasmine roll-on</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.91 (10K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1399</div>
+                <button onclick="addToCart('Jasmine roll-on', 1399); document.getElementById('rollon-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Lycon berry roll-on -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Lycon berry roll-on" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Lycon berry roll-on</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-circle-dot" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;">60 mins</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1949</div>
+                <button onclick="addToCart('Lycon berry roll-on', 1949); document.getElementById('rollon-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Full Arms Waxing Options Modal -->
+<div id="full-arms-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Full arms &amp; underarms waxing</h2>
+            <button onclick="document.getElementById('full-arms-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.90 (163K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Moroccan honey wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Moroccan honey wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Moroccan honey wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (25K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹599</div>
+                <button onclick="addToCart('Moroccan honey wax', 599); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- RICA gold wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="RICA gold wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">RICA gold wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (59K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹819</div>
+                <button onclick="addToCart('RICA gold wax', 819); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Cirepil mojito roll-on wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Cirepil mojito roll-on wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cirepil mojito roll-on wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.91 (24K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1049</div>
+                <button onclick="addToCart('Cirepil mojito roll-on wax', 1049); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- RICA gold roll-on wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="RICA gold roll-on wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">RICA gold roll-on wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (29K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹959</div>
+                <button onclick="addToCart('RICA gold roll-on wax', 959); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Cirepil mojito wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Cirepil mojito wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cirepil mojito wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (11K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹689</div>
+                <button onclick="addToCart('Cirepil mojito wax', 689); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Jasmine roll-on wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Jasmine roll-on wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Jasmine roll-on wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (2K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹799</div>
+                <button onclick="addToCart('Jasmine roll-on wax', 799); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Lycon berry roll-on wax -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/waxing_service.jpg" alt="Lycon berry roll-on wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Lycon berry roll-on wax</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-clock" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;">60 mins</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹1949</div>
+                <button onclick="addToCart('Lycon berry roll-on wax', 1949); document.getElementById('full-arms-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Head Massage Options Modal -->
+<div id="head-massage-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Head massage</h2>
+            <button onclick="document.getElementById('head-massage-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.92 (55K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- 15 mins -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="15 mins Relaxing Head Massage" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">15 mins Relaxing Head Massage</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-clock" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;">15 mins</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹349</div>
+                <button onclick="addToCart('15 mins Relaxing Head Massage', 349); document.getElementById('head-massage-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- 30 mins -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="30 mins Deep Relaxation Head Massage" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">30 mins Deep Relaxation Head Massage</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-clock" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;">30 mins</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹599</div>
+                <button onclick="addToCart('30 mins Deep Relaxation Head Massage', 599); document.getElementById('head-massage-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detan Options Modal -->
+<div id="detan-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Detan</h2>
+            <button onclick="document.getElementById('detan-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.89 (31K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Face & Neck -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Face & Neck Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Face &amp; Neck Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.88 (10K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹549</div>
+                <button onclick="addToCart('Face & Neck Detan', 549); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Arms -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Arms Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Arms Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (8K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹699</div>
+                <button onclick="addToCart('Full Arms Detan', 699); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Back -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Back Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Back Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (5K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹849</div>
+                <button onclick="addToCart('Full Back Detan', 849); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Half Legs -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Half Legs Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Half Legs Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.87 (3K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹799</div>
+                <button onclick="addToCart('Half Legs Detan', 799); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Legs -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Legs Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Legs Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (4K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹999</div>
+                <button onclick="addToCart('Full Legs Detan', 999); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Body -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Body Detan" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Body Detan</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.91 (1K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹2499</div>
+                <button onclick="addToCart('Full Body Detan', 2499); document.getElementById('detan-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bleach Options Modal -->
+<div id="bleach-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Bleach</h2>
+            <button onclick="document.getElementById('bleach-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.89 (23K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Face & Neck -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Face & Neck Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Face &amp; Neck Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.88 (8K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹549</div>
+                <button onclick="addToCart('Face & Neck Bleach', 549); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Arms -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Arms Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Arms Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (6K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹699</div>
+                <button onclick="addToCart('Full Arms Bleach', 699); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Back -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Back Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Back Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.90 (3K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹849</div>
+                <button onclick="addToCart('Full Back Bleach', 849); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Half Legs -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Half Legs Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Half Legs Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.87 (2K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹799</div>
+                <button onclick="addToCart('Half Legs Bleach', 799); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Legs -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Legs Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Legs Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.89 (2K reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹999</div>
+                <button onclick="addToCart('Full Legs Bleach', 999); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Full Body -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Body Bleach" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Body Bleach</div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                    <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:11px;"></i>
+                    <span style="font-size:11px;color:#555;text-decoration:underline;">4.91 (500 reviews)</span>
+                </div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹2499</div>
+                <button onclick="addToCart('Full Body Bleach', 2499); document.getElementById('bleach-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Threading Options Modal -->
+<div id="threading-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Threading</h2>
+            <button onclick="document.getElementById('threading-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.91 (487K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Option 1 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Eyebrow Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Eyebrow Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹99</div>
+                <button onclick="addToCart('Eyebrow Threading', 99); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 2 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Upper Lip Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Upper Lip Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹49</div>
+                <button onclick="addToCart('Upper Lip Threading', 49); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 3 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Forehead Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Forehead Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹49</div>
+                <button onclick="addToCart('Forehead Threading', 49); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 4 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Chin Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Chin Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹49</div>
+                <button onclick="addToCart('Chin Threading', 49); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 5 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Lower Lip Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Lower Lip Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹49</div>
+                <button onclick="addToCart('Lower Lip Threading', 49); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 6 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Sideburns / Lock Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Sideburns / Lock Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹79</div>
+                <button onclick="addToCart('Sideburns / Lock Threading', 79); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 7 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Cheeks Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cheeks Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹79</div>
+                <button onclick="addToCart('Cheeks Threading', 79); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 8 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Face Threading" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Face Threading</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹349</div>
+                <button onclick="addToCart('Full Face Threading', 349); document.getElementById('threading-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Face Wax Options Modal -->
+<div id="face-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Cirepil PR Visage face wax</h2>
+            <button onclick="document.getElementById('face-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.89 (113K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Option 1 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Upper Lip Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Upper Lip Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹199</div>
+                <button onclick="addToCart('Upper Lip Face Wax', 199); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 2 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Forehead Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Forehead Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹199</div>
+                <button onclick="addToCart('Forehead Face Wax', 199); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 3 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Chin Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Chin Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹199</div>
+                <button onclick="addToCart('Chin Face Wax', 199); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 4 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Lower Lip Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Lower Lip Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹199</div>
+                <button onclick="addToCart('Lower Lip Face Wax', 199); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 5 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Sideburns / Lock Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Sideburns / Lock Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;">₹249</div>
+                <button onclick="addToCart('Sideburns / Lock Face Wax', 249); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 6 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Cheeks Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Cheeks Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹249</div>
+                <button onclick="addToCart('Cheeks Face Wax', 249); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <!-- Option 7 -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/beauty.jpg" alt="Full Face Wax" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Full Face Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹849</div>
+                <button onclick="addToCart('Full Face Wax', 849); document.getElementById('face-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Full Legs Waxing Modal -->
+<div id="full-legs-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Full legs waxing</h2>
+            <button onclick="document.getElementById('full-legs-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.90 (91K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <!-- Options -->
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Honey Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹539</div>
+                <button onclick="addToCart('Full Legs Honey Wax', 539); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹639</div>
+                <button onclick="addToCart('Full Legs Chocolate Wax', 639); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Aloe Vera Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹589</div>
+                <button onclick="addToCart('Full Legs Aloe Vera Wax', 589); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Charcoal Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹689</div>
+                <button onclick="addToCart('Full Legs Charcoal Wax', 689); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Rica Roll-on Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹799</div>
+                <button onclick="addToCart('Full Legs Rica Roll-on Wax', 799); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">White Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹849</div>
+                <button onclick="addToCart('Full Legs White Chocolate Wax', 849); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Advanced Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹949</div>
+                <button onclick="addToCart('Full Legs Advanced Wax', 949); document.getElementById('full-legs-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back Waxing Modal -->
+<div id="back-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Back waxing</h2>
+            <button onclick="document.getElementById('back-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.91 (6K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Honey Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹539</div>
+                <button onclick="addToCart('Back Honey Wax', 539); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹639</div>
+                <button onclick="addToCart('Back Chocolate Wax', 639); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Aloe Vera Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹589</div>
+                <button onclick="addToCart('Back Aloe Vera Wax', 589); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Charcoal Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹689</div>
+                <button onclick="addToCart('Back Charcoal Wax', 689); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Rica Roll-on Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹799</div>
+                <button onclick="addToCart('Back Rica Roll-on Wax', 799); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">White Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹849</div>
+                <button onclick="addToCart('Back White Chocolate Wax', 849); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Advanced Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹949</div>
+                <button onclick="addToCart('Back Advanced Wax', 949); document.getElementById('back-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stomach Waxing Modal -->
+<div id="stomach-wax-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:flex-end;justify-content:center;">
+    <div style="background:#fff;width:100%;max-width:600px;border-radius:20px 20px 0 0;padding:30px;max-height:90vh;overflow-y:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+            <h2 style="font-size:20px;font-weight:700;margin:0;">Stomach waxing</h2>
+            <button onclick="document.getElementById('stomach-wax-modal').style.display='none'" style="background:none;border:none;font-size:22px;cursor:pointer;color:#333;">&times;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+            <i class="fa-solid fa-star" style="color:#6a1b9a;font-size:13px;"></i>
+            <span style="color:#555;font-size:13px;text-decoration:underline;text-underline-offset:2px;">4.93 (7K reviews)</span>
+        </div>
+        <div style="display:flex;gap:15px;overflow-x:auto;padding-bottom:10px;">
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Honey Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹489</div>
+                <button onclick="addToCart('Stomach Honey Wax', 489); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹589</div>
+                <button onclick="addToCart('Stomach Chocolate Wax', 589); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Aloe Vera Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹539</div>
+                <button onclick="addToCart('Stomach Aloe Vera Wax', 539); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Charcoal Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹639</div>
+                <button onclick="addToCart('Stomach Charcoal Wax', 639); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Rica Roll-on Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹749</div>
+                <button onclick="addToCart('Stomach Rica Roll-on Wax', 749); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">White Chocolate Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹799</div>
+                <button onclick="addToCart('Stomach White Chocolate Wax', 799); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+            <div style="min-width:140px;border:1px solid #eee;border-radius:12px;padding:12px;text-align:left;">
+                <img src="images/womens_salon.jpg" style="width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
+                <div style="font-size:13px;font-weight:600;color:#6a1b9a;margin-bottom:4px;">Advanced Wax</div>
+                <div style="font-size:13px;font-weight:700;color:#000;margin-bottom:10px;margin-top:20px;">₹899</div>
+                <button onclick="addToCart('Stomach Advanced Wax', 899); document.getElementById('stomach-wax-modal').style.display='none'" style="width:100%;border:1px solid #ddd;background:white;color:#6a1b9a;font-weight:600;padding:7px 0;border-radius:8px;cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Underarms Wax Modal -->
+<div id="underarms-wax-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:24px; width:90%; max-width:420px; position:relative;">
+        <button onclick="document.getElementById('underarms-wax-modal').style.display='none'" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:20px; cursor:pointer; color:#666;"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size:20px; font-weight:700; margin:0 0 6px 0;">Underarms waxing</h2>
+        <p style="font-size:13px; color:#666; margin:0 0 20px 0;">Select your preferred wax type</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+
+            <!-- Option 1: Honey Wax -->
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:4px;">🍯 Honey Wax</div>
+                    <div style="font-size:12px; color:#666;">Standard wax • Quick & effective</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:6px;">₹119</div>
+                </div>
+                <button onclick="addToCart('Underarms Honey Wax', 119); document.getElementById('underarms-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 20px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <!-- Option 2: Rica / Chocolate Wax -->
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:4px;">🍫 Rica / Chocolate Wax</div>
+                    <div style="font-size:12px; color:#666;">Premium wax • Less pain, soft skin</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:6px;">₹199</div>
+                </div>
+                <button onclick="addToCart('Underarms Rica Chocolate Wax', 199); document.getElementById('underarms-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 20px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Full Body Wax Modal -->
+<div id="full-body-wax-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:24px; width:90%; max-width:460px; max-height:90vh; overflow-y:auto; position:relative;">
+        <button onclick="document.getElementById('full-body-wax-modal').style.display='none'" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:20px; cursor:pointer; color:#666;"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size:20px; font-weight:700; margin:0 0 4px 0;">Full body waxing</h2>
+        <p style="font-size:13px; color:#666; margin:0 0 18px 0;">Select your preferred wax formula</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🍯 Honey Wax</div>
+                    <div style="font-size:12px; color:#666;">Standard wax • Full body coverage</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,799</div>
+                </div>
+                <button onclick="addToCart('Full Body Honey Wax', 1799); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🍫 Chocolate Wax</div>
+                    <div style="font-size:12px; color:#666;">Smooth & moisturising formula</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,999</div>
+                </div>
+                <button onclick="addToCart('Full Body Chocolate Wax', 1999); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🌿 Aloe Vera Wax</div>
+                    <div style="font-size:12px; color:#666;">Soothing & gentle on skin</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,999</div>
+                </div>
+                <button onclick="addToCart('Full Body Aloe Vera Wax', 1999); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🔫 Charcoal Wax</div>
+                    <div style="font-size:12px; color:#666;">Deep cleansing & detox</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹2,099</div>
+                </div>
+                <button onclick="addToCart('Full Body Charcoal Wax', 2099); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">📜 Rica Roll-on Wax</div>
+                    <div style="font-size:12px; color:#666;">Less pain • Premium roll-on formula</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹2,199</div>
+                </div>
+                <button onclick="addToCart('Full Body Rica Roll-on Wax', 2199); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🤍 White Chocolate Wax</div>
+                    <div style="font-size:12px; color:#666;">Ultra soft • Brightening effect</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹2,299</div>
+                </div>
+                <button onclick="addToCart('Full Body White Chocolate Wax', 2299); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+            <div style="border:1px solid #eee; border-radius:12px; padding:14px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">💎 Advanced / Diamond Wax</div>
+                    <div style="font-size:12px; color:#666;">Premium • Best results & skin glow</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹2,499</div>
+                </div>
+                <button onclick="addToCart('Full Body Advanced Diamond Wax', 2499); document.getElementById('full-body-wax-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Signature Mani-Pedi Combo Modal -->
+<div id="mani-pedi-combo-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:24px; width:90%; max-width:420px; position:relative;">
+        <button onclick="document.getElementById('mani-pedi-combo-modal').style.display='none'" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:20px; cursor:pointer; color:#666;"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size:20px; font-weight:700; margin:0 0 4px 0;">Signature mani-pedi combo</h2>
+        <p style="font-size:13px; color:#666; margin:0 0 18px 0;">Select your preferred option</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">💅 Manicure only</div>
+                    <div style="font-size:12px; color:#666;">Hands & nail care treatment</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹849</div>
+                </div>
+                <button onclick="addToCart('Signature Manicure', 849); document.getElementById('mani-pedi-combo-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🦶 Pedicure only</div>
+                    <div style="font-size:12px; color:#666;">Feet & toenail care treatment</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,049</div>
+                </div>
+                <button onclick="addToCart('Signature Pedicure', 1049); document.getElementById('mani-pedi-combo-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ice Cream Delight Pedicure Modal -->
+<div id="ice-cream-pedicure-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:24px; width:90%; max-width:420px; position:relative;">
+        <button onclick="document.getElementById('ice-cream-pedicure-modal').style.display='none'" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:20px; cursor:pointer; color:#666;"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size:20px; font-weight:700; margin:0 0 4px 0;">Ice cream delight pedicure</h2>
+        <p style="font-size:13px; color:#666; margin:0 0 18px 0;">Select your preferred option</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🦶 Pedicure only</div>
+                    <div style="font-size:12px; color:#666;">Strawberry-infused feet treatment</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,599</div>
+                </div>
+                <button onclick="addToCart('Ice Cream Delight Pedicure', 1599); document.getElementById('ice-cream-pedicure-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">💅🦶 Pedicure + Manicure combo</div>
+                    <div style="font-size:12px; color:#666;">Full hands & feet treatment</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,999</div>
+                </div>
+                <button onclick="addToCart('Ice Cream Delight Pedicure + Manicure', 1999); document.getElementById('ice-cream-pedicure-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rejuvenating Crystal Spa Pedicure Modal -->
+<div id="crystal-spa-pedicure-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; border-radius:16px; padding:24px; width:90%; max-width:420px; position:relative;">
+        <button onclick="document.getElementById('crystal-spa-pedicure-modal').style.display='none'" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:20px; cursor:pointer; color:#666;"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="font-size:20px; font-weight:700; margin:0 0 4px 0;">Rejuvenating crystal spa pedicure</h2>
+        <p style="font-size:13px; color:#666; margin:0 0 18px 0;">Select your preferred option</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">🦶 Pedicure only</div>
+                    <div style="font-size:12px; color:#666;">Crystal spa feet treatment</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,289</div>
+                </div>
+                <button onclick="addToCart('Crystal Spa Pedicure', 1289); document.getElementById('crystal-spa-pedicure-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+            <div style="border:1px solid #eee; border-radius:12px; padding:16px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                    <div style="font-weight:700; font-size:15px; margin-bottom:3px;">💅🦶 Pedicure + Manicure combo</div>
+                    <div style="font-size:12px; color:#666;">Full hands & feet crystal spa</div>
+                    <div style="font-size:14px; font-weight:700; color:#000; margin-top:5px;">₹1,699</div>
+                </div>
+                <button onclick="addToCart('Crystal Spa Pedicure + Manicure', 1699); document.getElementById('crystal-spa-pedicure-modal').style.display='none'" style="border:1px solid #ddd; background:white; color:#6a1b9a; font-weight:600; padding:8px 16px; border-radius:8px; cursor:pointer;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="cart.js?v=11"></script>
 </body>
+
 </html>
+

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</div>
 <style>
 body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
 .page-wrapper { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px; }
@@ -89,10 +90,10 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
 <header class="header">
     <div style="display:flex;align-items:center;gap:15px;">
         <button id="back-btn" onclick="history.back()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-arrow-left"></i></button>
-        <a href="index.html" class="logo">
-            <div class="logo-icon">J</div>
-            <div><span class="logo-text">Joamex</span><span class="logo-sub">Home Services Simplified</span></div>
-        </a>
+        <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+            </a>
     </div>
     <div class="search-container" id="header-search" style="display:none;">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -125,47 +126,47 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <h3>Select a service</h3>
                 <div class="service-grid">
                     <a href="#tap" class="service-item-sidebar active">
-                        <div class="service-item-img"><img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap"></div>
+                        <div class="service-item-img"><img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Tap"></div>
                         <span>Tap &amp; mixer</span>
                     </a>
                     <a href="#toilet" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Toilet"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Toilet"></div>
                         <span>Toilet</span>
                     </a>
                     <a href="#bath" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Bath"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Bath"></div>
                         <span>Bath &amp; Shower</span>
                     </a>
                     <a href="#accessories" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Bath accessories"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Bath accessories"></div>
                         <span>Bath accessories</span>
                     </a>
                     <a href="#basin" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Basin"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Basin"></div>
                         <span>Basin &amp; sink</span>
                     </a>
                     <a href="#drainage" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drainage"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Drainage"></div>
                         <span>Drainage &amp; blockage</span>
                     </a>
                     <a href="#leakage" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Leakage"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" alt="Leakage"></div>
                         <span>Leakage &amp; connections</span>
                     </a>
                     <a href="#grouting" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Grouting"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" alt="Grouting"></div>
                         <span>Grouting</span>
                     </a>
                     <a href="#tank" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tank"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Tank"></div>
                         <span>Water tank</span>
                     </a>
                     <a href="#motor" class="service-item-sidebar">
-                        <div class="service-item-img"><img src="images/plumber.jpg" alt="Motor"></div>
+                        <div class="service-item-img"><img src="images/new_plumber_icon.jpg" alt="Motor"></div>
                         <span>Motor</span>
                     </a>
                     <a href="#consultation" class="service-item-sidebar">
-                        <div class="service-item-img" style="border-radius:10px;overflow:hidden;padding:0;"><img src="images/consultation.jpg" onerror="this.src='images/plumber.jpg'" alt="Consultation" style="width:50px;height:50px;object-fit:cover;border-radius:10px;"></div>
+                        <div class="service-item-img" style="border-radius:10px;overflow:hidden;padding:0;"><img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Consultation" style="width:50px;height:50px;object-fit:cover;border-radius:10px;"></div>
                         <span>Book a consultation</span>
                     </a>
                 </div>
@@ -199,8 +200,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap repair">
-                        <button class="add-btn" onclick="addToCart('Tap repair',49)">Add</button>
+                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Tap repair">
+                        <button class="add-btn" onclick="document.getElementById('tap-repair-modal').style.display='flex'">Add</button>
                         <div class="options-text">5 options</div>
                     </div>
                 </div>
@@ -213,8 +214,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/plumber.jpg" alt="Tap accessory installation" style="border-radius:50%;">
-                        <button class="add-btn" onclick="addToCart('Tap accessory installation',69)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" alt="Tap accessory installation" style="border-radius:50%;">
+                        <button class="add-btn" onclick="document.getElementById('tap-acc-modal').style.display='flex'">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
                 </div>
@@ -227,8 +228,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tap installation/replacement">
-                        <button class="add-btn" onclick="addToCart('Tap installation/replacement',59)">Add</button>
+                        <img class="svc-img" src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Tap installation/replacement">
+                        <button class="add-btn" onclick="document.getElementById('tap-inst-modal').style.display='flex'">Add</button>
                         <div class="options-text">6 options</div>
                     </div>
                 </div>
@@ -258,8 +259,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Flush tank repair">
-                        <button class="add-btn" onclick="addToCart('Flush tank repair',129)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Flush tank repair">
+                        <button class="add-btn" onclick="document.getElementById('flush-tank-modal').style.display='flex'">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
                 </div>
@@ -272,7 +273,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Toilet seat cover installation" style="border-radius:50%;">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Toilet seat cover installation" style="border-radius:50%;">
                         <button class="add-btn" onclick="addToCart('Toilet seat cover installation',99)">Add</button>
                     </div>
                 </div>
@@ -285,7 +286,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="External flush tank replacement">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="External flush tank replacement">
                         <button class="add-btn" onclick="addToCart('External flush tank replacement',449)">Add</button>
                     </div>
                 </div>
@@ -298,8 +299,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Indian toilet repair/installation">
-                        <button class="add-btn" onclick="addToCart('Indian toilet repair/installation',599)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Indian toilet repair/installation">
+                        <button class="add-btn" onclick="document.getElementById('indian-toilet-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -312,8 +313,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Western toilet repair wall-mounted">
-                        <button class="add-btn" onclick="addToCart('Western toilet repair (wall-mounted)',599)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Western toilet repair wall-mounted">
+                        <button class="add-btn" onclick="document.getElementById('wall-mounted-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -326,8 +327,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Western toilet repair floor-mounted">
-                        <button class="add-btn" onclick="addToCart('Western toilet repair (floor-mounted)',599)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Western toilet repair floor-mounted">
+                        <button class="add-btn" onclick="document.getElementById('floor-mounted-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -340,8 +341,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Jet spray repair/replacement">
-                        <button class="add-btn" onclick="addToCart('Jet spray repair/replacement',89)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Jet spray repair/replacement">
+                        <button class="add-btn" onclick="document.getElementById('jet-spray-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -371,7 +372,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower mixer tap installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shower mixer tap installation">
                         <button class="add-btn" onclick="addToCart('Shower mixer tap installation',349)">Add</button>
                     </div>
                 </div>
@@ -384,8 +385,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower installation">
-                        <button class="add-btn" onclick="addToCart('Shower installation',99)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shower installation">
+                        <button class="add-btn" onclick="document.getElementById('shower-inst-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -398,7 +399,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower filter installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shower filter installation">
                         <button class="add-btn" onclick="addToCart('Shower filter installation',129)">Add</button>
                     </div>
                 </div>
@@ -411,7 +412,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower repair">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shower repair">
                         <button class="add-btn" onclick="addToCart('Shower repair',99)">Add</button>
                     </div>
                 </div>
@@ -441,7 +442,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Soap holder installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Soap holder installation">
                         <button class="add-btn" onclick="addToCart('Soap holder installation',79)">Add</button>
                     </div>
                 </div>
@@ -454,8 +455,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Towel holder installation">
-                        <button class="add-btn" onclick="addToCart('Towel holder installation',99)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Towel holder installation">
+                        <button class="add-btn" onclick="document.getElementById('towel-holder-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -468,8 +469,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shelf installation">
-                        <button class="add-btn" onclick="addToCart('Shelf installation',79)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shelf installation">
+                        <button class="add-btn" onclick="document.getElementById('shelf-inst-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -499,8 +500,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin leakage repair">
-                        <button class="add-btn" onclick="addToCart('Wash basin leakage repair',99)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Wash basin leakage repair">
+                        <button class="add-btn" onclick="document.getElementById('basin-leak-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -513,7 +514,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin blockage removal">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Wash basin blockage removal">
                         <button class="add-btn" onclick="addToCart('Wash basin blockage removal',199)">Add</button>
                     </div>
                 </div>
@@ -526,7 +527,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash basin installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Wash basin installation">
                         <button class="add-btn" onclick="addToCart('Wash basin installation',399)">Add</button>
                     </div>
                 </div>
@@ -539,8 +540,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Waste coupling installation">
-                        <button class="add-btn" onclick="addToCart('Waste coupling installation',149)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Waste coupling installation">
+                        <button class="add-btn" onclick="document.getElementById('waste-coupling-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -570,7 +571,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drain cover installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Drain cover installation">
                         <button class="add-btn" onclick="addToCart('Drain cover installation',99)">Add</button>
                     </div>
                 </div>
@@ -583,8 +584,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Drain blockage removal">
-                        <button class="add-btn" onclick="addToCart('Drain blockage removal',199)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Drain blockage removal">
+                        <button class="add-btn" onclick="document.getElementById('drain-block-modal').style.display='flex'">Add</button>
                         <div class="options-text">4 options</div>
                     </div>
                 </div>
@@ -601,7 +602,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="External pipeline leakage repair">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="External pipeline leakage repair">
                         <button class="add-btn" onclick="addToCart('External pipeline leakage repair',149)">Add</button>
                     </div>
                 </div>
@@ -614,7 +615,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Connection hose installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Connection hose installation">
                         <button class="add-btn" onclick="addToCart('Connection hose installation',89)">Add</button>
                     </div>
                 </div>
@@ -627,7 +628,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Washing machine filter installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Washing machine filter installation">
                         <button class="add-btn" onclick="addToCart('Washing machine filter installation',99)">Add</button>
                     </div>
                 </div>
@@ -640,7 +641,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Washing machine inlet installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Washing machine inlet installation">
                         <button class="add-btn" onclick="addToCart('Washing machine inlet installation',99)">Add</button>
                     </div>
                 </div>
@@ -653,7 +654,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Geyser connection leakage repair">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Geyser connection leakage repair">
                         <button class="add-btn" onclick="addToCart('Geyser connection leakage repair',99)">Add</button>
                     </div>
                 </div>
@@ -666,7 +667,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="RO water connection installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="RO water connection installation">
                         <button class="add-btn" onclick="addToCart('RO water connection installation',99)">Add</button>
                     </div>
                 </div>
@@ -679,7 +680,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shut-off valve leakage repair">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shut-off valve leakage repair">
                         <button class="add-btn" onclick="addToCart('Shut-off valve leakage repair',99)">Add</button>
                     </div>
                 </div>
@@ -695,8 +696,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/grouting_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Kitchen tile grouting">
-                        <button class="add-btn" onclick="addToCart('Kitchen tile grouting',999)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Kitchen tile grouting">
+                        <button class="add-btn" onclick="document.getElementById('kitchen-grout-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -726,8 +727,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water tank cleaning (loft placed)">
-                        <button class="add-btn" onclick="addToCart('Water tank cleaning (loft placed)',1199)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Water tank cleaning (loft placed)">
+                        <button class="add-btn" onclick="document.getElementById('loft-tank-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -740,8 +741,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Overhead tank cleaning (open placed)">
-                        <button class="add-btn" onclick="addToCart('Overhead tank cleaning (open placed)',899)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Overhead tank cleaning (open placed)">
+                        <button class="add-btn" onclick="document.getElementById('overhead-cleaning-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -754,8 +755,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Overhead water tank installation">
-                        <button class="add-btn" onclick="addToCart('Overhead water tank installation',599)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Overhead water tank installation">
+                        <button class="add-btn" onclick="document.getElementById('tank-install-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -768,8 +769,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water tank repair">
-                        <button class="add-btn" onclick="addToCart('Water tank repair',99)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Water tank repair">
+                        <button class="add-btn" onclick="document.getElementById('tank-repair-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -782,8 +783,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Water meter installation">
-                        <button class="add-btn" onclick="addToCart('Water meter installation',319)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Water meter installation">
+                        <button class="add-btn" onclick="document.getElementById('water-meter-modal').style.display='flex'">Add</button>
                     </div>
                 </div>
 
@@ -795,8 +796,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Underground tank cleaning">
-                        <button class="add-btn" onclick="addToCart('Underground tank cleaning',1299)">Add</button>
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Underground tank cleaning">
+                        <button class="add-btn" onclick="document.getElementById('ug-tank-modal').style.display='flex'">Add</button>
                         <div class="options-text">3 options</div>
                     </div>
                 </div>
@@ -813,7 +814,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor installation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Motor installation">
                         <button class="add-btn" onclick="addToCart('Motor installation',349)">Add</button>
                     </div>
                 </div>
@@ -826,7 +827,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor air cavity removal">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Motor air cavity removal">
                         <button class="add-btn" onclick="addToCart('Motor air cavity removal',99)">Add</button>
                     </div>
                 </div>
@@ -839,7 +840,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/motor_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Motor replacement">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Motor replacement">
                         <button class="add-btn" onclick="addToCart('Motor replacement',449)">Add</button>
                     </div>
                 </div>
@@ -860,7 +861,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/consultation.jpg" onerror="this.src='images/plumber.jpg'" alt="Plumber consultation">
+                        <img class="svc-img" src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Plumber consultation">
                         <button class="add-btn" onclick="addToCart('Plumber consultation',49)">Add</button>
                     </div>
                 </div>
@@ -879,8 +880,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         <!-- Modal content omitted for brevity -->
     </div>
 
-    <script src="cart.js"></script>
-    <script src="common.js"></script>
+    <script src="cart.js?v=11"></script>
+    <script src="common.js?v=2003"></script>
     <script>
         document.querySelectorAll('.service-item-sidebar').forEach(item => {
             item.addEventListener('click', function(e) {
@@ -902,7 +903,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
     </script>
 
 <!-- Tap Repair Modal -->
-    <div id="tap-repair-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="tap-repair-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-tap-repair-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
@@ -916,7 +917,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-tap" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Regular</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.80 <span style="color: #777;">(194K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹129</div>
@@ -924,7 +925,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Swan Tap Repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.80 <span style="color: #777;">(36K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
@@ -932,7 +933,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Shower mixer repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.77 <span style="color: #777;">(11K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹229</div>
@@ -940,7 +941,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Hot & cold mixer</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(27K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹299</div>
@@ -950,10 +951,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Tap Accessory Modal -->
-    <div id="tap-acc-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="tap-acc-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-tap-acc-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-tap-acc-modal-btn" onclick="document.getElementById('tap-acc-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Tap accessory installation</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.83 <span style="color: #777; font-weight: 400;">(21K reviews)</span></div>
@@ -965,7 +967,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-acc" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Filter</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.84 <span style="color: #777;">(12K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹49</div>
@@ -973,7 +975,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Extender</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(4K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹49</div>
@@ -981,7 +983,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Water-saving nozzle</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(2K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
@@ -989,7 +991,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Tap double connection</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(3K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹179</div>
@@ -999,8 +1001,9 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Tap Installation Modal -->
-    <div id="tap-inst-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="tap-inst-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-tap-inst-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
@@ -1014,42 +1017,42 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-inst" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Regular Tap</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹59</div>
                     <button class="option-add-btn" onclick="addToCart('Regular Tap Installation',59)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/leakage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Shower mixer</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
                     <button class="option-add-btn" onclick="addToCart('Shower mixer installation',249)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Swan Tap</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹79</div>
                     <button class="option-add-btn" onclick="addToCart('Swan Tap installation',79)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Hot & Cold tap</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
                     <button class="option-add-btn" onclick="addToCart('Hot & Cold tap installation',249)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Pillar Tap</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹89</div>
                     <button class="option-add-btn" onclick="addToCart('Pillar Tap installation',89)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tap_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/tap_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Sensor Tap</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹349</div>
                     <button class="option-add-btn" onclick="addToCart('Sensor Tap installation',349)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
@@ -1058,10 +1061,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Jet Spray Modal -->
-    <div id="jet-spray-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="jet-spray-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-jet-spray-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-jet-spray-modal-btn" onclick="document.getElementById('jet-spray-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Jet spray repair/replacement</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.82 <span style="color: #777; font-weight: 400;">(158K reviews)</span></div>
@@ -1073,7 +1077,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-jet" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Jet spray</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(154K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1081,7 +1085,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px; transform: scaleX(-1);">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Bidet</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(5K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹249</div>
@@ -1091,10 +1095,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Flush Tank Modal -->
-    <div id="flush-tank-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="flush-tank-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-flush-tank-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-flush-tank-modal-btn" onclick="document.getElementById('flush-tank-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Flush tank repair</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.75 <span style="color: #777; font-weight: 400;">(163K reviews)</span></div>
@@ -1106,7 +1111,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-flush" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">External PVC</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.77 <span style="color: #777;">(82K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1114,7 +1119,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">External ceramic</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(44K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1122,7 +1127,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Concealed</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.67 <span style="color: #777;">(36K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹399</div>
@@ -1130,7 +1135,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Syphon repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.70 <span style="color: #777;">(10K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1140,10 +1145,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Indian Toilet Modal -->
-    <div id="indian-toilet-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="indian-toilet-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-indian-toilet-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-indian-toilet-modal-btn" onclick="document.getElementById('indian-toilet-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Indian toilet repair/installation</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.83 <span style="color: #777; font-weight: 400;">(58 reviews)</span></div>
@@ -1155,7 +1161,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-ind" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Minor Repair / Blockage</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(120 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
@@ -1163,7 +1169,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Flush Pipe / Connection</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.82 <span style="color: #777;">(85 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹599</div>
@@ -1171,7 +1177,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Complete Installation</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.88 <span style="color: #777;">(45 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1499</div>
@@ -1181,10 +1187,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Wall Mounted Toilet Modal -->
-    <div id="wall-mounted-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="wall-mounted-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-wall-mounted-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-wall-mounted-modal-btn" onclick="document.getElementById('wall-mounted-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Western toilet repair (wall-mounted)</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.49 <span style="color: #777; font-weight: 400;">(220 reviews)</span></div>
@@ -1196,7 +1203,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-wall" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Concealed Flush Tank Repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.50 <span style="color: #777;">(110 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹799</div>
@@ -1204,7 +1211,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Minor Repair / Leakage Fix</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.45 <span style="color: #777;">(80 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
@@ -1212,7 +1219,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Complete Installation</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.60 <span style="color: #777;">(30 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1999</div>
@@ -1222,10 +1229,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Floor Mounted Toilet Modal -->
-    <div id="floor-mounted-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="floor-mounted-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-floor-mounted-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-floor-mounted-modal-btn" onclick="document.getElementById('floor-mounted-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Western toilet repair (floor-mounted)</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.74 <span style="color: #777; font-weight: 400;">(528 reviews)</span></div>
@@ -1237,7 +1245,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-floor" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Flush Tank / Syphon Repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.70 <span style="color: #777;">(250 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹599</div>
@@ -1245,7 +1253,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Blockage Removal / Minor Repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(180 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
@@ -1253,7 +1261,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Complete Installation</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.80 <span style="color: #777;">(98 reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1499</div>
@@ -1263,10 +1271,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Shower Installation Modal -->
-    <div id="shower-inst-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="shower-inst-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-shower-inst-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-shower-inst-modal-btn" onclick="document.getElementById('shower-inst-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Shower installation</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.82 <span style="color: #777; font-weight: 400;">(23K reviews)</span></div>
@@ -1278,7 +1287,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-shower" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Overhead / Hand Shower Installation</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.80 <span style="color: #777;">(15K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1286,7 +1295,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Shower Mixer / Diverter Repair</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(5K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹399</div>
@@ -1294,7 +1303,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Complete Shower Panel Installation</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.88 <span style="color: #777;">(3K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹799</div>
@@ -1304,10 +1313,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Towel Holder Installation Modal -->
-    <div id="towel-holder-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="towel-holder-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-towel-holder-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-towel-holder-modal-btn" onclick="document.getElementById('towel-holder-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Towel holder installation</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.71 <span style="color: #777; font-weight: 400;">(15K reviews)</span></div>
@@ -1319,7 +1329,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-towel" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Towel rack</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(8K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
@@ -1327,7 +1337,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Holding rod</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.68 <span style="color: #777;">(4K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1335,7 +1345,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Small holder</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.70 <span style="color: #777;">(3K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1345,8 +1355,9 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Shelf Installation Modal -->
-    <div id="shelf-inst-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="shelf-inst-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-shelf-inst-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
@@ -1360,7 +1371,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-shelf" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Floating glass shelf</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.74 <span style="color: #777;">(3K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
@@ -1368,7 +1379,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Corner shelf</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.69 <span style="color: #777;">(5K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1378,10 +1389,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Basin Leakage Repair Modal -->
-    <div id="basin-leak-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="basin-leak-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-basin-leak-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-basin-leak-modal-btn" onclick="document.getElementById('basin-leak-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Wash basin leakage repair</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.78 <span style="color: #777; font-weight: 400;">(70K reviews)</span></div>
@@ -1393,7 +1405,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-basin-leak" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Waste pipe</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.78 <span style="color: #777;">(58K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1401,7 +1413,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Bottle trap</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(12K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1409,7 +1421,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Connection hose</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(5K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹99</div>
@@ -1419,10 +1431,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Waste Coupling Modal -->
-    <div id="waste-coupling-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="waste-coupling-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-waste-coupling-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-waste-coupling-modal-btn" onclick="document.getElementById('waste-coupling-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Waste coupling installation</h3>
             <div class="options-rating" style="margin-bottom: 25px; font-size: 13px; color: #555;"><i class="fa-solid fa-star" style="color: #111;"></i> 4.81 <span style="color: #777; font-weight: 400;">(12K reviews)</span></div>
@@ -1434,7 +1447,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-waste" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Bottle trap basin</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(2K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹219</div>
@@ -1442,7 +1455,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Waste pipe basin</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.81 <span style="color: #777;">(9K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
@@ -1452,8 +1465,9 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Drain Blockage Modal -->
-    <div id="drain-block-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="drain-block-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-drain-block-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
@@ -1467,7 +1481,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-drain" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Bathroom/balcony</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.78 <span style="color: #777;">(46K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1475,7 +1489,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Toilet pot</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.75 <span style="color: #777;">(4K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1299</div>
@@ -1483,7 +1497,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Kitchen sink</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(36K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹299</div>
@@ -1491,7 +1505,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Wash basin</h4>
                     <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.79 <span style="color: #777;">(5K reviews)</span></div>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
@@ -1501,10 +1515,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Kitchen Grouting Modal -->
-    <div id="kitchen-grout-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="kitchen-grout-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-kitchen-grout-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-kitchen-grout-modal-btn" onclick="document.getElementById('kitchen-grout-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Kitchen tile grouting</h3>
 
@@ -1515,14 +1530,14 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 <div id="modal-carousel-kitchen-grout" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/grouting_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Epoxy grouting</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹999</div>
                     <button class="option-add-btn" onclick="addToCart('Kitchen epoxy grouting',999)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/grouting_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Cement grouting</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
                     <button class="option-add-btn" onclick="addToCart('Kitchen cement grouting',499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
@@ -1531,23 +1546,24 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Overhead Tank Install Modal -->
-    <div id="tank-install-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="tank-install-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-tank-install-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-tank-install-modal-btn" onclick="document.getElementById('tank-install-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Overhead water tank installation</h3>
             <div style="position: relative; margin: 0 -5px;">
                 <button id="scroll-left-tank-inst-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
                 <button id="scroll-right-tank-inst-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
                 <div id="modal-carousel-tank-inst" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Up to 1000L</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹599</div>
                     <button class="option-add-btn" onclick="addToCart('Tank installation up to 1000L',599)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Above 1000L</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹999</div>
                     <button class="option-add-btn" onclick="addToCart('Tank installation above 1000L',999)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
@@ -1555,29 +1571,30 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Water Tank Repair Modal -->
-    <div id="tank-repair-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="tank-repair-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-tank-repair-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-tank-repair-modal-btn" onclick="document.getElementById('tank-repair-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Water tank repair</h3>
             <div style="position: relative; margin: 0 -5px;">
                 <button id="scroll-left-tank-rep-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
                 <button id="scroll-right-tank-rep-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
                 <div id="modal-carousel-tank-rep" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Leakage repair</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹299</div>
                     <button class="option-add-btn" onclick="addToCart('Tank leakage repair',299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Lid replacement</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹199</div>
                     <button class="option-add-btn" onclick="addToCart('Tank lid replacement',199)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Valve replacement</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹149</div>
                     <button class="option-add-btn" onclick="addToCart('Tank valve replacement',149)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
@@ -1585,29 +1602,30 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 </div>
             </div>
         </div>
+</div>
 <!-- Underground Tank Cleaning Modal -->
-    <div id="ug-tank-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div id="ug-tank-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
-            <button id="close-ug-tank-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <button id="close-ug-tank-modal-btn" onclick="document.getElementById('ug-tank-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Underground tank cleaning</h3>
             <div style="position: relative; margin: 0 -5px;">
                 <button id="scroll-left-ug-tank-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
                 <button id="scroll-right-ug-tank-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
                 <div id="modal-carousel-ug-tank" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Up to 1000L</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1299</div>
                     <button class="option-add-btn" onclick="addToCart('UG Tank cleaning up to 1000L',1299)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">1000L to 3000L</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1999</div>
                     <button class="option-add-btn" onclick="addToCart('UG Tank cleaning 1000-3000L',1999)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                 </div>
                 <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                    <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
                     <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Above 3000L</h4>
                     <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹2999</div>
                     <button class="option-add-btn" onclick="addToCart('UG Tank cleaning above 3000L',2999)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
@@ -1616,6 +1634,88 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
             </div>
         </div>
 
+
+<!-- Loft Tank Modal -->
+    <div id="loft-tank-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-loft-tank-modal-btn" onclick="document.getElementById('loft-tank-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Water tank cleaning (loft placed)</h3>
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-loft-tank" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Up to 500L</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
+                    <button class="option-add-btn" onclick="addToCart('Loft Tank cleaning up to 500L',499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">500L to 1000L</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹799</div>
+                    <button class="option-add-btn" onclick="addToCart('Loft Tank cleaning 500-1000L',799)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                </div>
+            </div>
+        </div>
+</div>
+<!-- Water Meter Modal -->
+    <div id="water-meter-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-water-meter-modal-btn" onclick="document.getElementById('water-meter-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Water meter installation</h3>
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-meter-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-meter-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-meter" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Sub-meter</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹319</div>
+                    <button class="option-add-btn" onclick="addToCart('Sub-meter installation',319)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Main meter</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹499</div>
+                    <button class="option-add-btn" onclick="addToCart('Main meter installation',499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Smart meter</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹799</div>
+                    <button class="option-add-btn" onclick="addToCart('Smart meter installation',799)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<!-- Overhead Cleaning Modal -->
+    <div id="overhead-cleaning-modal" class="modal-overlay" style="display: none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;  align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-overhead-cleaning-modal-btn" onclick="document.getElementById('overhead-cleaning-modal').style.display='none'" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Overhead tank cleaning (open placed)</h3>
+            <div style="position: relative; margin: 0 -5px;">
+                <div id="modal-carousel-overhead-cleaning" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">Up to 1000L</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹899</div>
+                    <button class="option-add-btn" onclick="addToCart('Overhead Tank cleaning up to 1000L',899)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                    <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" style="width: 100%; height: 90px; object-fit: contain; margin-bottom: 10px;">
+                    <h4 style="font-size: 14px; margin-bottom: 5px; height: 34px; color: #111;">1000L to 3000L</h4>
+                    <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">₹1499</div>
+                    <button class="option-add-btn" onclick="addToCart('Overhead Tank cleaning 1000-3000L',1499)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
     <style>
     .hidden { display: none !important; }
     .wm-options-carousel::-webkit-scrollbar { display: none; }
@@ -1627,11 +1727,11 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
                 const modal = document.getElementById(modalId);
                 const closeBtn = document.getElementById(closeBtnId);
 
-                if (openBtn && modal && closeBtn) {
-                    openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
-                    closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                if (modal && closeBtn) {
+                    
+                    closeBtn.addEventListener('click', () => modal.style.display='none');
                     modal.addEventListener('click', (e) => {
-                        if (e.target === modal) modal.classList.add('hidden');
+                        if (e.target === modal) modal.style.display='none';
                     });
                 }
 
@@ -1682,7 +1782,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/toilet_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Toilet Repair">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Toilet Repair">
             </div>
             <button class="add-btn" onclick="addToCart('Toilet Repair', 199)">Add</button>
         </div>
@@ -1708,7 +1808,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/bath_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Shower Install">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Shower Install">
             </div>
             <button class="add-btn" onclick="addToCart('Shower Installation', 249)">Add</button>
         </div>
@@ -1734,7 +1834,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/accessories_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Accessory Fitting">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Accessory Fitting">
             </div>
             <button class="add-btn" onclick="addToCart('Accessory Fitting', 99)">Add</button>
         </div>
@@ -1760,7 +1860,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/basin_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Wash Basin">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Wash Basin">
             </div>
             <button class="add-btn" onclick="addToCart('Wash Basin Install', 349)">Add</button>
         </div>
@@ -1786,7 +1886,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/drainage_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Blockage">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Blockage">
             </div>
             <button class="add-btn" onclick="addToCart('Blockage Removal', 299)">Add</button>
         </div>
@@ -1812,7 +1912,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/appliance_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Appliance">
+                <img src="images/appliance_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Appliance">
             </div>
             <button class="add-btn" onclick="addToCart('Washing Machine Connection', 199)">Add</button>
         </div>
@@ -1838,7 +1938,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         </div>
         <div style="width: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div class="service-img-wrap">
-                <img src="images/tank_icon.jpg" onerror="this.src='images/plumber.jpg'" alt="Tank Motor">
+                <img src="images/new_plumber_icon.jpg" onerror="this.src='images/new_plumber_icon.jpg'" alt="Tank Motor">
             </div>
             <button class="add-btn" onclick="addToCart('Motor Installation', 399)">Add</button>
         </div>
@@ -1853,7 +1953,7 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
             <h3 style="margin: 0 0 10px 0; font-size: 22px; color: #111;">Expert Plumber Consultation</h3>
             <p style="margin: 0; color: #444; font-size: 14px; max-width: 300px;">Get professional advice and inspection for your plumbing needs.</p>
         </div>
-        <img src="images/plumber.jpg" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <img src="images/new_plumber_icon.jpg" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
     </div>
     <div class="service-card">
         <div class="service-card-info">
@@ -1887,8 +1987,8 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
         <!-- Modal content omitted for brevity -->
     </div>
 
-    <script src="cart.js"></script>
-    <script src="common.js"></script>
+    <script src="cart.js?v=11"></script>
+    <script src="common.js?v=2003"></script>
     <script>
         document.querySelectorAll('.service-item-sidebar').forEach(item => {
             item.addEventListener('click', function(e) {
@@ -1910,3 +2010,25 @@ body { background: #f7f5ef; font-family: 'Inter', sans-serif; }
     </script>
 </body>
 </html>
+
+
+    <!-- Cart Sidebar -->
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
+        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+            <button class="modal-close" id="close-cart-btn" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+            <div style="padding: 20px; border-bottom: 1px solid #eee;">
+                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+            </div>
+            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+                <!-- Items will be injected here -->
+            </div>
+            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0</span>
+                </div>
+                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    

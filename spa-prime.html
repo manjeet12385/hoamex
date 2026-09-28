@@ -47,8 +47,8 @@
         .center-content {}
 
         /* Banner */
-        .uc-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px 30px 30px 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; min-height: 300px; background-size: cover; background-position: center; color: white;}
-        .uc-difference-banner::before {
+        .joamex-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px 30px 30px 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; min-height: 300px; background-size: cover; background-position: center; color: white;}
+        .joamex-difference-banner::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%); z-index: 1;
         }
         .banner-text { position: relative; z-index: 2; width: 60%; text-align: left; padding-left: 20px; }
@@ -79,11 +79,11 @@
 
         /* Right sidebar */
         .right-sidebar { position: sticky; top: 80px; }
-        .uc-promise-card { border: 1px solid #eee; border-radius: 10px; padding: 18px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; }
-        .uc-promise-card h3 { font-size: 15px; font-weight: 700; margin: 0 0 10px 0; }
-        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
-        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 6px; display: flex; align-items: center; gap: 7px; }
-        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        .joamex-promise-card { border: 1px solid #eee; border-radius: 10px; padding: 18px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .joamex-promise-card h3 { font-size: 15px; font-weight: 700; margin: 0 0 10px 0; }
+        .joamex-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .joamex-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 6px; display: flex; align-items: center; gap: 7px; }
+        .joamex-promise-card ul li i { color: #00875a; font-size: 12px; }
         .promise-badge { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
         .cart-card { border: 1px solid #eee; border-radius: 10px; padding: 20px; text-align: center; color: #999; }
         .cart-card i { font-size: 28px; margin-bottom: 8px; display: block; }
@@ -96,12 +96,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="search-container" id="header-search" style="display: none;">
@@ -148,37 +145,37 @@
                     <div class="service-grid">
                         <a href="#stress-relief" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Stress relief">
+                                <img src="images/womens_spa.jpg" alt="Stress relief">
                             </div>
                             <span style="font-size: 10px; color: #333;">Stress relief</span>
                         </a>
                         <a href="#pain-relief" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Pain relief">
+                                <img src="images/womens_spa.jpg" alt="Pain relief">
                             </div>
                             <span style="font-size: 10px; color: #333;">Pain relief</span>
                         </a>
                         <a href="#skin-care-scrubs" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Skin care scrubs">
+                                <img src="images/womens_spa.jpg" alt="Skin care scrubs">
                             </div>
                             <span style="font-size: 10px; color: #333;">Skin care scrubs</span>
                         </a>
                         <a href="#post-natal" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Post natal">
+                                <img src="images/womens_spa.jpg" alt="Post natal">
                             </div>
                             <span style="font-size: 10px; color: #333;">Post natal</span>
                         </a>
                         <a href="#elderly-care" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Elderly care">
+                                <img src="images/womens_spa.jpg" alt="Elderly care">
                             </div>
                             <span style="font-size: 10px; color: #333;">Elderly care</span>
                         </a>
                         <a href="#add-ons" class="service-item">
                             <div class="service-item-img">
-                                <img src="images/beauty.jpg" alt="Add-ons">
+                                <img src="images/womens_spa.jpg" alt="Add-ons">
                             </div>
                             <span style="font-size: 10px; color: #333;">Add-ons</span>
                         </a>
@@ -190,19 +187,675 @@
             <div class="center-content">
                 
                 <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 30px;">
-                    <img src="images/beauty.jpg" alt="Spa to your home" style="width: 100%; height: auto; display: block;">
+                    <img src="images/womens_spa.jpg" alt="Spa to your home" style="width: 100%; height: auto; display: block;">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
                         <h2 style="color: #fff; font-size: 42px; font-weight: 700; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin: 0;">spa to your home</h2>
                     </div>
                 </div>
 
-                <!-- Sections will be added here later -->
+                <!-- Stress Relief Section -->
+                <div id="stress-relief" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Stress relief</h2>
+
+                    <!-- Service 1: Stress relief Swedish massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #007958; font-size: 11px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px;">
+                                        <i class="fa-solid fa-bookmark"></i> BESTSELLER
+                                    </div>
+                                    <h4 style="margin-bottom: 6px;">Stress relief Swedish massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (318K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,319</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Full-body massage which improves blood circulation &amp; sleep quality</li>
+                                        <li>Save more: Add a pack to unlock extra savings</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Stress relief Swedish massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Stress relief Swedish massage', 1319)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Quick comfort therapy -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Quick comfort therapy</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (22K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹999</span>
+                                        <span style="color: #999; font-size: 12px; text-decoration: line-through; margin-left: 6px;">₹1,199</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 45 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Revitalising oil massage focused on key stress areas</li>
+                                        <li>Eases tension &amp; restores energy for a relaxed, refreshed feel</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Quick comfort therapy', 999)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Swedish with foot massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #007958; font-size: 11px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;">VALUE-SAVER</div>
+                                    <h4 style="margin-bottom: 6px;">Swedish with foot massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (15K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,769</span>
+                                        <span style="color: #999; font-size: 12px; text-decoration: line-through; margin-left: 6px;">₹1,869</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 1 hr 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>60 mins Swedish massage &amp; 20 mins foot massage</li>
+                                        <li>Save more: Add a pack to unlock extra savings</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Swedish with foot massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Swedish with foot massage', 1769)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Swedish with head & shoulder massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Swedish with head & shoulder massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.82 (20K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,769</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 1 hr 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>60 mins Swedish massage</li>
+                                        <li>20 mins head &amp; shoulder massage</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Swedish with head & shoulder massage', 1769)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Top-to-toe stress relief massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Top-to-toe stress relief massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (64K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,929</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 1 hr 40 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Customisable pressure massage with scalp care &amp; foot reflexology</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div style="background: white; border-radius: 8px; position: relative; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Top-to-toe stress relief massage', 1929)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pain Relief Section -->
+                <div id="pain-relief" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Pain relief</h2>
+
+                    <!-- Service 1: Deep tissue massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #007958; font-size: 11px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px;">
+                                        <i class="fa-solid fa-bookmark"></i> BESTSELLER
+                                    </div>
+                                    <h4 style="margin-bottom: 6px;">Deep tissue massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (237K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,469</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Supports post-workout relaxation</li>
+                                        <li>Save more: Add a pack to unlock extra savings on each visit</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Deep tissue massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Deep tissue massage', 1469)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Deep tissue with foot massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Deep tissue with foot massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.81 (16K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,898</span>
+                                        <span style="color: #999; font-size: 12px; text-decoration: line-through; margin-left: 6px;">₹1,990</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 1 hr 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>60 mins deep tissue massage &amp; 20 mins foot massage</li>
+                                        <li>Save more: Add a pack to unlock extra savings on each visit</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Deep tissue with foot massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Deep tissue with foot massage', 1898)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Back relief massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Back relief massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.84 (13K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹929</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 40 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Focuses on lower back, spine &amp; shoulder blades to ease tension</li>
+                                        <li>Eliminates stiffness &amp; inflammation in the affected areas</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Back relief massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Back relief massage', 929)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Leg relief massage -->
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Leg relief massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.83 (19K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹929</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 40 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Customised massage with natural oils to alleviate soreness</li>
+                                        <li>Focuses on pain and stiffness in glutes, calf, and feet</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Leg relief massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Leg relief massage', 929)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Skin care scrubs Section -->
+                <div id="skin-care-scrubs" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Skin care scrubs</h2>
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Full body massage & scrub</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.82 (59K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹1,699</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 1 hr 30 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Removes dead skin, leaving skin soft, smooth & hydrated</li>
+                                        <li>Save more: Add pack of 4 to unlock savings on every visit</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Full body massage & scrub" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Full body massage & scrub', 1699)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post natal Section -->
+                <div id="post-natal" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Post natal</h2>
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Post natal massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.84 (5K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,369</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Reduces water retention & eases muscle tension</li>
+                                        <li>Save more: Add a pack to unlock extra savings on each visit</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Post natal massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Post natal massage', 1369)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elderly care Section -->
+                <div id="elderly-care" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Elderly care</h2>
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <div style="color: #007958; font-size: 11px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px;">
+                                        <i class="fa-solid fa-bookmark"></i> NEWLY LAUNCHED
+                                    </div>
+                                    <h4 style="margin-bottom: 6px;">Elderly care massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.86 (4K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹1,399</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 60 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Light-pressure full-body massage tailored for seniors</li>
+                                        <li>Gentle, soothing strokes across the whole body, paced for comfort</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Elderly care massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Elderly care massage', 1399)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add-ons Section -->
+                <div id="add-ons" style="margin-bottom: 36px; padding-top: 20px;">
+                    <h2 class="section-heading" style="font-size:24px; margin-bottom:20px;">Add-ons</h2>
+                    
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Foot massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.79 (61K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹549</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Foot massage using micro-movements to target every pressure point</li>
+                                        <li>Targets stiffness & discomfort in your feet</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Foot massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Foot massage', 549)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Face massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (40K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹349</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Gentle massage with upward & outward circular motions</li>
+                                        <li>Reduces fine lines & puffiness for a refreshed look</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Face massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Face massage', 349)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Head & shoulder massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (48K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹459</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Focused medium-pressure relief for head, neck & shoulders</li>
+                                        <li>Releases muscle tension & nourishes scalp</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Head & shoulder massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Head & shoulder massage', 459)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Head massage</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.83 (40K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹349</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 20 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Calming massage to soothe mind & promote hair health</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Head massage" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Head massage', 349)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Scrub</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.84 (572 reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>Starts at ₹499</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Targeted scrub to cleanse, smoothen & refresh your skin</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Scrub" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Scrub', 499)" style="width: 80px; padding: 6px 0;">Add</button>
+                                        <span style="font-size: 11px; color: #6366f1; margin-top: 4px;">3 options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Stretch therapy</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.88 (16K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹349</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 15 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Full-body low-pressure stretch that eases tension & boosts mobility</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Stretch therapy" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Stretch therapy', 349)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Massage top-up (15 mins)</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.79 (22K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹199</span>
+                                        <span style="color: #666; font-size: 13px; font-weight: normal; margin-left: 8px;">• 15 mins</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Extend your relaxation with 15 extra minutes of massage therapy</li>
+                                        <li>Choose any area you'd like more time spent on</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Massage top-up (15 mins)" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Massage top-up (15 mins)', 199)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div class="service-card-info" style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div style="flex: 1;">
+                                    <h4 style="margin-bottom: 6px;">Hot bed</h4>
+                                    <div class="service-rating">
+                                        <i class="fa-solid fa-star" style="color: #6366f1;"></i>
+                                        <a href="#">4.80 (21K reviews)</a>
+                                    </div>
+                                    <div class="service-price" style="margin: 8px 0;">
+                                        <span>₹49</span>
+                                    </div>
+                                    <ul class="service-features" style="margin-top: 10px; margin-bottom: 12px;">
+                                        <li>Advanced technology for ambient massage temperature</li>
+                                        <li>Enhances relaxation & removes stiffness</li>
+                                    </ul>
+                                    <a href="#" style="color: #6366f1; font-size: 13px; font-weight: 600; text-decoration: none;">View details</a>
+                                </div>
+                                <div style="width: 130px; text-align: right; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+                                    <div class="service-img-wrap" style="height: 100px; width: 100px; border-radius: 12px; margin-bottom: -15px; position: relative; z-index: 1; overflow: hidden;">
+                                        <img src="images/womens_spa.jpg" alt="Hot bed" style="border-radius: 12px; width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div style="background: white; border-radius: 8px; position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                                        <button class="add-btn" onclick="addToCart('Hot bed', 49)" style="width: 80px; padding: 6px 0;">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
             </div><!-- end center-content -->
 
             <!-- RIGHT SIDEBAR -->
             <div class="right-sidebar">
-                <div class="uc-promise-card">
+                <div class="joamex-promise-card">
                     <div>
                         <h3>Joamex Promise</h3>
                         <ul>
@@ -211,7 +864,7 @@
                             <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
                         </ul>
                     </div>
-                    <img src="images/beauty.jpg" alt="Promise" class="promise-badge">
+                    <img src="images/womens_spa.jpg" alt="Promise" class="promise-badge">
                 </div>
                 
                 <div class="cart-card">
@@ -227,7 +880,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Scroll Logic
             const sections = [
-                // To be added
+                { btn: 'stress-relief', section: 'stress-relief' },
+                { btn: 'pain-relief', section: 'pain-relief' },
+                { btn: 'skin-care-scrubs', section: 'skin-care-scrubs' },
+                { btn: 'post-natal', section: 'post-natal' },
+                { btn: 'elderly-care', section: 'elderly-care' },
+                { btn: 'add-ons', section: 'add-ons' }
             ];
 
             sections.forEach(s => {
@@ -242,11 +900,11 @@
             });
         });
     </script>
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -280,39 +938,129 @@
 @media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
 @media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
 </style>
-<footer class="footer">
+<footer class="footer" style="padding: 60px 0 0; background-color: #fdfaf6; color: #333; font-family: 'Inter', sans-serif;">
     <div class="footer-container">
-        <div class="footer-col" style="grid-column: span 2;">
-            <a href="index.html" class="footer-logo">Joamex</a>
-            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
-        </div>
+        
+        <!-- Col 1: Brand -->
         <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
+            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
+            </a>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
+                Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
+            </p>
+        </div>
+        
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
             </ul>
         </div>
+
+        <!-- Col 3: For Customers -->
         <div class="footer-col">
-            <h3>For Customers</h3>
-            <ul>
-                <li><a href="#">UC Reviews</a></li>
-                <li><a href="#">Categories near you</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
             </ul>
+        </div>
+        
+        <!-- Col 4: For Professionals -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Social Media & Quick Contact -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
+            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFx4WC" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    
+    <!-- Cities Expandable Section -->
+    <div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
+            <div class="cities-grid">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+                </div>
+            </div>
         </div>
+    </div>
+    
+    <div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
+        <div style="margin-bottom: 5px;">&copy; 2026 Joamex | All Rights Reserved</div>
+        <div>managed by <strong style="color: #111; font-weight: 700;">Indian Export Webmart</strong></div>
     </div>
 </footer>
 </body>

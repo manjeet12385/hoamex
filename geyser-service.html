@@ -39,9 +39,9 @@
         .instant-badge { display: inline-flex; flex-direction: column; align-items: center; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px 8px; font-size: 11px; float: right; }
         .instant-badge span:first-child { background: #00875a; color: white; padding: 2px 6px; border-radius: 4px; font-weight: 600; margin-bottom: 2px; }
         
-        .uc-cover-banner { background: #fdfaf4; border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .uc-cover-banner .text { font-size: 13px; font-weight: 600; color: #111; }
-        .uc-cover-banner .text span { color: #00875a; display: flex; align-items: center; gap: 5px; margin-bottom: 4px; font-size: 12px; font-weight: 700; }
+        .joamex-cover-banner { background: #fdfaf4; border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .joamex-cover-banner .text { font-size: 13px; font-weight: 600; color: #111; }
+        .joamex-cover-banner .text span { color: #00875a; display: flex; align-items: center; gap: 5px; margin-bottom: 4px; font-size: 12px; font-weight: 700; }
         
         .select-service-card { border: 1px solid #e8e4db; border-radius: 12px; padding: 15px; background: white; }
         .select-service-card h3 { font-size: 13px; color: #666; font-weight: 500; margin: 0 0 15px 0; }
@@ -77,11 +77,11 @@
         .promo-banner .text { font-size: 12px; font-weight: 600; color: #111; }
         .promo-banner .text span { font-size: 11px; font-weight: 400; color: #666; display: block; margin-top: 2px; }
 
-        .uc-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: white; }
-        .uc-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
-        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
-        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        .joamex-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: white; }
+        .joamex-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
+        .joamex-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .joamex-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .joamex-promise-card ul li i { color: #00875a; font-size: 12px; }
         
         .cart-summary { border: 1px solid #eee; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
         .cart-summary .total { font-weight: 700; font-size: 16px; color: #111; }
@@ -94,12 +94,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="header-actions">
@@ -131,9 +128,9 @@
                     </div>
                 </div>
 
-                <div class="uc-cover-banner">
+                <div class="joamex-cover-banner">
                     <div class="text">
-                        <span><i class="fa-solid fa-shield"></i> UC COVER</span>
+                        <span><i class="fa-solid fa-shield"></i> Joamex COVER</span>
                         60 days warranty on all services
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: #999; font-size: 12px;"></i>
@@ -158,7 +155,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/plumber.jpg" alt="Geyser check-up">
+                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser check-up">
                     <button class="add-btn" onclick="addToCart('Geyser check-up', 249)">Add</button>
                 </div>
             </div>
@@ -175,8 +172,8 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/plumber.jpg" alt="Geyser service">
-                    <button class="add-btn" onclick="addToCart('Geyser service',599)">Add</button>
+                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser service">
+                    <button id="open-geyser-service-modal-btn" class="add-btn">Add</button>
                     <div class="options-text">3 options</div>
                 </div>
             </div>
@@ -191,7 +188,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/plumber.jpg" alt="Geyser installation">
+                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser installation">
                     <button class="add-btn" onclick="addToCart('Geyser installation', 499)">Add</button>
                 </div>
             </div>
@@ -205,7 +202,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/plumber.jpg" alt="Geyser uninstallation">
+                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser uninstallation">
                     <button class="add-btn" onclick="addToCart('Geyser uninstallation', 399)">Add</button>
                 </div>
             </div>
@@ -222,10 +219,10 @@
                     </div>
                 </div>
 
-                <div class="uc-promise-card">
+                <div class="joamex-promise-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <h3 style="margin: 0;">UC Promise</h3>
-                        <img src="images/beauty.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
+                        <h3 style="margin: 0;">Joamex Promise</h3>
+                        <img src="images/new_geyser_repair_icon.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
@@ -243,11 +240,11 @@
         </div>
     </main>
     
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -266,9 +263,79 @@
         </div>
     </div>
 
+    <!-- Geyser Service Modal -->
+    <div id="geyser-service-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-geyser-service-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #333;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
+                <img src="images/new_geyser_repair_icon.jpg" onerror="this.src='images/new_geyser_repair_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Geyser service</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 20px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 (104K reviews)</p>
+            
+            <div style="background: #fff8ee; padding: 12px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 14px; cursor: pointer;">
+                <span style="color: #167a63;"><i class="fa-solid fa-shield-halved"></i> uccover <span style="color: #333; margin-left: 10px;">Standard rate card</span></span>
+                <i class="fa-solid fa-chevron-right" style="color: #333;"></i>
+            </div>
+            
+            <div style="position: relative; margin: 0 -5px;">
+                <button id="scroll-left-geyser-service-btn" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-left" style="font-size: 14px;"></i></button>
+                <button id="scroll-right-geyser-service-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
+                <div id="modal-carousel-geyser-service" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">Upto 10 ltr.</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(48K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹599</div>
+                        <button class="option-add-btn" onclick="addToCart('Geyser service - Upto 10 ltr.', 599)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">11 - 25 ltr.</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 <span style="color: #777;">(54K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹649</div>
+                        <button class="option-add-btn" onclick="addToCart('Geyser service - 11 - 25 ltr.', 649)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                    <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
+                        <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">More than 25 ltr.</h4>
+                        <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.71 <span style="color: #777;">(2K reviews)</span></div>
+                        <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹699</div>
+                        <button class="option-add-btn" onclick="addToCart('Geyser service - More than 25 ltr.', 699)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <style>
 .hidden { display: none !important; }
 .wm-options-carousel::-webkit-scrollbar { display: none; }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function setupModal(openBtnId, modalId, closeBtnId, carouselId, leftBtnId, rightBtnId) {
+            const openBtn = document.getElementById(openBtnId);
+            const modal = document.getElementById(modalId);
+            const closeBtn = document.getElementById(closeBtnId);
+
+            if (openBtn && modal && closeBtn) {
+                openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+                closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+            }
+
+            const carousel = document.getElementById(carouselId);
+            const leftBtn = document.getElementById(leftBtnId);
+            const rightBtn = document.getElementById(rightBtnId);
+
+            if (carousel && leftBtn && rightBtn) {
+                leftBtn.addEventListener('click', () => carousel.scrollBy({ left: -175, behavior: 'smooth' }));
+                rightBtn.addEventListener('click', () => carousel.scrollBy({ left: 175, behavior: 'smooth' }));
+            }
+        }
+        setupModal('open-geyser-service-modal-btn', 'geyser-service-modal', 'close-geyser-service-modal-btn', 'modal-carousel-geyser-service', 'scroll-left-geyser-service-btn', 'scroll-right-geyser-service-btn');
+    });
+</script>
 
     

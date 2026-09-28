@@ -191,6 +191,67 @@
             background: white;
             border-radius: 2px;
         }
+    
+    .balcony-options-carousel {
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    .balcony-options-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    .balcony-option-card {
+        min-width: 160px;
+        flex: 1;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 12px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+    .balcony-option-img {
+        width: 100%;
+        height: 100px;
+        border-radius: 6px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .balcony-option-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #111;
+        line-height: 1.3;
+        height: 36px; /* reserve space for 2 lines */
+    }
+    .balcony-option-rating {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+    .balcony-option-price {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #111;
+    }
+    .balcony-option-add {
+        width: 100%;
+        padding: 8px;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        color: #a855f7;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: auto;
+    }
+
     </style>
 </head>
 <body style="background-color: #fdfbf7;">
@@ -240,27 +301,27 @@
             <div class="select-service-box">
                 <h3 class="select-service-title">Select a service</h3>
                 <div class="service-grid-box">
-                    <div class="service-option" onclick="showSection('weekly-plans')">
+                    <div class="service-option" onclick="document.getElementById('weekly-plans').scrollIntoView({behavior: 'smooth', block: 'start'})">
                         <div class="service-option-icon" style="border-color: #e2e8f0; background: #fff;">
-                            <img src="images/cleaning.jpg" alt="Weekly plans" style="border-radius: 8px;">
+                            <img src="images/bathroom_cleaning.jpg" alt="Weekly plans" style="border-radius: 8px;">
                         </div>
                         <div class="service-option-text">Weekly plans: Best value</div>
                     </div>
-                    <div class="service-option" onclick="showSection('value-deals')">
+                    <div class="service-option" onclick="document.getElementById('value-deals').scrollIntoView({behavior: 'smooth', block: 'start'})">
                         <div class="service-option-icon">
                             <span style="color: #1e8f52; font-weight: 800; font-size: 14px; text-align: center; line-height: 1.1;">COMBO<br>DEALS</span>
                         </div>
                         <div class="service-option-text">Value deals</div>
                     </div>
-                    <div class="service-option" onclick="showSection('one-time-service')">
+                    <div class="service-option" onclick="document.getElementById('one-time-service').scrollIntoView({behavior: 'smooth', block: 'start'})">
                         <div class="service-option-icon">
-                            <img src="images/cleaning.jpg" alt="One time service" style="border-radius: 8px;">
+                            <img src="images/bathroom_cleaning.jpg" alt="One time service" style="border-radius: 8px;">
                         </div>
                         <div class="service-option-text">One time service</div>
                     </div>
-                    <div class="service-option" style="grid-column: 1 / 2; margin-top: 10px;" onclick="showSection('mini-services')">
+                    <div class="service-option" style="grid-column: 1 / 2; margin-top: 10px;" onclick="document.getElementById('mini-services').scrollIntoView({behavior: 'smooth', block: 'start'})">
                         <div class="service-option-icon">
-                            <img src="images/cleaning.jpg" alt="Mini services" style="border-radius: 8px;">
+                            <img src="images/bathroom_cleaning.jpg" alt="Mini services" style="border-radius: 8px;">
                         </div>
                         <div class="service-option-text">Mini services</div>
                     </div>
@@ -272,7 +333,7 @@
         <div class="bathroom-right">
             
             <!-- Default Banner -->
-            <div id="default-banner" style="position: relative; border-radius: 16px; overflow: hidden; min-height: 450px;">
+            <div id="default-banner" style="display: none;">
                 <img src="images/living_bedroom.jpg" alt="Bathroom Cleaning Banner" class="bathroom-banner-img">
                 <div class="bathroom-banner-content">
                     <div class="bathroom-banner-text">Weekly plans starting</div>
@@ -283,8 +344,8 @@
                 </div>
             </div>
 
-            <!-- Weekly Plans Section (Hidden by default) -->
-            <div id="weekly-plans" style="display: none; padding: 10px 0;">
+            <!-- Weekly Plans Section -->
+            <div id="weekly-plans" style="padding: 10px 0;">
                 <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Weekly plans: Best value</h2>
                 
                 <!-- Subscription Banner -->
@@ -301,7 +362,7 @@
                             <div style="font-size: 14px; color: #475569;">Skip, reschedule, pause or cancel when needed</div>
                         </div>
                     </div>
-                    <div style="width: 200px; background: url('images/cleaning.jpg') no-repeat center right; background-size: cover;">
+                    <div style="width: 200px; background: url('images/bathroom_cleaning.jpg') no-repeat center right; background-size: cover;">
                         <!-- Using placeholder image from existing images, actual image can be swapped -->
                     </div>
                 </div>
@@ -334,7 +395,7 @@
             </div>
 
             <!-- Value Deals Section (Hidden by default) -->
-            <div id="value-deals" style="display: none; padding: 10px 0;">
+            <div id="value-deals" style="padding: 10px 0;">
                 <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Value deals</h2>
 
                 <!-- Item 1: Intense cleaning (4 bathroom) -->
@@ -359,8 +420,8 @@
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
                         <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">4 bathrooms</div>
-                        <img src="images/cleaning.jpg" alt="4 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        <img src="images/bathroom_cleaning.jpg" alt="4 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button onclick="document.getElementById('balcony-modal').style.display='flex'" style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
 
@@ -386,7 +447,7 @@
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
                         <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">2 BATHROOMS</div>
-                        <img src="images/cleaning.jpg" alt="2 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="2 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -413,7 +474,7 @@
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
                         <div style="position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; font-size: 10px; font-weight: 700; border-bottom-right-radius: 8px; border-top-left-radius: 12px; z-index: 1;">3 BATHROOMS</div>
-                        <img src="images/cleaning.jpg" alt="3 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="3 bathroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -436,14 +497,14 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Bathroom and fan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Bathroom and fan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
             </div>
 
             <!-- One Time Service Section (Hidden by default) -->
-            <div id="one-time-service" style="display: none; padding: 10px 0;">
+            <div id="one-time-service" style="padding: 10px 0;">
                 <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">One time service</h2>
 
                 <!-- Item 1: Intense bathroom cleaning -->
@@ -468,7 +529,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Intense cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Intense cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -495,14 +556,14 @@
                         <div style="position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: center; z-index: 1;">
                             <span style="background: #1e8f52; color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">Extra 30 mins</span>
                         </div>
-                        <img src="images/cleaning.jpg" alt="Move-in cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Move-in cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
             </div>
 
             <!-- Mini Services Section (Hidden by default) -->
-            <div id="mini-services" style="display: none; padding: 10px 0;">
+            <div id="mini-services" style="padding: 10px 0;">
                 <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin-bottom: 25px; line-height: 1.2;">Mini services</h2>
 
                 <!-- Item 1: Balcony cleaning -->
@@ -520,8 +581,8 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Balcony cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                        <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
+                        <img src="images/bathroom_cleaning.jpg" alt="Balcony cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <button onclick="document.getElementById('balcony-modal').style.display='flex'" style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                         <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">2 options</div>
                     </div>
                 </div>
@@ -544,7 +605,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Exhaust fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Exhaust fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -567,7 +628,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Door cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Door cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -590,7 +651,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Mirror cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Mirror cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -614,7 +675,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Drain Cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Drain Cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                         <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">5 options</div>
                     </div>
@@ -638,7 +699,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Ceiling fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Ceiling fan cleaning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                         <div style="position: absolute; bottom: -35px; left: 0; right: 0; text-align: center; font-size: 11px; color: #64748b;">6 options</div>
                     </div>
@@ -659,7 +720,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="position: relative; width: 140px; height: 140px; border-radius: 12px; overflow: visible;">
-                        <img src="images/cleaning.jpg" alt="Bathroom disinfection" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        <img src="images/bathroom_cleaning.jpg" alt="Bathroom disinfection" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                         <button style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: #fff; color: #7c3aed; font-weight: 600; padding: 8px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -669,20 +730,55 @@
     </main>
 
     <script>
-        function showSection(sectionId) {
-            document.getElementById('default-banner').style.display = 'none';
-            document.getElementById('weekly-plans').style.display = 'none';
-            const valueDeals = document.getElementById('value-deals');
-            if (valueDeals) valueDeals.style.display = 'none';
-            const oneTimeService = document.getElementById('one-time-service');
-            if (oneTimeService) oneTimeService.style.display = 'none';
-            const miniServices = document.getElementById('mini-services');
-            if (miniServices) miniServices.style.display = 'none';
-            
-            document.getElementById(sectionId).style.display = 'block';
-        }
+        // Smooth scrolling is handled via inline onclick attributes.
     </script>
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
+    <!-- Balcony Modal -->
+    <div id="balcony-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+            
+            <div style="position: relative; width: 100%; height: 180px; background: #333;">
+                <button class="modal-close" onclick="document.getElementById('balcony-modal').style.display='none'" style="position: absolute; z-index: 10; background: rgba(0,0,0,0.3); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+                <img src="images/bathroom_cleaning.jpg" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+                <div style="padding: 24px; position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; color: white;">
+                    <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 8px 0; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">A deeper clean<br>for your balcony</h2>
+                    <p style="margin: 0; font-size: 14px; opacity: 0.9; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">Remove built-up dirt with<br>machine scrubbing</p>
+                </div>
+            </div>
+            
+            <div class="options-modal-body" style="padding: 24px;">
+                <h3 class="options-modal-title" style="font-size: 20px; margin-bottom: 5px; font-weight: 700;">Balcony cleaning</h3>
+                <div class="options-rating" style="margin-bottom: 20px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.80 <span style="color: #666; font-weight: 400; text-decoration: underline; text-decoration-style: dotted;">(60K reviews)</span></div>
+
+                <div style="position: relative; margin-bottom: 10px;">
+                    <button class="ac-scroll-btn ac-scroll-right" style="position: absolute; top: 50%; right: -15px; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;" onclick="document.getElementById('balcony-carousel').scrollBy(150, 0)"><i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i></button>
+                    
+                    <div id="balcony-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; scroll-behavior: smooth;">
+                        
+                        <!-- Small -->
+                        <div class="balcony-option-card" style="min-width: 160px; flex: 1; border: 1px solid #eaeaea; border-radius: 8px; padding: 12px; background: #fff; display: flex; flex-direction: column;">
+                            <img src="images/bathroom_cleaning.jpg" style="width: 100%; height: 100px; border-radius: 6px; object-fit: cover; margin-bottom: 10px;" alt="Small Balcony">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 5px; color: #111; line-height: 1.3; height: 36px;">Small (Up to 6 ft<br>long)</div>
+                            <div style="font-size: 12px; color: #555; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.80 <span style="color: #666;">(46K reviews)</span></div>
+                            <div style="font-size: 13px; font-weight: 600; margin-bottom: 15px; color: #111;">₹549</div>
+                            <button onclick="addToCart('Balcony cleaning - Small', 549); document.getElementById('balcony-modal').style.display='none';" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #a855f7; font-weight: 600; border-radius: 6px; cursor: pointer; font-size: 14px; margin-top: auto;">Add</button>
+                        </div>
+
+                        <!-- Large -->
+                        <div class="balcony-option-card" style="min-width: 160px; flex: 1; border: 1px solid #eaeaea; border-radius: 8px; padding: 12px; background: #fff; display: flex; flex-direction: column;">
+                            <img src="images/bathroom_cleaning.jpg" style="width: 100%; height: 100px; border-radius: 6px; object-fit: cover; margin-bottom: 10px;" alt="Large Balcony">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 5px; color: #111; line-height: 1.3; height: 36px;">Large (Up to 20 ft<br>long)</div>
+                            <div style="font-size: 12px; color: #555; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.79 <span style="color: #666;">(15K reviews)</span></div>
+                            <div style="font-size: 13px; font-weight: 600; margin-bottom: 15px; color: #111;">₹799</div>
+                            <button onclick="addToCart('Balcony cleaning - Large', 799); document.getElementById('balcony-modal').style.display='none';" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #a855f7; font-weight: 600; border-radius: 6px; cursor: pointer; font-size: 14px; margin-top: auto;">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+

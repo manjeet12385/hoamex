@@ -72,15 +72,72 @@
             position: sticky;
             top: 100px;
         }
-        .uc-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-        .uc-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
-        .uc-promise-card ul { list-style: none; padding: 0; margin: 0; }
-        .uc-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .uc-promise-card ul li i { color: #00875a; font-size: 12px; }
+        .joamex-promise-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .joamex-promise-card h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #111; }
+        .joamex-promise-card ul { list-style: none; padding: 0; margin: 0; }
+        .joamex-promise-card ul li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .joamex-promise-card ul li i { color: #00875a; font-size: 12px; }
         
         .cart-summary { border: 1px solid #eee; border-radius: 12px; padding: 20px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
         .cart-summary .total { font-weight: 700; font-size: 16px; color: #111; }
         .view-cart-btn { background: #7d33ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; }
+    
+    .vertical-option-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .vertical-option-row:last-child {
+        border-bottom: none;
+    }
+    .vertical-option-info h4 {
+        font-size: 15px;
+        margin: 0 0 4px 0;
+        font-weight: 600;
+        color: #111;
+    }
+    .vertical-option-info .option-rating {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 6px;
+    }
+    .vertical-option-info .option-price {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111;
+    }
+    .vertical-option-media {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100px;
+    }
+    .vertical-option-media img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-bottom: -15px;
+        z-index: 1;
+        margin-right: 15px;
+    }
+    .vertical-option-media button {
+        width: 70px;
+        padding: 6px 0;
+        background: white;
+        border: 1px solid #e0e0e0;
+        color: #6366f1;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        z-index: 2;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-right: 20px;
+    }
+
     </style>
 </head>
 <body>
@@ -89,12 +146,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="header-actions">
@@ -139,8 +193,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Decorative ceiling fan">
-                        <button class="add-btn" onclick="addToCart('Decorative ceiling fan installation/replacement',469)">Add</button>
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Decorative ceiling fan">
+                        <button class="add-btn" onclick="document.getElementById('decorative-fan-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -153,8 +207,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Smart fan">
-                        <button class="add-btn" onclick="addToCart('Smart fan installation/replacement',298)">Add</button>
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Smart fan">
+                        <button class="add-btn" onclick="document.getElementById('smart-fan-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -167,8 +221,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Ceiling fan">
-                        <button class="add-btn" onclick="addToCart('Ceiling fan installation/replacement',248)">Add</button>
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Ceiling fan">
+                        <button class="add-btn" onclick="document.getElementById('ceiling-fan-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -181,8 +235,8 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Exhaust fan">
-                        <button class="add-btn" onclick="addToCart('Exhaust fan installation/replacement',248)">Add</button>
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Exhaust fan">
+                        <button class="add-btn" onclick="document.getElementById('exhaust-fan-modal').style.display='flex'">Add</button>
                         <div class="options-text">2 options</div>
                     </div>
                 </div>
@@ -195,7 +249,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Wall fan">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Wall fan">
                         <button class="add-btn" onclick="addToCart('Wall fan', 199)">Add</button>
                     </div>
                 </div>
@@ -208,7 +262,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Fan regulator">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Fan regulator">
                         <button class="add-btn" onclick="addToCart('Fan regulator', 159)">Add</button>
                     </div>
                 </div>
@@ -221,7 +275,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Pedestal fan">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Pedestal fan">
                         <button class="add-btn" onclick="addToCart('Pedestal fan', 199)">Add</button>
                     </div>
                 </div>
@@ -234,7 +288,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Tower fan">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Tower fan">
                         <button class="add-btn" onclick="addToCart('Tower fan', 199)">Add</button>
                     </div>
                 </div>
@@ -247,7 +301,7 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Fan repair">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Fan repair">
                         <button class="add-btn" onclick="addToCart('Fan repair', 199)">Add</button>
                     </div>
                 </div>
@@ -262,17 +316,17 @@
                         <a href="#" class="view-details">View details</a>
                     </div>
                     <div class="svc-media">
-                        <img class="svc-img" src="images/tools.jpg" alt="Fan uninstallation">
+                        <img class="svc-img" src="images/new_fan_installation_icon.jpg" alt="Fan uninstallation">
                         <button class="add-btn" onclick="addToCart('Fan uninstallation', 179)">Add</button>
                     </div>
                 </div>
             </div>
 <!-- Right Column -->
             <div class="right-col">
-                <div class="uc-promise-card">
+                <div class="joamex-promise-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <h3 style="margin: 0;">UC Promise</h3>
-                        <img src="images/beauty.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
+                        <h3 style="margin: 0;">Joamex Promise</h3>
+                        <img src="images/new_fan_installation_icon.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
@@ -290,11 +344,183 @@
         </div>
     </main>
     
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
+
+    
+    <!-- Decorative Fan Modal -->
+    <div id="decorative-fan-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+            <button class="modal-close" onclick="document.getElementById('decorative-fan-modal').style.display='none'" style="position: absolute; z-index: 10; background: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="options-modal-body" style="padding: 24px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">Decorative ceiling fan installation/replacement</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.80 <span style="color: #666; font-weight: 400;">(473 reviews)</span></div>
+                
+                <div style="background: #fff9f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: #333; display: flex; align-items: center;">
+                    <i class="fa-solid fa-shield" style="color: #00875a; margin-right: 8px;"></i> uc cover &nbsp; <span style="font-weight: 400;">Standard rate card</span>
+                </div>
+
+                <div class="vertical-options-list">
+                    <!-- Option 1 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Installation</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.86 (298 reviews)</div>
+                            <div class="option-price">₹469 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Installation">
+                            <button onclick="addToCart('Decorative ceiling fan installation', 469); document.getElementById('decorative-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Replacement</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.70 (175 reviews)</div>
+                            <div class="option-price">₹519 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Replacement">
+                            <button onclick="addToCart('Decorative ceiling fan replacement', 519); document.getElementById('decorative-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Fan Modal -->
+    <div id="smart-fan-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+            <button class="modal-close" onclick="document.getElementById('smart-fan-modal').style.display='none'" style="position: absolute; z-index: 10; background: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="options-modal-body" style="padding: 24px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">Smart fan installation/replacement</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.85 <span style="color: #666; font-weight: 400;">(10K reviews)</span></div>
+                
+                <div style="background: #fff9f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: #333; display: flex; align-items: center;">
+                    <i class="fa-solid fa-shield" style="color: #00875a; margin-right: 8px;"></i> uc cover &nbsp; <span style="font-weight: 400;">Standard rate card</span>
+                </div>
+
+                <div class="vertical-options-list">
+                    <!-- Option 1 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Installation</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.83 (6K reviews)</div>
+                            <div class="option-price">₹298 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <button onclick="addToCart('Smart fan installation', 298); document.getElementById('smart-fan-modal').style.display='none';" style="margin-bottom:0; margin-right:20px;">Add</button>
+                        </div>
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Replacement</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.88 (4K reviews)</div>
+                            <div class="option-price">₹349 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <button onclick="addToCart('Smart fan replacement', 349); document.getElementById('smart-fan-modal').style.display='none';" style="margin-bottom:0; margin-right:20px;">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Ceiling Fan Modal -->
+    <div id="ceiling-fan-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+            <button class="modal-close" onclick="document.getElementById('ceiling-fan-modal').style.display='none'" style="position: absolute; z-index: 10; background: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="options-modal-body" style="padding: 24px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">Ceiling fan installation/replacement</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.89 <span style="color: #666; font-weight: 400;">(29K reviews)</span></div>
+                
+                <div style="background: #fff9f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: #333; display: flex; align-items: center;">
+                    <i class="fa-solid fa-shield" style="color: #00875a; margin-right: 8px;"></i> uc cover &nbsp; <span style="font-weight: 400;">Standard rate card</span>
+                </div>
+
+                <div class="vertical-options-list">
+                    <!-- Option 1 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Installation</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.88 (17K reviews)</div>
+                            <div class="option-price">₹248 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Installation">
+                            <button onclick="addToCart('Ceiling fan installation', 248); document.getElementById('ceiling-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Replacement</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.90 (12K reviews)</div>
+                            <div class="option-price">₹298 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Replacement">
+                            <button onclick="addToCart('Ceiling fan replacement', 298); document.getElementById('ceiling-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exhaust Fan Modal -->
+    <div id="exhaust-fan-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+            <button class="modal-close" onclick="document.getElementById('exhaust-fan-modal').style.display='none'" style="position: absolute; z-index: 10; background: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="options-modal-body" style="padding: 24px;">
+                <h3 class="options-modal-title" style="font-size: 22px; margin-bottom: 5px; font-weight: 700;">Exhaust fan installation/replacement</h3>
+                <div class="options-rating" style="margin-bottom: 15px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.84 <span style="color: #666; font-weight: 400;">(8K reviews)</span></div>
+                
+                <div style="background: #fff9f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; font-weight: 600; color: #333; display: flex; align-items: center;">
+                    <i class="fa-solid fa-shield" style="color: #00875a; margin-right: 8px;"></i> uc cover &nbsp; <span style="font-weight: 400;">Standard rate card</span>
+                </div>
+
+                <div class="vertical-options-list">
+                    <!-- Option 1 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Exhaust/wall fan installation</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.82 (5K reviews)</div>
+                            <div class="option-price">₹248 &bull; <span style="color: #777; font-weight: 400;">10 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Installation">
+                            <button onclick="addToCart('Exhaust/wall fan installation', 248); document.getElementById('exhaust-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="vertical-option-row">
+                        <div class="vertical-option-info">
+                            <h4>Replacement</h4>
+                            <div class="option-rating"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.87 (3K reviews)</div>
+                            <div class="option-price">₹298 &bull; <span style="color: #777; font-weight: 400;">30 mins</span></div>
+                        </div>
+                        <div class="vertical-option-media">
+                            <img src="images/new_fan_installation_icon.jpg" alt="Replacement">
+                            <button onclick="addToCart('Exhaust fan replacement', 298); document.getElementById('exhaust-fan-modal').style.display='none';">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">

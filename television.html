@@ -14,12 +14,9 @@
     <header class="header">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a href="index.html" class="logo">
-                <div class="logo-icon">J</div>
-                <div>
-                    <span class="logo-text">Joamex</span>
-                    <span class="logo-sub">Home Services Simplified</span>
-                </div>
+            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
             </a>
         </div>
         <div class="search-container" id="header-search" style="display: none;">
@@ -158,8 +155,8 @@
 
             <!-- Right Sidebar -->
             <div class="ac-right-sidebar">
-                <div class="uc-promise-card">
-                    <h3>UC Promise</h3>
+                <div class="joamex-promise-card">
+                    <h3>Joamex Promise</h3>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
                         <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
@@ -191,7 +188,7 @@
 
                 <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
                         <span style="font-size: 13px; color: #444;">Standard rate card</span>
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
@@ -252,7 +249,7 @@
 
                 <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
                         <span style="font-size: 13px; color: #444;">Standard rate card</span>
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
@@ -320,7 +317,7 @@
 
                 <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; cursor: pointer; border: 1px solid #eee;">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
                         <span style="font-size: 13px; color: #444;">Standard rate card</span>
                     </div>
                     <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
@@ -429,11 +426,11 @@
             }
         });
     </script>
-    <script src="common.js"></script>
-    <script src="cart.js"></script>
+    <script src="common.js?v=2003"></script>
+    <script src="cart.js?v=11"></script>
 
     <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="modal-overlay hidden" style="z-index: 1000;">
+    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
         <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
             <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
             <div style="padding: 20px; border-bottom: 1px solid #eee;">
@@ -467,40 +464,131 @@
 @media (max-width: 768px) { .footer { padding: 40px 20px; } .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
 @media (max-width: 480px) { .footer-container { grid-template-columns: 1fr; } }
 </style>
-<footer class="footer">
+<footer class="footer" style="padding: 60px 0 0; background-color: #fdfaf6; color: #333; font-family: 'Inter', sans-serif;">
     <div class="footer-container">
-        <div class="footer-col" style="grid-column: span 2;">
-            <a href="index.html" class="footer-logo">Joamex</a>
-            <p style="color: #666; font-size: 14px; line-height: 1.6; max-width: 300px;">Your trusted partner for premium home services. From grooming to appliance repair, we deliver excellence right at your doorstep.</p>
-        </div>
+        
+        <!-- Col 1: Brand -->
         <div class="footer-col">
-            <h3>Company</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Careers</a></li>
+            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
+                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
+            </a>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
+                Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
+            </p>
+        </div>
+        
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
             </ul>
         </div>
+
+        <!-- Col 3: For Customers -->
         <div class="footer-col">
-            <h3>For Customers</h3>
-            <ul>
-                <li><a href="#">UC Reviews</a></li>
-                <li><a href="#">Categories near you</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
             </ul>
+        </div>
+        
+        <!-- Col 4: For Professionals -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+            </ul>
+        </div>
+
+        <!-- Col 5: Social Media & Quick Contact -->
+        <div class="footer-col">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
+            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFx4WC" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+            </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div>&copy; 2024 Joamex Technologies Ltd. All rights reserved.</div>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    
+    <!-- Cities Expandable Section -->
+    <div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
+            <div class="cities-grid">
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
+                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+                </div>
+            </div>
         </div>
+    </div>
+    
+    <div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
+        <div style="margin-bottom: 5px;">&copy; 2026 Joamex | All Rights Reserved</div>
+        <div>managed by <strong style="color: #111; font-weight: 700;">Indian Export Webmart</strong></div>
     </div>
 </footer>
 </body>
 </html>
+
