@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-    window.addToCart = function(title, price, passedImgSrc = null, openSidebar = true) {
+    window.addToCart = function(title, price, passedImgSrc = null, openSidebar = false) {
         let imgSrc = passedImgSrc;
         if (!imgSrc) {
             imgSrc = 'images/new_plumber_icon.jpg'; // fallback
