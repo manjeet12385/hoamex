@@ -15,8 +15,8 @@
 <div style="display: flex; align-items: center; gap: 15px;">
 <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: none;"><i class="fa-solid fa-arrow-left"></i></button>
 <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-<img src="images/logo.png" alt="Joamex Icon" style="height: 35px; border-radius: 8px;">
-<img src="images/logo-text.png" alt="Joamex Text" style="height: 12px;">
+<img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
+<img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
 </a>
 </div>
 <div class="search-container" id="header-search" style="display: block;">
@@ -64,7 +64,7 @@
 <div class="divider"></div>
 <div class="services-grid">
 <div class="service-item" id="ac-repair-btn">
-<div class="service-icon"><img alt="AC" src="images/ac_repair_new.jpg"/></div>
+<div class="service-icon"><img alt="AC" src="images/ac.jpg"/></div>
 <p>AC, Appliance &amp; Repair</p>
 </div>
 <div class="service-item" id="epc-btn">
@@ -121,27 +121,27 @@
 <div class="spotlight-wrapper" style="position: relative;">
 <button class="nav-btn prev" id="prevBtnSpotlight"><i class="fa-solid fa-chevron-left"></i></button>
 <div class="spotlight-container" id="spotlight-carousel">
-<div class="spotlight-card card-beige">
+<div class="spotlight-card card-beige" onclick="window.location.href='full-home-cleaning.html'" style="cursor: pointer;">
 <h4>A cleaner home,<br/>without any hassle</h4>
 <p>Full home cleaning</p>
 <button class="btn-black">Book now</button>
 </div>
-<div class="spotlight-card card-grey">
+<div class="spotlight-card card-grey" onclick="window.location.href='ac-service.html'" style="cursor: pointer;">
 <h4>Deep clean with<br/>foam-jet AC service</h4>
 <p>AC service &amp; repair</p>
 <button class="btn-black">Book now</button>
 </div>
-<div class="spotlight-card card-blue">
+<div class="spotlight-card card-blue" onclick="window.location.href='electrician.html'" style="cursor: pointer;">
 <h4>Home repairs at<br/>affordable prices</h4>
 <p>Electricians, plumbers, carpenters</p>
 <button class="btn-blue">Book now</button>
 </div>
-<div class="spotlight-card card-pest">
+<div class="spotlight-card card-pest" onclick="window.location.href='pest-control.html'" style="cursor: pointer;">
 <h4>Make your home<br/>pest-free</h4>
 <p>2 visit pest-control pack</p>
 <button class="btn-black">Book now</button>
 </div>
-<div class="spotlight-card card-olive">
+<div class="spotlight-card card-olive" onclick="window.location.href='spa-women.html'" style="cursor: pointer;">
 <h4>Relax &amp; rejuvenate<br/>at home</h4>
 <p>Spa for women</p>
 <button class="btn-olive">Book now</button>
@@ -156,47 +156,47 @@
 <div class="noteworthy-wrapper" style="position: relative;">
 <button class="nav-btn prev" id="prevBtnNoteworthy"><i class="fa-solid fa-chevron-left"></i></button>
 <div class="noteworthy-container" id="noteworthy-carousel">
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='full-home-cleaning.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <img alt="Full Home Cleaning" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&amp;w=800&amp;auto=format&amp;fit=crop"/>
 </div>
 <h4>Full Home/ By Room Cleaning</h4>
 </div>
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='painting.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <img alt="Full home painting" src="images/painter.jpg"/>
 </div>
 <h4>Full home painting</h4>
 </div>
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='living-bedroom.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <img alt="Living &amp; Bedroom Cleaning" src="images/image.png"/>
 </div>
 <h4>Living &amp; Bedroom Cleaning</h4>
 </div>
 
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='water-purifier.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <div class="new-badge">New</div>
 <img alt="Native Water Purifier" src="images/plumber.jpg"/>
 </div>
 <h4>Native Water Purifier</h4>
 </div>
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='kitchen-cleaning.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <img alt="Kitchen Cleaning" src="images/cleaning.jpg"/>
 </div>
 <h4>Kitchen Cleaning</h4>
 </div>
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='hair-studio.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
 <img alt="Hair Studio for Women" src="images/womens_hair_studio.jpg"/>
 </div>
 <h4>Hair Studio for Women</h4>
 </div>
-<div class="noteworthy-item">
+<div class="noteworthy-item" onclick="window.location.href='ac-service.html'" style="cursor: pointer;">
 <div class="noteworthy-img-wrapper">
-<img alt="AC Service &amp; Repair" src="images/ac_repair_new.jpg"/>
+<img alt="AC Service &amp; Repair" src="images/ac.jpg"/>
 </div>
 <h4>AC Service &amp; Repair</h4>
 <p class="delivery-time"><i class="fa-solid fa-bolt"></i> In 44 mins</p>
@@ -213,7 +213,7 @@
 <div class="most-booked-container" id="most-booked-carousel">
 <div class="most-booked-item">
 <div class="most-booked-img-wrapper">
-<img alt="AC repair" src="images/ac_repair_new.jpg"/>
+<img alt="AC repair" src="images/ac.jpg"/>
 </div>
 <h4>AC repair</h4>
 <p class="service-meta"><i class="fa-solid fa-star"></i> 4.73  •  <span class="instant"><i class="fa-solid fa-bolt"></i> Instant</span></p>
@@ -229,7 +229,7 @@
 <button class="add-btn" onclick="addToCart('Haircut for men', 259)" style="margin-top: auto;">Book now</button></div>
 <div class="most-booked-item">
 <div class="most-booked-img-wrapper">
-<img alt="Foam-jet AC service" src="images/ac_repair_new.jpg"/>
+<img alt="Foam-jet AC service" src="images/ac.jpg"/>
 </div>
 <h4>Foam-jet AC service</h4>
 <p class="service-meta"><i class="fa-solid fa-star"></i> 4.75  •  <span class="instant"><i class="fa-solid fa-bolt"></i> Instant</span></p>
@@ -737,7 +737,7 @@
 <div class="modal-grid" style="justify-content: flex-start; gap: 20px; margin-bottom: 25px;">
 <a class="modal-item" href="ac-service.html" style="text-decoration: none;">
 <div class="img-wrapper">
-<img alt="AC" src="images/ac_repair_new.jpg"/>
+<img alt="AC" src="images/ac.jpg"/>
 <span class="delivery-badge-small">44 mins</span>
 </div>
 <p style="margin-top: 10px;">AC</p>
@@ -1085,7 +1085,7 @@
 <button class="modal-close" id="close-ac-modal-btn"><i class="fa-solid fa-xmark"></i></button>
 <h3 class="modal-title">AC, Appliance &amp; Repair</h3>
 <div class="modal-grid" style="justify-content: flex-start; gap: 20px; margin-bottom: 25px;">
-<a class="modal-item" href="ac-repair.html" style="text-decoration: none;"><img alt="AC" src="images/ac_repair_new.jpg"/><p>AC Repair</p></a>
+<a class="modal-item" href="ac-repair.html" style="text-decoration: none;"><img alt="AC" src="images/ac.jpg"/><p>AC Repair</p></a>
 <a class="modal-item" href="appliance-repair.html#washing-machine" style="text-decoration: none;"><img alt="Washing" src="images/washing_machine.jpg"/><p>Washing Machine</p></a>
 <a class="modal-item" href="appliance-repair.html#fridge" style="text-decoration: none;"><img alt="Fridge" src="images/refrigerator.jpg"/><p>Refrigerator</p></a>
 </div>

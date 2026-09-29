@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
+            const currentCart = JSON.parse(localStorage.getItem('joamex_cart')) || [];
+            if (currentCart.length === 0) {
                 alert("Your cart is empty!");
                 return;
             }

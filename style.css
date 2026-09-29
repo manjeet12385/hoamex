@@ -2727,3 +2727,52 @@ html, body {
         min-width: 100% !important;
     }
 }
+
+
+/* Universal Mobile Layout Fixes */
+@media screen and (max-width: 768px) {
+    /* Stack layout grids */
+    .three-col-layout,
+    .layout-grid,
+    .checkout-container,
+    .ac-layout,
+    .ac-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+    
+    /* Make all columns full width */
+    .left-col, .center-col, .right-col,
+    .ac-left-col, .ac-main-content, .ac-right-col,
+    .ac-sidebar, .ac-right-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: unset !important;
+        position: static !important;
+        margin-bottom: 20px !important;
+        padding: 0 !important;
+    }
+
+    /* Fix service grids to wrap or stack */
+    .service-cat-grid,
+    .service-grid,
+    .service-grid-box {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+        gap: 10px !important;
+    }
+    
+    /* Ensure modal contents are responsive */
+    .modal-content, .options-modal-content {
+        width: 95% !important;
+        max-width: 100% !important;
+        margin: 10px auto !important;
+    }
+    
+    /* Generic fallbacks for any images overflowing */
+    img {
+        max-width: 100% !important;
+        height: auto;
+    }
+}

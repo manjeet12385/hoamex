@@ -38,14 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Smooth scroll for sidebar links
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.service-item-sidebar').forEach(link => {
+    // Select all potential sidebar navigation links
+    const navLinks = document.querySelectorAll('.service-item-sidebar, .service-item, .service-cat-item, .left-sidebar a[href^="#"], .select-service-card a[href^="#"], .service-cat-grid a[href^="#"]');
+    
+    navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if(targetId && targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetEl = document.querySelector(targetId);
+            const targetHref = link.getAttribute('href');
+            if(targetHref && targetHref.startsWith('#')) {
+                // Find target element by exact ID or ID + '-section'
+                let targetEl = document.querySelector(targetHref);
+                if (!targetEl) {
+                    targetEl = document.querySelector(targetHref + '-section');
+                }
+                
                 if(targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                    e.preventDefault();
+                    // Smooth scroll with offset for sticky header
+                    const headerOffset = 100; // Account for fixed header height
+                    const elementPosition = targetEl.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+                    window.scrollTo({
+                         top: offsetPosition,
+                         behavior: 'smooth'
+                    });
                 }
             }
         });
@@ -510,3 +526,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Typing effect for search placeholder
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInputs = document.querySelectorAll('.search-container input');
+    
+    // Customize the list of services you want to cycle through
+    const words = ["plumber", "electrician", "carpenter", "cleaner", "ac repair", "pest control"];
+    
+    searchInputs.forEach(input => {
+        let currentWordIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingTimeout;
+        let isFocused = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBetweenWords = 2000;
+
+        function typeEffect() {
+            if (isFocused) return; // Stop animation if user focused the input
+
+            const currentWord = words[currentWordIndex];
+            
+            if (isDeleting) {
+                // Remove a character
+                input.setAttribute('placeholder', `Search for ${currentWord.substring(0, currentCharIndex - 1)}`);
+                currentCharIndex--;
+            } else {
+                // Add a character
+                input.setAttribute('placeholder', `Search for ${currentWord.substring(0, currentCharIndex + 1)}`);
+                currentCharIndex++;
+            }
+
+            let nextSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+            // If word is completely typed
+            if (!isDeleting && currentCharIndex === currentWord.length) {
+                isDeleting = true;
+                nextSpeed = delayBetweenWords; // Pause at the end of the word
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentWordIndex = (currentWordIndex + 1) % words.length; // Move to next word
+                nextSpeed = 500; // Small pause before typing next word
+            }
+
+            typingTimeout = setTimeout(typeEffect, nextSpeed);
+        }
+
+        // Start typing effect initially
+        setTimeout(typeEffect, 1000);
+
+        // Handle focus and blur events
+        input.addEventListener('focus', () => {
+            isFocused = true;
+            clearTimeout(typingTimeout);
+            input.setAttribute('placeholder', 'Search for services');
+        });
+
+        input.addEventListener('blur', () => {
+            isFocused = false;
+            if (input.value.trim() === '') {
+                // Restart animation if empty
+                setTimeout(typeEffect, 500);
+            }
+        });
+    });
+});
+
