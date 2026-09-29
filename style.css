@@ -2776,3 +2776,391 @@ html, body {
         height: auto;
     }
 }
+
+
+/* Premium Navbar Styles */
+.premium-navbar {
+    position: fixed !important;
+    top: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 95% !important;
+    max-width: 1400px !important;
+    z-index: 9999 !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 10px 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.premium-navbar:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0,0,0,0.05) !important;
+}
+
+/* Make body pad top so content doesn't hide behind floating navbar */
+body {
+    padding-top: 100px !important;
+}
+
+/* Premium Search Bar */
+.premium-navbar .search-container {
+    background: rgba(245, 245, 245, 0.8) !important;
+    border-radius: 30px !important;
+    border: 1px solid transparent !important;
+    transition: all 0.3s ease !important;
+}
+.premium-navbar .search-container:focus-within {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    transform: scale(1.02) !important;
+}
+.premium-navbar .search-container input {
+    background: transparent !important;
+}
+
+/* Premium Partner Button */
+.premium-navbar .partner-btn {
+    background: linear-gradient(135deg, #43a047, #2e7d32) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(67, 160, 71, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.premium-navbar .partner-btn:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 8px 20px rgba(67, 160, 71, 0.4) !important;
+}
+
+/* Premium Location Button */
+.premium-navbar .location-btn {
+    background: rgba(237, 231, 246, 0.7) !important;
+    color: #5e35b1 !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+.premium-navbar .location-btn:hover {
+    background: #ede7f6 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Premium Icon Buttons */
+.premium-navbar .icon-btn {
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+}
+.premium-navbar .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.04) !important;
+    transform: scale(1.15) !important;
+}
+
+/* Cart Badge Enhancement */
+.premium-navbar #cart-badge {
+    box-shadow: 0 2px 5px rgba(229, 57, 53, 0.4) !important;
+    animation: pulse-badge 2s infinite !important;
+}
+@keyframes pulse-badge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .premium-navbar {
+        top: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 10px 15px !important;
+    }
+}
+
+/* Super Animated Partner Button */
+.premium-navbar .partner-btn {
+    /* 1. Moving Gradient */
+    background: linear-gradient(270deg, #ff007f, #7928ca, #ff4d4d, #ff9a00) !important;
+    background-size: 300% 300% !important;
+    animation: movingGradient 4s ease infinite, pulseWiggle 4s infinite !important;
+    
+    border: none !important;
+    border-radius: 30px !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    font-weight: 800 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    box-shadow: 0 0 15px rgba(121, 40, 202, 0.6) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Animations */
+@keyframes movingGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseWiggle {
+    0%, 80%, 100% { transform: scale(1) rotate(0deg); }
+    85% { transform: scale(1.08) rotate(-3deg); box-shadow: 0 0 25px rgba(255, 0, 127, 0.8) !important; }
+    90% { transform: scale(1.08) rotate(3deg); }
+    95% { transform: scale(1.08) rotate(-3deg); }
+}
+
+/* Sweeping Shine Effect */
+.premium-navbar .partner-btn::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -150% !important;
+    width: 60% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent) !important;
+    transform: skewX(-20deg) !important;
+    animation: shineSweep 4s infinite !important;
+    z-index: -1 !important;
+}
+
+@keyframes shineSweep {
+    0%, 60% { left: -150%; }
+    100% { left: 150%; }
+}
+
+/* Hover Effect Override */
+.premium-navbar .partner-btn:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 35px rgba(255, 154, 0, 0.9) !important;
+    animation: movingGradient 1.5s ease infinite !important; /* Faster color change on hover */
+}
+
+
+/* Ensure clicks on modal items fall exactly on the a tag */
+.modal-item * { pointer-events: none; }
+
+
+
+/* UNIQUE NAVBAR STYLES ADDED PER USER REQUEST */
+.header.premium-navbar {
+    position: fixed !important;
+    top: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 96% !important;
+    max-width: 1200px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease !important;
+    padding: 12px 25px !important;
+    z-index: 99999 !important;
+}
+
+.header.premium-navbar:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0,0,0,0.05) !important;
+}
+
+/* Push body down so content doesn't hide behind floating navbar */
+body {
+    padding-top: 90px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .header.premium-navbar {
+        top: 0 !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 10px 15px !important;
+    }
+    body {
+        padding-top: 140px !important; /* Extra space for mobile stacked header */
+    }
+}
+
+/* UNIQUE ATTENTION-GRABBING PARTNER BUTTON */
+@keyframes shakeAndGlow {
+    0% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+    10% { transform: scale(1.05) rotate(-3deg); box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+    20% { transform: scale(1.05) rotate(3deg); box-shadow: 0 0 20px rgba(37, 211, 102, 0.8); }
+    30% { transform: scale(1.05) rotate(-3deg); box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+    40% { transform: scale(1.05) rotate(3deg); box-shadow: 0 0 20px rgba(37, 211, 102, 0.8); }
+    50% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+    100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes pulseBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header.premium-navbar .partner-btn {
+    background: #25D366 !important;
+    background-size: 300% 300% !important;
+    border: 2px solid white !important;
+    border-radius: 30px !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    animation: pulseBg 4s ease infinite, shakeAndGlow 3s infinite !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+}
+
+.header.premium-navbar .partner-btn::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -150% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: rgba(255,255,255,0.3) !important;
+    transform: rotate(45deg) !important;
+    animation: shineEffect 3s infinite !important;
+}
+
+@keyframes shineEffect {
+    0% { left: -150%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.header.premium-navbar .partner-btn i {
+    animation: hopIcon 1s ease-in-out infinite alternate !important;
+    margin-right: 8px !important;
+}
+
+@keyframes hopIcon {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+.header.premium-navbar .partner-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7) !important;
+    animation: pulseBg 2s ease infinite !important; /* Stop shaking on hover, just pulse fast */
+}
+
+/* Enhance Search Bar */
+.header.premium-navbar .search-container {
+    background: rgba(245, 245, 245, 0.7) !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.header.premium-navbar .search-container:focus-within {
+    background: #fff !important;
+    border: 1px solid #128C7E !important;
+    box-shadow: 0 4px 20px rgba(18, 140, 126, 0.15) !important;
+    transform: translateY(-1px) !important;
+}
+
+
+
+
+/* SUPER FLASHY COLOR CHANGING BUTTON */
+@keyframes crazyColors {
+    0% { background: #ff007f !important; box-shadow: 0 0 20px #ff007f !important; }
+    16% { background: #7928ca !important; box-shadow: 0 0 25px #7928ca !important; }
+    33% { background: #0070f3 !important; box-shadow: 0 0 20px #0070f3 !important; }
+    50% { background: #00dfd8 !important; box-shadow: 0 0 25px #00dfd8 !important; }
+    66% { background: #ff4d4d !important; box-shadow: 0 0 20px #ff4d4d !important; }
+    83% { background: #ffea00 !important; box-shadow: 0 0 25px #ffea00 !important; color: #000 !important; }
+    100% { background: #ff007f !important; box-shadow: 0 0 20px #ff007f !important; color: white !important; }
+}
+
+.header.premium-navbar .partner-btn {
+    animation: crazyColors 2s infinite, shakeAndGlow 3s infinite !important;
+    border: 2px solid white !important;
+    color: white !important;
+}
+
+.header.premium-navbar .partner-btn:hover {
+    animation: crazyColors 0.5s infinite !important;
+    transform: scale(1.15) !important;
+}
+
+
+
+/* DEFINITIVE FIX FOR PARTNER BUTTON COLORS */
+@keyframes crazyColorsSolid {
+    0% { background-color: #ff007f !important; background-image: none !important; box-shadow: 0 0 20px #ff007f !important; }
+    16% { background-color: #7928ca !important; background-image: none !important; box-shadow: 0 0 25px #7928ca !important; }
+    33% { background-color: #0070f3 !important; background-image: none !important; box-shadow: 0 0 20px #0070f3 !important; }
+    50% { background-color: #00dfd8 !important; background-image: none !important; box-shadow: 0 0 25px #00dfd8 !important; }
+    66% { background-color: #ff4d4d !important; background-image: none !important; box-shadow: 0 0 20px #ff4d4d !important; }
+    83% { background-color: #ffea00 !important; background-image: none !important; box-shadow: 0 0 25px #ffea00 !important; color: #000 !important; }
+    100% { background-color: #ff007f !important; background-image: none !important; box-shadow: 0 0 20px #ff007f !important; color: white !important; }
+}
+
+.header.premium-navbar .partner-btn {
+    background: none !important;
+    background-image: none !important;
+    animation: crazyColorsSolid 1.5s infinite, shakeAndGlow 3s infinite !important;
+}
+
+.header.premium-navbar .partner-btn:hover {
+    animation: crazyColorsSolid 0.5s infinite !important;
+}
+
+
+
+/* FINAL FIX FOR PARTNER BUTTON - BACK TO GREEN BUT ANIMATED */
+.header.premium-navbar .partner-btn {
+    /* Solid, attention-grabbing green gradient */
+    background: linear-gradient(135deg, #25D366, #128C7E) !important;
+    background-size: 200% 200% !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5) !important;
+    
+    /* Just a nice pulse and shake */
+    animation: greenPulse 1.5s infinite, mildShake 4s infinite !important;
+}
+
+@keyframes greenPulse {
+    0% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5) !important; }
+    50% { background-position: 100% 50%; box-shadow: 0 4px 25px rgba(37, 211, 102, 0.9) !important; transform: scale(1.05); }
+    100% { background-position: 0% 50%; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5) !important; }
+}
+
+@keyframes mildShake {
+    0% { transform: rotate(0deg); }
+    2% { transform: rotate(-3deg) scale(1.05); }
+    4% { transform: rotate(3deg) scale(1.05); }
+    6% { transform: rotate(-3deg) scale(1.05); }
+    8% { transform: rotate(3deg) scale(1.05); }
+    10% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.header.premium-navbar .partner-btn:hover {
+    transform: scale(1.1) !important;
+    animation: greenPulse 0.8s infinite !important; /* Fast pulse on hover */
+}

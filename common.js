@@ -256,41 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 24/7 Support Popup Logic
-document.addEventListener('DOMContentLoaded', () => {
-    const popupHtml = `
-    <div class="support-popup-overlay" id="support-popup">
-        <div class="support-popup-header">
-            <h3 class="support-popup-title">🎧 24/7 Free Support</h3>
-            <button class="support-popup-close" id="support-popup-close"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <p class="support-popup-text">
-            Have any questions or doubts? Contact our 24/7 free support team for immediate assistance. Directly WhatsApp or Call us.
-        </p>
-        <div class="support-popup-buttons">
-            <a href="tel:+919014380344" class="support-popup-btn btn-call">Call Now</a>
-            <a href="https://wa.me/919014380344" target="_blank" class="support-popup-btn btn-whatsapp">WhatsApp</a>
-        </div>
-    </div>
-    `;
 
-    document.body.insertAdjacentHTML('beforeend', popupHtml);
-    
-    const popup = document.getElementById('support-popup');
-    const closeBtn = document.getElementById('support-popup-close');
-
-    // Show popup after 3 seconds
-    setTimeout(() => {
-        if (!sessionStorage.getItem('supportPopupClosed')) {
-            popup.classList.add('show');
-        }
-    }, 3000);
-
-    closeBtn.addEventListener('click', () => {
-        popup.classList.remove('show');
-        sessionStorage.setItem('supportPopupClosed', 'true');
-    });
-});
 
 
 // Advanced Features for Location and Search
@@ -594,3 +560,174 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+// -----------------------------------------------------------
+// Universal "View Details" Modal System for Joamex
+// -----------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inject Modal HTML into the body if not exists
+    if (!document.getElementById('universal-details-modal')) {
+        const modalHTML = `
+            <div id="universal-details-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                <div style="background: white; width: 90%; max-width: 450px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: modalPop 0.3s ease-out; position: relative; max-height: 85vh; display: flex; flex-direction: column;">
+                    <div style="padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #fdfaf6;">
+                        <h3 id="udm-title" style="margin: 0; font-size: 18px; font-weight: 700; color: #111;">Service Details</h3>
+                        <button onclick="document.getElementById('universal-details-modal').style.display='none'" style="background: none; border: none; font-size: 24px; color: #666; cursor: pointer; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">&times;</button>
+                    </div>
+                    <div style="padding: 20px; overflow-y: auto; flex: 1;">
+                        <div style="background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-shield-halved"></i> 30-Day Joamex Guarantee | Verified Professionals
+                        </div>
+                        
+                        <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #333; display: flex; align-items: center;"><i class="fa-solid fa-circle-check" style="color: #4CAF50; margin-right: 8px; font-size: 18px;"></i> What's included</h4>
+                        <ul id="udm-included" style="margin: 0 0 25px 0; padding-left: 20px; color: #555; font-size: 14px; line-height: 1.6;">
+                            <li>Complete diagnostic and inspection</li>
+                            <li>Basic cleaning of the service area</li>
+                            <li>Tool and labor charges for basic fix</li>
+                        </ul>
+                        
+                        <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #333; display: flex; align-items: center;"><i class="fa-solid fa-circle-xmark" style="color: #f44336; margin-right: 8px; font-size: 18px;"></i> What's excluded</h4>
+                        <ul id="udm-excluded" style="margin: 0 0 25px 0; padding-left: 20px; color: #555; font-size: 14px; line-height: 1.6;">
+                            <li>Spare parts cost (will be quoted if needed)</li>
+                            <li>Any major civil or masonry work</li>
+                        </ul>
+                        
+                        <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #333; display: flex; align-items: center;"><i class="fa-solid fa-list-ol" style="color: #2196F3; margin-right: 8px; font-size: 18px;"></i> Process</h4>
+                        <ol id="udm-process" style="margin: 0 0 10px 0; padding-left: 20px; color: #555; font-size: 14px; line-height: 1.6;">
+                            <li>Inspection & Issue Identification</li>
+                            <li>Quotation for parts (if any)</li>
+                            <li>Repair/Service Execution</li>
+                            <li>Final Testing & Cleanup</li>
+                        </ol>
+                    </div>
+                    <div style="padding: 15px 20px; border-top: 1px solid #eee; background: #fff; text-align: center;">
+                        <div style="margin-bottom: 15px; padding: 12px; background: #f8fcf8; border: 1px solid #e2f2e5; border-radius: 12px; text-align: center;">
+                            <p style="margin: 0 0 10px 0; font-size: 13.5px; color: #444; font-weight: 700;">Have questions or doubts?</p>
+                            <div style="display: flex; gap: 10px; justify-content: center;">
+                                <a href="tel:+917667389146" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; background: #fff; color: #333; text-decoration: none; padding: 8px; border-radius: 8px; border: 1px solid #ddd; font-weight: 600; font-size: 14px; transition: 0.2s;" onmouseover="this.style.borderColor='#000'" onmouseout="this.style.borderColor='#ddd'">
+                                    <i class="fa-solid fa-phone" style="color: #2196F3;"></i> Call
+                                </a>
+                                <a href="https://wa.me/917667389146" target="_blank" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: #fff; text-decoration: none; padding: 8px; border-radius: 8px; font-weight: 600; font-size: 14px; box-shadow: 0 2px 8px rgba(37,211,102,0.3); transition: 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="document.getElementById('universal-details-modal').style.display='none'" style="width: 100%; background: #000; color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#000'">Got it</button>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes modalPop {
+                    0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+                    100% { opacity: 1; transform: scale(1) translateY(0); }
+                }
+            </style>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    // 2. Attach click events to all "View details" links
+    const updateDetailsLinks = () => {
+        document.querySelectorAll('a').forEach(link => {
+            const text = link.textContent.toLowerCase();
+            if (text.includes('view detail')) {
+                // Check if we haven't attached listener yet
+                if (!link.hasAttribute('data-modal-attached')) {
+                    link.setAttribute('data-modal-attached', 'true');
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Try to find the service title near this button
+                        let title = 'Service Details';
+                        
+                        // Strategy 1: It's inside .service-card-info -> h4
+                        let cardInfo = this.closest('.service-card-info');
+                        if (cardInfo) {
+                            let h4 = cardInfo.querySelector('h4, h3');
+                            if (h4) title = h4.textContent.trim();
+                        } else {
+                            // Strategy 2: It's inside .service-details or something, go up a few levels and find h3/h4
+                            let parent = this.parentElement;
+                            while (parent && parent.tagName !== 'BODY') {
+                                let heading = parent.querySelector('h3, h4');
+                                if (heading && heading !== this) {
+                                    title = heading.textContent.trim();
+                                    break;
+                                }
+                                parent = parent.parentElement;
+                            }
+                        }
+                        
+                        document.getElementById('udm-title').textContent = title;
+                        
+                        // --- DYNAMIC CONTENT BASED ON CATEGORY ---
+                        const t = title.toLowerCase();
+                        
+                        // DEFAULT (General Service)
+                        let included = `<li>Pre-service consultation and assessment</li><li>Standard service execution as per selected plan</li><li>Basic cleanup of the work area post-service</li>`;
+                        let excluded = `<li>Cost of any additional spare parts or materials</li><li>Major structural or civil work outside scope</li>`;
+                        let process = `<li>Understanding your specific requirements</li><li>Execution of the requested service</li><li>Final walkthrough and quality check</li>`;
+                        
+                        if (t.includes('clean') || t.includes('wash') || t.includes('dust') || t.includes('sweep') || t.includes('mop')) {
+                            included = `<li>Deep cleaning of all accessible surfaces</li><li>Professional grade eco-friendly chemicals</li><li>Post-cleanup surface sanitization</li>`;
+                            excluded = `<li>Cleaning of inaccessible or hazardous areas</li><li>Removal of heavy debris/furniture moving</li>`;
+                            process = `<li>Initial survey of the area</li><li>Dry dusting and vacuuming</li><li>Wet cleaning and scrubbing</li><li>Final sanitization and walkthrough</li>`;
+                        } else if (t.includes('salon') || t.includes('spa') || t.includes('massage') || t.includes('hair') || t.includes('makeup') || t.includes('beauty') || t.includes('beard') || t.includes('shave') || t.includes('wax') || t.includes('facial') || t.includes('pedicure') || t.includes('manicure') || t.includes('threading') || t.includes('grooming')) {
+                            included = `<li>Pre-service consultation</li><li>Use of premium branded products</li><li>Disposable gowns and sterilized tools</li>`;
+                            excluded = `<li>Specialized dermatological treatments</li><li>Extra product usage beyond standard measure</li>`;
+                            process = `<li>Setup of hygienic workstation</li><li>Personalized consultation</li><li>Execution of beauty/spa service</li><li>Post-service cleanup and tips</li>`;
+                        } else if (t.includes('ac ') || t.includes('refrigerat') || t.includes('appliance') || t.includes('washing') || t.includes('microwave') || t.includes('geyser') || t.includes('ro ') || t.includes('purifier') || t.includes('tv ') || t.includes('chimney') || t.includes('cooler')) {
+                            included = `<li>Comprehensive diagnostic check</li><li>Cleaning of filters and basic components</li><li>Standard tool and labor charges</li>`;
+                            excluded = `<li>Cost of gas refill (if applicable)</li><li>Replacement parts (compressor, PCB, motor, etc.)</li>`;
+                            process = `<li>Appliance performance testing</li><li>Identification of root cause</li><li>Component repair or service execution</li><li>Final functionality and safety test</li>`;
+                        } else if (t.includes('pest') || t.includes('termite') || t.includes('cockroach') || t.includes('ant') || t.includes('mosquito') || t.includes('bedbug') || t.includes('rodent')) {
+                            included = `<li>Thorough inspection of infested areas</li><li>Application of Govt-approved safe chemicals</li><li>Protective masking of valuables</li>`;
+                            excluded = `<li>Structural repairs for damages caused by pests</li><li>Post-treatment deep cleaning (can be added separately)</li>`;
+                            process = `<li>Infestation level assessment</li><li>Sealing of food and sensitive items</li><li>Targeted chemical spray/gel application</li><li>Safety instructions for next 24 hours</li>`;
+                        } else if (t.includes('plumb') || t.includes('electric') || t.includes('carpent') || t.includes('weld') || t.includes('drill') || t.includes('pipe') || t.includes('leak') || t.includes('wiring') || t.includes('switch') || t.includes('fan') || t.includes('wood')) {
+                            included = `<li>Initial visit and defect diagnosis</li><li>Minor adjustments and tightening</li><li>Standard toolkit usage by professional</li>`;
+                            excluded = `<li>Material cost (pipes, wires, wood, hinges, etc.)</li><li>Major structural breaking or patching</li>`;
+                            process = `<li>On-site problem assessment</li><li>Material procurement estimation (if needed)</li><li>Execution of repair/installation</li><li>Safety and functionality check</li>`;
+                        } else if (t.includes('paint') || t.includes('waterproof') || t.includes('wall')) {
+                            included = `<li>Surface preparation and minor crack filling</li><li>Application of selected primer and paint</li><li>Floor masking to prevent stains</li>`;
+                            excluded = `<li>Major wall repair or putty work (unless quoted)</li><li>Cost of premium textured paints (if not selected)</li>`;
+                            process = `<li>Color consultation and measurement</li><li>Masking and surface prep</li><li>Painting execution (number of coats as agreed)</li><li>Final unmasking and cleanup</li>`;
+                        }
+                        
+                        document.getElementById('udm-included').innerHTML = included;
+                        document.getElementById('udm-excluded').innerHTML = excluded;
+                        document.getElementById('udm-process').innerHTML = process;
+                        
+                        // Show modal
+                        const modal = document.getElementById('universal-details-modal');
+                        modal.style.display = 'flex';
+                    });
+                }
+            }
+        });
+    };
+    
+    // Initial call
+    updateDetailsLinks();
+    
+    // Re-run in case of dynamic injection
+    setTimeout(updateDetailsLinks, 1000);
+    setTimeout(updateDetailsLinks, 3000);
+});
+
+
+// Force navigation for all modal items
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.modal-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            const href = item.getAttribute('href');
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                // Remove default action just in case something else is messing with it
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = href;
+            }
+        });
+    });
+});
