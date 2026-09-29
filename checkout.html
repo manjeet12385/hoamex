@@ -189,29 +189,38 @@
 
             const btn = document.querySelector('.order-btn');
             const originalText = btn.innerText;
-            btn.innerText = "Processing...";
+            btn.innerText = "Redirecting to WhatsApp...";
             btn.disabled = true;
 
             try {
-                const response = await fetch('/api/bookings', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(orderData)
-                });
-                
-                if (response.ok) {
-                    // Show success modal
-                    document.getElementById('success-modal').classList.remove('hidden');
-                    // Clear cart
-                    localStorage.removeItem('joamex_cart');
-                } else {
-                    const errorData = await response.json();
-                    alert("Failed to place order: " + (errorData.error || "Unknown error"));
+                // Construct WhatsApp Message
+                let itemsText = cart.map(item => `- ${item.title || item.name} (Qty: ${item.quantity || 1})`).join("%0A");
+                let msg = `*New Booking Request!*%0A%0A`;
+                msg += `*Name:* ${customerName}%0A`;
+                msg += `*Phone:* ${phoneNumber}%0A`;
+                msg += `*Address:* ${address}%0A`;
+                const landmark = document.getElementById('cust-landmark').value;
+                if (landmark) {
+                    msg += `*Landmark:* ${landmark}%0A`;
                 }
+                msg += `*Date:* ${document.getElementById('booking-date').value} | *Time:* ${document.getElementById('booking-time').value}%0A`;
+                msg += `*Payment:* ${document.querySelector('.payment-method.active').innerText.trim()}%0A%0A`;
+                msg += `*Services:*%0A${itemsText}%0A%0A`;
+                msg += `*Total Amount:* ₹${parseInt(document.getElementById('checkout-total').innerText.replace('₹', '')) || 0}`;
+
+                // The phone number 917667389146 is the one used in the modal. 
+                // You can change it if needed.
+                const waLink = `https://wa.me/917667389146?text=${msg}`;
+                
+                // Clear cart
+                localStorage.removeItem('joamex_cart');
+                
+                // Redirect to WhatsApp
+                window.location.href = waLink;
+                
             } catch (error) {
                 console.error(error);
                 alert("Error placing order. Please try again.");
-            } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;
             }
