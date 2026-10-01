@@ -909,10 +909,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                         if (data.success) {
                                             if (data.token) localStorage.setItem('partnerToken', data.token);
                                             localStorage.setItem('partnerEmail', emailInput.value);
-                                            alert('OTP Verified Successfully! ✅\\n\\nRedirecting to your Partner Dashboard...');
-                                            window.location.href = 'partner-dashboard.html';
+                                            // Close modal instantly, then redirect
+                                            const modal = document.getElementById('partner-login-modal');
+                                            if (modal) modal.style.display = 'none';
+                                            finalBtn.innerHTML = '✅ Verified! Redirecting...';
+                                            finalBtn.style.background = '#1a7a45';
+                                            setTimeout(() => { window.location.href = 'partner-dashboard.html'; }, 800);
                                         } else {
-                                            alert(data.error || 'Invalid OTP');
+                                            alert(data.error || 'Invalid OTP. Please try again.');
                                         }
                                     } catch (err) {
                                         alert('Network error during verification.');
