@@ -731,3 +731,808 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// -----------------------------------------------------------
+// Partner Login Modal System
+// -----------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inject Modal HTML into the body if not exists
+    if (!document.getElementById('partner-login-modal')) {
+        const modalHTML = `
+            <div id="partner-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                <div style="background: #0d1117; width: 90%; max-width: 900px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: modalPop 0.3s ease-out; position: relative; display: flex; flex-direction: row; height: 500px;">
+                    
+                    <button id="close-partner-modal" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; font-size: 18px; color: #fff; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; z-index: 10;">&times;</button>
+                    
+                    <!-- Left Side -->
+                    <div style="flex: 1; background: linear-gradient(135deg, #091316 0%, #060a0d 100%); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-right: 1px solid rgba(255,255,255,0.05);">
+                        <div style="margin-bottom: 30px; position: relative;">
+                            <!-- Mock graphic for the green layers -->
+                            <div style="width: 150px; height: 150px; position: relative;">
+                                <div style="position: absolute; top: 20%; left: 15%; width: 70%; height: 70%; border: 2px solid #1a5d3c; transform: rotateX(60deg) rotateZ(-45deg); border-radius: 8px; box-shadow: 0 0 20px rgba(26,93,60,0.3);"></div>
+                                <div style="position: absolute; top: 35%; left: 15%; width: 70%; height: 70%; border: 2px solid #1f8a55; transform: rotateX(60deg) rotateZ(-45deg); border-radius: 8px; box-shadow: 0 0 30px rgba(31,138,85,0.4);"></div>
+                                <div style="position: absolute; top: 50%; left: 15%; width: 70%; height: 70%; border: 2px solid #23a566; transform: rotateX(60deg) rotateZ(-45deg); border-radius: 8px; box-shadow: 0 0 40px rgba(35,165,102,0.5);"></div>
+                                <div style="position: absolute; top: 35%; left: 40%; width: 30px; height: 40px; background: rgba(35,165,102,0.2); backdrop-filter: blur(4px); border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(35,165,102,0.5); z-index: 5;">
+                                    <i class="fa-solid fa-user" style="color: #23a566; font-size: 14px;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 style="color: #fff; font-size: 28px; font-weight: 700; margin: 0 0 15px 0;">Partner Portal</h2>
+                        <p style="color: #8b949e; font-size: 14px; line-height: 1.6; max-width: 280px; margin: 0;">Manage your service business, track earnings, and deliver excellence with our professional toolkit.</p>
+                    </div>
+                    
+                    <!-- Right Side -->
+                    <div style="flex: 1.2; background: #0a0c10; padding: 50px 40px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+                        <!-- Step 1: Login -->
+                        <div id="partner-login-step" style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
+                            <h3 style="color: #fff; font-size: 24px; font-weight: 700; margin: 0 0 10px 0;">Partner Login</h3>
+                        <p style="color: #8b949e; font-size: 14px; margin: 0 0 30px 0;">Enter your details for quick OTP access to your workspace.</p>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 8px;">Email Address</label>
+                            <input type="email" placeholder="partner@business.com" style="width: 100%; padding: 14px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box; transition: 0.2s;" onfocus="this.style.borderColor='#5e35b1'" onblur="this.style.borderColor='#30363d'">
+                        </div>
+                        
+                        <button id="partner-otp-btn" style="width: 100%; background: #5e35b1; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.2s; margin-bottom: 25px;" onmouseover="this.style.background='#6e45c1'" onmouseout="this.style.background='#5e35b1'">Get OTP Code &rarr;</button>
+                        
+                        <div style="background: rgba(22,27,34,0.5); border: 1px solid #30363d; border-radius: 8px; padding: 15px; display: flex; gap: 15px; align-items: flex-start; margin-bottom: 30px;">
+                            <div style="background: #23a566; color: #fff; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; margin-top: 2px; flex-shrink: 0;"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h4 style="color: #fff; font-size: 13px; font-weight: 600; margin: 0 0 5px 0;">Instant Access</h4>
+                                <p style="color: #8b949e; font-size: 12px; margin: 0; line-height: 1.5;">Secure login via one-time passcodes. No passwords required.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <p style="color: #8b949e; font-size: 13px; margin: 0;">New Partner? <a href="partner.html" style="color: #58a6ff; text-decoration: none; font-weight: 600;">Apply Now</a></p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: auto;">
+                                <span style="color: #484f58; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;"><i class="fa-solid fa-shield-halved"></i> PARTNER SECURITY 2.0</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: OTP Verification -->
+                        <div id="partner-otp-step" style="display: none; flex-direction: column; height: 100%; justify-content: center;">
+                            <a href="#" id="back-to-login" style="color: #8b949e; text-decoration: none; font-size: 13px; margin-bottom: 20px; display: inline-block;">&larr; Back to Login</a>
+                            <h3 style="color: #fff; font-size: 28px; font-weight: 700; margin: 0 0 10px 0;">OTP Verification</h3>
+                            <p style="color: #8b949e; font-size: 14px; margin: 0 0 30px 0;">Code sent to <span id="otp-sent-email" style="color: #fff;"></span></p>
+                            
+                            <div style="display: flex; gap: 10px; margin-bottom: 30px; justify-content: space-between;">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                                <input type="text" maxlength="1" class="otp-box-input" style="width: 45px; height: 50px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: 20px; text-align: center; outline: none; transition: 0.2s;" onfocus="this.style.borderColor='#23a566'" onblur="this.style.borderColor='#30363d'">
+                            </div>
+
+                            <button id="verify-otp-final-btn" style="width: 100%; background: #23a566; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: 0.2s; margin-bottom: 25px;" onmouseover="this.style.background='#28c076'" onmouseout="this.style.background='#23a566'">Verify & Enter Dashboard</button>
+
+                            <div style="text-align: center; margin-top: auto;">
+                                <span style="color: #8b949e; font-size: 13px;">Resend in <span style="color: #fff; font-weight: 600;">56s</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+    
+    // 2. Attach click events to partner buttons
+    const attachPartnerModalEvents = () => {
+        document.querySelectorAll('.partner-btn').forEach(btn => {
+            if (!btn.hasAttribute('data-partner-modal-attached')) {
+                btn.setAttribute('data-partner-modal-attached', 'true');
+                
+                const existingEmail = localStorage.getItem('partnerEmail');
+                if (existingEmail) {
+                    btn.innerHTML = '<i class="fa-solid fa-briefcase"></i> Dashboard';
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.location.href = 'partner-dashboard.html';
+                    });
+                } else {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        document.getElementById('partner-login-modal').style.display = 'flex';
+                    });
+                }
+            }
+        });
+        
+        const closeBtn = document.getElementById('close-partner-modal');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                document.getElementById('partner-login-modal').style.display = 'none';
+            });
+        }
+
+        const otpBtn = document.getElementById('partner-otp-btn');
+        if (otpBtn && !otpBtn.hasAttribute('data-otp-attached')) {
+            otpBtn.setAttribute('data-otp-attached', 'true');
+            otpBtn.addEventListener('click', () => {
+                const emailInput = otpBtn.previousElementSibling.querySelector('input');
+                if (emailInput && emailInput.value) {
+                    const originalText = otpBtn.innerHTML;
+                    otpBtn.innerHTML = 'Sending...';
+                    
+                    fetch('/api/send-otp', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: emailInput.value })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        otpBtn.innerHTML = originalText;
+                        if(data.success) {
+                            // Don't store email yet, wait for OTP validation
+                            // localStorage.setItem('partnerEmail', emailInput.value);
+                            
+                            // Hide login step, show OTP step
+                            document.getElementById('partner-login-step').style.display = 'none';
+                            document.getElementById('partner-otp-step').style.display = 'flex';
+                            document.getElementById('otp-sent-email').innerText = emailInput.value;
+                            
+                            // Attach event for back button
+                            document.getElementById('back-to-login').onclick = function(e) {
+                                e.preventDefault();
+                                document.getElementById('partner-otp-step').style.display = 'none';
+                                document.getElementById('partner-login-step').style.display = 'flex';
+                            };
+                            
+                            // Attach event for final verify button
+                            const finalBtn = document.getElementById('verify-otp-final-btn');
+                            if (finalBtn) {
+                                finalBtn.onclick = async function() {
+                                    const inputs = document.querySelectorAll('.otp-box-input');
+                                    let val = '';
+                                    inputs.forEach(i => val += i.value);
+                                    if(val.length < 6) {
+                                        alert('Please enter the complete 6-digit OTP.');
+                                        return;
+                                    }
+                                    
+                                    const originalBtnText = finalBtn.innerHTML;
+                                    finalBtn.innerHTML = 'Verifying...';
+                                    
+                                    try {
+                                        const res = await fetch('/api/partner/verify-otp', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ email: emailInput.value, otp: val })
+                                        });
+                                        const data = await res.json();
+                                        
+                                        if (data.success) {
+                                            if (data.token) localStorage.setItem('partnerToken', data.token);
+                                            localStorage.setItem('partnerEmail', emailInput.value);
+                                            alert('OTP Verified Successfully! ✅\\n\\nRedirecting to your Partner Dashboard...');
+                                            window.location.href = 'partner-dashboard.html';
+                                        } else {
+                                            alert(data.error || 'Invalid OTP');
+                                        }
+                                    } catch (err) {
+                                        alert('Network error during verification.');
+                                    } finally {
+                                        finalBtn.innerHTML = originalBtnText;
+                                    }
+                                };
+                            }
+                            
+                            // OTP input auto focus
+                            const otpInputs = document.querySelectorAll('.otp-box-input');
+                            otpInputs.forEach((input, index) => {
+                                input.addEventListener('input', function() {
+                                    if(this.value.length === 1 && index < otpInputs.length - 1) {
+                                        otpInputs[index + 1].focus();
+                                    }
+                                });
+                                input.addEventListener('keydown', function(e) {
+                                    if (e.key === 'Backspace' && this.value === '' && index > 0) {
+                                        otpInputs[index - 1].focus();
+                                    }
+                                });
+                            });
+                            
+                        } else {
+                            alert('Failed to send OTP: ' + (data.error || 'Unknown error'));
+                        }
+                    })
+                    .catch(err => {
+                        otpBtn.innerHTML = originalText;
+                        alert('Server error while sending OTP.');
+                    });
+                } else {
+                    alert('Please enter a valid email address first.');
+                }
+            });
+        }
+    };
+    
+    attachPartnerModalEvents();
+    
+    // Re-run in case of dynamic injection
+    setTimeout(attachPartnerModalEvents, 1000);
+});
+
+
+// --- Secret Admin Trick ---
+document.addEventListener('DOMContentLoaded', () => {
+    const secretTrigger = document.getElementById('secret-admin');
+    if(secretTrigger) {
+        let clickCount = 0;
+        let clickTimer;
+        
+        secretTrigger.addEventListener('click', (e) => {
+            clickCount++;
+            
+            if(clickCount === 1) {
+                clickTimer = setTimeout(() => {
+                    clickCount = 0; // reset if not clicked 5 times within 2 seconds
+                }, 2000);
+            }
+            
+            if(clickCount === 5) {
+                clearTimeout(clickTimer);
+                clickCount = 0;
+                // Add a cool little transition effect before redirecting
+                document.body.style.transition = "opacity 0.5s ease";
+                document.body.style.opacity = "0";
+                setTimeout(() => {
+                    window.location.href = "admin.html";
+                }, 500);
+            }
+        });
+    }
+});
+
+
+// User Login Modal System
+function injectUserModal() {
+    if (!document.getElementById('user-login-modal')) {
+        const modalHTML = `
+            <div id="user-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: flex-start; justify-content: center; backdrop-filter: blur(5px); padding: 20px 15px; box-sizing: border-box; overflow-y: auto;">
+                <div style="background: #0d1117; width: 100%; max-width: 440px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid #30363d; position: relative; font-family: 'Inter', sans-serif; margin: auto;">
+                    <button id="close-user-modal" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #8b949e; font-size: 20px; cursor: pointer; transition: 0.2s; z-index: 10;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8b949e'">&times;</button>
+                    
+                    <div style="padding: clamp(20px, 5vw, 40px) clamp(15px, 4vw, 30px);">
+                        <!-- Tabs -->
+                        <div style="display: flex; gap: 20px; margin-bottom: 25px; border-bottom: 1px solid #30363d;">
+                            <button id="tab-login" style="background: transparent; border: none; color: #fff; font-size: 16px; font-weight: 600; padding: 10px 0; cursor: pointer; border-bottom: 2px solid #4a3aff; transition: 0.2s;">Login</button>
+                            <button id="tab-signup" style="background: transparent; border: none; color: #8b949e; font-size: 16px; font-weight: 600; padding: 10px 0; cursor: pointer; border-bottom: 2px solid transparent; transition: 0.2s;">Sign Up</button>
+                        </div>
+
+                        <!-- Step 1: Login -->
+                        <div id="user-login-step" style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
+                            <h3 style="color: #fff; font-size: 24px; font-weight: 700; margin: 0 0 10px 0;">Customer Login</h3>
+                            <p style="color: #8b949e; font-size: 14px; margin: 0 0 30px 0; line-height: 1.5;">Enter your email to view your bookings.</p>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <input type="email" id="user-email-input" placeholder="Enter your email" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 14px 15px; border-radius: 8px; color: #fff; font-size: 15px; outline: none; transition: 0.2s; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                            </div>
+                            
+                            <button id="user-otp-btn" style="width: 100%; background: #4a3aff; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: 0.2s; margin-bottom: 20px;" onmouseover="this.style.background='#3d2fd1'" onmouseout="this.style.background='#4a3aff'">Send OTP</button>
+                        </div>
+
+                        <!-- Sign Up Form (Directly visible) -->
+                        <div id="user-signup-step" style="display: none; flex-direction: column; height: 100%; justify-content: flex-start;">
+                            <h3 style="color: #fff; font-size: 24px; font-weight: 700; margin: 0 0 5px 0;">Create Account</h3>
+                            <p style="color: #8b949e; font-size: 14px; margin: 0 0 20px 0;">Fill in your details to get started.</p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px;">
+                                <input type="text" id="signup-name" placeholder="Full Name (Jiske naam par address hai)" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="email" id="signup-email" placeholder="Email Address" style="flex: 1; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                    <button id="signup-verify-email-btn" style="background: #238636; color: #fff; border: none; padding: 0 15px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.2s;">Verify</button>
+                                </div>
+                                <div id="signup-email-otp-container" style="display: none; flex-direction: column; gap: 5px;">
+                                    <div style="display: flex; gap: 10px;">
+                                        <input type="text" id="signup-email-otp" placeholder="Enter Email OTP" style="flex: 1; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                        <button id="signup-confirm-email-btn" style="background: #4a3aff; color: #fff; border: none; padding: 0 15px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.2s;">Confirm</button>
+                                    </div>
+                                    <div style="text-align: right; padding-right: 5px;">
+                                        <a href="#" id="signup-resend-otp-btn" style="color: #4a3aff; font-size: 12px; text-decoration: none; font-weight: 500;">Resend OTP</a>
+                                    </div>
+                                </div>
+
+                                <input type="text" id="signup-phone" placeholder="Phone Number" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <select id="signup-gender" style="flex: 1; min-width: 130px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #8b949e; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                        <option value="" disabled selected>Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <input type="date" id="signup-dob" title="Date of Birth" style="flex: 1; min-width: 130px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #8b949e; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                </div>
+                                
+                                <div style="margin-top: 10px; margin-bottom: 5px; border-bottom: 1px solid #30363d; padding-bottom: 5px;">
+                                    <span style="color: #fff; font-weight: 600; font-size: 14px;">Address Details</span>
+                                </div>
+
+                                <input type="text" id="signup-house" placeholder="House/Flat/Building No." style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <input type="text" id="signup-society" placeholder="Building/Apartment/Society Name" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <input type="text" id="signup-street" placeholder="Street/Road/Area / Gali number" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <input type="text" id="signup-landmark" placeholder="Landmark (Optional)" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <input type="text" id="signup-village" placeholder="Village/Town/City" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <input type="text" id="signup-tehsil" placeholder="Tehsil/Taluk (Optional)" style="width: 100%; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <input type="text" id="signup-district" placeholder="District" style="flex: 1; min-width: 120px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                    <input type="text" id="signup-state" placeholder="State" style="flex: 1; min-width: 120px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                </div>
+                                
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <input type="text" id="signup-country" placeholder="Country" value="India" style="flex: 1; min-width: 120px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                    <input type="text" id="signup-pincode" placeholder="PIN Code" style="flex: 1; min-width: 120px; background: #161b22; border: 1px solid #30363d; padding: 12px 15px; border-radius: 8px; color: #fff; font-size: 14px; outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='#4a3aff'" onblur="this.style.borderColor='#30363d'">
+                                </div>
+                                
+                            </div>
+
+                            <button id="user-register-btn" style="width: 100%; background: #4a3aff; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: 0.2s;">Sign Up</button>
+                        </div>
+
+                        <!-- Step 2: OTP Verify (For Login) -->
+                        <div id="user-otp-step" style="display: none; flex-direction: column; height: 100%; justify-content: center;">
+                            <a href="#" id="user-back-to-login" style="color: #8b949e; text-decoration: none; font-size: 13px; margin-bottom: 20px; display: inline-block;">&larr; Back</a>
+                            <h3 style="color: #fff; font-size: 24px; font-weight: 700; margin: 0 0 10px 0;">Verify Email</h3>
+                            <p style="color: #8b949e; font-size: 14px; margin: 0 0 30px 0;">Code sent to <span id="user-otp-sent-email" style="color: #fff;"></span></p>
+                            
+                            <div style="display: flex; gap: clamp(6px, 2vw, 10px); margin-bottom: 30px; justify-content: space-between;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                                <input type="text" maxlength="1" class="user-otp-box" style="flex: 1; min-width: 0; height: clamp(40px, 10vw, 50px); background: #161b22; border: 1px solid #30363d; border-radius: 8px; color: #fff; font-size: clamp(16px, 4vw, 20px); text-align: center; outline: none;">
+                            </div>
+
+                            <button id="user-verify-otp-btn" style="width: 100%; background: #4a3aff; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: 0.2s;">Verify & Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+    
+    // Attach events
+    const loginBtn = document.getElementById('user-login-btn');
+    if(loginBtn) {
+        // ✅ Session expiry check — auto-logout after 30 days
+        const _loginTime = localStorage.getItem('loginTime');
+        if (_loginTime) {
+            const daysSince = (Date.now() - parseInt(_loginTime)) / (1000 * 60 * 60 * 24);
+            if (daysSince > 30) {
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userPhone');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userLocation');
+                localStorage.removeItem('user_location');
+                localStorage.removeItem('loginTime');
+            }
+        }
+
+        const existingEmail = localStorage.getItem('userEmail') || localStorage.getItem('userPhone');
+        if(existingEmail) {
+            loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color: #4a3aff;"></i>';
+            loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+        } else {
+            loginBtn.onclick = () => document.getElementById('user-login-modal').style.display = 'flex';
+        }
+    }
+    const closeBtn = document.getElementById('close-user-modal');
+    if(closeBtn) {
+        closeBtn.onclick = () => document.getElementById('user-login-modal').style.display = 'none';
+    }
+    const tabLogin = document.getElementById('tab-login');
+    const tabSignup = document.getElementById('tab-signup');
+    const loginStep = document.getElementById('user-login-step');
+    const signupStep = document.getElementById('user-signup-step');
+    const otpStep = document.getElementById('user-otp-step');
+    
+    if(tabLogin && tabSignup) {
+        tabLogin.onclick = () => {
+            tabLogin.style.color = '#fff';
+            tabLogin.style.borderBottomColor = '#4a3aff';
+            tabSignup.style.color = '#8b949e';
+            tabSignup.style.borderBottomColor = 'transparent';
+            
+            loginStep.style.display = 'flex';
+            signupStep.style.display = 'none';
+            otpStep.style.display = 'none';
+        };
+        tabSignup.onclick = () => {
+            tabSignup.style.color = '#fff';
+            tabSignup.style.borderBottomColor = '#4a3aff';
+            tabLogin.style.color = '#8b949e';
+            tabLogin.style.borderBottomColor = 'transparent';
+            
+            signupStep.style.display = 'flex';
+            loginStep.style.display = 'none';
+            otpStep.style.display = 'none';
+        };
+    }
+
+    const sendOtp = document.getElementById('user-otp-btn');
+    if(sendOtp) {
+        sendOtp.onclick = () => {
+            // ✅ FIX 1: trim + lowercase before sending OTP
+            let email = document.getElementById('user-email-input').value;
+            email = email.trim().toLowerCase();
+            // Put cleaned value back so OTP-sent display is also clean
+            document.getElementById('user-email-input').value = email;
+
+            if(email && email.includes('@')) {
+                const originalText = sendOtp.innerText;
+                sendOtp.innerText = "Sending...";
+                fetch('/api/user/send-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(async res => {
+                    const data = await res.json();
+                    sendOtp.innerText = originalText;
+                    if(res.status === 404) {
+                        // User not registered — show clear message
+                        const emailInput = document.getElementById('user-email-input');
+                        emailInput.style.borderColor = '#f85149';
+                        emailInput.placeholder = 'No account found with this email';
+                        emailInput.value = '';
+                        // Show error below input
+                        let errMsg = document.getElementById('user-login-error-msg');
+                        if(!errMsg) {
+                            errMsg = document.createElement('p');
+                            errMsg.id = 'user-login-error-msg';
+                            errMsg.style.cssText = 'color:#f85149; font-size:13px; margin: -10px 0 10px 0;';
+                            emailInput.parentNode.insertBefore(errMsg, emailInput.nextSibling);
+                        }
+                        errMsg.innerText = '⚠️ ' + (data.error || 'No account found. Please sign up first.');
+                    } else if(data.success) {
+                        // Clear any previous error
+                        const errMsg = document.getElementById('user-login-error-msg');
+                        if(errMsg) errMsg.remove();
+                        loginStep.style.display = 'none';
+                        signupStep.style.display = 'none';
+                        otpStep.style.display = 'flex';
+                        document.getElementById('user-otp-sent-email').innerText = email;
+                    } else {
+                        alert('Failed to send OTP: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(err => {
+                    sendOtp.innerText = originalText;
+                    alert('Network error. Please try again.');
+                });
+            } else {
+                alert('Enter valid email address');
+            }
+        };
+    }
+    const backBtn = document.getElementById('user-back-to-login');
+    if(backBtn) {
+        backBtn.onclick = (e) => {
+            e.preventDefault();
+            otpStep.style.display = 'none';
+            // Determine which tab is active
+            if (tabSignup && tabSignup.style.color === 'rgb(255, 255, 255)') {
+                signupStep.style.display = 'flex';
+            } else {
+                loginStep.style.display = 'flex';
+            }
+        };
+    }
+    const verifyBtn = document.getElementById('user-verify-otp-btn');
+    if(verifyBtn) {
+        verifyBtn.onclick = async () => {
+            let email = document.getElementById('user-email-input').value;
+            email = email.trim().toLowerCase();
+
+            // Collect the 6 OTP digits from individual boxes
+            const otpBoxes = document.querySelectorAll('.user-otp-box');
+            const otp = Array.from(otpBoxes).map(b => b.value).join('').trim();
+
+            if (otp.length !== 6) {
+                alert('Please enter the 6-digit OTP.');
+                return;
+            }
+
+            verifyBtn.innerText = 'Verifying...';
+            verifyBtn.disabled = true;
+
+            try {
+                // ✅ Server-side OTP verification
+                const res = await fetch('/api/user/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, otp })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    // Store cleaned email, remove old data
+                    localStorage.setItem('userEmail', email);
+                    localStorage.setItem('loginTime', Date.now().toString()); // ✅ session timer
+                    if (data.token) localStorage.setItem('token', data.token); // Save JWT
+                    localStorage.removeItem('userPhone');
+
+                    // Close the login modal
+                    const modal = document.getElementById('user-login-modal');
+                    if (modal) modal.style.display = 'none';
+
+                    // ✅ Update header icon immediately
+                    const loginBtn = document.getElementById('user-login-btn');
+                    if (loginBtn) {
+                        loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color:#4a3aff;"></i>';
+                        loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+                    }
+
+                    alert('Login successful! Welcome back.');
+                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard.html';
+                    localStorage.removeItem('loginRedirect');
+                    window.location.href = redirectUrl;
+                } else {
+                    verifyBtn.innerText = 'Verify & Login';
+                    verifyBtn.disabled = false;
+                    alert(data.error || 'Invalid OTP. Please try again.');
+                }
+            } catch (err) {
+                verifyBtn.innerText = 'Verify & Login';
+                verifyBtn.disabled = false;
+                alert('Network error. Please try again.');
+            }
+        };
+    }
+
+    // Email Verification Logic for Signup
+    const verifyEmailBtn = document.getElementById('signup-verify-email-btn');
+    const emailOtpContainer = document.getElementById('signup-email-otp-container');
+    const confirmEmailBtn = document.getElementById('signup-confirm-email-btn');
+    const emailInput = document.getElementById('signup-email');
+    const resendOtpBtn = document.getElementById('signup-resend-otp-btn');
+    let isEmailVerified = false;
+
+    const triggerOtpSend = () => {
+        const email = emailInput ? emailInput.value : '';
+        if (email && email.includes('@')) {
+            const originalText = verifyEmailBtn.innerText;
+            verifyEmailBtn.innerText = 'Sending...';
+            
+            fetch('/api/user/send-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, isSignup: true })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    verifyEmailBtn.innerText = 'Sent!';
+                    verifyEmailBtn.style.background = '#8b949e';
+                    emailOtpContainer.style.display = 'flex';
+                } else {
+                    verifyEmailBtn.innerText = originalText;
+                    alert('Failed to send OTP: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(err => {
+                verifyEmailBtn.innerText = originalText;
+                alert('Network error while sending OTP.');
+            });
+        } else {
+            alert('Please enter a valid email to verify.');
+        }
+    };
+
+    if (emailInput) {
+        // Reset verify button if user edits the email after sending OTP
+        emailInput.addEventListener('input', () => {
+            if (!isEmailVerified) {
+                verifyEmailBtn.innerText = 'Verify';
+                verifyEmailBtn.style.background = '#238636';
+                emailOtpContainer.style.display = 'none';
+            }
+        });
+    }
+
+    if (verifyEmailBtn) {
+        verifyEmailBtn.onclick = (e) => {
+            e.preventDefault();
+            triggerOtpSend();
+        };
+    }
+
+    if (resendOtpBtn) {
+        resendOtpBtn.onclick = (e) => {
+            e.preventDefault();
+            const originalText = resendOtpBtn.innerText;
+            resendOtpBtn.innerText = 'Sending...';
+            
+            const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+            if (email && email.includes('@')) {
+                fetch('/api/user/send-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    // ✅ isResend:true — skip the duplicate email check
+                    body: JSON.stringify({ email: email, isSignup: true, isResend: true })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.success) {
+                        resendOtpBtn.innerText = 'Sent again!';
+                        setTimeout(() => { resendOtpBtn.innerText = 'Resend OTP'; }, 3000);
+                    } else {
+                        resendOtpBtn.innerText = originalText;
+                        alert('Failed to resend OTP: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(err => {
+                    resendOtpBtn.innerText = originalText;
+                    alert('Network error while resending OTP.');
+                });
+            }
+        };
+    }
+
+    if (confirmEmailBtn) {
+        confirmEmailBtn.onclick = async (e) => {
+            e.preventDefault();
+            const otpVal = document.getElementById('signup-email-otp').value.trim();
+            const emailVal = emailInput ? emailInput.value.trim().toLowerCase() : '';
+            
+            if (otpVal.length === 0) {
+                alert('Please enter the OTP.');
+                return;
+            }
+
+            confirmEmailBtn.innerText = 'Checking...';
+            confirmEmailBtn.disabled = true;
+
+            try {
+                // ✅ Server-side verify the signup OTP
+                const res = await fetch('/api/user/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailVal, otp: otpVal })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    isEmailVerified = true;
+                    if (data.token) localStorage.setItem('token', data.token); // ✅ Save JWT from signup verify
+                    emailOtpContainer.innerHTML = '<span style="color: #238636; font-weight: 600; font-size: 14px; display: flex; align-items: center; padding: 12px 0;"><i class="fa-solid fa-check-circle" style="margin-right: 5px;"></i> Email Verified</span>';
+                    verifyEmailBtn.style.display = 'none';
+                    if(emailInput) emailInput.readOnly = true;
+                } else {
+                    confirmEmailBtn.innerText = 'Confirm';
+                    confirmEmailBtn.disabled = false;
+                    alert(data.error || 'Invalid or expired OTP. Please try again.');
+                }
+            } catch(err) {
+                confirmEmailBtn.innerText = 'Confirm';
+                confirmEmailBtn.disabled = false;
+                alert('Network error while verifying OTP.');
+            }
+        };
+    }
+
+    const registerBtn = document.getElementById('user-register-btn');
+    if(registerBtn) {
+        registerBtn.onclick = () => {
+            const name = document.getElementById('signup-name').value.trim();
+            let email = document.getElementById('signup-email').value.trim().toLowerCase();
+            const phone = document.getElementById('signup-phone').value.trim();
+            const pincode = document.getElementById('signup-pincode').value.trim();
+
+            if (!name || !email || !phone || !pincode) {
+                alert('Please fill in all essential fields (Name, Email, Phone, PIN Code)!');
+                return;
+            }
+
+            if (!isEmailVerified) {
+                alert('Please verify your email before signing up.');
+                return;
+            }
+            
+            // Build address string
+            const house = document.getElementById('signup-house').value.trim();
+            const society = document.getElementById('signup-society').value.trim();
+            const street = document.getElementById('signup-street').value.trim();
+            const village = document.getElementById('signup-village').value.trim();
+            const district = document.getElementById('signup-district').value.trim();
+            const state = document.getElementById('signup-state').value.trim();
+            
+            const gender = document.getElementById('signup-gender').value;
+            const dob = document.getElementById('signup-dob').value;
+            
+            const fullAddress = [house, society, street, village, district, state, pincode].filter(Boolean).join(', ');
+            
+            const originalText = registerBtn.innerText;
+            registerBtn.innerText = 'Creating Account...';
+            registerBtn.disabled = true;
+
+            const token = localStorage.getItem('token') || '';
+            fetch('/api/user/register', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    full_name: name,
+                    email: email,
+                    phone: phone,
+                    gender: gender,
+                    dob: dob,
+                    full_address: fullAddress
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                registerBtn.innerText = originalText;
+                registerBtn.disabled = false;
+                
+                if (data.success) {
+                    // ✅ Hide modal and reset button before redirect to fix browser back behavior
+                    const modal = document.getElementById('user-login-modal');
+                    if (modal) modal.style.display = 'none';
+                    registerBtn.innerText = 'Sign Up';
+
+                    // ✅ Store cleaned values, clear stale data
+                    localStorage.setItem('userName', name);
+                    localStorage.setItem('userEmail', email);
+                    localStorage.setItem('userLocation', fullAddress);
+                    localStorage.setItem('loginTime', Date.now().toString()); // ✅ session timer
+                    // ✅ Do NOT store phone separately to avoid dual-login confusion
+                    localStorage.removeItem('userPhone');
+                    localStorage.removeItem('user_location');
+
+                    // ✅ Update header icon immediately after register
+                    const loginBtn = document.getElementById('user-login-btn');
+                    if (loginBtn) {
+                        loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color:#4a3aff;"></i>';
+                        loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+                    }
+                    
+                    alert('Account created successfully! Welcome to Joamex.');
+                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard.html';
+                    localStorage.removeItem('loginRedirect');
+                    window.location.href = redirectUrl;
+                } else {
+                    alert('Error creating account: ' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(err => {
+                registerBtn.innerText = originalText;
+                registerBtn.disabled = false;
+                console.error(err);
+                alert('Network error while creating account.');
+            });
+        };
+    }
+    
+    // Auto focus OTP
+    const otpInputs = document.querySelectorAll('.user-otp-box');
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', function() {
+            if(this.value.length === 1 && index < otpInputs.length - 1) otpInputs[index + 1].focus();
+        });
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && this.value === '' && index > 0) otpInputs[index - 1].focus();
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(injectUserModal, 500);
+});

@@ -71,6 +71,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Your cart is empty!");
                 return;
             }
+            
+            // Mandatory User Login Check
+            const existingUser = localStorage.getItem('userEmail') || localStorage.getItem('userPhone');
+            if(!existingUser) {
+                // Not logged in -> Show login modal
+                localStorage.setItem('loginRedirect', 'checkout.html');
+                const loginModal = document.getElementById('user-login-modal');
+                if(loginModal) {
+                    loginModal.style.display = 'flex';
+                    if(cartSidebar) cartSidebar.style.display = 'none'; // hide cart so modal is visible clearly
+                } else {
+                    alert('Please login first to proceed to checkout!');
+                }
+                return;
+            }
+
+            // Already logged in -> Proceed to checkout
             window.location.href = 'checkout.html';
         });
     }

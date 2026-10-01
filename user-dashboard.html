@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Joamex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-wrap img {
+            height: 40px;
+            border-radius: 8px;
+        }
+        .logo-text {
+            height: 16px;
+        }
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .user-phone {
+            font-weight: 600;
+            color: #475569;
+            font-size: 14px;
+            background: #f1f5f9;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        .logout-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .header-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        .header-sub {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        /* Bookings List */
+        .booking-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .b-left { flex: 1; }
+        .b-id {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .b-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status-badge {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        .status-pending { background: #fef08a; color: #ca8a04; }
+        .status-confirmed { background: #dbeafe; color: #2563eb; }
+
+        .b-details {
+            display: flex;
+            gap: 30px;
+            color: #475569;
+            font-size: 14px;
+        }
+        .b-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .b-detail-item i { color: #94a3b8; }
+
+        .b-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .b-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        .b-payment {
+            font-size: 12px;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 16px;
+            border: 1px dashed #cbd5e1;
+        }
+        .empty-icon {
+            font-size: 48px;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .booking-card {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .b-right {
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid #f1f5f9;
+                padding-top: 15px;
+                flex-direction: row;
+                align-items: center;
+            }
+            .b-details {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-wrap">
+            <img src="images/logo.png" alt="Logo">
+            <img src="images/logo-text.png" alt="Joamex" class="logo-text">
+        </a>
+        <div class="user-profile">
+            <div class="user-phone" id="displayPhone">Loading...</div>
+            <button class="logout-btn" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="header-title">My Bookings</h1>
+        <p class="header-sub">Track all your service requests in one place.</p>
+
+        <div id="bookingsList">
+            <div class="empty-state">
+                <i class="fa-solid fa-spinner fa-spin empty-icon" style="color: #4a3aff;"></i>
+                <p>Loading your bookings...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const phone = localStorage.getItem('userPhone');
+        const email = localStorage.getItem('userEmail');
+        const userName = localStorage.getItem('userName');
+        
+        if(!phone && !email) {
+            alert('Please login first!');
+            window.location.href = 'index.html';
+        } else {
+            let displayText = '';
+            if (userName) {
+                displayText = userName;
+            } else if (email) {
+                displayText = email;
+            } else {
+                displayText = '+91 ' + phone;
+            }
+            
+            document.getElementById('displayPhone').innerText = displayText;
+            
+            if(email) {
+                loadUserBookings(email, 'email');
+            } else {
+                loadUserBookings(phone, 'phone');
+            }
+        }
+
+        function logout() {
+            // ✅ Clear ALL user-related storage keys
+            localStorage.removeItem('userPhone');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userLocation');
+            localStorage.removeItem('user_location');
+            localStorage.removeItem('loginTime');
+            localStorage.removeItem('token');
+            window.location.href = 'index.html';
+        }
+
+        async function loadUserBookings(identifier, type) {
+            try {
+                const queryParam = type === 'email' ? 'email' : 'phone';
+                const token = localStorage.getItem('token') || '';
+                const res = await fetch(`/api/user/bookings?${queryParam}=` + encodeURIComponent(identifier), {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                
+                const listDiv = document.getElementById('bookingsList');
+                
+                if(data.success && data.bookings && data.bookings.length > 0) {
+                    listDiv.innerHTML = '';
+                    
+                    data.bookings.forEach((b, index) => {
+                        let serviceType = 'General Service';
+                        try {
+                            const cart = typeof b.cart_items === 'string' ? JSON.parse(b.cart_items) : b.cart_items;
+                            if(cart && cart.length > 0) serviceType = cart[0].title || cart[0].name || serviceType;
+                        } catch(e){}
+
+                        const dateStr = b.booking_date ? new Date(b.booking_date).toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'}) : 'N/A';
+                        
+                        // Real status logic
+                        const status = b.status || 'Pending';
+                        let statusClass = 'status-pending';
+                        if(status === 'Confirmed' || status === 'On the way') statusClass = 'status-confirmed';
+                        else if(status === 'Completed') statusClass = 'status-confirmed'; // maybe a different color eventually
+                        
+                        const address = b.address + (b.landmark ? ', ' + b.landmark : '');
+                        
+                        let partnerInfoHtml = '';
+                        if (b.assigned_partner_name && b.assigned_partner_phone) {
+                            partnerInfoHtml = `
+                                <div style="margin-top: 15px; padding: 12px; background: #e0e7ff; border-radius: 8px; border-left: 4px solid #4a3aff;">
+                                    <div style="font-weight: 600; font-size: 14px; margin-bottom: 5px;"><i class="fa-solid fa-user-check"></i> Partner Assigned: ${b.assigned_partner_name}</div>
+                                    <div style="display: flex; gap: 10px; margin-top: 8px;">
+                                        <a href="tel:${b.assigned_partner_phone}" style="text-decoration: none; padding: 6px 12px; background: #4a3aff; color: white; border-radius: 6px; font-size: 13px; font-weight: 600;"><i class="fa-solid fa-phone"></i> Call Partner</a>
+                                        <a href="https://wa.me/91${b.assigned_partner_phone}?text=Hi%20${b.assigned_partner_name},%20this%20is%20regarding%20my%20service%20booking!" target="_blank" style="text-decoration: none; padding: 6px 12px; background: #25D366; color: white; border-radius: 6px; font-size: 13px; font-weight: 600;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        const cardHTML = `
+                            <div class="booking-card">
+                                <div class="b-left">
+                                    <div class="b-id">ORDER #${b.id}</div>
+                                    <div class="b-title">
+                                        ${serviceType} 
+                                        <span class="status-badge ${statusClass}">${status}</span>
+                                    </div>
+                                    <div class="b-details">
+                                        <div class="b-detail-item">
+                                            <i class="fa-regular fa-calendar-check"></i> ${dateStr} &nbsp;|&nbsp; ${b.time_slot}
+                                        </div>
+                                        <div class="b-detail-item">
+                                            <i class="fa-solid fa-location-dot"></i> ${address}
+                                        </div>
+                                    </div>
+                                    ${partnerInfoHtml}
+                                </div>
+                                <div class="b-right">
+                                    <div class="b-price">&#8377;${b.total_amount}</div>
+                                    <div class="b-payment">${b.payment_method === 'cash' ? 'Pay After Service' : 'Paid Online'}</div>
+                                </div>
+                            </div>
+                        `;
+                        listDiv.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+                } else {
+                    listDiv.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fa-solid fa-box-open empty-icon"></i>
+                            <h3 style="font-size:18px; color:#1e293b; margin-bottom:5px;">No Bookings Found</h3>
+                            <p style="color:#64748b;">You haven't made any service bookings yet.</p>
+                            <a href="index.html" style="display:inline-block; margin-top:20px; background:#4a3aff; color:white; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:600;">Book a Service</a>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('bookingsList').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa-solid fa-triangle-exclamation empty-icon" style="color:#ef4444;"></i>
+                        <p style="color:#ef4444; font-weight:600;">Failed to load bookings. Please check your connection or restart the server.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

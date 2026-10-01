@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joamex - Admin Panel</title>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            height: 100vh;
+            overflow: hidden; /* App-like feel */
+        }
+
+        /* --- LOGIN SCREEN --- */
+        .login-wrapper {
+            background-color: #0f172a;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1000;
+        }
+        .login-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .login-box h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .login-box p {
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 13px; color: #cbd5e1; margin-bottom: 8px; font-weight: 500; }
+        .input-group input {
+            width: 100%; padding: 14px 16px; background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: #fff; font-size: 15px; outline: none;
+        }
+        .login-btn {
+            width: 100%; padding: 14px; background: #6366f1; color: #fff; border: none;
+            border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 10px;
+        }
+        .error-msg { color: #ef4444; font-size: 13px; text-align: center; margin-top: 15px; opacity: 0; }
+
+        /* --- DASHBOARD LAYOUT --- */
+        .app-container {
+            display: none;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            border-right: 1px solid #e2e8f0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            float: left;
+        }
+        .sidebar-header {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .brand-icon {
+            width: 36px; height: 36px; background: #6366f1; color: white;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: bold;
+        }
+        .brand-text { font-size: 18px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+        
+        .nav-menu {
+            padding: 20px 12px;
+            flex-grow: 1;
+        }
+        .nav-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; margin-bottom: 8px;
+            border-radius: 10px; color: #64748b;
+            text-decoration: none; font-weight: 500; font-size: 15px;
+            cursor: pointer; transition: 0.2s;
+        }
+        .nav-item:hover { background: #f8fafc; color: #0f172a; }
+        .nav-item.active { background: #6366f1; color: #fff; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+        .nav-item i { font-size: 18px; width: 24px; text-align: center; }
+
+        .sidebar-footer { padding: 20px; border-top: 1px solid #f1f5f9; }
+        .logout-btn {
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 10px; border-radius: 8px; background: #fee2e2; color: #ef4444;
+            border: none; font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .logout-btn:hover { background: #fca5a5; color: #fff; }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 260px;
+            height: 100%;
+            background: #f8fafc;
+            overflow-y: auto;
+        }
+        .topbar {
+            padding: 20px 40px;
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .page-title { font-size: 24px; font-weight: 700; color: #0f172a; }
+        
+        .content-area { padding: 40px; }
+        
+        /* Views */
+        .view-section { display: none; }
+        .view-section.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Stats Cards */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 30px; }
+        .stat-card {
+            background: #fff; padding: 24px; border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;
+        }
+        .stat-card h3 { color: #64748b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .stat-card .value { font-size: 32px; font-weight: 700; color: #0f172a; }
+
+        /* Data Table */
+        .table-card {
+            background: #fff; border-radius: 16px; border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); overflow: hidden;
+        }
+        .table-header { padding: 20px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .table-header h3 { font-size: 16px; font-weight: 600; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 16px 24px; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; background: #f8fafc; }
+        td { padding: 16px 24px; font-size: 14px; color: #334155; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #f8fafc; }
+        
+        .profile-cell { display: flex; align-items: center; gap: 12px; }
+        .avatar { width: 36px; height: 36px; border-radius: 8px; background: #e0e7ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; }
+        
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+        .badge.verified { background: #dcfce7; color: #166534; }
+        .badge.pending { background: #fef9c3; color: #854d0e; }
+        .badge.category { background: #f3e8ff; color: #6b21a8; }
+        
+        .action-btn { padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-view { background: #f1f5f9; color: #334155; }
+        .btn-view:hover { background: #e2e8f0; }
+        
+        .empty-state { padding: 40px; text-align: center; color: #64748b; font-size: 15px; }
+
+        /* Docs Modal */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.7); z-index: 2000; justify-content: center; align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: #fff; width: 100%; max-width: 600px; border-radius: 20px;
+            overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            animation: slideUp 0.3s ease;
+        }
+        .modal-header { padding: 20px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { font-size: 18px; font-weight: 700; color: #0f172a; }
+        .close-modal { background: none; border: none; font-size: 20px; color: #64748b; cursor: pointer; }
+        .modal-body { padding: 24px; max-height: 60vh; overflow-y: auto; }
+        .doc-section { margin-bottom: 20px; }
+        .doc-section h4 { font-size: 14px; font-weight: 600; color: #475569; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px; }
+        .doc-list p { font-size: 14px; color: #334155; margin-bottom: 8px; }
+        .doc-list a { color: #6366f1; text-decoration: none; font-weight: 500; }
+        .modal-footer { padding: 20px 24px; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; gap: 12px; background: #f8fafc; }
+        
+        .btn-verify { background: #16a34a; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+        .btn-reject { background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div class="login-wrapper" id="loginWrapper">
+        <div class="login-box">
+            <h2>System Access</h2>
+            <p>Please verify your identity</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="adminId" placeholder="admin@example.com" autocomplete="off" required>
+                </div>
+                <div class="input-group">
+                    <label>Passcode</label>
+                    <input type="password" id="adminPass" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="login-btn">Authenticate</button>
+                <div class="error-msg" id="errorMsg">Invalid credentials.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- APP LAYOUT -->
+    <div class="app-container" id="appContainer">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="brand-text">Admin Panel</div>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active" onclick="switchView('partners', this)">
+                    <i class="fa-solid fa-users-gear"></i> Partners
+                </div>
+                <div class="nav-item" onclick="switchView('users', this)">
+                    <i class="fa-regular fa-user"></i> Users
+                </div>
+                <div class="nav-item" onclick="switchView('bookings', this)">
+                    <i class="fa-regular fa-calendar-check"></i> Bookings
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="topbar">
+                <div class="page-title" id="pageTitle">Partner Management</div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #475569;">A</div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                
+                <!-- VIEW 2: PARTNERS -->
+                <div id="view-partners" class="view-section active">
+                    <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+                        <div class="stat-card"><h3>Total Partners</h3><div class="value" id="countTotalPartners">0</div></div>
+                        <div class="stat-card"><h3>Pending Verification</h3><div class="value" style="color: #d97706;" id="countPending">0</div></div>
+                        <div class="stat-card"><h3>Verified</h3><div class="value" style="color: #16a34a;" id="countVerified">0</div></div>
+                        <div class="stat-card"><h3>Rejected</h3><div class="value" style="color: #dc2626;">0</div></div>
+                    </div>
+
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3>All Registered Partners</h3>
+                        </div>
+                        <table id="partnersTable">
+                            <thead>
+                                <tr>
+                                    <th>Profile</th>
+                                    <th>Category</th>
+                                    <th>Contact Info</th>
+                                    <th>Status</th>
+                                    <th>Joined Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="partnersTableBody">
+                                <!-- Data injected here via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- VIEW 3: USERS -->
+                <div id="view-users" class="view-section">
+                    <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="stat-card"><h3>Total Users</h3><div class="value" id="countTotalUsers">0</div></div>
+                    </div>
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3>All Registered Users</h3>
+                        </div>
+                        <table id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Contact Info</th>
+                                    <th>Gender & DOB</th>
+                                    <th>Address</th>
+                                    <th>Joined Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Data injected here via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- VIEW 4: BOOKINGS -->
+                <div id="view-bookings" class="view-section">
+                    <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="stat-card"><h3>Total Bookings</h3><div class="value" id="countTotalBookings">0</div></div>
+                    </div>
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3>All Service Bookings</h3>
+                        </div>
+                        <table id="bookingsTable">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Customer Details</th>
+                                    <th>Service Type</th>
+                                    <th>Schedule</th>
+                                    <th>Amount & Payment</th>
+                                    <th>Assigned Partner</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingsTableBody">
+                                <!-- Data injected here via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- DOCS MODAL -->
+    <div class="modal-overlay" id="docsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Partner Documents & Verification</h3>
+                <button class="close-modal" onclick="closeDocsModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="docsModalBody">
+                <!-- Injected via JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-reject" id="btnReject" onclick="updateStatus('REJECTED')">Reject</button>
+                <button class="btn-verify" id="btnVerify" onclick="updateStatus('VERIFIED')">Approve & Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check login state
+        if(sessionStorage.getItem('admin_logged_in') === 'true') {
+            document.getElementById('loginWrapper').style.display = 'none';
+            document.getElementById('appContainer').style.display = 'block';
+            loadPartnersData();
+        }
+
+        // Login Form Submit
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('adminId').value.trim().toLowerCase();
+            const pass = document.getElementById('adminPass').value.trim();
+            const btn = document.querySelector('.login-btn');
+            
+            btn.innerHTML = 'Verifying...';
+            
+            fetch('/api/admin/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: id, password: pass })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    sessionStorage.setItem('admin_logged_in', 'true');
+                    sessionStorage.setItem('adminToken', data.token);
+                    document.getElementById('loginWrapper').style.display = 'none';
+                    document.getElementById('appContainer').style.display = 'block';
+                    loadPartnersData();
+                } else {
+                    btn.innerHTML = 'Authenticate';
+                    document.getElementById('errorMsg').style.opacity = '1';
+                }
+            })
+            .catch(err => {
+                btn.innerHTML = 'Authenticate';
+                document.getElementById('errorMsg').innerText = 'Server Error';
+                document.getElementById('errorMsg').style.opacity = '1';
+            });
+        });
+
+        function logout() {
+            sessionStorage.removeItem('admin_logged_in');
+            sessionStorage.removeItem('adminToken');
+            location.reload();
+        }
+
+        // View Switcher Logic
+        function switchView(viewId, element) {
+            // Update Sidebar UI
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Update Title
+            const titleMap = {
+                'dashboard': 'Dashboard',
+                'partners': 'Partner Management',
+                'users': 'User Management',
+                'bookings': 'Booking History'
+            };
+            document.getElementById('pageTitle').innerText = titleMap[viewId];
+            
+            // Hide all views, show targeted view
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-' + viewId).classList.add('active');
+            
+            // Load specific data based on view
+            if(viewId === 'partners') {
+                loadPartnersData();
+            } else if (viewId === 'users') {
+                loadUsersData();
+            } else if (viewId === 'bookings') {
+                loadAdminBookingsData();
+            }
+        }
+
+        // Fetch Partners Data
+        function loadPartnersData() {
+            const tbody = document.getElementById('partnersTableBody');
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 30px;">Loading data...</td></tr>';
+            const token = sessionStorage.getItem('adminToken') || '';
+            fetch('/api/admin/partners', { headers: { 'Authorization': `Bearer ${token}` } })
+                .then(res => res.json())
+                .then(data => {
+                    if(!data.success || !data.partners || data.partners.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No partners found in the database.</td></tr>';
+                        document.getElementById('countTotalPartners').innerText = '0';
+                        document.getElementById('countPending').innerText = '0';
+                        document.getElementById('countVerified').innerText = '0';
+                        return;
+                    }
+                    
+                    const partners = data.partners;
+                    document.getElementById('countTotalPartners').innerText = partners.length;
+                    
+                    let pendingCount = 0;
+                    let verifiedCount = 0;
+                    let rejectedCount = 0;
+                    let html = '';
+                    
+                    partners.forEach(p => {
+                        const initial = p.full_name ? p.full_name.charAt(0).toUpperCase() : '?';
+                        const statusLower = (p.status || 'PENDING').toLowerCase();
+                        let statusClass = 'pending';
+                        if(statusLower === 'verified') statusClass = 'verified';
+                        else if(statusLower === 'rejected') statusClass = 'rejected';
+                        
+                        const statusIcon = statusClass === 'verified' ? 'fa-check' : (statusClass === 'rejected' ? 'fa-xmark' : 'fa-clock');
+                        
+                        if(statusClass === 'pending') pendingCount++;
+                        if(statusClass === 'verified') verifiedCount++;
+                        if(statusClass === 'rejected') rejectedCount++;
+                        
+                        // Serialize docs, bank, and skills for modal (escape quotes)
+                        const docsStr = encodeURIComponent(JSON.stringify(p.documents || {}));
+                        const bankStr = encodeURIComponent(JSON.stringify(p.bank_details || {}));
+                        const skillsStr = encodeURIComponent(JSON.stringify(p.skills || []));
+                        
+                        // Date formatting
+                        let dateStr = 'N/A';
+                        const dateVal = p.joined_date || p.created_at;
+                        if(dateVal) {
+                            const d = new Date(dateVal);
+                            dateStr = d.toLocaleDateString();
+                        }
+
+                        html += `
+                            <tr>
+                                <td>
+                                    <div class="profile-cell">
+                                        <div class="avatar">${initial}</div>
+                                        <div>
+                                            <div style="font-weight: 600; color: #0f172a;">${p.full_name || 'N/A'}</div>
+                                            <div style="font-size: 12px; color: #64748b;">Exp: ${p.experience_years || 0} years</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge category">${p.primary_category || 'Other'}</span>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;"><i class="fa-solid fa-phone" style="color:#cbd5e1; font-size:12px; width:16px;"></i> ${p.phone || 'N/A'}</div>
+                                    <div style="font-size: 12px; color: #64748b;"><i class="fa-solid fa-envelope" style="color:#cbd5e1; font-size:12px; width:16px;"></i> ${p.email || 'N/A'}</div>
+                                </td>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span class="badge ${statusClass}"><i class="fa-solid ${statusIcon}"></i> ${p.status || 'PENDING'}</span>
+                                        ${statusLower !== 'verified' ? `<button class="action-btn" style="background: #16a34a; color: white; padding: 4px 8px; font-size: 11px;" onclick="quickUpdateStatus(${p.id}, 'VERIFIED')" title="Accept Partner">Accept</button>` : ''}
+                                        ${statusLower !== 'rejected' ? `<button class="action-btn" style="background: #ef4444; color: white; padding: 4px 8px; font-size: 11px;" onclick="quickUpdateStatus(${p.id}, 'REJECTED')" title="Reject Partner">Reject</button>` : ''}
+                                    </div>
+                                </td>
+                                <td>${dateStr}</td>
+                                <td>
+                                    <button class="action-btn btn-view" onclick="openDocsModal(${p.id}, '${p.full_name}', '${docsStr}', '${bankStr}', '${skillsStr}', '${p.status}')" title="View Documents">View Docs</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    
+                    tbody.innerHTML = html;
+                    document.getElementById('countPending').innerText = pendingCount;
+                    document.getElementById('countVerified').innerText = verifiedCount;
+                    // Also update rejected count if we had an element for it
+                    const rejEl = document.querySelector('.stat-card:nth-child(4) .value');
+                    if(rejEl) rejEl.innerText = rejectedCount;
+                })
+                .catch(err => {
+                    console.error(err);
+                    tbody.innerHTML = '<tr><td colspan="6" class="empty-state" style="color:red;">Error fetching data. Check connection.</td></tr>';
+                });
+        }
+
+        let currentPartnerId = null;
+
+        function openDocsModal(id, name, docsStr, bankStr, skillsStr, status) {
+            currentPartnerId = id;
+            const docs = JSON.parse(decodeURIComponent(docsStr));
+            const bank = JSON.parse(decodeURIComponent(bankStr));
+            const skills = JSON.parse(decodeURIComponent(skillsStr));
+            
+            let html = `
+                <div class="doc-section">
+                    <h4>Partner Profile</h4>
+                    <p style="margin-bottom: 5px;"><b>Name:</b> ${name}</p>
+                    <p><b>Sub-Categories (Skills):</b> 
+                        ${skills.length > 0 ? skills.map(s => `<span style="display:inline-block; background:#f1f5f9; padding:2px 8px; border-radius:4px; font-size:12px; margin-right:4px;">${s}</span>`).join('') : '<span style="color:#64748b;">None specified</span>'}
+                    </p>
+                </div>
+                <div class="doc-section">
+                    <h4>Uploaded Documents</h4>
+                    <div class="doc-list">
+            `;
+            
+            if(Object.keys(docs).length === 0) {
+                html += `<p style="color:#ef4444;">No documents uploaded</p>`;
+            } else {
+                for(let key in docs) {
+                    let fileUrl = docs[key];
+                    if (fileUrl !== 'Not Uploaded' && !fileUrl.startsWith('http')) {
+                        fileUrl = "images/" + fileUrl;
+                    }
+                    
+                    if (fileUrl === 'Not Uploaded') continue;
+                    
+                    const isPdf = fileUrl.toLowerCase().endsWith('.pdf');
+                    
+                    html += `
+                        <div style="margin-bottom: 15px;">
+                            <p style="margin-bottom: 5px; font-size: 13px; color: #64748b;"><b>${key.replace('_', ' ').toUpperCase()}</b></p>
+                            <a href="${fileUrl}" target="_blank" style="display: inline-block; text-decoration: none;">
+                                ${isPdf ? 
+                                  `<div style="padding: 20px; background: #f1f5f9; border-radius: 8px; border: 1px dashed #cbd5e1; color: #4f46e5;"><i class="fa-solid fa-file-pdf"></i> View PDF Document</div>` 
+                                  : 
+                                  `<img src="${fileUrl}" style="max-width: 100%; max-height: 180px; border-radius: 8px; border: 1px solid #e2e8f0; object-fit: contain; background: #f8fafc;" alt="${key}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                   <div style="display:none; color: #ef4444; font-size:12px;">Image not found on server</div>`
+                                }
+                            </a>
+                        </div>
+                    `;
+                }
+            }
+            
+            html += `
+                    </div>
+                </div>
+                <div class="doc-section">
+                    <h4>Bank Details</h4>
+                    <div class="doc-list">
+            `;
+            
+            if(Object.keys(bank).length === 0) {
+                html += `<p style="color:#ef4444;">No bank details provided</p>`;
+            } else {
+                html += `
+                    <p><b>Account Holder:</b> ${bank.holder_name || 'N/A'}</p>
+                    <p><b>Bank Name:</b> ${bank.bank_name || 'N/A'}</p>
+                    <p><b>Account Number:</b> ${bank.account_number || 'N/A'}</p>
+                    <p><b>IFSC Code:</b> ${bank.ifsc || 'N/A'}</p>
+                `;
+            }
+            
+            html += `</div></div>`;
+            
+            document.getElementById('docsModalBody').innerHTML = html;
+            
+            // Hide buttons if already acted upon
+            if(status === 'VERIFIED') {
+                document.getElementById('btnVerify').style.display = 'none';
+                document.getElementById('btnReject').style.display = 'inline-block';
+            } else if (status === 'REJECTED') {
+                document.getElementById('btnReject').style.display = 'none';
+                document.getElementById('btnVerify').style.display = 'inline-block';
+            } else {
+                document.getElementById('btnVerify').style.display = 'inline-block';
+                document.getElementById('btnReject').style.display = 'inline-block';
+            }
+            
+            document.getElementById('docsModal').style.display = 'flex';
+        }
+
+        function closeDocsModal() {
+            document.getElementById('docsModal').style.display = 'none';
+            currentPartnerId = null;
+        }
+
+        function updateStatus(newStatus) {
+            if(!currentPartnerId) return;
+            
+            const btn = newStatus === 'VERIFIED' ? document.getElementById('btnVerify') : document.getElementById('btnReject');
+            const originalText = btn.innerText;
+            btn.innerText = 'Updating...';
+            
+            const token = sessionStorage.getItem('adminToken') || '';
+            fetch(`/api/admin/partners/${currentPartnerId}/status`, {
+                method: 'PUT',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ status: newStatus })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    closeDocsModal();
+                    loadPartnersData(); // Reload table
+                } else {
+                    alert('Failed to update status');
+                    btn.innerText = originalText;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error connecting to server');
+                btn.innerText = originalText;
+            });
+        }
+
+        // Quick status update from the main table
+        function quickUpdateStatus(id, newStatus) {
+            const token = sessionStorage.getItem('adminToken') || '';
+            fetch(`/api/admin/partners/${id}/status`, {
+                method: 'PUT',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ status: newStatus })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    loadPartnersData(); // Reload table
+                } else {
+                    alert('Failed to update status');
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error connecting to server');
+            });
+        }
+
+        // Fetch Users Data
+        function loadUsersData() {
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 30px;">Loading users...</td></tr>';
+            
+            const token = sessionStorage.getItem('adminToken') || '';
+            fetch('/api/admin/users', { headers: { 'Authorization': `Bearer ${token}` } })
+                .then(res => res.json())
+                .then(data => {
+                    if(!data.success || !data.users || data.users.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No users found in the database.</td></tr>';
+                        document.getElementById('countTotalUsers').innerText = '0';
+                        return;
+                    }
+                    
+                    const users = data.users;
+                    document.getElementById('countTotalUsers').innerText = users.length;
+                    
+                    let html = '';
+                    users.forEach(u => {
+                        let dateStr = 'N/A';
+                        if(u.created_at) {
+                            dateStr = new Date(u.created_at).toLocaleDateString();
+                        }
+                        
+                        html += `
+                            <tr>
+                                <td>
+                                    <div style="font-weight: 600; color: #0f172a;">${u.full_name || 'N/A'}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;"><i class="fa-solid fa-phone" style="color:#cbd5e1; font-size:12px; width:16px;"></i> ${u.phone || 'N/A'}</div>
+                                    <div style="font-size: 12px; color: #64748b;"><i class="fa-solid fa-envelope" style="color:#cbd5e1; font-size:12px; width:16px;"></i> ${u.email || 'N/A'}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;">${u.gender || '-'}</div>
+                                    <div style="font-size: 12px; color: #64748b;">${u.dob || '-'}</div>
+                                </td>
+                                <td style="max-width: 250px;">
+                                    <div style="font-size: 12px; color: #64748b; white-space: normal; line-height: 1.4;">${u.full_address || 'N/A'}</div>
+                                </td>
+                                <td>${dateStr}</td>
+                            </tr>
+                        `;
+                    });
+                    tbody.innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Error loading users:', err);
+                    tbody.innerHTML = '<tr><td colspan="5" class="empty-state" style="color:red;">Error loading users data.</td></tr>';
+                });
+        }
+
+        // Fetch Bookings Data
+        function loadAdminBookingsData() {
+            const tbody = document.getElementById('bookingsTableBody');
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 30px;">Loading bookings...</td></tr>';
+            
+            const token = sessionStorage.getItem('adminToken') || '';
+            fetch('/api/admin/bookings', { headers: { 'Authorization': `Bearer ${token}` } })
+                .then(res => res.json())
+                .then(data => {
+                    if(!data.success || !data.bookings || data.bookings.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No bookings found in the database.</td></tr>';
+                        document.getElementById('countTotalBookings').innerText = '0';
+                        return;
+                    }
+                    
+                    const bookings = data.bookings;
+                    document.getElementById('countTotalBookings').innerText = bookings.length;
+                    
+                    let html = '';
+                    bookings.forEach(b => {
+                        let serviceType = 'General Service';
+                        try {
+                            const cart = typeof b.cart_items === 'string' ? JSON.parse(b.cart_items) : b.cart_items;
+                            if(cart && cart.length > 0) serviceType = cart[0].title || cart[0].name;
+                        } catch(e){}
+
+                        const dateStr = b.booking_date ? b.booking_date.split('T')[0] : 'N/A';
+                        
+                        
+                        let partnerInfo = '<span style="color:#94a3b8; font-style:italic;">Unassigned</span>';
+                        if (b.assigned_partner_name) {
+                            partnerInfo = `
+                                <div style="font-weight: 600;">${b.assigned_partner_name}</div>
+                                <div style="font-size: 12px; color: #64748b;"><i class="fa-solid fa-phone"></i> ${b.assigned_partner_phone || ''}</div>
+                            `;
+                        }
+
+                        let statusColor = '#fef08a'; let statusText = '#ca8a04';
+                        let currentStatus = b.status || 'Pending';
+                        if(currentStatus === 'Confirmed') { statusColor = '#dbeafe'; statusText = '#2563eb'; }
+                        else if(currentStatus === 'On the way') { statusColor = '#ffedd5'; statusText = '#ea580c'; }
+                        else if(currentStatus === 'Completed') { statusColor = '#dcfce7'; statusText = '#16a34a'; }
+
+                        const address = b.address ? (b.address + (b.landmark ? ', ' + b.landmark : '')) : 'N/A';
+
+                        html += `
+                            <tr>
+                                <td>
+                                    <div style="font-weight: 600; color: #0f172a;">#BKG-${b.id}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 600;">${b.customer_name || 'N/A'}</div>
+                                    <div style="font-size: 12px; color: #64748b;"><i class="fa-solid fa-phone"></i> ${b.phone_number || 'N/A'}</div>
+                                    <div style="font-size: 11px; color: #94a3b8; margin-top:2px; max-width: 200px; white-space: normal;">${address}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;">${serviceType}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;"><i class="fa-regular fa-calendar"></i> ${dateStr}</div>
+                                    <div style="font-size: 12px; color: #64748b;">${b.time_slot || '-'}</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 600; color: #16a34a;">₹${b.total_amount || 0}</div>
+                                    <div style="font-size: 12px; color: #64748b;">${b.payment_method || 'N/A'}</div>
+                                </td>
+                                <td>${partnerInfo}</td>
+                                <td><span style="background:${statusColor}; color:${statusText}; padding:4px 8px; border-radius:4px; font-size:11px; font-weight:600;">${currentStatus}</span></td>
+                            </tr>
+                        `;
+                    });
+                    tbody.innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Error loading bookings:', err);
+                    tbody.innerHTML = '<tr><td colspan="5" class="empty-state" style="color:red;">Error loading bookings data.</td></tr>';
+                });
+        }
+    </script>
+</body>
+</html>

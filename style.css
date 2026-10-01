@@ -3164,3 +3164,260 @@ body {
     transform: scale(1.1) !important;
     animation: greenPulse 0.8s infinite !important; /* Fast pulse on hover */
 }
+
+
+/* =============================================================
+   COMPREHENSIVE RESPONSIVE CSS — ALL DEVICES
+   Breakpoints:
+     ≤ 480px   → Mobile (small phones)
+     ≤ 768px   → Tablet / large phones
+     ≤ 1024px  → Small laptops
+   ============================================================= */
+
+/* ---------- GLOBAL helpers ---------- */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Small laptops (≤ 1024px) ---------- */
+@media (max-width: 1024px) {
+    .header {
+        padding: 12px 20px !important;
+    }
+    .search-container {
+        width: 35% !important;
+    }
+    .main-content {
+        padding: 0 15px !important;
+    }
+    .carousel-item {
+        min-width: calc(50% - 10px) !important;
+    }
+}
+
+/* ---------- Tablet / large phones (≤ 768px) ---------- */
+@media (max-width: 768px) {
+
+    /* — Header — */
+    .header {
+        flex-wrap: wrap !important;
+        padding: 10px 15px !important;
+        gap: 10px !important;
+    }
+    .search-container {
+        width: 100% !important;
+        order: 3 !important;
+    }
+    .header-actions {
+        gap: 8px !important;
+    }
+    .location-btn span,
+    .partner-btn span {
+        display: none !important;   /* hide text, keep icon */
+    }
+    .location-btn, .partner-btn {
+        padding: 8px 10px !important;
+    }
+
+    /* Body padding for taller fixed header */
+    body {
+        padding-top: 115px !important;
+    }
+
+    /* — Carousel — */
+    .carousel-item {
+        min-width: calc(80% - 10px) !important;
+        height: 200px !important;
+    }
+
+    /* — Services / category grids — */
+    .services-grid,
+    .category-grid,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* — Cards — */
+    .service-card,
+    .category-card {
+        padding: 15px !important;
+    }
+
+    /* — Section headings — */
+    h1 { font-size: clamp(22px, 5vw, 32px) !important; }
+    h2 { font-size: clamp(18px, 4vw, 26px) !important; }
+    h3 { font-size: clamp(16px, 3.5vw, 22px) !important; }
+
+    /* — Footer — */
+    .footer-grid,
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    /* — Cart sidebar — */
+    #cart-sidebar {
+        width: 100% !important;
+        right: 0 !important;
+    }
+
+    /* — Modals (login / partner etc.) — */
+    #user-login-modal,
+    #partner-modal,
+    .modal-overlay {
+        padding: 10px !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+    }
+    /* inner box */
+    #user-login-modal > div,
+    #partner-modal > div,
+    .modal-overlay > div,
+    .modal-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 12px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+
+    /* — Checkout / booking forms — */
+    .checkout-container,
+    .booking-form,
+    form.main-form {
+        padding: 15px !important;
+    }
+    .form-row,
+    .input-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .form-row input,
+    .form-row select,
+    .input-row input,
+    .input-row select {
+        width: 100% !important;
+        min-width: unset !important;
+    }
+
+    /* — Sticky icons (WhatsApp / Call) — */
+    .sticky-icons {
+        bottom: 10px !important;
+        right: 10px !important;
+    }
+}
+
+/* ---------- Small phones (≤ 480px) ---------- */
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 120px !important;
+    }
+
+    /* — Header: stack logo + actions — */
+    .header {
+        padding: 8px 12px !important;
+    }
+    .logo-text { font-size: 17px !important; }
+    .partner-btn, .location-btn {
+        font-size: 12px !important;
+        padding: 7px 8px !important;
+    }
+    .icon-btn {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    /* — Carousel — */
+    .carousel-item {
+        min-width: calc(90% - 5px) !important;
+        height: 160px !important;
+    }
+
+    /* — Service / category grid → single column — */
+    .services-grid,
+    .category-grid,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* — Hero / banner sections — */
+    .hero-section,
+    .banner-section {
+        padding: 20px 12px !important;
+        text-align: center !important;
+    }
+    .hero-section h1 {
+        font-size: clamp(20px, 6vw, 28px) !important;
+    }
+    .hero-section p {
+        font-size: 14px !important;
+    }
+
+    /* — Buttons — */
+    .btn, .cta-btn, button.primary {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+
+    /* — Login / Signup modal inner box — */
+    #user-login-modal > div,
+    .modal-box {
+        padding: 20px 14px !important;
+        border-radius: 10px !important;
+    }
+
+    /* OTP boxes — keep them in a single row on small screens */
+    .user-otp-box {
+        height: 42px !important;
+        font-size: 16px !important;
+    }
+
+    /* Signup gender + dob row → stack */
+    #user-login-modal [style*="display: flex; gap: 10px; flex-wrap"] {
+        flex-direction: column !important;
+    }
+
+    /* — Footer — */
+    .footer-grid,
+    .footer-columns {
+        grid-template-columns: 1fr !important;
+    }
+    .footer-logo { margin-bottom: 15px !important; }
+
+    /* — Tables (bookings / admin) — */
+    table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* — Price list cards — */
+    .price-card,
+    .service-item {
+        padding: 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* — Section gaps — */
+    .main-content {
+        margin: 15px auto !important;
+    }
+    .section-gap { margin-bottom: 30px !important; }
+}
+
+/* ---------- Very small phones (≤ 360px) ---------- */
+@media (max-width: 360px) {
+    .header-actions { gap: 5px !important; }
+    .location-btn { display: none !important; } /* hide location on tiny screens */
+    .logo-text { font-size: 15px !important; }
+}
+
