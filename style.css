@@ -1658,10 +1658,20 @@ img {
         top: -2px;
     }
     
-    /* Index page services grid - 2 columns on mobile for compact scrollable view */
+    /* Index page services grid - 3 columns on mobile for compact scrollable view */
     .services-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px 10px !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px 8px !important;
+    }
+    .service-item p {
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-break: break-word !important;
     }
     
     /* Carousels & Sliders */
@@ -1780,7 +1790,8 @@ img {
 @media (max-width: 480px) {
     /* Very Small Phones */
     .services-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px 8px !important;
     }
     .stats-container {
         flex-direction: column;
@@ -1792,13 +1803,22 @@ img {
     .ac-banner-text h2 {
         font-size: 32px;
     }
+    /* Fix long text labels — 2-line max, no overflow */
     .service-item p {
-        font-size: 10px !important;
-        line-height: 1.3;
+        font-size: 9.5px !important;
+        line-height: 1.25 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-break: break-word !important;
+        margin-top: 6px !important;
     }
     .service-icon {
-        width: 50px !important;
-        height: 50px !important;
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 6px !important;
     }
     .service-icon img {
         width: 100% !important;
@@ -3310,6 +3330,12 @@ img, video, iframe {
     .sticky-icons {
         bottom: 10px !important;
         right: 10px !important;
+        left: auto !important;
+    }
+    /* Fix sticky-contact-icons: move from left to right on mobile */
+    .sticky-contact-icons {
+        left: auto !important;
+        right: 12px !important;
     }
 }
 
