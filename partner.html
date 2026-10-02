@@ -359,6 +359,39 @@
         .next-btn:hover {
             background-color: #3b2ecc;
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 30px 20px;
+            }
+            .main-content {
+                width: 100%;
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .main-heading {
+                font-size: 32px;
+            }
+        }
+        @media (max-width: 500px) {
+            .category-grid {
+                grid-template-columns: repeat(1, 1fr) !important;
+            }
+        }
     </style>
 </head>
 <body>

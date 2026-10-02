@@ -209,6 +209,29 @@
         
         .btn-verify { background: #16a34a; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
         .btn-reject { background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                float: none;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .table-card {
+                overflow-x: auto;
+            }
+            .app-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
