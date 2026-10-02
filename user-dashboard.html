@@ -169,9 +169,23 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+            .user-profile {
+                width: 100%;
+                justify-content: space-between;
+            }
             .booking-card {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
+                padding: 15px;
+            }
+            .b-title {
+                flex-wrap: wrap;
+                font-size: 18px;
             }
             .b-right {
                 text-align: left;
@@ -180,10 +194,15 @@
                 padding-top: 15px;
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
             }
             .b-details {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                word-break: break-word;
+            }
+            .partner-btns {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -309,10 +328,10 @@
                         if (b.assigned_partner_name && b.assigned_partner_phone) {
                             partnerInfoHtml = `
                                 <div style="margin-top: 15px; padding: 12px; background: #e0e7ff; border-radius: 8px; border-left: 4px solid #4a3aff;">
-                                    <div style="font-weight: 600; font-size: 14px; margin-bottom: 5px;"><i class="fa-solid fa-user-check"></i> Partner Assigned: ${b.assigned_partner_name}</div>
-                                    <div style="display: flex; gap: 10px; margin-top: 8px;">
-                                        <a href="tel:${b.assigned_partner_phone}" style="text-decoration: none; padding: 6px 12px; background: #4a3aff; color: white; border-radius: 6px; font-size: 13px; font-weight: 600;"><i class="fa-solid fa-phone"></i> Call Partner</a>
-                                        <a href="https://wa.me/91${b.assigned_partner_phone}?text=Hi%20${b.assigned_partner_name},%20this%20is%20regarding%20my%20service%20booking!" target="_blank" style="text-decoration: none; padding: 6px 12px; background: #25D366; color: white; border-radius: 6px; font-size: 13px; font-weight: 600;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                                    <div style="font-weight: 600; font-size: 14px; margin-bottom: 5px; word-break: break-word;"><i class="fa-solid fa-user-check"></i> Partner Assigned: ${b.assigned_partner_name}</div>
+                                    <div class="partner-btns" style="display: flex; gap: 10px; margin-top: 8px;">
+                                        <a href="tel:${b.assigned_partner_phone}" style="text-decoration: none; padding: 6px 12px; background: #4a3aff; color: white; border-radius: 6px; font-size: 13px; font-weight: 600; white-space: nowrap;"><i class="fa-solid fa-phone"></i> Call Partner</a>
+                                        <a href="https://wa.me/91${b.assigned_partner_phone}?text=Hi%20${b.assigned_partner_name},%20this%20is%20regarding%20my%20service%20booking!" target="_blank" style="text-decoration: none; padding: 6px 12px; background: #25D366; color: white; border-radius: 6px; font-size: 13px; font-weight: 600; white-space: nowrap;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                                     </div>
                                 </div>
                             `;
