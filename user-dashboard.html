@@ -169,6 +169,9 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
             .navbar {
                 flex-direction: column;
                 padding: 15px 20px;
@@ -177,15 +180,30 @@
             .user-profile {
                 width: 100%;
                 justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .user-phone {
+                max-width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .container {
+                padding: 0 15px;
             }
             .booking-card {
                 flex-direction: column;
                 gap: 15px;
                 padding: 15px;
+                width: 100%;
+                overflow: hidden;
             }
             .b-title {
                 flex-wrap: wrap;
                 font-size: 18px;
+            }
+            .b-left {
+                width: 100%;
             }
             .b-right {
                 text-align: left;
@@ -195,11 +213,18 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+                flex-wrap: wrap;
             }
             .b-details {
                 flex-direction: column;
                 gap: 8px;
+            }
+            .b-detail-item {
+                align-items: flex-start;
                 word-break: break-word;
+            }
+            .b-detail-item i {
+                margin-top: 4px;
             }
             .partner-btns {
                 flex-wrap: wrap;
