@@ -2365,7 +2365,10 @@ p, h1, h2, h3, h4, h5, h6, span, div {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        padding: 10px !important;
+        padding: 5px !important;
+    }
+    .top-section {
+        margin-bottom: 5px !important;
     }
     .ac-left-col, .ac-main-content, .ac-right-col, .left-sidebar, .right-sidebar, .main-content, .bathroom-left, .bathroom-right {
         width: 100% !important;
