@@ -159,22 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
 });
 
-// EPC Modal Sidebar highlighting
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarLinks = document.querySelectorAll('.epc-sidebar-link');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            sidebarLinks.forEach(l => {
-                l.style.borderLeftColor = 'transparent';
-                l.style.background = 'transparent';
-                l.style.color = '#666';
-            });
-            e.currentTarget.style.borderLeftColor = '#000';
-            e.currentTarget.style.background = '#fff';
-            e.currentTarget.style.color = '#333';
-        });
-    });
-});
+// (Duplicate EPC sidebar listener removed — FIX #7)
 
 // Parallax Effect for Hero Images
 document.addEventListener('DOMContentLoaded', () => {
@@ -372,6 +357,15 @@ if (!window.hoamexFeaturesLoaded) {
             { name: 'Solar Cleaning', link: 'solar-cleaning.html' },
         ];
 
+        // ✅ FIX #8: Deduplicate servicesList by name
+        const seen = new Set();
+        const dedupedServicesList = servicesList.filter(s => {
+            const key = s.name.toLowerCase().trim();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+
         const searchInputs = document.querySelectorAll('.search-container input');
         searchInputs.forEach(input => {
             const container = input.closest('.search-container');
@@ -391,7 +385,8 @@ if (!window.hoamexFeaturesLoaded) {
                     return;
                 }
 
-                const matches = servicesList.filter(s => s.name.toLowerCase().includes(val));
+                // Use deduplicated list
+                const matches = dedupedServicesList.filter(s => s.name.toLowerCase().includes(val));
                 
                 if (matches.length > 0) {
                     dropdown.innerHTML = matches.map(m => `
@@ -406,18 +401,12 @@ if (!window.hoamexFeaturesLoaded) {
                 }
             });
 
-            // Hide dropdown when clicking outside
             document.addEventListener('click', (e) => {
-                if (!container.contains(e.target)) {
-                    dropdown.style.display = 'none';
-                }
+                if (!container.contains(e.target)) dropdown.style.display = 'none';
             });
             
-            // Show dropdown again if focused and has value
             input.addEventListener('focus', (e) => {
-                if (e.target.value.trim().length > 0) {
-                    dropdown.style.display = 'block';
-                }
+                if (e.target.value.trim().length > 0) dropdown.style.display = 'block';
             });
         });
     });
@@ -1113,19 +1102,7 @@ function injectUserModal() {
     // Attach events
     const loginBtn = document.getElementById('user-login-btn');
     if(loginBtn) {
-        // ✅ Session expiry check — auto-logout after 30 days
-        const _loginTime = localStorage.getItem('loginTime');
-        if (_loginTime) {
-            const daysSince = (Date.now() - parseInt(_loginTime)) / (1000 * 60 * 60 * 24);
-            if (daysSince > 30) {
-                localStorage.removeItem('userEmail');
-                localStorage.removeItem('userPhone');
-                localStorage.removeItem('userName');
-                localStorage.removeItem('userLocation');
-                localStorage.removeItem('user_location');
-                localStorage.removeItem('loginTime');
-            }
-        }
+        // Auto-logout removed as requested by user
 
         const existingEmail = localStorage.getItem('userEmail') || localStorage.getItem('userPhone');
         if(existingEmail) {
@@ -1540,3 +1517,66 @@ function injectUserModal() {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(injectUserModal, 500);
 });
+
+// ✅ FIX #25: Global JavaScript Error Boundary
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error('[Hoamex Global Error]', message, 'at', source, 'line', lineno);
+    // Optionally log to backend in production
+    return false; // Let browser also log the error
+};
+window.addEventListener('unhandledrejection', function(event) {
+    console.error('[Hoamex Unhandled Promise]', event.reason);
+});
+
+// ✅ FIX #3: Global logout function that calls /api/logout to revoke token
+window.hoamexLogout = async function(redirectUrl = 'index.html') {
+    try {
+        const token = localStorage.getItem('token') || '';
+        if (token) {
+            await fetch('/api/logout', {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+        }
+    } catch(e) { /* ignore network errors during logout */ }
+    finally {
+        // Clear all user session data
+        localStorage.removeItem('userPhone');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userLocation');
+        localStorage.removeItem('user_location');
+        localStorage.removeItem('loginTime');
+        localStorage.removeItem('token');
+        window.location.href = redirectUrl;
+    }
+};
+
+// ✅ FIX #23: Cart version migration — prevent crashes if cart schema changes
+(function migrateCart() {
+    const CART_VERSION = 2;
+    try {
+        const raw = localStorage.getItem('joamex_cart');
+        if (!raw) return;
+        const cart = JSON.parse(raw);
+        if (!Array.isArray(cart)) {
+            // Corrupted cart — reset it
+            localStorage.removeItem('joamex_cart');
+            console.warn('Cart was corrupted and has been reset.');
+            return;
+        }
+        // Ensure all items have required fields
+        const migrated = cart.filter(item => item && (item.title || item.name)).map(item => ({
+            title: item.title || item.name || 'Unknown Service',
+            price: typeof item.price === 'number' ? item.price : (parseInt(String(item.price || '0').replace(/[^\d]/g, '')) || 0),
+            imgSrc: item.imgSrc || 'images/new_plumber_icon.jpg',
+            quantity: item.quantity || 1,
+            id: item.id || Date.now(),
+            _v: CART_VERSION
+        }));
+        localStorage.setItem('joamex_cart', JSON.stringify(migrated));
+    } catch(e) {
+        localStorage.removeItem('joamex_cart');
+        console.warn('Cart migration failed, cart reset:', e);
+    }
+})();

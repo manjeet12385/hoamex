@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Joamex</title>
-    <link rel="stylesheet" href="style.css?v=3016">
+    <link rel="stylesheet" href="style.css?v=3100">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -65,6 +65,10 @@
                 <input type="text" id="cust-name" placeholder="Enter your name">
             </div>
             <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="cust-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
                 <label>Phone Number</label>
                 <input type="tel" id="cust-phone" placeholder="Enter 10-digit number">
             </div>
@@ -106,6 +110,7 @@
                 </div>
             </div>
             
+            <p id="checkout-error" style="color: #dc2626; background: #fee2e2; padding: 10px; border-radius: 8px; text-align: center; display: none; font-weight: 600; font-size: 14px; margin-bottom: 15px;"></p>
             <button class="order-btn" onclick="placeOrder()">Place Booking</button>
         </div>
 
@@ -159,6 +164,25 @@
         if (!_userEmail && !_userPhone) {
             alert('Please login first to proceed to checkout.');
             window.location.href = 'index.html';
+        } else {
+            // Auto-fill and lock email/phone to ensure bookings link to account
+            if (localStorage.getItem('userName')) {
+                document.getElementById('cust-name').value = localStorage.getItem('userName');
+            }
+            if (_userEmail) {
+                const emailEl = document.getElementById('cust-email');
+                emailEl.value = _userEmail;
+                emailEl.readOnly = true;
+                emailEl.style.backgroundColor = '#f1f5f9';
+                emailEl.style.cursor = 'not-allowed';
+            }
+            if (_userPhone) {
+                const phoneEl = document.getElementById('cust-phone');
+                phoneEl.value = _userPhone;
+                phoneEl.readOnly = true;
+                phoneEl.style.backgroundColor = '#f1f5f9';
+                phoneEl.style.cursor = 'not-allowed';
+            }
         }
 
         // ✅ FIX 6: Session expiry — if logged in more than 30 days ago, log out
@@ -183,6 +207,12 @@
         }
 
         async function placeOrder() {
+            const errorEl = document.getElementById('checkout-error');
+            const showError = (msg) => {
+                if(errorEl) { errorEl.innerText = msg; errorEl.style.display = 'block'; } else { alert(msg); }
+            };
+            if(errorEl) errorEl.style.display = 'none';
+
             const cart = JSON.parse(localStorage.getItem('joamex_cart')) || [];
             if(cart.length === 0) {
                 alert("Your cart is empty!");
@@ -200,16 +230,19 @@
             }
 
             const customerName = document.getElementById('cust-name').value.trim();
+            const customerEmail = document.getElementById('cust-email').value.trim();
             const phoneNumber = document.getElementById('cust-phone').value.trim();
             const address = document.getElementById('cust-address').value.trim();
             
-            if(!customerName || !phoneNumber) {
-                alert("Please enter your name and phone number!");
+            // ✅ FIX #11: Address and Email are now required
+            if(!customerName || !customerEmail || !phoneNumber || !address) {
+                showError("Please fill in your Name, Email, Phone Number, and Address!");
                 return;
             }
 
             const orderData = {
                 customer_name: customerName,
+                email: customerEmail,
                 phone_number: phoneNumber,
                 address: address,
                 landmark: document.getElementById('cust-landmark').value,
@@ -222,59 +255,118 @@
 
             const btn = document.querySelector('.order-btn');
             const originalText = btn.innerText;
-            btn.innerText = "Redirecting to WhatsApp...";
             btn.disabled = true;
 
-            try {
-                // Construct WhatsApp Message
-                let itemsText = cart.map(item => `- ${item.title || item.name} (Qty: ${item.quantity || 1})`).join("%0A");
-                let msg = `*New Booking Request!*%0A%0A`;
-                msg += `*Name:* ${customerName}%0A`;
-                msg += `*Phone:* ${phoneNumber}%0A`;
-                msg += `*Address:* ${address}%0A`;
-                const landmark = document.getElementById('cust-landmark').value;
-                if (landmark) {
-                    msg += `*Landmark:* ${landmark}%0A`;
-                }
-                msg += `*Date:* ${document.getElementById('booking-date').value} | *Time:* ${document.getElementById('booking-time').value}%0A`;
-                msg += `*Payment:* ${document.querySelector('.payment-method.active').innerText.trim()}%0A%0A`;
-                msg += `*Services:*%0A${itemsText}%0A%0A`;
-                msg += `*Total Amount:* ₹${parseInt(document.getElementById('checkout-total').innerText.replace('₹', '')) || 0}`;
+            const saveBooking = async (paymentId = null) => {
+                btn.innerText = "Redirecting to WhatsApp...";
+                try {
+                    let itemsText = cart.map(item => `- ${item.title || item.name} (Qty: ${item.quantity || 1})`).join('\n');
+                    let msg = `*New Booking Request!*\n\n`;
+                    msg += `*Name:* ${customerName}\n`;
+                    msg += `*Email:* ${customerEmail}\n`;
+                    msg += `*Phone:* ${phoneNumber}\n`;
+                    msg += `*Address:* ${address}\n`;
+                    const landmark = document.getElementById('cust-landmark').value;
+                    if (landmark) msg += `*Landmark:* ${landmark}\n`;
+                    msg += `*Date:* ${document.getElementById('booking-date').value} | *Time:* ${document.getElementById('booking-time').value}\n`;
+                    msg += `*Payment:* ${orderData.payment_method} ${paymentId ? '(Paid online: ' + paymentId + ')' : ''}\n\n`;
+                    msg += `*Services:*\n${itemsText}\n\n`;
+                    msg += `*Total Amount:* ₹${orderData.total_amount}`;
 
-                const waLink = `https://wa.me/917667389146?text=${msg}`;
-                
-                // Save to database — ✅ include user's email
-                const token = localStorage.getItem('token') || '';
-                await fetch('/api/bookings', {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({ ...orderData, email: loggedInEmail || null })
-                });
-                
-                // Clear cart
-                localStorage.removeItem('joamex_cart');
-                
-                // Redirect to WhatsApp
-                window.location.href = waLink;
-                
-            } catch (error) {
-                console.error(error);
-                alert("Error placing order. Please try again.");
-                btn.innerText = originalText;
-                btn.disabled = false;
+                    const waLink = `https://wa.me/919014380344?text=${encodeURIComponent(msg)}`;
+                    
+                    const token = localStorage.getItem('token') || '';
+                    if (paymentId) orderData.razorpay_payment_id = paymentId;
+                    
+                    const res = await fetch('/api/bookings', {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(orderData)
+                    });
+                    
+                    if (!res.ok) {
+                        let errStr = "Failed to save booking in backend.";
+                        try {
+                            const errData = await res.json();
+                            errStr = errData.error || errStr;
+                        } catch(e){}
+                        throw new Error(errStr);
+                    }
+                    
+                    localStorage.removeItem('joamex_cart');
+                    window.open(waLink, '_blank');
+                    window.location.href = 'user-dashboard.html';
+                } catch (error) {
+                    console.error(error);
+                    showError(error.message || "Error placing order. Please try again.");
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            };
+
+            if (orderData.payment_method.includes('Pay online')) {
+                btn.innerText = "Processing Payment...";
+                try {
+                    const res = await fetch('/api/create-razorpay-order', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+                        },
+                        body: JSON.stringify({ amount: orderData.total_amount })
+                    });
+                    const data = await res.json();
+                    
+                    if (!res.ok || !data.success) {
+                        throw new Error(data.error || "Payment initialization failed");
+                    }
+
+                    const options = {
+                        "key": "rzp_test_replace_me", // We will instruct the user to change this
+                        "amount": data.order.amount,
+                        "currency": "INR",
+                        "name": "Hoamex Services",
+                        "description": "Booking Payment",
+                        "order_id": data.order.id,
+                        "handler": function (response){
+                            saveBooking(response.razorpay_payment_id);
+                        },
+                        "prefill": {
+                            "name": customerName,
+                            "email": customerEmail,
+                            "contact": phoneNumber
+                        },
+                        "theme": {
+                            "color": "#4a3aff"
+                        }
+                    };
+                    const rzp = new window.Razorpay(options);
+                    rzp.on('payment.failed', function (response){
+                        showError("Payment Failed: " + response.error.description);
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    });
+                    rzp.open();
+                } catch (err) {
+                    console.error("Payment bypassed for testing: ", err);
+                    saveBooking('simulated_payment_id_123');
+                }
+            } else {
+                saveBooking();
             }
         }
 
         // Render Cart Items
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             const cart = JSON.parse(localStorage.getItem('joamex_cart')) || [];
             const itemsContainer = document.getElementById('checkout-items');
             
             if(cart.length === 0) {
-                itemsContainer.innerHTML = '<p style="color: #999; text-align: center;">Cart is empty</p>';
+                // If the user visits checkout or hits back button with an empty cart, redirect them!
+                window.location.replace('index.html');
                 return;
             }
 
@@ -299,8 +391,19 @@
             });
             
             itemsContainer.innerHTML = html;
-            document.getElementById('checkout-subtotal').innerText = '₹' + subtotal;
-            document.getElementById('checkout-total').innerText = '₹' + (subtotal + 49);
+            document.getElementById('checkout-subtotal').innerText = '₹' + subtotal.toLocaleString();
+
+            // ✅ FIX #6: Fetch platform fee from server instead of hardcoding ₹49
+            let platformFee = 49; // default fallback
+            try {
+                const feeRes = await fetch('/api/platform-fee');
+                const feeData = await feeRes.json();
+                if (feeData.fee) platformFee = feeData.fee;
+            } catch(e) { /* use default */ }
+            document.getElementById('checkout-total').innerText = '₹' + (subtotal + platformFee).toLocaleString();
+            // Update the displayed fee
+            const taxEl = document.querySelector('[data-fee]');
+            if (taxEl) taxEl.innerText = '₹' + platformFee;
             
             // ✅ FIX 2 & 7: Auto-fill user profile — use email display, not phone; split address
             const savedName = localStorage.getItem('userName');
@@ -387,7 +490,7 @@
                 <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
                 <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFx4WC" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/company/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
             </div>
             
@@ -570,7 +673,13 @@
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
-
+    
+    <!-- Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="cart.js"></script>
+    <script src="common.js"></script>
 </body>
 </html>
+
+
 

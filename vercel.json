@@ -14,11 +14,23 @@
       "use": "@vercel/static"
     },
     {
-      "src": "*.js",
+      "src": "prices.json",
       "use": "@vercel/static"
     },
     {
       "src": "images/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "cart.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "common.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "app.js",
       "use": "@vercel/static"
     }
   ],

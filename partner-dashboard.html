@@ -752,7 +752,12 @@
                         if (b.status === 'Pending' || !b.status) {
                             actionHtml = `<button onclick="acceptBooking(${b.id})" style="background:#4c1d95; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Accept Job</button>`;
                         } else if (b.status === 'Confirmed') {
-                            actionHtml = `<button onclick="updateBookingStatus(${b.id}, 'On the way')" style="background:#ea580c; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Mark On the Way</button>`;
+                            actionHtml = `
+                                <div style="display:flex; gap:5px; flex-direction:column;">
+                                    <button onclick="updateBookingStatus(${b.id}, 'On the way')" style="background:#ea580c; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Mark On the Way</button>
+                                    <button onclick="releaseBooking(${b.id})" style="background:#ef4444; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Release Job</button>
+                                </div>
+                            `;
                         } else if (b.status === 'On the way') {
                             actionHtml = `<button onclick="updateBookingStatus(${b.id}, 'Completed')" style="background:#16a34a; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Mark Completed</button>`;
                         } else {
@@ -826,6 +831,7 @@
         async function acceptBooking(bookingId) {
             const partnerName = document.getElementById('profName').innerText;
             const partnerPhone = document.getElementById('profPhone').innerText;
+            const partnerEmail = document.getElementById('profEmail').innerText;
             
             const token = localStorage.getItem('partnerToken') || '';
             try {
@@ -835,7 +841,12 @@
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}` 
                     },
-                    body: JSON.stringify({ booking_id: bookingId, partner_name: partnerName, partner_phone: partnerPhone })
+                    body: JSON.stringify({ 
+                        booking_id: bookingId, 
+                        partner_name: partnerName, 
+                        partner_phone: partnerPhone,
+                        partner_email: partnerEmail
+                    })
                 });
                 const data = await res.json();
                 if(data.success) {
@@ -869,6 +880,32 @@
                 }
             } catch (err) {
                 console.error(err);
+            }
+        }
+
+        async function releaseBooking(bookingId) {
+            if(!confirm("Are you sure you want to release this job? It will be sent back to other partners.")) return;
+            
+            const token = localStorage.getItem('partnerToken') || '';
+            try {
+                const res = await fetch('/api/partner/release-booking', {
+                    method: 'PUT',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` 
+                    },
+                    body: JSON.stringify({ booking_id: bookingId })
+                });
+                const data = await res.json();
+                if(data.success) {
+                    alert('Job released successfully.');
+                    loadBookings();
+                } else {
+                    alert('Could not release booking: ' + (data.error || 'Unknown error'));
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Network error while releasing booking.');
             }
         }
 

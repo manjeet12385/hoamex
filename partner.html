@@ -859,7 +859,7 @@
             });
         }
 
-        function sendPartnerOTP() {
+        async function sendPartnerOTP() {
             const emailInput = document.getElementById('partner-email');
             const btn = document.getElementById('send-otp-btn');
             
@@ -868,30 +868,52 @@
                 return;
             }
             
+            const email = emailInput.value.trim().toLowerCase();
             const originalText = btn.innerHTML;
-            btn.innerHTML = 'Sending...';
+            btn.innerHTML = 'Checking...';
             btn.disabled = true;
+
+            // ✅ FIX: Pre-check if email is already registered before sending OTP
+            try {
+                const checkRes = await fetch('/api/partners/check-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const checkData = await checkRes.json();
+                if (checkData.exists) {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    alert('⚠️ ' + checkData.message);
+                    return; // Stop here — don't send OTP
+                }
+            } catch (err) {
+                // If check-email fails, allow OTP sending (fail-open for UX)
+                console.warn('Email pre-check failed, proceeding with OTP:', err);
+            }
+            
+            btn.innerHTML = 'Sending...';
             
             fetch('/api/send-otp', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: emailInput.value.trim().toLowerCase(), isSignup: true })
+                body: JSON.stringify({ email, isSignup: true })
             })
             .then(res => res.json())
             .then(data => {
                 if(data.success) {
                     document.getElementById('otp-verify-box').style.display = 'block';
-                    btn.innerHTML = 'Sent!';
+                    btn.innerHTML = 'Sent ✓';
                 } else {
                     btn.innerHTML = originalText;
                     btn.disabled = false;
-                    alert('Failed to send OTP.');
+                    alert('⚠️ ' + (data.error || 'Failed to send OTP.'));
                 }
             })
             .catch(err => {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                alert('Server error.');
+                alert('Server error. Please try again.');
             });
         }
 
@@ -931,15 +953,15 @@
         }
 
         const subcategories = {
-            'appliances': ['AC Service', 'AC Repair', 'Refrigerator', 'Washing Machine', 'Microwave', 'RO / Water Purifier', 'Geyser Service', 'Television', 'Chimney'],
-            'epc': ['Fan Repair', 'Switchboard Repair', 'Wiring', 'Leak Repair', 'Water Tank Cleaning', 'Pipe Fitting', 'Bathroom Fittings', 'Furniture Assembly', 'IKEA Assembly', 'Wood Polish'],
-            'cleaning_pest': ['Full Home Cleaning', 'Bathroom Cleaning', 'Kitchen Cleaning', 'Sofa/Carpet Cleaning', 'Cockroach Control', 'Ants Control', 'Termite Control', 'General Pest Control'],
-            'renovation': ['Interior Painting', 'Exterior Painting', 'Wall Panels', 'Texture Painting', 'Waterproofing', 'Tile Grouting'],
-            'fabrication': ['Gates & Doors', 'Grills & Railings', 'Welding Repair', 'Sheds & Roofing'],
-            'women_spa': ['Salon for Women', 'Spa for Women', 'Hair Studio', 'Makeup', 'Massage Royale'],
-            'men_spa': ['Salon for Men', 'Spa for Men', 'Massage Men', 'Men\'s Grooming'],
-            'home_care': ['Maid Helper', 'Cook on Demand', 'Babysitting', 'Elder Care', 'Packers & Movers', 'Mini Truck / Logistics', 'Driver on Demand'],
-            'security_solar': ['CCTV Services', 'Smart Locks', 'Home Alarm', 'Solar Installation', 'Solar Cleaning', 'Solar Water Heater', 'Water Solutions']
+            'appliances': ['AC', 'Washing Machine', 'Refrigerator', 'Television', 'Chimney', 'Microwave', 'RO/Water Purifier'],
+            'epc': ['Electrician', 'Plumber', 'Carpenter', 'Wood & Furniture Polish', 'Fan Installation', 'Furniture Assembly', 'Geyser Service & Repair', 'IKEA Furniture Assembly', 'Tile Grouting & Sealant', 'Festival Lights Installation', 'Wall Panels by Revamp'],
+            'cleaning_pest': ['Bathroom Cleaning', 'Kitchen cleaning', 'Living & Bedroom Cleaning', 'Full Home/ By Room Cleaning', 'Cockroach Control', 'Termite Control', 'Ants & Bed Bugs Control', 'Leak & gap sealing', 'Tile Grouting & Sealant'],
+            'renovation': ['Wood & Furniture Polish', 'Tile Grouting & Sealant', 'Walls & Rooms Painting'],
+            'fabrication': ['Window Grills & Balcony Railings', 'Gates & Doors', 'Sheds & Roofing', 'Welding & Repair'],
+            'women_spa': ['Hair Studio for Women', 'Makeup, Saree & Styling', 'Salon for Women', 'Spa for Women'],
+            'men_spa': ['Salon for Men', 'Massage for Men'],
+            'home_care': ['Packers & Movers', 'Mini Truck on Rent', 'Driver on Demand', 'Maid / Helper', 'Cook on Demand', 'Elder / Patient Care', 'Babysitting / Nanny'],
+            'security_solar': ['CCTV Camera Installation', 'Smart Locks & Doorbells', 'Home Alarm Systems', 'Solar Panel Installation', 'Solar Panel Cleaning', 'Solar Water Heater', 'RO / Water Purifier', 'Water Tank Cleaning']
         };
 
         function selectCat(element, categoryId) {

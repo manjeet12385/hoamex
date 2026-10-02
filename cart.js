@@ -8,10 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return item;
     });
     
-    // Deduplicate by title just in case there were duplicates in old local storage
+    // Normalize titles: trim + lowercase for consistent matching
+    const normalizeTitle = (t) => (t || '').trim().toLowerCase();
+
+    // Deduplicate by normalized title
     const uniqueCart = [];
     cart.forEach(item => {
-        const existing = uniqueCart.find(i => i.title === item.title);
+        const existing = uniqueCart.find(i => normalizeTitle(i.title) === normalizeTitle(item.title));
         if (existing) {
             existing.quantity += item.quantity;
         } else {
@@ -20,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     cart = uniqueCart;
     saveCart();
+
+    // Expose normalizeTitle globally for use in other functions
+    window._normalizeCartTitle = normalizeTitle;
 
     const cartSidebar = document.getElementById('cart-sidebar');
     const closeCartBtn = document.getElementById('close-cart-btn');
@@ -174,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (!title) return;
             
-            const cartItem = cart.find(i => i.title === title);
+            const cartItem = cart.find(i => window._normalizeCartTitle(i.title) === window._normalizeCartTitle(title));
             const parent = btn.parentElement;
             
             // Check if qty-control already exists next to this button
@@ -217,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation();
             event.preventDefault();
         }
-        const item = cart.find(i => i.title === title);
+        const item = cart.find(i => window._normalizeCartTitle(i.title) === window._normalizeCartTitle(title));
         if (item) {
             item.quantity--;
             if (item.quantity <= 0) {
-                cart = cart.filter(i => i.title !== title);
+                cart = cart.filter(i => window._normalizeCartTitle(i.title) !== window._normalizeCartTitle(title));
             }
             saveCart();
             updateCartUI();
@@ -233,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation();
             event.preventDefault();
         }
-        const item = cart.find(i => i.title === title);
+        const item = cart.find(i => window._normalizeCartTitle(i.title) === window._normalizeCartTitle(title));
         if (item) {
             item.quantity++;
             saveCart();
@@ -250,6 +256,44 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
+    function getCategoryFromUrl() {
+        const path = window.location.pathname.toLowerCase();
+        
+        if (path.includes('men-') || path.includes('-men')) {
+            if (path.includes('spa') || path.includes('massage') || path.includes('grooming')) return 'Massage for Men';
+            if (path.includes('salon')) return 'Salon for Men';
+        }
+        if (path.includes('women') || path.includes('spa') || path.includes('salon') || path.includes('beauty') || path.includes('makeup') || path.includes('hair')) {
+            if (path.includes('spa') || path.includes('massage')) return 'Spa for Women';
+            if (path.includes('salon') || path.includes('beauty')) return 'Salon for Women';
+            if (path.includes('makeup')) return 'Makeup, Saree & Styling';
+            if (path.includes('hair')) return 'Hair Studio for Women';
+        }
+
+        const map = {
+            'ac-service': 'AC', 'ac-repair': 'AC', 'refrigerator': 'Refrigerator', 'fridge': 'Refrigerator',
+            'washing-machine': 'Washing Machine', 'microwave': 'Microwave', 'water-purifier': 'RO/Water Purifier',
+            'ro-service': 'RO/Water Purifier', 'geyser': 'Geyser Service & Repair', 'television': 'Television', 'chimney': 'Chimney',
+            'electrician': 'Electrician', 'plumber': 'Plumber', 'carpenter': 'Carpenter', 'fan-installation': 'Fan Installation', 
+            'leak': 'Leak & gap sealing', 'water-tank': 'Water Tank Cleaning', 'wood-polish': 'Wood & Furniture Polish', 'wood-furniture': 'Wood & Furniture Polish',
+            'furniture': 'Furniture Assembly', 'ikea': 'IKEA Furniture Assembly', 'tile-grouting': 'Tile Grouting & Sealant', 'festival-lights': 'Festival Lights Installation',
+            'full-home-cleaning': 'Full Home/ By Room Cleaning', 'living-bedroom': 'Living & Bedroom Cleaning', 'bathroom-cleaning': 'Bathroom Cleaning', 
+            'kitchen-cleaning': 'Kitchen cleaning', 'cleaning': 'Full Home/ By Room Cleaning', 'cockroach': 'Cockroach Control', 
+            'ants': 'Ants & Bed Bugs Control', 'termite': 'Termite Control', 'pest': 'Ants & Bed Bugs Control', 
+            'painting': 'Walls & Rooms Painting', 'wall-panel': 'Wall Panels by Revamp', 'grouting': 'Tile Grouting & Sealant',
+            'gates-door': 'Gates & Doors', 'grills': 'Window Grills & Balcony Railings', 'welding': 'Welding & Repair', 'sheds': 'Sheds & Roofing',
+            'maid': 'Maid / Helper', 'cook': 'Cook on Demand', 'babysit': 'Babysitting / Nanny', 'elder': 'Elder / Patient Care', 'packers': 'Packers & Movers',
+            'mini-truck': 'Mini Truck on Rent', 'logistics': 'Mini Truck on Rent', 'driver': 'Driver on Demand', 
+            'cctv': 'CCTV Camera Installation', 'smart-lock': 'Smart Locks & Doorbells', 'home-alarm': 'Home Alarm Systems', 'solar-install': 'Solar Panel Installation',
+            'solar-clean': 'Solar Panel Cleaning', 'solar-water': 'Solar Water Heater',
+            'water-solution': 'RO / Water Purifier'
+        };
+        for (let key in map) {
+            if (path.includes(key)) return map[key];
+        }
+        return 'General';
+    }
+
     window.addToCart = function(title, price, passedImgSrc = null, openSidebar = false) {
         let imgSrc = passedImgSrc;
         if (!imgSrc) {
@@ -263,11 +307,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch(e) {}
         }
         
-        const existing = cart.find(i => i.title === title);
+        const category = getCategoryFromUrl();
+        const existing = cart.find(i => window._normalizeCartTitle(i.title) === window._normalizeCartTitle(title));
         if (existing) {
             existing.quantity++;
         } else {
-            cart.push({ title, price, imgSrc, quantity: 1, id: Date.now() });
+            cart.push({ title, price, imgSrc, category, quantity: 1, id: Date.now() });
         }
         
         saveCart();

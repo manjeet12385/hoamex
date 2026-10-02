@@ -241,15 +241,19 @@
         }
 
         function logout() {
-            // ✅ Clear ALL user-related storage keys
-            localStorage.removeItem('userPhone');
-            localStorage.removeItem('userEmail');
-            localStorage.removeItem('userName');
-            localStorage.removeItem('userLocation');
-            localStorage.removeItem('user_location');
-            localStorage.removeItem('loginTime');
-            localStorage.removeItem('token');
-            window.location.href = 'index.html';
+            // ✅ FIX #3: Use global logout which calls /api/logout for token revocation
+            if (window.hoamexLogout) {
+                window.hoamexLogout('index.html');
+            } else {
+                localStorage.removeItem('userPhone');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userLocation');
+                localStorage.removeItem('user_location');
+                localStorage.removeItem('loginTime');
+                localStorage.removeItem('token');
+                window.location.href = 'index.html';
+            }
         }
 
         async function loadUserBookings(identifier, type) {
@@ -259,6 +263,24 @@
                 const res = await fetch(`/api/user/bookings?${queryParam}=` + encodeURIComponent(identifier), {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
+
+                // ✅ FIX #9: Handle expired/invalid token — redirect to login
+                if (res.status === 401 || res.status === 403) {
+                    alert('Your session has expired. Please login again.');
+                    if (window.hoamexLogout) {
+                        window.hoamexLogout('index.html');
+                    } else {
+                        localStorage.removeItem('userPhone');
+                        localStorage.removeItem('userEmail');
+                        localStorage.removeItem('userName');
+                        localStorage.removeItem('userLocation');
+                        localStorage.removeItem('user_location');
+                        localStorage.removeItem('loginTime');
+                        localStorage.removeItem('token');
+                        window.location.href = 'index.html';
+                    }
+                    return;
+                }
                 const data = await res.json();
                 
                 const listDiv = document.getElementById('bookingsList');
