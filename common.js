@@ -1580,3 +1580,27 @@ window.hoamexLogout = async function(redirectUrl = 'index.html') {
         console.warn('Cart migration failed, cart reset:', e);
     }
 })();
+
+// Dynamically change carousel arrows to sleek long arrows as per user request
+document.addEventListener('DOMContentLoaded', () => {
+    // For Next Buttons
+    document.querySelectorAll('.nav-btn.next i.fa-chevron-right').forEach(icon => {
+        icon.classList.remove('fa-chevron-right');
+        icon.classList.add('fa-arrow-right-long');
+    });
+    // For Prev Buttons
+    document.querySelectorAll('.nav-btn.prev i.fa-chevron-left').forEach(icon => {
+        icon.classList.remove('fa-chevron-left');
+        icon.classList.add('fa-arrow-left-long');
+    });
+    
+    // Also cover mini-nav-btns
+    document.querySelectorAll('.mini-nav-btn.mini-next i.fa-chevron-right').forEach(icon => {
+        icon.classList.remove('fa-chevron-right');
+        icon.classList.add('fa-arrow-right-long');
+    });
+    document.querySelectorAll('.mini-nav-btn.mini-prev i.fa-chevron-left').forEach(icon => {
+        icon.classList.remove('fa-chevron-left');
+        icon.classList.add('fa-arrow-left-long');
+    });
+});
