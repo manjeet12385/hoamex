@@ -2306,6 +2306,12 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+    #nextBtnMainServices {
+        display: flex !important;
+        right: -10px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
     .modal-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;

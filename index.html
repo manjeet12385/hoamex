@@ -62,7 +62,8 @@
 <section class="services-grid-container">
 <h3>What are you looking for?</h3>
 <div class="divider"></div>
-<div class="services-grid">
+<div class="services-grid-wrapper" style="position: relative;">
+<div class="services-grid" id="main-services-grid">
 <div class="service-item" id="ac-repair-btn">
 <div class="service-icon"><img alt="AC" src="images/ac.jpg"/></div>
 <p>AC, Appliance &amp; Repair</p>
@@ -99,6 +100,8 @@
 <div class="service-icon"><img alt="Security" src="images/security.jpg"/></div>
 <p>Home Security, Solar &amp; Water</p>
 </div>
+</div>
+<button class="nav-btn next" id="nextBtnMainServices" style="display: none;" onclick="document.getElementById('main-services-grid').scrollBy({left: 150, behavior: 'smooth'})"><i class="fa-solid fa-arrow-right"></i></button>
 </div>
 <div class="stats-container">
 <div class="stat-item">
