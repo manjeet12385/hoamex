@@ -1586,21 +1586,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // For Next Buttons
     document.querySelectorAll('.nav-btn.next i.fa-chevron-right').forEach(icon => {
         icon.classList.remove('fa-chevron-right');
-        icon.classList.add('fa-arrow-right-long');
+        icon.classList.add('fa-arrow-right');
     });
     // For Prev Buttons
     document.querySelectorAll('.nav-btn.prev i.fa-chevron-left').forEach(icon => {
         icon.classList.remove('fa-chevron-left');
-        icon.classList.add('fa-arrow-left-long');
+        icon.classList.add('fa-arrow-left');
     });
     
     // Also cover mini-nav-btns
     document.querySelectorAll('.mini-nav-btn.mini-next i.fa-chevron-right').forEach(icon => {
         icon.classList.remove('fa-chevron-right');
-        icon.classList.add('fa-arrow-right-long');
+        icon.classList.add('fa-arrow-right');
     });
     document.querySelectorAll('.mini-nav-btn.mini-prev i.fa-chevron-left').forEach(icon => {
         icon.classList.remove('fa-chevron-left');
-        icon.classList.add('fa-arrow-left-long');
+        icon.classList.add('fa-arrow-left');
     });
 });
