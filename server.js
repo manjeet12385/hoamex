@@ -68,13 +68,27 @@ const JWT_SECRET = process.env.JWT_SECRET || 'hoamex_super_secret_key_123';
 const PLATFORM_FEE = parseInt(process.env.PLATFORM_FEE) || 49;
 
 // Auth Middleware
-const authGuard = (req, res, next) => {
+const authGuard = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) return res.status(401).json({ error: 'Unauthorized. Please login.' });
   const token = authHeader.split(' ')[1];
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded; // { email, role }
+    
+    // Real-time DB check to ensure user wasn't deleted by admin (skip during registration)
+    const isRegisterRoute = req.path.includes('/register');
+    
+    if (!isRegisterRoute) {
+      if (req.user.role === 'partner') {
+        const dbRes = await pool.query('SELECT email FROM partners WHERE email = $1', [req.user.email]);
+        if (dbRes.rows.length === 0) return res.status(401).json({ error: 'Account deleted. Please login again.' });
+      } else if (req.user.role === 'user' || !req.user.role) {
+        const dbRes = await pool.query('SELECT email FROM users WHERE email = $1', [req.user.email]);
+        if (dbRes.rows.length === 0) return res.status(401).json({ error: 'Account deleted. Please login again.' });
+      }
+    }
+    
     next();
   } catch (err) {
     return res.status(401).json({ error: 'Invalid or expired token.' });

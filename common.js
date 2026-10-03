@@ -730,12 +730,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.getElementById('partner-login-modal')) {
         const modalHTML = `
             <div id="partner-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
-                <div style="background: #0d1117; width: 90%; max-width: 900px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: modalPop 0.3s ease-out; position: relative; display: flex; flex-direction: row; height: 500px;">
+                <style>
+                    .partner-modal-inner { display: flex; flex-direction: row; height: 500px; }
+                    .partner-modal-left { display: flex; flex: 1; background: linear-gradient(135deg, #091316 0%, #060a0d 100%); padding: 40px; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-right: 1px solid rgba(255,255,255,0.05); }
+                    @media (max-width: 768px) {
+                        .partner-modal-inner { flex-direction: column; height: auto; min-height: 400px; }
+                        .partner-modal-left { display: none !important; }
+                    }
+                </style>
+                <div class="partner-modal-inner" style="background: #0d1117; width: 90%; max-width: 900px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: modalPop 0.3s ease-out; position: relative;">
                     
                     <button id="close-partner-modal" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; border-radius: 50%; font-size: 18px; color: #fff; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; z-index: 10;">&times;</button>
                     
                     <!-- Left Side -->
-                    <div style="flex: 1; background: linear-gradient(135deg, #091316 0%, #060a0d 100%); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-right: 1px solid rgba(255,255,255,0.05);">
+                    <div class="partner-modal-left">
                         <div style="margin-bottom: 30px; position: relative;">
                             <!-- Mock graphic for the green layers -->
                             <div style="width: 150px; height: 150px; position: relative;">
@@ -1568,6 +1576,7 @@ window.hoamexLogout = async function(redirectUrl = 'index.html') {
         // Ensure all items have required fields
         const migrated = cart.filter(item => item && (item.title || item.name)).map(item => ({
             title: item.title || item.name || 'Unknown Service',
+            category: item.category || 'General',
             price: typeof item.price === 'number' ? item.price : (parseInt(String(item.price || '0').replace(/[^\d]/g, '')) || 0),
             imgSrc: item.imgSrc || 'images/new_plumber_icon.jpg',
             quantity: item.quantity || 1,

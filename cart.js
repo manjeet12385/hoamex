@@ -256,9 +256,20 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-    function getCategoryFromUrl() {
+    function getCategoryFromUrl(title = '') {
         const path = window.location.pathname.toLowerCase();
+        const t = title.toLowerCase();
         
+        // Smart title-based overrides for shared pages
+        if (t.includes('haircut') || t.includes('shave') || t.includes('beard') || t.includes('pedicure') || t.includes('facial') || t.includes('salon')) {
+            if (path.includes('men') || path.includes('grooming')) return 'Salon for Men';
+            if (path.includes('women') || path.includes('beauty')) return 'Salon for Women';
+        }
+        if (t.includes('massage') || t.includes('spa') || t.includes('therapy')) {
+            if (path.includes('men') || path.includes('grooming')) return 'Massage for Men';
+            if (path.includes('women') || path.includes('beauty')) return 'Spa for Women';
+        }
+
         if (path.includes('men-') || path.includes('-men')) {
             if (path.includes('spa') || path.includes('massage') || path.includes('grooming')) return 'Massage for Men';
             if (path.includes('salon')) return 'Salon for Men';
@@ -307,10 +318,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch(e) {}
         }
         
-        const category = getCategoryFromUrl();
+        const category = getCategoryFromUrl(title);
         const existing = cart.find(i => window._normalizeCartTitle(i.title) === window._normalizeCartTitle(title));
         if (existing) {
             existing.quantity++;
+            existing.category = category;
         } else {
             cart.push({ title, price, imgSrc, category, quantity: 1, id: Date.now() });
         }
