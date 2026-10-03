@@ -496,8 +496,8 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="dashSidebar">
         <div class="brand">
-            <div class="brand-icon">D</div>
-            <div class="brand-text">Service Partner<br><span style="font-size:11px; color:#64748b; font-weight:500;">Partner Dashboard</span></div>
+            <div class="brand-icon" id="sidebar-brand-icon">D</div>
+            <div class="brand-text" id="sidebar-brand-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">Service Partner<br><span style="font-size:11px; color:#64748b; font-weight:500;">Partner Dashboard</span></div>
         </div>
         
         <div class="nav-menu">
@@ -646,6 +646,10 @@
                             // Continue loading the dashboard content behind the overlay so it looks like Image 2
                         }
 
+                        // Sidebar Profile Update
+                        document.getElementById('sidebar-brand-icon').innerText = partner.full_name.charAt(0).toUpperCase();
+                        document.getElementById('sidebar-brand-text').innerHTML = `${partner.full_name}<br><span style="font-size:11px; color:#64748b; font-weight:500;">${partner.email}</span>`;
+
                         // Modal Profile
                         document.getElementById('profName').innerText = partner.full_name;
                         document.getElementById('profInitials').innerText = partner.full_name.charAt(0).toUpperCase();
@@ -755,7 +759,7 @@
                             actionHtml = `
                                 <div style="display:flex; gap:5px; flex-direction:column;">
                                     <button onclick="updateBookingStatus(${b.id}, 'On the way')" style="background:#ea580c; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Mark On the Way</button>
-                                    <button onclick="releaseBooking(${b.id})" style="background:#ef4444; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Release Job</button>
+                                    <button onclick="releaseBooking(${b.id})" style="background:#ef4444; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;">Cancel Service</button>
                                 </div>
                             `;
                         } else if (b.status === 'On the way') {
