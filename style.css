@@ -346,6 +346,12 @@ body {
     object-fit: contain;
 }
 
+#main-services-grid .service-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+}
+
 .service-item p {
     font-size: 13px;
     color: #555;

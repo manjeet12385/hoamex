@@ -18,6 +18,14 @@
       "use": "@vercel/static"
     },
     {
+      "src": "image copy 8.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 9.png",
+      "use": "@vercel/static"
+    },
+    {
       "src": "images/**/*",
       "use": "@vercel/static"
     },
@@ -38,6 +46,10 @@
     {
       "src": "/api/(.*)",
       "dest": "/server.js"
+    },
+    {
+      "src": "^/([a-zA-Z0-9_-]+)$",
+      "dest": "/$1.html"
     },
     {
       "src": "/(.*)",
