@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Assembly - Joamex</title>
-    <link rel="stylesheet" href="style.css?v=3100">
+    <link rel="stylesheet" href="style.css?v=3101">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -87,16 +87,18 @@
         .cart-summary .total { font-weight: 700; font-size: 16px; color: #111; }
         .view-cart-btn { background: #7d33ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; }
     </style>
+
+
 </head>
+
 <body>
 
     <!-- Header -->
     <header class="header premium-navbar">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-left"></i></button>
-            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
+            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;" onclick="window.location.href="index""><i class="fa-solid fa-arrow-left"></i></button>
+            <a class="logo" href="index" style="display: flex;  align-items: center; justify-content: center;  margin-right: 15px; text-decoration: none;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
         <div class="header-actions">
@@ -155,7 +157,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser check-up">
+                    <img loading="lazy" class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser check-up">
                     <button class="add-btn" onclick="addToCart('Geyser check-up', 249)">Add</button>
                 </div>
             </div>
@@ -172,7 +174,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser service">
+                    <img loading="lazy" class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser service">
                     <button onclick="addToCart('Geyser service', 299)" id="open-geyser-service-modal-btn" class="add-btn">Add</button>
                     <div class="options-text">3 options</div>
                 </div>
@@ -188,7 +190,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser installation">
+                    <img loading="lazy" class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser installation">
                     <button class="add-btn" onclick="addToCart('Geyser installation', 499)">Add</button>
                 </div>
             </div>
@@ -202,7 +204,7 @@
                     <a href="#" class="view-details">View details</a>
                 </div>
                 <div class="svc-media">
-                    <img class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser uninstallation">
+                    <img loading="lazy" class="svc-img" src="images/new_geyser_repair_icon.jpg" alt="Geyser uninstallation">
                     <button class="add-btn" onclick="addToCart('Geyser uninstallation', 399)">Add</button>
                 </div>
             </div>
@@ -222,7 +224,7 @@
                 <div class="joamex-promise-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
                         <h3 style="margin: 0;">Joamex Promise</h3>
-                        <img src="images/new_geyser_repair_icon.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
+                        <img loading="lazy" src="images/new_geyser_repair_icon.jpg" alt="Quality Assured" style="width: 40px; height: 40px; border-radius: 50%;">
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
@@ -268,7 +270,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-geyser-service-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_geyser_repair_icon.jpg" onerror="this.src='images/new_geyser_repair_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_geyser_repair_icon.jpg" onerror="this.src='images/new_geyser_repair_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Geyser service</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 20px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.76 (104K reviews)</p>

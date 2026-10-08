@@ -50,6 +50,7 @@ const razorpay = new Razorpay({
 });
 
 const app = express();
+const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
 // ✅ FIX #21: DB Pool with timeout config to prevent connection leaks
@@ -138,7 +139,7 @@ app.use((req, res, next) => {
 });
 
 // Serve the static HTML/JS/CSS files from this directory
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, ''), { extensions: ['html'] }));
 
 // Initialize Database Table
 async function initDb() {
@@ -1055,8 +1056,11 @@ app.use((req, res) => {
 
 // Start Server (only if not running in Vercel)
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+  app.listen(PORT, HOST, () => {
+    console.log(`Server is running at http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}`);
+  }).on('error', (err) => {
+    console.error('Failed to start server:', err.message);
+    process.exit(1);
   });
 }
 

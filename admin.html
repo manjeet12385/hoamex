@@ -233,7 +233,10 @@
             }
         }
     </style>
+
+
 </head>
+
 <body>
 
     <!-- LOGIN SCREEN -->
@@ -614,7 +617,7 @@
                                 ${isPdf ? 
                                   `<div style="padding: 20px; background: #f1f5f9; border-radius: 8px; border: 1px dashed #cbd5e1; color: #4f46e5;"><i class="fa-solid fa-file-pdf"></i> View PDF Document</div>` 
                                   : 
-                                  `<img src="${fileUrl}" style="max-width: 100%; max-height: 180px; border-radius: 8px; border: 1px solid #e2e8f0; object-fit: contain; background: #f8fafc;" alt="${key}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                  `<img loading="lazy" src="${fileUrl}" style="max-width: 100%; max-height: 180px; border-radius: 8px; border: 1px solid #e2e8f0; object-fit: contain; background: #f8fafc;" alt="${key}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                                    <div style="display:none; color: #ef4444; font-size:12px;">Image not found on server</div>`
                                 }
                             </a>
@@ -857,5 +860,6 @@
                 });
         }
     </script>
+
 </body>
 </html>

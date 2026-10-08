@@ -1,22 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refrigerator - Joamex</title>
-    <link rel="stylesheet" href="style.css?v=3100">
+    <link rel="stylesheet" href="style.css?v=3101">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
+
 <body>
 
     <!-- Header Section -->
     <header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" class="header premium-navbar">
         <div style="display: flex; align-items: center; gap: 15px;">
             <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
+            <a class="logo" href="index" style="display: flex;  align-items: center; justify-content: center;  margin-right: 15px; text-decoration: none;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
         <div class="search-container" id="header-search" style="display: none;">
@@ -65,24 +67,8 @@
                 </button>
             </div>
             
-            <!-- Right Column is empty for washing machine top section -->
-            <div class="ac-right-col" style="display: flex; justify-content: flex-end;">
-                <!-- Could place something here if needed -->
-            </div>
-        </div>
-
-        <div class="divider" style="margin: 40px auto; max-width: 1200px;"></div>
-
-        <!-- 3-Column Detailed Section -->
-        <div class="ac-details-section" id="ac-details-section">
-            
-            <!-- Left Sidebar -->
-            <div class="ac-sidebar">
-                <!-- Intentionally left blank to maintain spacing -->
-            </div>
-
-            <!-- Center Content -->
-            <div class="ac-main-content">
+            <!-- Right Column -->
+            <div class="ac-right-col" style="flex-grow: 1;">
                 <h2 class="section-heading" style="font-size: 22px; font-weight: 700; margin-bottom: 20px;">Select a service</h2>
                 
                 <div class="plan-details-card" style="padding-top: 20px;">
@@ -99,7 +85,7 @@
                         </div>
                         <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
                             <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
-                                <img src="images/image%20copy%204.png" alt="TV check-up" style="width: 100%; height: 90px; object-fit: cover;">
+                                <img loading="lazy" src="images/image%20copy%204.png" alt="TV check-up" style="width: 100%; height: 90px; object-fit: cover;">
                             </div>
                             <button onclick="addToCart('TV check-up', 249)" id="open-tv-checkup-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             <span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
@@ -121,7 +107,7 @@
                         </div>
                         <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
                             <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
-                                <img src="images/image%20copy%204.png" alt="TV installation" style="width: 100%; height: 90px; object-fit: cover;">
+                                <img loading="lazy" src="images/image%20copy%204.png" alt="TV installation" style="width: 100%; height: 90px; object-fit: cover;">
                             </div>
                             <button onclick="addToCart('TV installation', 399)" id="open-tv-install-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             <span style="font-size: 12px; color: #666; margin-top: 5px;">5 options</span>
@@ -143,7 +129,7 @@
                         </div>
                         <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
                             <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px; background: #f8f8f8;">
-                                <img src="images/image%20copy%204.png" alt="TV uninstallation" style="width: 100%; height: 90px; object-fit: cover;">
+                                <img loading="lazy" src="images/image%20copy%204.png" alt="TV uninstallation" style="width: 100%; height: 90px; object-fit: cover;">
                             </div>
                             <button onclick="addToCart('TV uninstallation', 349)" id="open-tv-uninstall-modal-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
                             <span style="font-size: 12px; color: #666; margin-top: 5px;">3 options</span>
@@ -151,26 +137,16 @@
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Right Sidebar -->
-            <div class="ac-right-sidebar">
-                <div class="joamex-promise-card">
+                <div class="joamex-promise-card" style="margin-top: 40px; margin-bottom: 20px;">
                     <h3>Joamex Promise</h3>
                     <ul>
                         <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
                         <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
                         <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
                     </ul>
-                    <img src="images/beauty.jpg" class="promise-badge" alt="Quality Assured">
-                </div>
-
-                <div class="cart-card">
-                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    <p>No items in your cart</p>
+                    <img loading="lazy" src="images/homecare.jpg" class="promise-badge" alt="Quality Assured">
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -179,7 +155,7 @@
         <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
             <button id="close-tv-checkup-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
             <div class="options-modal-banner" style="position: relative; height: 200px;">
-                <img src="images/real_33.jpg" alt="TV check-up" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/real_33.jpg" alt="TV check-up" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             
             <div class="options-modal-body" style="padding: 20px;">
@@ -240,7 +216,7 @@
         <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
             <button id="close-tv-install-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
             <div class="options-modal-banner" style="position: relative; height: 200px;">
-                <img src="images/real_2.jpg" alt="TV installation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                <img loading="lazy" src="images/real_2.jpg" alt="TV installation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
             </div>
             
             <div class="options-modal-body" style="padding: 20px;">
@@ -308,7 +284,7 @@
         <div class="modal-content options-modal-content" style="max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px;">
             <button id="close-tv-uninstall-modal-btn" class="modal-close" style="z-index: 10; background: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px;"><i class="fa-solid fa-xmark"></i></button>
             <div class="options-modal-banner" style="position: relative; height: 200px;">
-                <img src="images/real_2.jpg" alt="TV uninstallation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                <img loading="lazy" src="images/real_2.jpg" alt="TV uninstallation" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
             </div>
             
             <div class="options-modal-body" style="padding: 20px;">
@@ -469,9 +445,8 @@
         
         <!-- Col 1: Brand -->
         <div class="footer-col">
-            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
+            <a href="index" style="display: inline-flex;  align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
             <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
                 Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
@@ -482,9 +457,9 @@
         <div class="footer-col">
             <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
             <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
-                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
-                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+                <li style="margin-bottom: 12px;"><a href="about-us" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="terms" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+                <li style="margin-bottom: 12px;"><a href="privacy" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
                 <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
             </ul>
         </div>
@@ -493,9 +468,9 @@
         <div class="footer-col">
             <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
             <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
-                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
-                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
+                <li style="margin-bottom: 12px;"><a href="reviews" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+                <li style="margin-bottom: 12px;"><a href="contact" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+                <li style="margin-bottom: 12px;"><a href="categories" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
             </ul>
         </div>
         
@@ -503,7 +478,7 @@
         <div class="footer-col">
             <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
             <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+                <li style="margin-bottom: 12px;"><a href="partner" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
             </ul>
         </div>
 
@@ -520,8 +495,8 @@
             
             <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
             <div style="display: flex; gap: 10px;">
-                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </div>
@@ -532,53 +507,53 @@
             <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
             <div class="cities-grid">
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Bengaluru</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Kolkata</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Nagpur</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Kanpur</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Guntur</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Hyderabad</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Jaipur</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Vizag</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Nashik</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Nellore</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Mumbai</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Surat</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Bhopal</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Mysore</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Warangal</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Delhi NCR</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Lucknow</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Vijayawada</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Khammam</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Chennai</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Indore</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Chandigarh</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Ludhiana</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Karimnagar</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Pune</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Coimbatore</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Vadodara</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Madurai</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Nizamabad</a>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Ahmedabad</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Kochi</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Patna</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Rajkot</a>
+                    <a href="categories" style="color: #555; text-decoration: none;">Mahbubnagar</a>
                 </div>
             </div>
         </div>
@@ -637,13 +612,14 @@
 
     <!-- Sticky Contact Icons -->
     <div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 15px;">
-        <a href="https://wa.me/919014380344" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="https://wa.me/919391769636" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="tel:+919391769636" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
+
 
 </body>
 </html>

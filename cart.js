@@ -49,9 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const priceEl = card.querySelector('.service-price span, .price span, .plan-price, .option-price');
                 if (priceEl) {
                     const priceText = priceEl.innerText;
-                    const priceMatch = priceText.match(/\d+(,\d+)?/);
+                    // First try to match ₹ followed by numbers to avoid matching '50% OFF'
+                    const priceMatch = priceText.match(/₹\s*(\d+(,\d+)?)/) || priceText.match(/\d+(,\d+)?/);
                     if (priceMatch) {
-                        price = parseInt(priceMatch[0].replace(',', ''));
+                        // priceMatch[1] contains the number if ₹ was matched, otherwise priceMatch[0]
+                        const rawNumber = priceMatch[1] || priceMatch[0];
+                        price = parseInt(rawNumber.replace(',', ''));
                     }
                 }
                 
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const existingUser = localStorage.getItem('userEmail') || localStorage.getItem('userPhone');
             if(!existingUser) {
                 // Not logged in -> Show login modal
-                localStorage.setItem('loginRedirect', 'checkout.html');
+                localStorage.setItem('loginRedirect', 'checkout');
                 const loginModal = document.getElementById('user-login-modal');
                 if(loginModal) {
                     loginModal.style.display = 'flex';
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Already logged in -> Proceed to checkout
-            window.location.href = 'checkout.html';
+            window.location.href = 'checkout';
         });
     }
 

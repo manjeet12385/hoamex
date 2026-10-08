@@ -1,0 +1,127 @@
+CSS FILE LENGTH: 91602
+RULE: /* Header */ .header {     display: flex;     align-items: center;     justify-content: space-between;     padding: 15px 40px;     background-color: #ffffff;     border-bottom: 1px solid rgba(0,0,0,0.05);     position: fixed !important;     width: 100% !important;     top: 0 !important;     left: 0 !important;     z-index: 10000 !important; }
+RULE: .header-actions {     display: flex;     align-items: center;     gap: 15px; }
+RULE: .section-header {     display: flex;     justify-content: space-between;     align-items: flex-end;     margin-bottom: 25px; }
+RULE: /* Modal Overlay */ .modal-overlay {     position: fixed;     top: 0;     left: 0;     width: 100%;     height: 100%;     background: rgba(0, 0, 0, 0.6);     backdrop-filter: blur(2px);     display: flex;     justify-content: center;     align-items: center;     z-index: 1000;     opacity: 1;     transition: opacity 0.3s ease; }
+RULE: .modal-overlay.hidden {     opacity: 0;     pointer-events: none; }
+RULE: /* Modal Content */ .modal-content {     background: #fff;     width: 600px;     max-width: 90%;     max-height: 85vh;     overflow-y: auto;     border-radius: 16px;     padding: 30px;     position: relative;     box-shadow: 0 10px 30px rgba(0,0,0,0.2);     transform: translateY(0);     transition: transform 0.3s ease; }
+RULE: .modal-overlay.hidden .modal-content {     transform: translateY(20px); }
+RULE: .modal-close {     position: absolute;     top: 15px;     right: 15px;     background: #fff;     border: none;     width: 36px;     height: 36px;     border-radius: 50%;     box-shadow: 0 2px 10px rgba(0,0,0,0.1);     font-size: 16px;     cursor: pointer;     display: flex;     align-items: center;     justify-content: center;     color: #333;     transition: background 0.2s;     z-index: 10; }
+RULE: .modal-close:hover {     background: #f5f5f5; }
+RULE: .modal-title {     font-size: 24px;     font-weight: 700;     margin-bottom: 25px;     color: #000; }
+RULE: .modal-grid {     display: flex;     justify-content: space-between;     flex-wrap: wrap;     text-align: center; }
+RULE: .modal-item {     width: 22%;     margin-bottom: 20px;     cursor: pointer; }
+RULE: .modal-item img {     width: 80px;     height: 80px;     background: #f9f9f9;     border-radius: 12px;     padding: 10px;     margin-bottom: 10px;     object-fit: contain;     transition: transform 0.2s; }
+RULE: .modal-item:hover img {     transform: scale(1.05); }
+RULE: .modal-item p {     font-size: 12px;     color: #333;     font-weight: 500;     line-height: 1.4; }
+RULE: .modal-subtitle {     font-size: 16px;     font-weight: 600;     margin-bottom: 15px;     color: #333;     text-align: left; }
+RULE: .modal-item .img-wrapper {     position: relative;     display: inline-block; }
+RULE: .modal-item .img-wrapper img {     margin-bottom: 0; }
+RULE: .ac-page-header {     display: flex;     justify-content: space-between;     align-items: flex-start; }
+RULE: .plan-header {     display: flex;     justify-content: space-between;     align-items: flex-start;     margin-bottom: 15px; }
+RULE: .plan-header h4 {     font-size: 18px;     font-weight: 700;     margin-bottom: 5px; }
+RULE: /* Options Modal Specifics */ .options-modal-content {     padding: 0;     max-width: 600px;     max-height: 80vh;     overflow-y: auto;     overflow-x: hidden; }
+RULE: .options-modal-banner {     position: relative;     height: 180px;     background: #f8f8f8;     display: flex; }
+RULE: .options-modal-banner img {     position: absolute;     right: 0;     top: 0;     height: 100%;     width: 45%;     object-fit: cover; }
+RULE: .options-modal-body {     padding: 25px 30px; }
+RULE: .options-modal-title {     font-size: 20px;     font-weight: 700;     margin-bottom: 5px; }
+RULE: /* Header adjustments */     .header {         padding: 10px 15px !important;         flex-wrap: wrap;         gap: 10px;     }
+RULE: /* Modals / Cart Bottom Sheet */     .modal-content {         position: absolute !important;         bottom: 0 !important;         left: 0 !important;         right: 0 !important;         top: auto !important;         transform: none !important;         width: 100% !important;         max-width: 100% !important;         border-radius: 20px 20px 0 0 !important;         padding: 24px !important;         max-height: 85vh;         overflow-y: auto;     }
+RULE: #cart-sidebar .modal-content {         height: 80vh !important;         display: flex !important;         flex-direction: column !important;     }
+RULE: .modal-close, #close-cart-btn {         top: 15px !important;         right: 15px !important;         left: auto !important;         background: #f1f1f1 !important;         color: #333 !important;     }
+RULE: /* 24/7 Support Popup */ .support-popup-overlay {     position: fixed;     bottom: 20px;     left: 50%;     transform: translateX(-50%);     width: 90%;     max-width: 400px;     background: #fff;     border-radius: 12px;     box-shadow: 0 10px 30px rgba(0,0,0,0.15);     z-index: 10000;     padding: 20px;     opacity: 0;     visibility: hidden;     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);     transform: translate(-50%, 20px); }
+RULE: .support-popup-overlay.show {     opacity: 1;     visibility: visible;     transform: translate(-50%, 0); }
+RULE: .support-popup-header {     display: flex;     justify-content: space-between;     align-items: center;     margin-bottom: 10px; }
+RULE: .support-popup-title {     font-size: 18px;     font-weight: 700;     color: #111;     display: flex;     align-items: center;     gap: 10px;     margin: 0; }
+RULE: .support-popup-close {     background: none;     border: none;     font-size: 16px;     color: #999;     cursor: pointer;     padding: 0; }
+RULE: .support-popup-text {     font-size: 13px;     color: #666;     line-height: 1.5;     margin-bottom: 20px;     margin-top: 0; }
+RULE: .support-popup-buttons {     display: flex;     gap: 10px; }
+RULE: .support-popup-btn {     flex: 1;     padding: 12px;     border-radius: 8px;     font-size: 14px;     font-weight: 600;     text-align: center;     text-decoration: none;     border: none;     cursor: pointer;     transition: 0.3s;     display: block; }
+RULE: .header {         flex-direction: column;         padding: 10px 15px;         gap: 10px;     }
+RULE: .header-actions {         width: 100%;         justify-content: space-between;     }
+RULE: .modal-content {         width: 95% !important;         margin: 10px;         padding: 15px !important;     }
+RULE: .modal-grid {         grid-template-columns: repeat(3, 1fr) !important;     }
+RULE: .header {         padding: 10px;     }
+RULE: .modal-grid {         grid-template-columns: repeat(2, 1fr) !important;     }
+RULE: #modal-carousel-drain, .wm-options-carousel {         flex-direction: column;     }
+RULE: /* Exact Mobile Navbar Layout Override */ @media screen and (max-width: 768px) {     .header {         display: grid !important;         grid-template-columns: auto 1fr auto auto !important;         grid-template-rows: auto auto !important;         row-gap: 15px !important;         column-gap: 8px !important;         padding: 15px 10px !important;         align-items: center !important;     }
+RULE: .header > div:first-child {         grid-column: 1 / 2 !important;         grid-row: 1 / 2 !important;         margin-right: 0 !important;     }
+RULE: .header-actions {         display: contents !important;     }
+RULE: .header-actions > .location-btn {         grid-column: 2 / 3 !important;         grid-row: 1 / 2 !important;         justify-self: end !important;         background-color: #f3e8ff !important;         color: #6b21a8 !important;         padding: 6px 10px !important;         font-size: 11px !important;         white-space: nowrap;         overflow: hidden;         text-overflow: ellipsis;         max-width: 120px;     }
+RULE: .header-actions > .icon-btn:nth-of-type(1) { /* User icon */         grid-column: 3 / 4 !important;         grid-row: 1 / 2 !important;         width: 32px !important;         height: 32px !important;     }
+RULE: .header-actions > #open-cart-btn {         grid-column: 4 / 5 !important;         grid-row: 1 / 2 !important;         width: 32px !important;         height: 32px !important;     }
+RULE: .header-actions > .partner-btn {         grid-column: 1 / 2 !important;         grid-row: 2 / 3 !important;         padding: 8px 12px !important;         font-size: 12px !important;         border-radius: 8px !important;         white-space: nowrap;     }
+RULE: .modal-grid {         display: grid !important;         grid-template-columns: repeat(3, 1fr) !important;         gap: 15px !important;         justify-content: center !important;     }
+RULE: .modal-item {         width: 100% !important;         margin-bottom: 0 !important;     }
+RULE: .modal-item img {         width: 65px !important;         height: 65px !important;     }
+RULE: .modal-subtitle {         font-size: 16px !important;     }
+RULE: .modal-grid {         grid-template-columns: repeat(2, 1fr) !important;     }
+RULE: .modal-content, .service-card, .plan-card, .option-card, .noteworthy-item, .spotlight-card, .most-booked-item {     max-width: 100% !important;     box-sizing: border-box !important; }
+RULE: .modal-content {         padding: 15px !important;         width: 100% !important;     }
+RULE: .services-grid, .modal-grid {         grid-template-columns: repeat(2, 1fr) !important;         gap: 10px !important;     }
+RULE: .services-grid, .modal-grid {         grid-template-columns: repeat(2, 1fr) !important;     }
+RULE: /* Location Modal Styles */ #location-modal {     display: none;     position: fixed;     top: 0; left: 0; right: 0; bottom: 0;     background: rgba(0,0,0,0.5);     z-index: 10000;     align-items: center;     justify-content: center; }
+RULE: .location-modal-box {     background: #fdfaf6;     width: 500px;     max-width: 90%;     border-radius: 16px;     padding: 24px;     position: relative;     box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+RULE: .loc-modal-header {     display: flex;     justify-content: space-between;     align-items: center;     margin-bottom: 20px; }
+RULE: .loc-modal-header h2 {     font-size: 18px;     display: flex;     align-items: center;     gap: 10px;     color: #1a1c23; }
+RULE: .loc-modal-header h2 i {     color: #4f46e5;     font-size: 20px; }
+RULE: /* Persistent Fixed Header */ .header {     position: -webkit-sticky; position: sticky;     top: 0;     z-index: 9999;     background: #fff;     width: 100%;     box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+RULE: /* Ensure body content starts below header */ body {     padding-top: 75px; /* adjust based on header height */ }
+RULE: /* Fix plan-header: stack price and button below text */     .plan-header {         flex-direction: column !important;         gap: 12px !important;     }
+RULE: .plan-header > * {         width: 100% !important;     }
+RULE: .ac-page-header {         flex-direction: column !important;         gap: 10px !important;     }
+RULE: .ac-page-header > * {         width: 100% !important;     }
+RULE: /* Ensure modal contents are responsive */     .modal-content, .options-modal-content {         width: 95% !important;         max-width: 100% !important;         margin: 10px auto !important;     }
+RULE: /* Premium Navbar Styles */ .premium-navbar {     position: fixed !important;     top: 15px !important;     left: 50% !important;     transform: translateX(-50%) !important;     width: 95% !important;     max-width: 1400px !important;     z-index: 9999 !important;     background: rgba(255, 255, 255, 0.85) !important;     backdrop-filter: blur(12px) !important;     -webkit-backdrop-filter: blur(12px) !important;     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0,0,0,0.05) !important;     border-radius: 20px !important;     border: 1px solid rgba(255, 255, 255, 0.5) !important;     padding: 10px 25px !important;     transition: all 0.3s ease !important; }
+RULE: .premium-navbar:hover {     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0,0,0,0.05) !important; }
+RULE: /* Make body pad top so content doesn't hide behind floating navbar */ body {     padding-top: 100px !important; }
+RULE: .premium-navbar .search-container {     background: rgba(245, 245, 245, 0.8) !important;     border-radius: 30px !important;     border: 1px solid transparent !important;     transition: all 0.3s ease !important; }
+RULE: .premium-navbar .search-container:focus-within {     background: #fff !important;     border: 1px solid #ddd !important;     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;     transform: scale(1.02) !important; }
+RULE: .premium-navbar .search-container input {     background: transparent !important; }
+RULE: .premium-navbar .partner-btn {     background: linear-gradient(135deg, #43a047, #2e7d32) !important;     border: none !important;     border-radius: 30px !important;     color: white !important;     padding: 10px 20px !important;     font-weight: 600 !important;     box-shadow: 0 4px 15px rgba(67, 160, 71, 0.3) !important;     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
+RULE: .premium-navbar .partner-btn:hover {     transform: translateY(-2px) scale(1.05) !important;     box-shadow: 0 8px 20px rgba(67, 160, 71, 0.4) !important; }
+RULE: .premium-navbar .location-btn {     background: rgba(237, 231, 246, 0.7) !important;     color: #5e35b1 !important;     border-radius: 30px !important;     font-weight: 600 !important;     transition: all 0.3s ease !important; }
+RULE: .premium-navbar .location-btn:hover {     background: #ede7f6 !important;     transform: translateY(-2px) !important; }
+RULE: .premium-navbar .icon-btn {     border-radius: 50% !important;     width: 45px !important;     height: 45px !important;     display: flex !important;     align-items: center !important;     justify-content: center !important;     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;     background: transparent !important;     border: 1px solid transparent !important; }
+RULE: .premium-navbar .icon-btn:hover {     background: rgba(0, 0, 0, 0.04) !important;     transform: scale(1.15) !important; }
+RULE: .premium-navbar #cart-badge {     box-shadow: 0 2px 5px rgba(229, 57, 53, 0.4) !important;     animation: pulse-badge 2s infinite !important; }
+RULE: .premium-navbar {         top: 0 !important;         width: 100% !important;         border-radius: 0 !important;         padding: 10px 15px !important;     }
+RULE: .premium-navbar .partner-btn {     /* 1. Moving Gradient */     background: linear-gradient(270deg, #ff007f, #7928ca, #ff4d4d, #ff9a00) !important;     background-size: 300% 300% !important;     animation: movingGradient 4s ease infinite, pulseWiggle 4s infinite !important;          border: none !important;     border-radius: 30px !important;     color: white !important;     padding: 10px 22px !important;     font-weight: 800 !important;     position: relative !important;     overflow: visible !important;     z-index: 1 !important;     box-shadow: 0 0 15px rgba(121, 40, 202, 0.6) !important;     text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;     transition: all 0.3s ease !important; }
+RULE: .premium-navbar .partner-btn::before {     content: '' !important;     position: absolute !important;     top: 0 !important;     left: -150% !important;     width: 60% !important;     height: 100% !important;     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent) !important;     transform: skewX(-20deg) !important;     animation: shineSweep 4s infinite !important;     z-index: -1 !important; }
+RULE: .premium-navbar .partner-btn:hover {     transform: scale(1.15) !important;     box-shadow: 0 0 35px rgba(255, 154, 0, 0.9) !important;     animation: movingGradient 1.5s ease infinite !important; /* Faster color change on hover */ }
+RULE: /* Ensure clicks on modal items fall exactly on the a tag */ .modal-item * { pointer-events: none; }
+RULE: /* UNIQUE NAVBAR STYLES ADDED PER USER REQUEST */ .header.premium-navbar, .header {     position: fixed !important;     top: 0 !important;     left: 0 !important;     transform: none !important;     width: 100% !important;     max-width: 100% !important;     background: #ffffff !important;     backdrop-filter: none !important;     -webkit-backdrop-filter: none !important;     border: none !important;     border-bottom: 1px solid #e5e5e5 !important;     border-radius: 0 !important;     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;     transition: all 0.2s ease !important;     padding: 12px 40px !important;     z-index: 99999 !important; }
+RULE: .header.premium-navbar:hover, .header:hover {     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; }
+RULE: /* Push body down so content doesn't hide behind floating navbar */ body {     padding-top: 75px !important; }
+RULE: .header.premium-navbar, .header {     position: fixed !important;     top: 0 !important;     left: 0 !important;     transform: none !important;     width: 100% !important;     max-width: 100% !important;     background: #ffffff !important;     backdrop-filter: none !important;     -webkit-backdrop-filter: none !important;     border: none !important;     border-bottom: 1px solid #e5e5e5 !important;     border-radius: 0 !important;     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;     transition: all 0.2s ease !important;     padding: 12px 40px !important;     z-index: 99999 !important; }
+RULE: padding-top: 170px !important; /* Extra space for mobile stacked header */     } }  /* UNIQUE ATTENTION-GRABBING PARTNER BUTTON */ @keyframes shakeAndGlow {     0% { transform: scale(1) rotate(0deg); box-shadow: 0 0 0 rgba(37, 211, 102, 0); }
+RULE: .header.premium-navbar .partner-btn {     background: #25D366 !important;     background-size: 300% 300% !important;     border: 2px solid white !important;     border-radius: 30px !important;     color: white !important;     padding: 10px 22px !important;     font-weight: 800 !important;     text-transform: uppercase !important;     letter-spacing: 0.5px !important;     animation: pulseBg 4s ease infinite, shakeAndGlow 3s infinite !important;     position: relative;     overflow: hidden;     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important; }
+RULE: .header.premium-navbar .partner-btn::after {     content: '' !important;     position: absolute !important;     top: -50% !important;     left: -150% !important;     width: 200% !important;     height: 200% !important;     background: rgba(255,255,255,0.3) !important;     transform: rotate(45deg) !important;     animation: shineEffect 3s infinite !important; }
+RULE: .header.premium-navbar .partner-btn i {     animation: hopIcon 1s ease-in-out infinite alternate !important;     margin-right: 8px !important; }
+RULE: .header.premium-navbar .partner-btn:hover {     transform: scale(1.1) !important;     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7) !important;     animation: pulseBg 2s ease infinite !important; /* Stop shaking on hover, just pulse fast */ }
+RULE: .header.premium-navbar .search-container {     background: rgba(245, 245, 245, 0.7) !important;     border-radius: 30px !important;     border: 1px solid rgba(0,0,0,0.05) !important;     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; }
+RULE: .header.premium-navbar .search-container:focus-within {     background: #fff !important;     border: 1px solid #128C7E !important;     box-shadow: 0 4px 20px rgba(18, 140, 126, 0.15) !important;     transform: translateY(-1px) !important; }
+RULE: .header.premium-navbar .partner-btn {     animation: crazyColors 2s infinite, shakeAndGlow 3s infinite !important;     border: 2px solid white !important;     color: white !important; }
+RULE: .header.premium-navbar .partner-btn:hover {     animation: crazyColors 0.5s infinite !important;     transform: scale(1.15) !important; }
+RULE: .header.premium-navbar .partner-btn {     background: none !important;     background-image: none !important;     animation: crazyColorsSolid 1.5s infinite, shakeAndGlow 3s infinite !important; }
+RULE: .header.premium-navbar .partner-btn:hover {     animation: crazyColorsSolid 0.5s infinite !important; }
+RULE: .header.premium-navbar .partner-btn {     /* Solid, attention-grabbing green gradient */     background: linear-gradient(135deg, #25D366, #128C7E) !important;     background-size: 200% 200% !important;     border: none !important;     color: white !important;     padding: 10px 22px !important;     font-weight: 800 !important;     text-transform: uppercase !important;     letter-spacing: 0.5px !important;     border-radius: 30px !important;     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5) !important;          /* Just a nice pulse and shake */     animation: greenPulse 1.5s infinite, mildShake 4s infinite !important; }
+RULE: .header.premium-navbar .partner-btn:hover {     transform: scale(1.1) !important;     animation: greenPulse 0.8s infinite !important; /* Fast pulse on hover */ }
+RULE: .header {         padding: 12px 20px !important;     }
+RULE: /* — Header — */     .header {         flex-wrap: wrap !important;         padding: 10px 15px !important;         gap: 10px !important;     }
+RULE: .header-actions {         gap: 8px !important;     }
+RULE: /* Body padding for taller fixed header */     body {         padding-top: 170px !important;     }
+RULE: #cart-sidebar {         width: 100% !important;         right: 0 !important;     }
+RULE: /* — Modals (login / partner etc.) — */     #user-login-modal,     #partner-modal,     .modal-overlay {         padding: 10px !important;         align-items: flex-start !important;         overflow-y: auto !important;     }
+RULE: #user-login-modal > div,     #partner-modal > div,     .modal-overlay > div,     .modal-box {         width: 100% !important;         max-width: 100% !important;         margin: 0 auto !important;         border-radius: 12px !important;         max-height: 90vh !important;         overflow-y: auto !important;     }
+RULE: /* — Header: stack logo + actions — */     .header {         padding: 8px 12px !important;     }
+RULE: /* — Login / Signup modal inner box — */     #user-login-modal > div,     .modal-box {         padding: 20px 14px !important;         border-radius: 10px !important;     }
+RULE: #user-login-modal [style*="display: flex; gap: 10px; flex-wrap"] {         flex-direction: column !important;     }
+RULE: .header-actions { gap: 5px !important; }
+RULE: /* 1. Header Gap Fix */     body {         padding-top: 85px !important;     }
+RULE: /* 3. Popups and Modals Fixes */     .modal-overlay {         z-index: 10001 !important; /* Above everything */     }
+RULE: .modal-content {         width: 95% !important;         padding: 20px !important;         margin-top: 10% !important;     }
+RULE: #cart-sidebar {         width: 85% !important; /* Proper width on mobile */         max-width: 320px !important;     }
+RULE: /* Make sure fixed header doesn't block cart close buttons */     #cart-sidebar {         z-index: 10005 !important;     }
+RULE: .top-section, .ac-page-header {         position: static !important;          background-color: #f7f9fa !important;          padding-top: 20px !important;          padding-bottom: 20px !important;      }
+RULE: .top-section, .ac-page-header {         position: static !important;      }

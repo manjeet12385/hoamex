@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tile Grouting & Sealant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="style.css?v=3100" rel="stylesheet">
+    <link href="style.css?v=3101" rel="stylesheet">
     <style>
         .three-col-layout {
             display: grid;
@@ -17,8 +17,6 @@
             padding: 20px;
         }
         .left-col {
-            position: sticky;
-            top: 20px;
             align-self: start;
         }
         .center-col {
@@ -141,15 +139,17 @@
             font-size: 12px;
         }
     </style>
+
+
 </head>
+
 <body>
 
     <!-- Header Section -->
     <header class="header premium-navbar">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
+            <a href="index" class="logo" style="display: flex;  align-items: center; justify-content: center;  margin-right: 15px; text-decoration: none;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
         <div class="search-container" id="header-search">
@@ -172,27 +172,27 @@
                 <div class="page-rating"><i class="fa-solid fa-star"></i> 4.83 (11K bookings)</div>
             </div>
 
-            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 15px;">
+            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 15px; position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: none; background: #fff; z-index: 10;">
                 <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 16px;">Select a service</h3>
                 <div class="service-cat-grid">
                     <a href="#bathroom" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_tile_grouting_icon.jpg" alt="Bathroom"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Bathroom"></div>
                         <p>Bathroom</p>
                     </a>
                     <a href="#kitchen" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_tile_grouting_icon.jpg" alt="Kitchen"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen"></div>
                         <p>Kitchen</p>
                     </a>
                     <a href="#outdoor" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_tile_grouting_icon.jpg" alt="Outdoor grouting"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Outdoor grouting"></div>
                         <p>Outdoor grouting</p>
                     </a>
                     <a href="#leak" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_tile_grouting_icon.jpg" alt="Leak & gap sealing"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Leak & gap sealing"></div>
                         <p>Leak & gap sealing</p>
                     </a>
                     <a href="#consultation" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_tile_grouting_icon.jpg" alt="At home consultation"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="At home consultation"></div>
                         <p>At home consultation</p>
                     </a>
                 </div>
@@ -202,7 +202,7 @@
         <!-- Center Content -->
         <div class="center-col" id="center-col">
             <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 30px; border: 1px solid #eaeaea;">
-                <img src="images/new_tile_grouting_icon.jpg" alt="Tile grouting comparison" style="width: 100%; display: block; object-fit: cover;">
+                <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Tile grouting comparison" style="width: 100%; display: block; object-fit: cover;">
             </div>
 
             
@@ -212,7 +212,7 @@
                 
                 <div class="svc-row" style="display: block; border-bottom: 1px solid #eee; padding: 20px 0;">
                     <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Bathroom tile grouting" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Bathroom tile grouting" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div class="svc-info" style="padding-right: 20px;">
@@ -243,7 +243,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Full bathroom tile grouting" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Full bathroom tile grouting" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Full bathroom tile grouting', 1799)">Add</button>
                     </div>
                 </div>
@@ -259,7 +259,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Bathroom tile grouting (only walls)" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Bathroom tile grouting (only walls)" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Bathroom tile grouting (only walls)', 899)">Add</button>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Shower cubicle sealing', 549)">Add</button>
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="WC / Toilet base sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="WC / Toilet base sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('WC / Toilet base sealing', 399)">Add</button>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Bathtub sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Bathtub sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Bathtub sealing', 549)">Add</button>
                     </div>
                 </div>
@@ -322,14 +322,14 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Wash basin sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Wash basin sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Wash basin sealing', 399)">Add</button>
                     </div>
                 </div>
                 
                 <div class="svc-row" style="display: block; border-bottom: 1px solid #eee; padding: 30px 0;">
                     <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Basin, toilet base & shower cubicle sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Basin, toilet base & shower cubicle sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div class="svc-info" style="padding-right: 20px;">
@@ -365,14 +365,14 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Kitchen sink sealing', 549)">Add</button>
                     </div>
                 </div>
 
                 <div class="svc-row" style="display: block; border-bottom: 1px solid #eee; padding: 30px 0;">
                     <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink & slab sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink & slab sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div class="svc-info" style="padding-right: 20px;">
@@ -403,7 +403,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Kitchen countertop grouting" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen countertop grouting" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px; font-weight: bold; text-transform: uppercase;" onclick="document.getElementById('countertop-grouting-modal').classList.remove('hidden')">ADD</button>
                         <p style="font-size: 10px; color: #666; margin-top: 25px; text-align: center;">2 options</p>
                     </div>
@@ -420,7 +420,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Full kitchen grouting" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Full kitchen grouting" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px; font-weight: bold; text-transform: uppercase;" onclick="document.getElementById('kitchen-grouting-modal').classList.remove('hidden')">ADD</button>
                         <p style="font-size: 10px; color: #666; margin-top: 25px; text-align: center;">2 options</p>
                     </div>
@@ -445,7 +445,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Balcony/ washing area grouting" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Balcony/ washing area grouting" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Balcony/ washing area grouting', 899)">Add</button>
                     </div>
                 </div>
@@ -461,7 +461,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Terrace grouting" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Terrace grouting" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Terrace grouting', 1799)">Add</button>
                     </div>
                 </div>
@@ -484,14 +484,14 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Kitchen sink sealing', 549)">Add</button>
                     </div>
                 </div>
 
                 <div class="svc-row" style="display: block; border-bottom: 1px solid #eee; padding: 30px 0;">
                     <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink & slab sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Kitchen sink & slab sealing" style="width: 100%; height: 250px; object-fit: cover; display: block;">
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div class="svc-info" style="padding-right: 20px;">
@@ -521,7 +521,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Basin, toilet base & shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Basin, toilet base & shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Basin, toilet base & shower cubicle sealing', 1199)">Add</button>
                     </div>
                 </div>
@@ -537,7 +537,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Wash basin sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Wash basin sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Wash basin sealing', 399)">Add</button>
                     </div>
                 </div>
@@ -553,7 +553,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="WC / Toilet base sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="WC / Toilet base sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('WC / Toilet base sealing', 399)">Add</button>
                     </div>
                 </div>
@@ -569,7 +569,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Shower cubicle sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Shower cubicle sealing', 549)">Add</button>
                     </div>
                 </div>
@@ -584,7 +584,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action" style="width: 120px; height: 120px; position: relative;">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Bathtub sealing" class="svc-img" style="border-radius: 12px;">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Bathtub sealing" class="svc-img" style="border-radius: 12px;">
                         <button class="add-btn" style="bottom: -15px; color: #6a1b9a; padding: 8px 0; width: 90px; border-radius: 8px;" onclick="addToCart('Bathtub sealing', 549)">Add</button>
                     </div>
                 </div>
@@ -603,7 +603,7 @@
                         <p class="svc-meta" style="margin-top: 8px;">Inspection of tiles and grouting to recommend the best solution.</p>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_tile_grouting_icon.jpg" alt="Expert consultation & inspection" class="svc-img">
+                        <img loading="lazy" src="images/new_tile_grouting_icon.jpg" alt="Expert consultation & inspection" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Expert consultation & inspection', 299)">Add</button>
                     </div>
                 </div>
@@ -633,7 +633,7 @@
             <button onclick="document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
             
             <div style="position: relative; height: 220px; width: 100%; display: flex; align-items: center; justify-content: center; background: #fff8ee; overflow: hidden;">
-                <img src="images/new_tile_grouting_icon.jpg" onerror="this.src='images/new_tile_grouting_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_tile_grouting_icon.jpg" onerror="this.src='images/new_tile_grouting_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
                 <div style="position: absolute; top: 15px; width: 100%; display: flex; justify-content: space-around; font-weight: bold; color: #111; z-index: 2;">
                     <span style="font-size: 14px;">Old grouting</span>
                     <span style="font-size: 14px;">New grouting</span>
@@ -658,7 +658,7 @@
                     </div>
                     <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
                         <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
-                            <img src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                            <img loading="lazy" src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
                         </div>
                         <button onclick="addToCart('Full Kitchen Grouting (Epoxy)', 2799); document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
                     </div>
@@ -676,7 +676,7 @@
                     </div>
                     <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
                         <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
-                            <img src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                            <img loading="lazy" src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
                         </div>
                         <button onclick="addToCart('Full Kitchen Grouting (White cement)', 1799); document.getElementById('kitchen-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
                     </div>
@@ -691,7 +691,7 @@
             <button onclick="document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: absolute; right: 15px; top: 15px; background: white; border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"><i class="fa-solid fa-xmark"></i></button>
             
             <div style="position: relative; height: 220px; width: 100%; display: flex; align-items: center; justify-content: center; background: #fff8ee; overflow: hidden;">
-                <img src="images/new_tile_grouting_icon.jpg" onerror="this.src='images/new_tile_grouting_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_tile_grouting_icon.jpg" onerror="this.src='images/new_tile_grouting_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
                 <div style="position: absolute; top: 15px; width: 100%; display: flex; justify-content: space-around; font-weight: bold; color: #111; z-index: 2;">
                     <span style="background: rgba(255,255,255,0.8); padding: 4px 12px; border-radius: 4px; font-size: 14px;">Old grouting</span>
                     <span style="background: rgba(255,255,255,0.8); padding: 4px 12px; border-radius: 4px; font-size: 14px;">New grouting</span>
@@ -719,7 +719,7 @@
                     </div>
                     <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
                         <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
-                            <img src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                            <img loading="lazy" src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
                         </div>
                         <button onclick="addToCart('Kitchen slab/ countertop (Epoxy)', 1299); document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
                     </div>
@@ -738,7 +738,7 @@
                     </div>
                     <div style="width: 80px; display: flex; flex-direction: column; align-items: center;">
                         <div style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 8px; margin-bottom: -15px; position: relative; z-index: 1;">
-                            <img src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
+                            <img loading="lazy" src="images/new_tile_grouting_icon.jpg" style="width: 60px; height: 60px; object-fit: contain;">
                         </div>
                         <button onclick="addToCart('Kitchen Only slab/ countertop (White cement)', 699); document.getElementById('countertop-grouting-modal').classList.add('hidden')" style="position: relative; z-index: 2; width: 80px; padding: 6px 0; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">Add</button>
                     </div>
@@ -837,15 +837,16 @@
         }
     </style>
     <div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 20px;">
-        <a href="https://wa.me/919014380344" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
+        <a href="https://wa.me/919391769636" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
             <span class="notification-badge" style="position: absolute; right: -5px; top: -5px; background-color: #ff0000; color: white; font-size: 12px; font-weight: bold; padding: 3px 7px; border-radius: 50%; border: 2px solid white; line-height: 1;">1</span>
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+919014380344" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
+        <a href="tel:+919391769636" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
             <span style="position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); top: -2px; left: -2px;"></span>
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
+
 
 </body>
 </html>

@@ -1,175 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    const setupCarouselArrows = (carouselId, previousButtonId, nextButtonId, itemSelector) => {
+        const carousel = document.getElementById(carouselId);
+        const previousButton = document.getElementById(previousButtonId);
+        const nextButton = document.getElementById(nextButtonId);
+        if (!carousel || !previousButton || !nextButton) return;
 
-    if (carousel && prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            // Scroll left by the width of one item + gap
-            const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
-            const gap = 20; // 20px gap from CSS
-            carousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
+        const updateArrows = () => {
+            const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+            previousButton.classList.toggle('is-hidden', carousel.scrollLeft <= 1);
+            nextButton.classList.toggle('is-hidden', carousel.scrollLeft >= maxScrollLeft - 1);
+        };
+        const scrollOneItem = (direction) => {
+            const item = carousel.querySelector(itemSelector);
+            if (!item) return;
 
-        nextBtn.addEventListener('click', () => {
-            // Scroll right by the width of one item + gap
-            const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
-            const gap = 20; // 20px gap from CSS
-            carousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
+            const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+            carousel.scrollBy({
+                left: direction * (item.getBoundingClientRect().width + gap),
+                behavior: 'smooth'
+            });
+        };
 
-    // Spotlight Carousel
-    const spotlightCarousel = document.getElementById('spotlight-carousel');
-    const prevBtnSpotlight = document.getElementById('prevBtnSpotlight');
-    const nextBtnSpotlight = document.getElementById('nextBtnSpotlight');
+        previousButton.addEventListener('click', () => scrollOneItem(-1));
+        nextButton.addEventListener('click', () => scrollOneItem(1));
+        carousel.addEventListener('scroll', updateArrows, { passive: true });
+        window.addEventListener('resize', updateArrows);
+        updateArrows();
+    };
 
-    if (spotlightCarousel && prevBtnSpotlight && nextBtnSpotlight) {
-        prevBtnSpotlight.addEventListener('click', () => {
-            const itemWidth = spotlightCarousel.querySelector('.spotlight-card').offsetWidth;
-            const gap = 20; 
-            spotlightCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnSpotlight.addEventListener('click', () => {
-            const itemWidth = spotlightCarousel.querySelector('.spotlight-card').offsetWidth;
-            const gap = 20;
-            spotlightCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Noteworthy Carousel
-    const noteworthyCarousel = document.getElementById('noteworthy-carousel');
-    const prevBtnNoteworthy = document.getElementById('prevBtnNoteworthy');
-    const nextBtnNoteworthy = document.getElementById('nextBtnNoteworthy');
-
-    if (noteworthyCarousel && prevBtnNoteworthy && nextBtnNoteworthy) {
-        prevBtnNoteworthy.addEventListener('click', () => {
-            const itemWidth = noteworthyCarousel.querySelector('.noteworthy-item').offsetWidth;
-            const gap = 20; 
-            noteworthyCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnNoteworthy.addEventListener('click', () => {
-            const itemWidth = noteworthyCarousel.querySelector('.noteworthy-item').offsetWidth;
-            const gap = 20;
-            noteworthyCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Most Booked Carousel
-    const mostBookedCarousel = document.getElementById('most-booked-carousel');
-    const prevBtnMostBooked = document.getElementById('prevBtnMostBooked');
-    const nextBtnMostBooked = document.getElementById('nextBtnMostBooked');
-
-    if (mostBookedCarousel && prevBtnMostBooked && nextBtnMostBooked) {
-        prevBtnMostBooked.addEventListener('click', () => {
-            const itemWidth = mostBookedCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            mostBookedCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnMostBooked.addEventListener('click', () => {
-            const itemWidth = mostBookedCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            mostBookedCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Salon Carousel
-    const salonCarousel = document.getElementById('salon-carousel');
-    const prevBtnSalon = document.getElementById('prevBtnSalon');
-    const nextBtnSalon = document.getElementById('nextBtnSalon');
-
-    if (salonCarousel && prevBtnSalon && nextBtnSalon) {
-        prevBtnSalon.addEventListener('click', () => {
-            const itemWidth = salonCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            salonCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnSalon.addEventListener('click', () => {
-            const itemWidth = salonCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            salonCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Spa Carousel
-    const spaCarousel = document.getElementById('spa-carousel');
-    const prevBtnSpa = document.getElementById('prevBtnSpa');
-    const nextBtnSpa = document.getElementById('nextBtnSpa');
-
-    if (spaCarousel && prevBtnSpa && nextBtnSpa) {
-        prevBtnSpa.addEventListener('click', () => {
-            const itemWidth = spaCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            spaCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnSpa.addEventListener('click', () => {
-            const itemWidth = spaCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            spaCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Cleaning Essentials Carousel
-    const cleaningCarousel = document.getElementById('cleaning-carousel');
-    const prevBtnCleaning = document.getElementById('prevBtnCleaning');
-    const nextBtnCleaning = document.getElementById('nextBtnCleaning');
-
-    if (cleaningCarousel && prevBtnCleaning && nextBtnCleaning) {
-        prevBtnCleaning.addEventListener('click', () => {
-            const itemWidth = cleaningCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            cleaningCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnCleaning.addEventListener('click', () => {
-            const itemWidth = cleaningCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            cleaningCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Massage Carousel
-    const massageCarousel = document.getElementById('massage-carousel');
-    const prevBtnMassage = document.getElementById('prevBtnMassage');
-    const nextBtnMassage = document.getElementById('nextBtnMassage');
-
-    if (massageCarousel && prevBtnMassage && nextBtnMassage) {
-        prevBtnMassage.addEventListener('click', () => {
-            const itemWidth = massageCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            massageCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnMassage.addEventListener('click', () => {
-            const itemWidth = massageCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            massageCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
-
-    // Salon for Men Carousel
-    const salonMenCarousel = document.getElementById('salon-men-carousel');
-    const prevBtnSalonMen = document.getElementById('prevBtnSalonMen');
-    const nextBtnSalonMen = document.getElementById('nextBtnSalonMen');
-
-    if (salonMenCarousel && prevBtnSalonMen && nextBtnSalonMen) {
-        prevBtnSalonMen.addEventListener('click', () => {
-            const itemWidth = salonMenCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20; 
-            salonMenCarousel.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-        });
-
-        nextBtnSalonMen.addEventListener('click', () => {
-            const itemWidth = salonMenCarousel.querySelector('.most-booked-item').offsetWidth;
-            const gap = 20;
-            salonMenCarousel.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-        });
-    }
+    [
+        ['spotlight-carousel', 'prevBtnSpotlight', 'nextBtnSpotlight', '.spotlight-card'],
+        ['noteworthy-carousel', 'prevBtnNoteworthy', 'nextBtnNoteworthy', '.noteworthy-item'],
+        ['most-booked-carousel', 'prevBtnMostBooked', 'nextBtnMostBooked', '.most-booked-item'],
+        ['salon-carousel', 'prevBtnSalon', 'nextBtnSalon', '.most-booked-item'],
+        ['spa-carousel', 'prevBtnSpa', 'nextBtnSpa', '.most-booked-item'],
+        ['cleaning-carousel', 'prevBtnCleaning', 'nextBtnCleaning', '.most-booked-item'],
+        ['massage-carousel', 'prevBtnMassage', 'nextBtnMassage', '.most-booked-item'],
+        ['salon-men-carousel', 'prevBtnSalonMen', 'nextBtnSalonMen', '.most-booked-item']
+    ].forEach(([carouselId, previousButtonId, nextButtonId, itemSelector]) => {
+        setupCarouselArrows(carouselId, previousButtonId, nextButtonId, itemSelector);
+    });
 
     // Modal Logic
     const womensBeautyBtn = document.getElementById('womens-beauty-btn');

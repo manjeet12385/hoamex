@@ -1,5 +1,5 @@
 const fs = require('fs');
-let content = fs.readFileSync('bathroom-cleaning.html', 'utf8');
+let content = fs.readFileSync('bathroom-cleaning', 'utf8');
 
 // 1. Add onclick to the Balcony cleaning Add button
 content = content.replace(
@@ -126,4 +126,4 @@ if (!content.includes('id="balcony-modal"')) {
     content = content.replace('<!-- Cart Sidebar -->', modalHTML + '\n    <!-- Cart Sidebar -->');
 }
 
-fs.writeFileSync('bathroom-cleaning.html', content);
+fs.writeFileSync('bathroom-cleaning', content);

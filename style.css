@@ -363,8 +363,8 @@ body {
 .stats-container {
     display: flex;
     justify-content: center;
-    gap: 100px;
-    padding-top: 30px;
+    gap: 42px;
+    padding: 14px 0 12px;
     border-top: 1px solid #eee;
 }
 
@@ -373,13 +373,14 @@ body {
 }
 
 .stat-value {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 700;
     color: #2c3e50;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    line-height: 1.25;
 }
 
 .stat-value i {
@@ -793,6 +794,12 @@ body {
 
 .salon-container::-webkit-scrollbar {
     display: none;
+}
+
+@media (min-width: 769px) {
+    .salon-container > .most-booked-item {
+        flex: 0 0 260px;
+    }
 }
 
 /* Modal Overlay */
@@ -1848,8 +1855,15 @@ img {
         gap: 12px 8px !important;
     }
     .stats-container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px 8px;
+    }
+    .stats-container .stat-item {
+        flex: 1 1 45%;
+    }
+    .stats-container .stat-value {
+        font-size: 14px !important;
     }
     .banner-text h2 {
         font-size: 24px !important;
@@ -2304,7 +2318,7 @@ img {
         text-align: center;
     }
     .stat-value {
-        font-size: 18px !important;
+        font-size: 15px !important;
     }
     .stat-label {
         font-size: 11px !important;
@@ -3491,6 +3505,12 @@ img, video, iframe {
     object-fit: contain;
 }
 
+@media (min-width: 1025px) {
+    .header.premium-navbar.home-page-header {
+        padding-left: max(75px, calc(50% - 542.5px)) !important;
+    }
+}
+
 .header.premium-navbar .search-container {
     flex: 0 1 340px !important;
     width: 340px !important;
@@ -4491,25 +4511,22 @@ html, body {
         align-items: center !important;
         justify-content: center !important;
         gap: 0 !important;
-        width: 42px !important;
-        min-width: 42px !important;
-        height: 48px !important;
-        padding: 3px 0 !important;
-        border-radius: 18px !important;
-        background: #fff !important;
-        border: 1px solid rgba(37, 32, 20, 0.1) !important;
+        width: 34px !important;
+        min-width: 34px !important;
+        height: 34px !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
     }
 
     .header-actions > #open-cart-btn > i {
-        font-size: 15px !important;
-        line-height: 18px !important;
+        font-size: 18px !important;
+        line-height: 1 !important;
     }
 
     .header-actions > #open-cart-btn::after {
-        content: "Cart";
-        font-size: 9px !important;
-        font-weight: 600 !important;
-        line-height: 11px !important;
+        content: none !important;
     }
 
     .header .search-container:not([style*="display:none"]):not([style*="display: none"]) {
@@ -4626,5 +4643,208 @@ html, body {
     body:has(.header .search-container[style*="display:none"]),
     body:has(.header .search-container[style*="display: none"]) {
         padding-top: 64px !important;
+    }
+}
+
+/* Keep the desktop navbar controls aligned and inside the viewport. */
+@media (min-width: 1025px) {
+    .header.premium-navbar {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: clamp(8px, 1vw, 16px) !important;
+    }
+
+    .header.premium-navbar.home-page-header {
+        padding-right: max(75px, calc(50% - 542.5px)) !important;
+    }
+
+    .header.premium-navbar > div:first-child {
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+    }
+
+    .header.premium-navbar .search-container {
+        flex: 1 1 340px !important;
+        width: auto !important;
+        min-width: 220px !important;
+        max-width: 360px !important;
+        margin: 0 !important;
+    }
+
+    .header.premium-navbar .header-actions {
+        display: flex !important;
+        flex: 0 0 auto !important;
+        align-items: center !important;
+        gap: clamp(4px, 0.6vw, 10px) !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .header.premium-navbar .header-actions > .location-btn,
+    .header.premium-navbar .header-actions > .partner-btn {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        padding: 8px 10px !important;
+        font-size: 12px !important;
+    }
+
+    .header.premium-navbar .header-actions > .icon-btn {
+        position: relative !important;
+        inset: auto !important;
+        flex: 0 0 40px !important;
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header.premium-navbar .header-actions {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .header.premium-navbar .header-actions > .icon-btn {
+        position: relative !important;
+        inset: auto !important;
+        flex: 0 0 40px !important;
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+}
+
+/* Soft rounded backplates for the home-page service category icons. */
+#main-services-grid .service-icon {
+    box-sizing: border-box;
+    padding: 4px;
+    overflow: hidden;
+    border: 1px solid #f3ead9;
+    border-radius: 10px;
+    background-color: #fff8eb;
+    box-shadow: 0 2px 6px rgba(75, 58, 31, 0.08);
+}
+
+#main-services-grid .service-icon img {
+    border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        justify-content: initial !important;
+        align-items: center !important;
+        gap: 4px 8px !important;
+        padding: 8px 0 6px !important;
+    }
+
+    .stats-container .stat-item {
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .stats-container .stat-value {
+        justify-content: center !important;
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .stats-container .stat-value {
+        font-size: 12px !important;
+    }
+}
+
+#prevBtnSpotlight.nav-btn.is-hidden,
+#nextBtnSpotlight.nav-btn.is-hidden,
+#prevBtnNoteworthy.nav-btn.is-hidden,
+#nextBtnNoteworthy.nav-btn.is-hidden,
+#prevBtnMostBooked.nav-btn.is-hidden,
+#nextBtnMostBooked.nav-btn.is-hidden,
+#prevBtnSalon.nav-btn.is-hidden,
+#nextBtnSalon.nav-btn.is-hidden,
+#prevBtnSpa.nav-btn.is-hidden,
+#nextBtnSpa.nav-btn.is-hidden,
+#prevBtnCleaning.nav-btn.is-hidden,
+#nextBtnCleaning.nav-btn.is-hidden,
+#prevBtnMassage.nav-btn.is-hidden,
+#nextBtnMassage.nav-btn.is-hidden,
+#prevBtnSalonMen.nav-btn.is-hidden,
+#nextBtnSalonMen.nav-btn.is-hidden,
+.mini-nav-btn.is-hidden {
+    display: none !important;
+}
+
+.page-rating,
+.ac-rating,
+.kitchen-rating,
+.bathroom-rating {
+    display: none !important;
+}
+
+@media (min-width: 769px) {
+    .main-content .nav-btn:not(#nextBtnMainServices) {
+        display: flex !important;
+        width: 30px !important;
+        height: 30px !important;
+        padding: 0 !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border-radius: 50% !important;
+        background: rgba(255, 255, 255, 0.94) !important;
+        color: #222 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16) !important;
+        text-shadow: none !important;
+        z-index: 20 !important;
+    }
+
+    .main-content .nav-btn.prev:not(#nextBtnMainServices) {
+        left: 4px !important;
+        right: auto !important;
+    }
+
+    .main-content .nav-btn.next:not(#nextBtnMainServices) {
+        right: 4px !important;
+        left: auto !important;
+    }
+
+    .main-content .nav-btn:not(#nextBtnMainServices) i {
+        font-size: 13px !important;
+        line-height: 1 !important;
+    }
+
+    #prevBtnNoteworthy.nav-btn:not(#nextBtnMainServices),
+    #nextBtnNoteworthy.nav-btn:not(#nextBtnMainServices) {
+        top: 75px !important;
+    }
+
+    #prevBtnMostBooked.nav-btn:not(#nextBtnMainServices),
+    #nextBtnMostBooked.nav-btn:not(#nextBtnMainServices),
+    #prevBtnSalon.nav-btn:not(#nextBtnMainServices),
+    #nextBtnSalon.nav-btn:not(#nextBtnMainServices),
+    #prevBtnSpa.nav-btn:not(#nextBtnMainServices),
+    #nextBtnSpa.nav-btn:not(#nextBtnMainServices),
+    #prevBtnCleaning.nav-btn:not(#nextBtnMainServices),
+    #nextBtnCleaning.nav-btn:not(#nextBtnMainServices),
+    #prevBtnMassage.nav-btn:not(#nextBtnMainServices),
+    #nextBtnMassage.nav-btn:not(#nextBtnMainServices),
+    #prevBtnSalonMen.nav-btn:not(#nextBtnMainServices),
+    #nextBtnSalonMen.nav-btn:not(#nextBtnMainServices) {
+        top: 70px !important;
     }
 }

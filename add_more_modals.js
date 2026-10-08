@@ -1,5 +1,5 @@
 const fs = require('fs');
-let content = fs.readFileSync('fan-installation.html', 'utf8');
+let content = fs.readFileSync('fan-installation', 'utf8');
 
 // 1. Replace the onclick for Ceiling fan
 content = content.replace(
@@ -105,4 +105,4 @@ if (!content.includes('id="ceiling-fan-modal"')) {
     content = content.replace('<!-- Cart Sidebar -->', modals + '\n    <!-- Cart Sidebar -->');
 }
 
-fs.writeFileSync('fan-installation.html', content);
+fs.writeFileSync('fan-installation', content);

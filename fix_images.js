@@ -1,17 +1,17 @@
 const fs = require('fs');
 
 const mappings = {
-    'carpenter.html': 'images/new_carpenter_icon.jpg',
-    'wood-furniture-polish.html': 'images/new_wood_polish_icon.jpg',
-    'fan-installation.html': 'images/new_fan_installation_icon.jpg',
-    'furniture-assembly.html': 'images/new_carpenter_icon.jpg',
-    'geyser-service.html': 'images/new_geyser_repair_icon.jpg',
-    'ikea-furniture.html': 'images/new_carpenter_icon.jpg',
-    'tile-grouting.html': 'images/new_tile_grouting_icon.jpg',
-    'festival-lights.html': 'images/new_festival_lights_icon.jpg',
-    'wall-panels.html': 'images/new_wall_panels_icon.jpg',
-    'electrician.html': 'images/new_electrician_icon.jpg',
-    'plumber.html': 'images/new_plumber_icon.jpg'
+    'carpenter': 'images/new_carpenter_icon.jpg',
+    'wood-furniture-polish': 'images/new_wood_polish_icon.jpg',
+    'fan-installation': 'images/new_fan_installation_icon.jpg',
+    'furniture-assembly': 'images/new_carpenter_icon.jpg',
+    'geyser-service': 'images/new_geyser_repair_icon.jpg',
+    'ikea-furniture': 'images/new_carpenter_icon.jpg',
+    'tile-grouting': 'images/new_tile_grouting_icon.jpg',
+    'festival-lights': 'images/new_festival_lights_icon.jpg',
+    'wall-panels': 'images/new_wall_panels_icon.jpg',
+    'electrician': 'images/new_electrician_icon.jpg',
+    'plumber': 'images/new_plumber_icon.jpg'
 };
 
 const placeholders = [

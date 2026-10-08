@@ -393,7 +393,10 @@
             }
         }
     </style>
+
+
 </head>
+
 <body>
 
     <!-- Left Sidebar -->
@@ -843,7 +846,7 @@
                 reader.onload = function(e) {
                     box.style.padding = "10px";
                     contentDiv.innerHTML = `
-                        <img src="${e.target.result}" style="max-height: 120px; max-width: 100%; border-radius: 8px; object-fit: contain;">
+                        <img loading="lazy" src="${e.target.result}" style="max-height: 120px; max-width: 100%; border-radius: 8px; object-fit: contain;">
                         <p style="margin-top: 10px; font-size: 12px; color: #23a566; font-weight: 600;"><i class="fa-solid fa-check-circle"></i> Uploaded: ${file.name}</p>
                     `;
                 }
@@ -1140,5 +1143,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

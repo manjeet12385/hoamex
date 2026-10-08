@@ -1,0 +1,273 @@
+.carousel { display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */ }
+.carousel-item { position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 250px;
+    min-width: calc(33.333% - 13.33px);
+    scroll-snap-align: start;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+/* True Sliding Slider for Carousel Item */
+.mini-slider-wrapper { position: relative;
+    overflow: hidden;
+    padding: 0 !important; }
+.service-icon { width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden; }
+.spotlight-container { display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 10px; }
+.spotlight-card { min-width: 400px;
+    height: 220px;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start; }
+.noteworthy-container { display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 10px; }
+.noteworthy-img-wrapper { position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px; }
+.most-booked-container { display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 10px; }
+.most-booked-img-wrapper { width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px; }
+.salon-container { display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 10px; }
+/* Modal Content */
+.modal-content { background: #fff;
+    width: 600px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease; }
+.ac-banner-container { background: #f8f8f8;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    display: flex; }
+.annual-promo-card { background: #f5f5f5;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px; }
+/* Options Modal Specifics */
+.options-modal-content { padding: 0;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden; }
+.options-card-container { display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px; }
+/* Left sidebar */
+.left-sidebar { position: -webkit-sticky; position: sticky; top: 190px; max-height: calc(100vh - 200px); overflow-y: auto; scrollbar-width: none; }
+.service-item-img { width: 52px; height: 52px; border-radius: 8px; overflow: hidden; margin: 0 auto 6px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; }
+/* Banner */
+.uc-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; min-height: 250px; background-size: cover; background-position: center; color: white; }
+.service-img-wrap { width: 120px; height: 120px; border-radius: 12px; overflow: hidden; margin-bottom: -15px; position: relative; z-index: 1; }
+/* Right sidebar */
+.right-sidebar { position: -webkit-sticky; position: sticky; top: 190px; max-height: calc(100vh - 200px); overflow-y: auto; scrollbar-width: none; }
+/* Left sidebar */
+.left-sidebar { position: -webkit-sticky; position: sticky; top: 190px; max-height: calc(100vh - 200px); overflow-y: auto; scrollbar-width: none; }
+.service-item-img { width: 52px; height: 52px; border-radius: 8px; overflow: hidden; margin: 0 auto 6px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; }
+/* Banner */
+.uc-difference-banner { background: #e8e8e8; border-radius: 14px; padding: 30px; margin-bottom: 30px; position: relative; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; min-height: 250px; background-size: cover; background-position: center; color: white; }
+.service-img-wrap { width: 120px; height: 120px; border-radius: 12px; overflow: hidden; margin-bottom: -15px; position: relative; z-index: 1; }
+/* Right sidebar */
+.right-sidebar { position: -webkit-sticky; position: sticky; top: 190px; max-height: calc(100vh - 200px); overflow-y: auto; scrollbar-width: none; }
+.service-item p { font-size: 10px !important;
+        line-height: 1.25 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-break: break-word !important; }
+.service-grid { display: flex !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 15px !important;
+        padding-bottom: 10px !important;
+        scrollbar-width: none !important; /* Firefox */ }
+/* Modals / Cart Bottom Sheet */
+    .modal-content { position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 20px 20px 0 0 !important;
+        padding: 24px !important;
+        max-height: 85vh;
+        overflow-y: auto; }
+/* Fix long text labels — 2-line max, no overflow */
+    .service-item p { font-size: 9.5px !important;
+        line-height: 1.25 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-break: break-word !important;
+        margin-top: 6px !important; }
+.left-sidebar { display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px; }
+.header-actions > .location-btn { grid-column: 2 / 3 !important;
+        grid-row: 1 / 2 !important;
+        justify-self: end !important;
+        background-color: #f3e8ff !important;
+        color: #6b21a8 !important;
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px; }
+.service-grid { display: flex !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 15px !important;
+        padding-bottom: 10px !important;
+        -webkit-overflow-scrolling: touch !important; }
+.select-service-card { border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+        overflow: hidden !important; }
+/* Fix plan details card */
+    .plan-details-card { padding: 12px !important;
+        overflow: hidden !important; }
+/* Fix 3-col layout cards */
+    .ac-service-layout,
+    .ac-details-section,
+    .three-col-layout,
+    .page-layout,
+    .bathroom-page { display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        padding: 10px !important;
+        gap: 15px !important; }
+/* Fix horizontal scrolling containers */
+    .ac-service-scroll,
+    .ac-service-grid { overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important; }
+.services-grid { display: grid !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        grid-template-columns: none !important;
+        grid-auto-flow: column !important;
+        grid-auto-columns: calc(50% - 6px) !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        gap: 12px !important;
+        scroll-snap-type: x mandatory !important;
+        padding-bottom: 15px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important; }
+/* Super Animated Partner Button */
+.premium-navbar .partner-btn { /* 1. Moving Gradient */
+    background: linear-gradient(270deg, #ff007f, #7928ca, #ff4d4d, #ff9a00) !important;
+    background-size: 300% 300% !important;
+    animation: movingGradient 4s ease infinite, pulseWiggle 4s infinite !important;
+    
+    border: none !important;
+    border-radius: 30px !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    font-weight: 800 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    box-shadow: 0 0 15px rgba(121, 40, 202, 0.6) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
+    transition: all 0.3s ease !important; }
+.header.premium-navbar .partner-btn { background: #25D366 !important;
+    background-size: 300% 300% !important;
+    border: 2px solid white !important;
+    border-radius: 30px !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    animation: pulseBg 4s ease infinite, shakeAndGlow 3s infinite !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important; }
+/* — Modals (login / partner etc.) — */
+    #user-login-modal,
+    #partner-modal,
+    .modal-overlay { padding: 10px !important;
+        align-items: flex-start !important;
+        overflow-y: auto !important; }
+/* inner box */
+    #user-login-modal > div,
+    #partner-modal > div,
+    .modal-overlay > div,
+    .modal-box { width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 12px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important; }
+/* — Tables (bookings / admin) — */
+    table { display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important; }

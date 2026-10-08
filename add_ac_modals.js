@@ -1,5 +1,5 @@
 const fs = require('fs');
-let content = fs.readFileSync('ac-service.html', 'utf8');
+let content = fs.readFileSync('ac-service', 'utf8');
 
 // 1. Replace the onclick for the Foam-jet AC service "Add" button
 content = content.replace(
@@ -252,4 +252,4 @@ if (!content.includes('id="foam-jet-modal"')) {
     content = content.replace('<!-- Cart Sidebar -->', modalHTML + '\n    <!-- Cart Sidebar -->');
 }
 
-fs.writeFileSync('ac-service.html', content);
+fs.writeFileSync('ac-service', content);

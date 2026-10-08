@@ -71,6 +71,170 @@
             color: #267337;
             text-decoration: underline;
         }
+        .contact-hero {
+            padding: 52px 20px 58px;
+            background: linear-gradient(180deg, #e9f3ff 0%, #f5f9ff 75%, #fff 100%);
+            text-align: center;
+        }
+        .contact-hero h1 {
+            margin: 0 0 10px;
+            color: #303e50;
+            font-size: clamp(30px, 4vw, 42px);
+            letter-spacing: -1px;
+        }
+        .contact-hero > p {
+            max-width: 520px;
+            margin: 0 auto;
+            color: #7b8899;
+            font-size: 15px;
+        }
+        .contact-feature {
+            max-width: 960px;
+            margin: 34px auto 0;
+            padding: 30px;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 15px 40px rgba(35, 76, 123, .09);
+            text-align: left;
+        }
+        .contact-feature h2 {
+            margin: 0 0 8px;
+            color: #303e50;
+            font-size: 24px;
+        }
+        .contact-feature p {
+            max-width: 740px;
+            margin: 0;
+            color: #778292;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .contact-main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, .78fr);
+            gap: 56px;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 54px 20px 60px;
+        }
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px 15px;
+        }
+        .contact-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .contact-field.full,
+        .contact-form .form-actions,
+        .contact-form .hint {
+            grid-column: 1 / -1;
+        }
+        .contact-field label {
+            color: #66758a;
+            font-size: 13px;
+        }
+        .contact-field input,
+        .contact-field textarea {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #d8e0eb;
+            border-radius: 6px;
+            outline: none;
+            background: #fff;
+            color: #263548;
+            font: inherit;
+            font-size: 14px;
+        }
+        .contact-field input:focus,
+        .contact-field textarea:focus {
+            border-color: #176bc5;
+            box-shadow: 0 0 0 3px rgba(23, 107, 197, .12);
+        }
+        .contact-field textarea {
+            min-height: 117px;
+            resize: vertical;
+        }
+        .contact-form .form-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .contact-submit {
+            padding: 12px 24px;
+            border: 0;
+            border-radius: 28px;
+            background: #176bc5;
+            box-shadow: 0 4px 12px rgba(23, 107, 197, .15);
+            color: #fff;
+            cursor: pointer;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .contact-submit:hover {
+            background: #1058aa;
+        }
+        .contact-form .hint {
+            margin: 0;
+            color: #7b8899;
+            font-size: 12px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .contact-info-item h2 {
+            margin: 0 0 6px;
+            color: #303e50;
+            font-size: 15px;
+        }
+        .contact-info-item p,
+        .contact-info-item a {
+            margin: 0;
+            color: #7e8a98;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .contact-info-item a {
+            text-decoration: none;
+        }
+        .contact-info-item a:hover {
+            color: #176bc5;
+        }
+        .contact-map {
+            max-width: 960px;
+            margin: 0 auto 70px;
+            padding: 0 20px;
+        }
+        .contact-map-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 15px;
+        }
+        .contact-map-heading h2 {
+            margin: 0;
+            color: #303e50;
+            font-size: 22px;
+        }
+        .contact-map-heading p {
+            margin: 4px 0 0;
+            color: #7b8899;
+            font-size: 14px;
+        }
+        .contact-map-frame {
+            width: 100%;
+            height: 310px;
+            overflow: hidden;
+            border: 0;
+            border-radius: 16px;
+            background: #e7edf5;
+            box-shadow: 0 15px 40px rgba(35, 76, 123, .09);
+        }
         @media (max-width: 600px) {
             .contact-page-header {
                 padding: 28px 16px 18px;
@@ -89,6 +253,50 @@
                 font-size: 14px;
             }
         }
+        @media (max-width: 760px) {
+            .contact-hero {
+                padding: 37px 15px 42px;
+            }
+            .contact-feature {
+                margin-top: 26px;
+                padding: 24px;
+            }
+            .contact-main {
+                grid-template-columns: 1fr;
+                gap: 38px;
+                padding-top: 38px;
+                padding-bottom: 48px;
+            }
+            .contact-info {
+                gap: 21px;
+            }
+            .contact-map {
+                margin-bottom: 45px;
+            }
+            .contact-map-frame {
+                height: 285px;
+            }
+        }
+        @media (max-width: 440px) {
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            .contact-field.full,
+            .contact-form .form-actions,
+            .contact-form .hint {
+                grid-column: 1;
+            }
+            .contact-form .form-actions {
+                justify-content: stretch;
+            }
+            .contact-submit {
+                width: 100%;
+            }
+            .contact-map-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
     </style>
 
 
@@ -102,7 +310,7 @@
                 <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
-        <div class="search-container" id="header-search" style="display: block;">
+        <div class="search-container" id="header-search" style="display: none;">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input placeholder="Search for services" type="text"/>
         </div>
@@ -117,30 +325,76 @@
         </div>
     </header>
 
-    <header class="contact-page-header">
-        <h1>Contact Us</h1>
-    </header>
+    <main>
+        <section class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>Have any questions? Reach out through our contact form, and our team will get back to you during support hours.</p>
+            <div class="contact-feature">
+                <h2>Have any queries?</h2>
+                <p>Your feedback matters! Joamex is committed to making home services simple and convenient. Whether you need to book a service, have a question about pricing, or want to share feedback, our team is here to assist you.</p>
+            </div>
+        </section>
 
-    <main class="contact-content">
-        <h2>Get In Touch</h2>
-        <div class="contact-details">
-            <div class="contact-detail">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <div>
-                    <strong>Phone</strong>
-                    <a href="tel:+919014380344">+91 90143 80344</a>
+        <section class="contact-main" id="enquiry" aria-label="Contact form and business information">
+            <form id="contactForm" class="contact-form">
+                <div class="contact-field">
+                    <label for="firstName">First Name *</label>
+                    <input id="firstName" name="firstName" placeholder="Enter your first name" autocomplete="given-name" maxlength="80" required>
                 </div>
-            </div>
-            <div class="contact-detail">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <div>
-                    <strong>Address</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1-11-182%2C+Kamala+Palace%2C+Shyamlal+Building%2C+Near+Ganesh+Temple%2C+Shyamlal%2C+Begumpet%2C+Hyderabad-500016%2C+Telangana" target="_blank" rel="noopener noreferrer">
-                        1-11-182, Kamala Palace, Shyamlal Building, Near Ganesh Temple, Shyamlal, Begumpet, Hyderabad-500016, Telangana
-                    </a>
+                <div class="contact-field">
+                    <label for="lastName">Last Name *</label>
+                    <input id="lastName" name="lastName" placeholder="Enter your last name" autocomplete="family-name" maxlength="80" required>
                 </div>
+                <div class="contact-field">
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" autocomplete="email" maxlength="254" required>
+                </div>
+                <div class="contact-field">
+                    <label for="phone">Phone *</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="Enter your mobile number" autocomplete="tel" pattern="(?:[0-9+]|\s|\x28|\x29|\x2d){10,18}" title="Please enter a valid phone number" required>
+                </div>
+                <div class="contact-field full">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Enter your message..." maxlength="2000" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="contact-submit">Send via WhatsApp &rarr;</button>
+                </div>
+                <p class="hint">Submitting opens WhatsApp with your enquiry pre-filled. Please press Send in WhatsApp to deliver your message. No information is stored by this page.</p>
+            </form>
+
+            <aside class="contact-info" aria-label="Joamex contact information">
+                <div class="contact-info-item">
+                    <h2>Address</h2>
+                    <p>Joamex<br>1-11-182, Kamala Palace,<br>Shyamlal, Begumpet,<br>Hyderabad, Telangana,<br>India - 500016</p>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=1-11-182%20Kamala%20Palace%20Shyamlal%20Begumpet%20Hyderabad%20500016" target="_blank" rel="noopener noreferrer">Get directions &nearr;</a>
+                </div>
+                <div class="contact-info-item">
+                    <h2>Email us</h2>
+                    <a href="mailto:info@joamex.in">info@joamex.in</a>
+                </div>
+                <div class="contact-info-item">
+                    <h2>Call or WhatsApp</h2>
+                    <a href="tel:+919391769636">+91 93917 69636</a><br>
+                    <a href="https://wa.me/919391769636" target="_blank" rel="noopener noreferrer">Chat on WhatsApp &nearr;</a>
+                </div>
+                <div class="contact-info-item">
+                    <h2>Customer Support Hours</h2>
+                    <p>10:00 AM - 5:00 PM<br>Contact us for operating-day details.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="contact-map" aria-label="Joamex office location">
+            <div class="contact-map-heading">
+                <div>
+                    <h2>Find Us on the Map</h2>
+                    <p>Our office location in Begumpet, Hyderabad</p>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=1-11-182%20Kamala%20Palace%20Shyamlal%20Begumpet%20Hyderabad%20500016" target="_blank" rel="noopener noreferrer">Open in Google Maps &nearr;</a>
             </div>
-        </div>
+            <iframe class="contact-map-frame" title="Map showing Joamex office address in Begumpet, Hyderabad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=1-11-182%2C%20Kamala%20Palace%2C%20Shyamlal%2C%20Begumpet%2C%20Hyderabad%20500016&amp;output=embed"></iframe>
+        </section>
     </main>
 
     <!-- The updated footer will be injected by update_footer.py -->
@@ -199,8 +453,8 @@
             
             <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
             <div style="display: flex; gap: 10px;">
-                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </div>
@@ -286,6 +540,19 @@
     
     <script src="common.js?v=13"></script>
     <script src="cart.js?v=13"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (!this.reportValidity()) {
+                return;
+            }
+
+            const formData = new FormData(this);
+            const message = `Hello Joamex, I have an enquiry.\n\nName: ${formData.get('firstName')} ${formData.get('lastName')}\nEmail: ${formData.get('email')}\nPhone: ${formData.get('phone')}\n\nMessage:\n${formData.get('message')}`;
+            window.open(`https://wa.me/919391769636?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+        });
+    </script>
 
     <!-- Location Modal -->
     <div id="location-modal">
@@ -370,11 +637,11 @@
         }
     </style>
     <div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 20px;">
-        <a href="https://wa.me/919014380344" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
+        <a href="https://wa.me/919391769636" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
             <span class="notification-badge" style="position: absolute; right: -5px; top: -5px; background-color: #ff0000; color: white; font-size: 12px; font-weight: bold; padding: 3px 7px; border-radius: 50%; border: 2px solid white; line-height: 1;">1</span>
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+919014380344" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
+        <a href="tel:+919391769636" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
             <span style="position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); top: -2px; left: -2px;"></span>
             <i class="fa-solid fa-phone"></i>
         </a>
@@ -383,4 +650,3 @@
 
 </body>
 </html>
-

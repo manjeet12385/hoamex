@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
-        fetch('header.html')
+        fetch('header')
             .then(res => res.text())
             .then(data => {
                 headerPlaceholder.innerHTML = data;
                 
                 // Logic for back button & search bar
-                const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+                const isHomePage = window.location.pathname.endsWith('index') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
                 const backBtn = document.getElementById('back-btn');
                 const searchContainer = document.getElementById('header-search');
                 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        fetch('footer.html')
+        fetch('footer')
             .then(res => res.text())
             .then(data => {
                 footerPlaceholder.innerHTML = data;
@@ -114,50 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Smooth scroll for sidebar links
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.service-item-sidebar').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if(targetId && targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetEl = document.querySelector(targetId);
-                if(targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-});
 
-// Handle Location Button
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait slightly for header to load
-    setTimeout(() => {
-        const locBtn = document.querySelector('.location-btn');
-        if (locBtn) {
-            locBtn.addEventListener('click', () => {
-                const span = locBtn.querySelector('span');
-                if(span) {
-                    span.innerText = 'Connaught Place, Delhi';
-                    locBtn.style.backgroundColor = '#e8f5e9';
-                    locBtn.style.color = '#2e7d32';
-                }
-            });
-        }
-
-        // Handle Search Bar
-        const searchInput = document.querySelector('.search-container input');
-        if (searchInput) {
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    alert('Search results for "' + searchInput.value + '" will be available soon!');
-                    searchInput.value = '';
-                }
-            });
-        }
-    }, 500);
-});
 
 // (Duplicate EPC sidebar listener removed — FIX #7)
 
@@ -194,26 +151,37 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mini-Slider Logic for the first carousel card
 document.addEventListener('DOMContentLoaded', () => {
     const miniSliderTrack = document.getElementById('miniSliderTrack');
-    if (miniSliderTrack) {
+    if (miniSliderTrack && !miniSliderTrack.dataset.sliderInitialized) {
+        miniSliderTrack.dataset.sliderInitialized = 'true';
         let currentSlide = 0;
         let slideInterval;
         const totalSlides = miniSliderTrack.querySelectorAll('img').length;
-        
-        const goToSlide = (index) => {
-            currentSlide = (index + totalSlides) % totalSlides;
+        const miniPrevBtn = document.getElementById('miniPrevBtn');
+        const miniNextBtn = document.getElementById('miniNextBtn');
+        const miniSliderCard = document.getElementById('miniSliderCard');
+
+        if (!totalSlides) return;
+
+        const updateMiniSliderArrows = () => {
+            if (!miniPrevBtn || !miniNextBtn) return;
+            miniPrevBtn.classList.toggle('is-hidden', currentSlide === 0);
+            miniNextBtn.classList.toggle('is-hidden', currentSlide === totalSlides - 1);
+        };
+
+        const goToSlide = (index, wrap = false) => {
+            currentSlide = wrap
+                ? (index + totalSlides) % totalSlides
+                : Math.max(0, Math.min(index, totalSlides - 1));
             miniSliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateMiniSliderArrows();
         };
 
         const startSlide = () => {
             clearInterval(slideInterval);
             slideInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
+                goToSlide(currentSlide + 1, true);
             }, 3000); // Slide every 3 seconds
         };
-
-        const miniPrevBtn = document.getElementById('miniPrevBtn');
-        const miniNextBtn = document.getElementById('miniNextBtn');
-        const miniSliderCard = document.getElementById('miniSliderCard');
 
         if (miniPrevBtn && miniNextBtn) {
             miniPrevBtn.addEventListener('click', (e) => {
@@ -237,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miniSliderCard.addEventListener('mouseleave', startSlide);
         }
 
+        updateMiniSliderArrows();
         startSlide();
     }
 });
@@ -287,74 +256,74 @@ if (!window.hoamexFeaturesLoaded) {
 
         // --- 2. Live Search Feature ---
         const servicesList = [
-            { name: 'Hair Studio for Women', link: 'hair-studio.html' },
-            { name: 'Makeup, Saree &amp; Styling', link: 'makeup.html' },
-            { name: 'AC', link: 'ac-service.html' },
+            { name: 'Hair Studio for Women', link: 'hair-studio' },
+            { name: 'Makeup, Saree &amp; Styling', link: 'makeup' },
+            { name: 'AC', link: 'ac-service' },
             { name: 'Washing Machine', link: 'appliance-repair.html#washing-machine' },
             { name: 'Refrigerator', link: 'appliance-repair.html#fridge' },
-            { name: 'Television', link: 'television.html' },
-            { name: 'Chimney', link: 'chimney.html' },
-            { name: 'Microwave', link: 'microwave.html' },
-            { name: 'RO/Water Purifier', link: 'water-purifier.html' },
-            { name: 'Electrician', link: 'electrician.html' },
-            { name: 'Plumber', link: 'plumber.html' },
-            { name: 'Carpenter', link: 'carpenter.html' },
-            { name: 'Wood &amp; Furniture Polish', link: 'wood-furniture-polish.html' },
-            { name: 'Fan Installation', link: 'fan-installation.html' },
-            { name: 'Furniture Assembly', link: 'furniture-assembly.html' },
-            { name: 'Geyser Service &amp; Repair', link: 'geyser-service.html' },
-            { name: 'IKEA Furniture Assembly', link: 'ikea-furniture.html' },
-            { name: 'Tile Grouting &amp; Sealant', link: 'tile-grouting.html' },
-            { name: 'Festival Lights Installation', link: 'festival-lights.html' },
-            { name: 'Bathroom Cleaning', link: 'bathroom-cleaning.html' },
-            { name: 'Kitchen cleaning', link: 'kitchen-cleaning.html' },
-            { name: 'Living &amp; Bedroom Cleaning', link: 'living-bedroom.html' },
-            { name: 'Full Home/ By Room Cleaning', link: 'full-home-cleaning.html' },
-            { name: 'Cockroach Control', link: 'cockroach-control.html' },
-            { name: 'Termite Control', link: 'termite-control.html' },
-            { name: 'Ants &amp; Bed Bugs Control', link: 'ants-control.html' },
-            { name: 'Leak &amp; gap sealing', link: 'leak-gap.html' },
-            { name: 'CCTV Camera Installation', link: 'cctv-services.html' },
-            { name: 'Smart Locks &amp; Doorbells', link: 'smart-locks.html' },
-            { name: 'Home Alarm Systems', link: 'home-alarm.html' },
-            { name: 'Solar Panel Installation', link: 'solar-installation.html' },
-            { name: 'Solar Panel Cleaning', link: 'solar-cleaning.html' },
-            { name: 'Solar Water Heater', link: 'solar-water-heater.html' },
-            { name: 'RO / Water Purifier', link: 'ro-service.html' },
-            { name: 'Water Tank Cleaning', link: 'water-tank-cleaning.html' },
-            { name: 'Packers &amp; Movers', link: 'packers-movers.html' },
-            { name: 'Mini Truck on Rent', link: 'mini-truck.html' },
-            { name: 'Driver on Demand', link: 'driver-on-demand.html' },
-            { name: 'Maid / Helper', link: 'maid-helper.html' },
-            { name: 'Cook on Demand', link: 'cook-on-demand.html' },
-            { name: 'Elder / Patient Care', link: 'elder-care.html' },
-            { name: 'Babysitting / Nanny', link: 'babysitting.html' },
-            { name: 'Window Grills &amp; Balcony Railings', link: 'grills-railings.html' },
-            { name: 'Gates &amp; Doors', link: 'gates-doors.html' },
-            { name: 'Sheds &amp; Roofing', link: 'sheds-roofing.html' },
-            { name: 'Welding &amp; Repair', link: 'welding-repair.html' },
-            { name: 'AC Repair', link: 'ac-repair.html' },
-            { name: 'Full Home Cleaning', link: 'full-home-cleaning.html' },
-            { name: 'Pest Control', link: 'pest-control.html' },
-            { name: 'Full Home Renovation', link: 'full-home-renovation.html' },
-            { name: 'Painting', link: 'painting.html' },
-            { name: 'Salon for Women', link: 'salon-women.html' },
-            { name: 'Spa for Women', link: 'womens-spa.html' },
-            { name: 'Salon for Men', link: 'salon-men.html' },
-            { name: 'Massage for Men', link: 'massage-men.html' },
-            { name: 'AC Service', link: 'ac-service.html' },
-            { name: 'Home Renovation', link: 'full-home-renovation.html' },
-            { name: 'Washing Machine Repair', link: 'washing-machine.html' },
-            { name: 'Refrigerator Repair', link: 'refrigerator.html' },
-            { name: 'Water Purifier (RO)', link: 'water-purifier.html' },
-            { name: 'Packers & Movers', link: 'packers-movers.html' },
-            { name: 'Maid & Helper', link: 'maid-helper.html' },
-            { name: 'Nanny / Babysitting', link: 'babysitting.html' },
-            { name: 'Elder Care', link: 'elder-care.html' },
-            { name: 'Kitchen Cleaning', link: 'kitchen-cleaning.html' },
-            { name: 'CCTV Installation', link: 'cctv-services.html' },
-            { name: 'Smart Locks', link: 'smart-locks.html' },
-            { name: 'Solar Cleaning', link: 'solar-cleaning.html' },
+            { name: 'Television', link: 'television' },
+            { name: 'Chimney', link: 'chimney' },
+            { name: 'Microwave', link: 'microwave' },
+            { name: 'RO/Water Purifier', link: 'water-purifier' },
+            { name: 'Electrician', link: 'electrician' },
+            { name: 'Plumber', link: 'plumber' },
+            { name: 'Carpenter', link: 'carpenter' },
+            { name: 'Wood &amp; Furniture Polish', link: 'wood-furniture-polish' },
+            { name: 'Fan Installation', link: 'fan-installation' },
+            { name: 'Furniture Assembly', link: 'furniture-assembly' },
+            { name: 'Geyser Service &amp; Repair', link: 'geyser-service' },
+            { name: 'IKEA Furniture Assembly', link: 'ikea-furniture' },
+            { name: 'Tile Grouting &amp; Sealant', link: 'tile-grouting' },
+            { name: 'Festival Lights Installation', link: 'festival-lights' },
+            { name: 'Bathroom Cleaning', link: 'bathroom-cleaning' },
+            { name: 'Kitchen cleaning', link: 'kitchen-cleaning' },
+            { name: 'Living &amp; Bedroom Cleaning', link: 'living-bedroom' },
+            { name: 'Full Home/ By Room Cleaning', link: 'full-home-cleaning' },
+            { name: 'Cockroach Control', link: 'cockroach-control' },
+            { name: 'Termite Control', link: 'termite-control' },
+            { name: 'Ants &amp; Bed Bugs Control', link: 'ants-control' },
+            { name: 'Leak &amp; gap sealing', link: 'leak-gap' },
+            { name: 'CCTV Camera Installation', link: 'cctv-services' },
+            { name: 'Smart Locks &amp; Doorbells', link: 'smart-locks' },
+            { name: 'Home Alarm Systems', link: 'home-alarm' },
+            { name: 'Solar Panel Installation', link: 'solar-installation' },
+            { name: 'Solar Panel Cleaning', link: 'solar-cleaning' },
+            { name: 'Solar Water Heater', link: 'solar-water-heater' },
+            { name: 'RO / Water Purifier', link: 'ro-service' },
+            { name: 'Water Tank Cleaning', link: 'water-tank-cleaning' },
+            { name: 'Packers &amp; Movers', link: 'packers-movers' },
+            { name: 'Mini Truck on Rent', link: 'mini-truck' },
+            { name: 'Driver on Demand', link: 'driver-on-demand' },
+            { name: 'Maid / Helper', link: 'maid-helper' },
+            { name: 'Cook on Demand', link: 'cook-on-demand' },
+            { name: 'Elder / Patient Care', link: 'elder-care' },
+            { name: 'Babysitting / Nanny', link: 'babysitting' },
+            { name: 'Window Grills &amp; Balcony Railings', link: 'grills-railings' },
+            { name: 'Gates &amp; Doors', link: 'gates-doors' },
+            { name: 'Sheds &amp; Roofing', link: 'sheds-roofing' },
+            { name: 'Welding &amp; Repair', link: 'welding-repair' },
+            { name: 'AC Repair', link: 'ac-repair' },
+            { name: 'Full Home Cleaning', link: 'full-home-cleaning' },
+            { name: 'Pest Control', link: 'pest-control' },
+            { name: 'Full Home Renovation', link: 'full-home-renovation' },
+            { name: 'Painting', link: 'painting' },
+            { name: 'Salon for Women', link: 'salon-women' },
+            { name: 'Spa for Women', link: 'womens-spa' },
+            { name: 'Salon for Men', link: 'salon-men' },
+            { name: 'Massage for Men', link: 'massage-men' },
+            { name: 'AC Service', link: 'ac-service' },
+            { name: 'Home Renovation', link: 'full-home-renovation' },
+            { name: 'Washing Machine Repair', link: 'washing-machine' },
+            { name: 'Refrigerator Repair', link: 'refrigerator' },
+            { name: 'Water Purifier (RO)', link: 'water-purifier' },
+            { name: 'Packers & Movers', link: 'packers-movers' },
+            { name: 'Maid & Helper', link: 'maid-helper' },
+            { name: 'Nanny / Babysitting', link: 'babysitting' },
+            { name: 'Elder Care', link: 'elder-care' },
+            { name: 'Kitchen Cleaning', link: 'kitchen-cleaning' },
+            { name: 'CCTV Installation', link: 'cctv-services' },
+            { name: 'Smart Locks', link: 'smart-locks' },
+            { name: 'Solar Cleaning', link: 'solar-cleaning' },
         ];
 
         // ✅ FIX #8: Deduplicate servicesList by name
@@ -558,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Inject Modal HTML into the body if not exists
     if (!document.getElementById('universal-details-modal')) {
         const modalHTML = `
-            <div id="universal-details-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+            <div id="universal-details-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99999999; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
                 <div style="background: white; width: 90%; max-width: 450px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: modalPop 0.3s ease-out; position: relative; max-height: 85vh; display: flex; flex-direction: column;">
                     <div style="padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; background: #fdfaf6;">
                         <h3 id="udm-title" style="margin: 0; font-size: 18px; font-weight: 700; color: #111;">Service Details</h3>
@@ -729,7 +698,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Inject Modal HTML into the body if not exists
     if (!document.getElementById('partner-login-modal')) {
         const modalHTML = `
-            <div id="partner-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+            <div id="partner-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999999; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
                 <style>
                     .partner-modal-inner { display: flex; flex-direction: row; height: 500px; }
                     .partner-modal-left { display: flex; flex: 1; background: linear-gradient(135deg, #091316 0%, #060a0d 100%); padding: 40px; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-right: 1px solid rgba(255,255,255,0.05); }
@@ -782,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         
                         <div style="text-align: center; margin-bottom: 20px;">
-                            <p style="color: #8b949e; font-size: 13px; margin: 0;">New Partner? <a href="partner.html" style="color: #58a6ff; text-decoration: none; font-weight: 600;">Apply Now</a></p>
+                            <p style="color: #8b949e; font-size: 13px; margin: 0;">New Partner? <a href="partner" style="color: #58a6ff; text-decoration: none; font-weight: 600;">Apply Now</a></p>
                         </div>
                         
                         <div style="text-align: center; margin-top: auto;">
@@ -829,7 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.innerHTML = '<i class="fa-solid fa-briefcase"></i> Dashboard';
                     btn.addEventListener('click', function(e) {
                         e.preventDefault();
-                        window.location.href = 'partner-dashboard.html';
+                        window.location.href = 'partner-dashboard';
                     });
                 } else {
                     btn.addEventListener('click', function(e) {
@@ -911,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                             if (modal) modal.style.display = 'none';
                                             finalBtn.innerHTML = '✅ Verified! Redirecting...';
                                             finalBtn.style.background = '#1a7a45';
-                                            setTimeout(() => { window.location.href = 'partner-dashboard.html'; }, 800);
+                                            setTimeout(() => { window.location.href = 'partner-dashboard'; }, 800);
                                         } else {
                                             alert(data.error || 'Invalid OTP. Please try again.');
                                         }
@@ -983,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.transition = "opacity 0.5s ease";
                 document.body.style.opacity = "0";
                 setTimeout(() => {
-                    window.location.href = "admin.html";
+                    window.location.href = "admin";
                 }, 500);
             }
         });
@@ -995,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function injectUserModal() {
     if (!document.getElementById('user-login-modal')) {
         const modalHTML = `
-            <div id="user-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: flex-start; justify-content: center; backdrop-filter: blur(5px); padding: 20px 15px; box-sizing: border-box; overflow-y: auto;">
+            <div id="user-login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999999; align-items: flex-start; justify-content: center; backdrop-filter: blur(5px); padding: 20px 15px; box-sizing: border-box; overflow-y: auto;">
                 <div style="background: #0d1117; width: 100%; max-width: 440px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid #30363d; position: relative; font-family: 'Inter', sans-serif; margin: auto;">
                     <button id="close-user-modal" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #8b949e; font-size: 20px; cursor: pointer; transition: 0.2s; z-index: 10;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#8b949e'">&times;</button>
                     
@@ -1115,7 +1084,7 @@ function injectUserModal() {
         const existingEmail = localStorage.getItem('userEmail') || localStorage.getItem('userPhone');
         if(existingEmail) {
             loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color: #4a3aff;"></i>';
-            loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+            loginBtn.onclick = () => window.location.href = 'user-dashboard';
         } else {
             loginBtn.onclick = () => document.getElementById('user-login-modal').style.display = 'flex';
         }
@@ -1264,11 +1233,11 @@ function injectUserModal() {
                     const loginBtn = document.getElementById('user-login-btn');
                     if (loginBtn) {
                         loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color:#4a3aff;"></i>';
-                        loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+                        loginBtn.onclick = () => window.location.href = 'user-dashboard';
                     }
 
                     alert('Login successful! Welcome back.');
-                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard.html';
+                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard';
                     localStorage.removeItem('loginRedirect');
                     window.location.href = redirectUrl;
                 } else {
@@ -1490,11 +1459,11 @@ function injectUserModal() {
                     const loginBtn = document.getElementById('user-login-btn');
                     if (loginBtn) {
                         loginBtn.innerHTML = '<i class="fa-solid fa-user-check" style="color:#4a3aff;"></i>';
-                        loginBtn.onclick = () => window.location.href = 'user-dashboard.html';
+                        loginBtn.onclick = () => window.location.href = 'user-dashboard';
                     }
                     
                     alert('Account created successfully! Welcome to Joamex.');
-                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard.html';
+                    const redirectUrl = localStorage.getItem('loginRedirect') || window.userLoginRedirect || 'user-dashboard';
                     localStorage.removeItem('loginRedirect');
                     window.location.href = redirectUrl;
                 } else {
@@ -1537,7 +1506,7 @@ window.addEventListener('unhandledrejection', function(event) {
 });
 
 // ✅ FIX #3: Global logout function that calls /api/logout to revoke token
-window.hoamexLogout = async function(redirectUrl = 'index.html') {
+window.hoamexLogout = async function(redirectUrl = 'index') {
     try {
         const token = localStorage.getItem('token') || '';
         if (token) {
@@ -1612,4 +1581,11 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.remove('fa-chevron-left');
         icon.classList.add('fa-arrow-left');
     });
+});
+
+// GLOBAL MODAL LOCK-OUT FIX
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+        e.target.style.display = 'none';
+    }
 });

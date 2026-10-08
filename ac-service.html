@@ -1,590 +1,500 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC Service & Repair - Joamex</title>
-    <link rel="stylesheet" href="style.css?v=3100">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AC Service &amp; Repair - Joamex</title>
+<link href="style.css?v=3101" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 </head>
 <body>
+<!-- Header Section -->
+<header class="header premium-navbar" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<div style="display: flex; align-items: center; gap: 15px;">
+<button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
+<a class="logo" href="index" style="display: flex;  align-items: center; justify-content: center;  margin-right: 15px; text-decoration: none;">
+<img alt="Joamex" loading="lazy" src="images/logo-full.png" style="height: 40px;"/>
+</a>
+</div>
+<div class="search-container" id="header-search" style="display: none;">
+<i class="fa-solid fa-magnifying-glass search-icon"></i>
+<input placeholder="Search for services" type="text"/>
+</div>
+<div class="header-actions">
+<button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
+<button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
+<div class="icon-btn" id="user-login-btn"><i class="fa-regular fa-user"></i></div>
+<div class="icon-btn" id="open-cart-btn" style="position: relative;">
+<i class="fa-solid fa-cart-shopping"></i>
+<span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="main-content">
+<div class="ac-service-layout">
+<!-- Left Column: Title and Services -->
+<div class="ac-left-col">
+<div class="ac-page-header">
+<h1 class="ac-page-title">AC Service<br/>&amp; Repair</h1>
 
-    <!-- Header Section -->
-    <header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" class="header premium-navbar">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <button id="back-btn" style="background: none; border: none; font-size: 20px; cursor: pointer; display: block;"><i class="fa-solid fa-arrow-left"></i></button>
-            <a class="logo" href="index.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
-            </a>
-        </div>
-        <div class="search-container" id="header-search" style="display: none;">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" placeholder="Search for services">
-        </div>
-        <div class="header-actions">
-            <button class="location-btn"><i class="fa-solid fa-location-dot"></i> Use Current Location</button>
-            <button class="partner-btn"><i class="fa-solid fa-handshake"></i> Join as Partner</button>
-            <div class="icon-btn" id="user-login-btn"><i class="fa-regular fa-user"></i></div>
-            <div class="icon-btn" id="open-cart-btn" style="position: relative;">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #e53935; color: white; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 10px; display: none;">0</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="ac-service-layout">
-            
-            <!-- Left Column: Title and Services -->
-            <div class="ac-left-col">
-                <div class="ac-page-header">
-                    <h1 class="ac-page-title">AC Service<br>& Repair</h1>
-                    <div class="ac-instant-badge">
-                        <i class="fa-solid fa-bolt"></i> Instant
-                        <div class="ac-instant-time">In 44 mins</div>
-                    </div>
-                </div>
-                
-                <div class="ac-rating">
-                    <i class="fa-solid fa-star"></i> 4.78 <span>(14.1 M bookings)</span>
-                </div>
-
-                <div class="ac-select-service-card">
-                    <h3>Select a service</h3>
-                    <div class="ac-service-grid">
-                        <div class="ac-service-card-item" id="annual-plan-btn" style="border: 2px solid #000; padding: 5px; border-radius: 8px;">
-                            <div class="ac-discount-badge">Upto<br><strong>30%</strong><br>OFF</div>
-                            <p>Annual plan</p>
-                        </div>
-                        <div class="ac-service-card-item" id="service-plan-btn">
-                            <img src="images/ac.jpg" alt="Service">
-                            <p>Service</p>
-                        </div>
-                        <div class="ac-service-card-item" id="repair-plan-btn">
-                            <img src="images/ac.jpg" alt="Repair & gas refill">
-                            <p>Repair & gas refill</p>
-                        </div>
-                        <div class="ac-service-card-item" id="install-plan-btn">
-                            <img src="images/ac.jpg" alt="Installation">
-                            <p>Installation/uninstall<br>lation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Banner -->
-            <div class="ac-right-col">
-                <div class="ac-banner-container">
-                    <div class="ac-banner-text">
-                        <h2>Foam-jet<br>AC service</h2>
-                        <p>Deep cleans AC coils<br>for better cooling</p>
-                    </div>
-                    <img src="images/slider_ac.png" alt="Foam-jet AC Service" class="ac-banner-img">
-                </div>
-            </div>
-        </div>
-
-        <div class="divider" style="margin: 40px auto; max-width: 1200px;"></div>
-
-        <!-- 3-Column Detailed Section -->
-        <div class="ac-details-section" id="ac-details-section">
-            
-            <!-- Left Sidebar -->
-            <div class="ac-sidebar">
-                <!-- Intentionally left blank to maintain spacing -->
-            </div>
-
-            <!-- Center Content -->
-            <div class="ac-main-content">
-                <h2 class="section-heading">Annual plan</h2>
-                
-                <div class="annual-promo-card">
-                    <div class="promo-tag">10% OFF</div>
-                    <div class="promo-content">
-                        <h3>Annual service plan</h3>
-                        <div class="promo-price"><strike>₹599</strike> <strong>₹399/AC</strong></div>
-                        <p>Starts at 399/AC<br>Valid in 2026*</p>
-                    </div>
-                    <img src="images/slider_ac.png" alt="AC Service Promo">
-                </div>
-
-                <div class="plan-details-card">
-                    <div class="plan-header">
-                        <div>
-                            <h4>Annual plan [2 times/year]</h4>
-                            <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                            <div class="plan-price">Starts at ₹1,198 <strike>₹1,290</strike></div>
-                        </div>
-                        <div class="add-btn-container">
-                            <button onclick="addToCart('Annual plan [2 times/year]', 1290)" class="add-btn" id="open-options-modal-btn">Add</button>
-                            <span>10 options</span>
-                        </div>
-                    </div>
-                    
-                    <div class="save-tag"><i class="fa-solid fa-tag"></i> Add more & save up to 23%</div>
-                    
-                    <ul class="plan-features">
-                        <li>Get 1st service now, choose 2nd service anytime in 2026</li>
-                        <li>Applicable for both window or split ACs</li>
-                    </ul>
-                    
-                    <a href="#" class="view-details">View details</a>
-                </div>
-
-                <!-- New Service Details Section -->
-                <div id="service-details-section" style="margin-top: 60px;">
-                    <h2 class="section-heading">Service</h2>
-                    
-                    <div class="service-banner-card" style="position: relative; border-radius: 12px; overflow: hidden; background: #f0f0f0; margin-bottom: 20px;">
-                        <div class="free-gas-tag" style="position: absolute; top: 15px; left: 15px; background: #00875a; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 13px; z-index: 2;">Free gas check</div>
-                        <div style="padding: 60px 20px 20px 20px; width: 50%; position: relative; z-index: 2;">
-                            <h3 style="font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 10px;">Foam-jet<br>AC service</h3>
-                            <p style="color: #555; font-size: 15px;">Deep clean AC vents<br>for efficient cooling</p>
-                        </div>
-                        <img src="images/slider_ac.png" alt="AC Cleaning" style="position: absolute; top: 0; right: 0; height: 100%; width: 60%; object-fit: cover;">
-                    </div>
-
-                    <div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px;">
-                        <div class="plan-header">
-                            <div>
-                                <h4>Foam-jet AC service</h4>
-                                <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                                <div class="plan-price">Starts at ₹649</div>
-                            </div>
-                            <div class="add-btn-container">
-                                <button class="add-btn" style="padding: 8px 30px;" onclick="document.getElementById('foam-jet-modal').style.display='flex'">Add</button>
-                                <span style="display: block; margin-top: 5px;">9 options</span>
-                            </div>
-                        </div>
-                        
-                        <div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> Add more & save up to 23%</div>
-                        
-                        <ul class="plan-features" style="margin-top: 15px;">
-                            <li>Applicable for both window & split ACs</li>
-                            <li>Indoor unit deep cleaning with foam & jet spray</li>
-                        </ul>
-                        
-                        <a href="#" class="view-details">View details</a>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px dashed #ccc;">
-                        <div class="plan-header">
-                            <div>
-                                <h4>Foam-jet service (2 ACs)</h4>
-                                <div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                                <div class="plan-price">₹1,198 <strike>₹1,290</strike> &bull; <span style="font-weight: 400; color: #666; font-size: 13px;">2 hrs</span></div>
-                            </div>
-                            <div class="add-btn-container">
-                                <button onclick="addToCart('Foam-jet service (2 ACs)', 1290)" class="add-btn" style="padding: 8px 30px;">Add</button>
-                            </div>
-                        </div>
-                        
-                        <div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> ₹599 per AC</div>
-                        
-                        <ul class="plan-features" style="margin-top: 15px;">
-                            <li>Applicable for both window or split ACs</li>
-                            <li>Indoor unit deep cleaning with foam & jet spray</li>
-                        </ul>
-                        
-                        <a href="#" class="view-details">View details</a>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (3 ACs)</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,647 <strike style="color:#999; font-weight:400; font-size: 13px;">₹1,947</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">3 hrs</span></div>
-                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹549 per AC</div>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
-                                    <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
-                                </div>
-                                <button onclick="addToCart('Foam-jet service (3 ACs)', 549)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (4 ACs)</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,996 <strike style="color:#999; font-weight:400; font-size: 13px;">₹2,596</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">4 hrs</span></div>
-                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
-                                    <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
-                                </div>
-                                <button onclick="addToCart('Foam-jet service (4 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (5 ACs)</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹2,495 <strike style="color:#999; font-weight:400; font-size: 13px;">₹3,245</strike> &bull; <span style="color: #666; font-weight: 400; font-size: 13px;">5 hrs</span></div>
-                                <div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
-                                    <img src="images/slider_ac.png" alt="Service" style="width: 100%; height: 90px; object-fit: cover;">
-                                </div>
-                                <button onclick="addToCart('Foam-jet service (5 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Repair & Gas Refill Section -->
-                <div id="repair-details-section" style="margin-top: 60px;">
-                    <h2 class="section-heading">Repair & gas refill</h2>
-                    
-                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC repair</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.73 <span style="color: #666; font-weight: 400;">(865K reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹299</div>
-                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
-                                    <li>Complete check-up to identify issues before repair</li>
-                                </ul>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <img src="images/slider_ac.png" alt="AC Repair" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
-                                </div>
-                                <button onclick="addToCart('AC repair', 299)" id="add-ac-repair-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                                <span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Gas refill & check-up</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span style="color: #666; font-weight: 400;">(111K reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹3,000 <span style="font-weight: 400; color: #666; font-size: 13px;">&bull; 2 hrs 30 mins</span></div>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-block; margin-top: 10px;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <img src="images/ac.jpg" alt="Gas Refill" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px; background: #f8f8f8;">
-                                </div>
-                                <button onclick="addToCart('Gas refill & check-up', 3000)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Installation/Uninstallation Section -->
-                <div id="install-details-section" style="margin-top: 60px;">
-                    <h2 class="section-heading">Installation/uninstallation</h2>
-                    
-                    <div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC installation</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.69 <span style="color: #666; font-weight: 400;">(151K reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹1,599</div>
-                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
-                                    <li>Installation of indoor & outdoor units with free gas check</li>
-                                </ul>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <img src="images/slider_ac.png" alt="AC Installation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
-                                </div>
-                                <button onclick="addToCart('AC installation', 1599)" id="open-install-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                                <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div style="flex: 1; padding-right: 20px;">
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC uninstallation</h4>
-                                <div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.79 <span style="color: #666; font-weight: 400;">(141K reviews)</span></div>
-                                <div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹699</div>
-                                <ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
-                                    <li>Uninstallation of both indoor & outdoor units</li>
-                                </ul>
-                                <a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
-                            </div>
-                            <div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
-                                <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
-                                    <img src="images/slider_ac.png" alt="AC Uninstallation" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;">
-                                </div>
-                                <button onclick="addToCart('AC uninstallation', 699)" id="open-uninstall-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
-                                <span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Sidebar -->
-            <div class="ac-right-sidebar">
-                <div class="joamex-promise-card">
-                    <h3>Joamex Promise</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Verified Professionals</li>
-                        <li><i class="fa-solid fa-check"></i> Hassle Free Booking</li>
-                        <li><i class="fa-solid fa-check"></i> Transparent Pricing</li>
-                    </ul>
-                    <img src="images/beauty.jpg" class="promise-badge" alt="Quality Assured">
-                </div>
-
-                <div class="cart-card">
-                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    <p>No items in your cart</p>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Options Modal -->
-    <div id="options-modal" class="modal-overlay hidden">
-        <div class="modal-content options-modal-content">
-            <button id="close-options-modal-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <div class="options-modal-banner">
-                <div class="options-banner-text">
-                    <h2>Foam-jet<br>AC service</h2>
-                    <p>Deep cleans AC coils<br>for better cooling</p>
-                </div>
-                <img src="images/slider_ac.png" alt="Foam-jet AC Service">
-            </div>
-            
-            <div class="options-modal-body">
-                <h3 class="options-modal-title">Annual plan [2 times/year]</h3>
-                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                <div class="options-discount"><i class="fa-solid fa-tag"></i> Get ₹100 off</div>
-
-                <div class="options-card-container">
-                    <div class="option-card">
-                        <h4>1 AC</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹1198 <strike>₹1298</strike></div>
-                        <button onclick="addToCart('1 AC', 1298)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>2 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹2196 <strike>₹2596</strike></div>
-                        <button onclick="addToCart('2 ACs', 2596)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>3 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹2994 <strike>₹3894</strike></div>
-                        <button onclick="addToCart('3 ACs', 3894)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>4 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹3592 <strike>₹5192</strike></div>
-                        <button onclick="addToCart('4 ACs', 5192)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>5 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹4490 <strike>₹6490</strike></div>
-                        <button onclick="addToCart('5 ACs', 6490)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>6 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹5388 <strike>₹7788</strike></div>
-                        <button onclick="addToCart('6 ACs', 7788)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>7 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹6286 <strike>₹9086</strike></div>
-                        <button onclick="addToCart('7 ACs', 9086)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>8 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹7184 <strike>₹10384</strike></div>
-                        <button onclick="addToCart('8 ACs', 10384)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>9 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹8082 <strike>₹11682</strike></div>
-                        <button onclick="addToCart('9 ACs', 11682)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>10 ACs</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
-                        <div class="option-price">₹8980 <strike>₹12980</strike></div>
-                        <button onclick="addToCart('10 ACs', 12980)" class="option-add-btn">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Install Options Modal -->
-    <div id="install-options-modal" class="modal-overlay hidden">
-        <div class="modal-content options-modal-content">
-            <button id="close-install-options-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <div class="options-modal-banner">
-                <div class="options-banner-text">
-                    <h2>AC installation</h2>
-                    <p>Expert installation done<br>right the first time</p>
-                </div>
-                <img src="images/homecare.jpg" alt="AC Installation">
-            </div>
-            
-            <div class="options-modal-body">
-                <h3 class="options-modal-title">AC installation</h3>
-                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(151K reviews)</span></div>
-
-                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
-                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
-                </div>
-
-                <div class="options-card-container">
-                    <div class="option-card">
-                        <h4>Split AC</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(141K reviews)</span></div>
-                        <div class="option-price">₹2499</div>
-                        <button onclick="addToCart('Split AC', 2499)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>Window AC</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(11K reviews)</span></div>
-                        <div class="option-price">₹1599</div>
-                        <button onclick="addToCart('Window AC', 1599)" class="option-add-btn">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Uninstall Options Modal -->
-    <div id="uninstall-options-modal" class="modal-overlay hidden">
-        <div class="modal-content options-modal-content">
-            <button id="close-uninstall-options-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <div class="options-modal-banner">
-                <div class="options-banner-text">
-                    <h2>AC uninstallation</h2>
-                    <p>Safe removal without damage<br>to your unit or walls</p>
-                </div>
-                <img src="images/homecare.jpg" alt="AC Uninstallation">
-            </div>
-            
-            <div class="options-modal-body">
-                <h3 class="options-modal-title">AC uninstallation</h3>
-                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(141K reviews)</span></div>
-
-                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
-                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
-                </div>
-
-                <div class="options-card-container">
-                    <div class="option-card">
-                        <h4>Split AC</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(132K reviews)</span></div>
-                        <div class="option-price">₹899</div>
-                        <button onclick="addToCart('Split AC', 899)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>Window AC</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.82 <span>(9K reviews)</span></div>
-                        <div class="option-price">₹699</div>
-                        <button onclick="addToCart('Window AC', 699)" class="option-add-btn">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Repair Options Modal -->
-    <div id="repair-options-modal" class="modal-overlay hidden">
-        <div class="modal-content options-modal-content">
-            <button id="close-repair-options-modal-btn" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            
-            <div class="options-modal-banner" style="background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); position: relative;">
-                <div class="options-banner-text" style="position: absolute; left: 20px; top: 20px; z-index: 2;">
-                    <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px;">AC Repair</h2>
-                    <p style="font-size: 14px; color: #555; line-height: 1.4;">Hassle-free fixes<br>for all AC issues</p>
-                </div>
-                <img src="images/ac.jpg" alt="AC Repair" style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8; mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);">
-            </div>
-            
-            <div class="options-modal-body">
-                <h3 class="options-modal-title">AC repair</h3>
-                <div class="options-rating"><i class="fa-solid fa-star"></i> 4.73 <span>(865K reviews)</span></div>
-
-                <div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
-                        <span style="font-size: 13px; color: #444;">Standard rate card</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
-                </div>
-
-                <div class="options-card-container">
-                    <div class="option-card">
-                        <h4>Less/no cooling</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(496K reviews)</span></div>
-                        <div class="option-price">₹299</div>
-                        <button onclick="addToCart('Less/no cooling', 299)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>Power issue</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.72 <span>(142K reviews)</span></div>
-                        <div class="option-price">₹299</div>
-                        <button onclick="addToCart('Power issue', 299)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card">
-                        <h4>Unwanted noise/smell</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(42K reviews)</span></div>
-                        <div class="option-price">₹499</div>
-                        <button onclick="addToCart('Unwanted noise/smell', 499)" class="option-add-btn">Add</button>
-                    </div>
-                    <div class="option-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
-                        <h4>Water leakage</h4>
-                        <div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(185K reviews)</span></div>
-                        <div class="option-price">₹599</div>
-                        <button class="option-add-btn" style="padding: 5px 10px; width: fit-content; align-self: flex-end; position: absolute; bottom: 15px; right: 15px; background: transparent; color: #000; border: 2px solid #000; border-radius: 6px;"><i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
+</div>
+<div class="ac-rating">
+<i class="fa-solid fa-star"></i> 4.78 <span>(14.1 M bookings)</span>
+</div>
+<div class="ac-select-service-card">
+<h3>Select a service</h3>
+<div class="ac-service-grid">
+<div class="ac-service-card-item" id="annual-plan-btn" onclick="document.getElementById('sec-annual-plan').scrollIntoView({behavior: 'smooth'})">
+<div class="ac-discount-badge">Upto<br/><strong>30%</strong><br/>OFF</div>
+<p>Annual plan</p>
+</div>
+<div class="ac-service-card-item" id="service-plan-btn" onclick="document.getElementById('sec-service-plan').scrollIntoView({behavior: 'smooth'})">
+<img alt="Service" loading="lazy" src="images/ac.jpg"/>
+<p>Service</p>
+</div>
+<div class="ac-service-card-item" id="repair-plan-btn" onclick="document.getElementById('sec-repair-plan').scrollIntoView({behavior: 'smooth'})">
+<img alt="Repair &amp; gas refill" loading="lazy" src="images/ac.jpg"/>
+<p>Repair &amp; gas refill</p>
+</div>
+<div class="ac-service-card-item" id="install-plan-btn" onclick="document.getElementById('sec-install-plan').scrollIntoView({behavior: 'smooth'})">
+<img alt="Installation" loading="lazy" src="images/ac.jpg"/>
+<p>Installation/Uninstallation</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Banner -->
+<div class="ac-right-col" style=""><div class="ac-main-content">
+<h2 class="section-heading" id="sec-annual-plan">Annual plan</h2>
+<div class="annual-promo-card">
+<div class="promo-tag">10% OFF</div>
+<div class="promo-content">
+<h3>Annual service plan</h3>
+<div class="promo-price"><strike>₹599</strike> <strong>₹399/AC</strong></div>
+<p>Starts at 399/AC<br/>Valid in 2026*</p>
+</div>
+<img alt="AC Service Promo" loading="lazy" src="images/slider_ac.png"/>
+</div>
+<div class="plan-details-card">
+<div class="plan-header">
+<div>
+<h4>Annual plan [2 times/year]</h4>
+<div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="plan-price">Starts at ₹1,198 <strike>₹1,290</strike></div>
+</div>
+<div class="add-btn-container">
+<button class="add-btn" id="open-options-modal-btn">Add</button>
+<span>10 options</span>
+</div>
+</div>
+<div class="save-tag"><i class="fa-solid fa-tag"></i> Add more &amp; save up to 23%</div>
+<ul class="plan-features">
+<li>Get 1st service now, choose 2nd service anytime in 2026</li>
+<li>Applicable for both window or split ACs</li>
+</ul>
+<a class="view-details" href="#">View details</a>
+</div>
+<!-- New Service Details Section -->
+<div id="service-details-section" style="margin-top: 60px;">
+<h2 class="section-heading" id="sec-service-plan">Service</h2>
+<div class="service-banner-card" style="position: relative; border-radius: 12px; overflow: hidden; background: #f0f0f0; margin-bottom: 20px;">
+<div class="free-gas-tag" style="position: absolute; top: 15px; left: 15px; background: #00875a; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 13px; z-index: 2;">Free gas check</div>
+<div style="padding: 60px 20px 20px 20px; width: 50%; position: relative; z-index: 2;">
+<h3 style="font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 10px;">Foam-jet<br/>AC service</h3>
+<p style="color: #555; font-size: 15px;">Deep clean AC vents<br/>for efficient cooling</p>
+</div>
+<img alt="AC Cleaning" loading="lazy" src="images/slider_ac.png" style="position: absolute; top: 0; right: 0; height: 100%; width: 60%; object-fit: cover;"/>
+</div>
+<div class="plan-details-card" style="padding-bottom: 20px; margin-bottom: 20px;">
+<div class="plan-header">
+<div>
+<h4>Foam-jet AC service</h4>
+<div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="plan-price">Starts at ₹649</div>
+</div>
+<div class="add-btn-container">
+<button class="add-btn" onclick="document.getElementById('foam-jet-modal').style.display='flex'" style="padding: 8px 30px;">Add</button>
+<span style="display: block; margin-top: 5px;">9 options</span>
+</div>
+</div>
+<div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> Add more &amp; save up to 23%</div>
+<ul class="plan-features" style="margin-top: 15px;">
+<li>Applicable for both window &amp; split ACs</li>
+<li>Indoor unit deep cleaning with foam &amp; jet spray</li>
+</ul>
+<a class="view-details" href="#">View details</a>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; border-top: 1px dashed #ccc;">
+<div class="plan-header">
+<div>
+<h4>Foam-jet service (2 ACs)</h4>
+<div class="plan-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="plan-price">₹1,198 <strike>₹1,290</strike> • <span style="font-weight: 400; color: #666; font-size: 13px;">2 hrs</span></div>
+</div>
+<div class="add-btn-container">
+<button class="add-btn" onclick="addToCart('Foam-jet service (2 ACs)', 1290)" style="padding: 8px 30px;">Add</button>
+</div>
+</div>
+<div class="save-tag" style="margin-top: 10px;"><i class="fa-solid fa-tag"></i> ₹599 per AC</div>
+<ul class="plan-features" style="margin-top: 15px;">
+<li>Applicable for both window or split ACs</li>
+<li>Indoor unit deep cleaning with foam &amp; jet spray</li>
+</ul>
+<a class="view-details" href="#">View details</a>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (3 ACs)</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,647 <strike style="color:#999; font-weight:400; font-size: 13px;">₹1,947</strike> • <span style="color: #666; font-weight: 400; font-size: 13px;">3 hrs</span></div>
+<div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹549 per AC</div>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+<img alt="Service" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover;"/>
+</div>
+<button onclick="addToCart('Foam-jet service (3 ACs)', 549)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+</div>
+</div>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (4 ACs)</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹1,996 <strike style="color:#999; font-weight:400; font-size: 13px;">₹2,596</strike> • <span style="color: #666; font-weight: 400; font-size: 13px;">4 hrs</span></div>
+<div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+<img alt="Service" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover;"/>
+</div>
+<button onclick="addToCart('Foam-jet service (4 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+</div>
+</div>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Foam-jet service (5 ACs)</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.75 <span style="color: #666; font-weight: 400;">(2.9M reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹2,495 <strike style="color:#999; font-weight:400; font-size: 13px;">₹3,245</strike> • <span style="color: #666; font-weight: 400; font-size: 13px;">5 hrs</span></div>
+<div style="color: #00875a; font-size: 13px; font-weight: 600; margin-bottom: 15px;"><i class="fa-solid fa-tag"></i> ₹499 per AC</div>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<div style="position: absolute; top: 0; left: 0; width: 100%; background: #00875a; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 4px 0; z-index: 2;">Free gas check</div>
+<img alt="Service" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover;"/>
+</div>
+<button onclick="addToCart('Foam-jet service (5 ACs)', 499)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+</div>
+</div>
+</div>
+</div>
+<!-- New Repair & Gas Refill Section -->
+<div id="repair-details-section" style="margin-top: 60px;">
+<h2 class="section-heading" id="sec-repair-plan">Repair &amp; gas refill</h2>
+<div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC repair</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.73 <span style="color: #666; font-weight: 400;">(865K reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹299</div>
+<ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+<li>Complete check-up to identify issues before repair</li>
+</ul>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<img alt="AC Repair" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;"/>
+</div>
+<button id="add-ac-repair-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+<span style="font-size: 12px; color: #666; margin-top: 5px;">4 options</span>
+</div>
+</div>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Gas refill &amp; check-up</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.77 <span style="color: #666; font-weight: 400;">(111K reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">₹3,000 <span style="font-weight: 400; color: #666; font-size: 13px;">• 2 hrs 30 mins</span></div>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-block; margin-top: 10px;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<img alt="Gas Refill" loading="lazy" src="images/ac.jpg" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px; background: #f8f8f8;"/>
+</div>
+<button onclick="addToCart('Gas refill &amp; check-up', 3000)" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+</div>
+</div>
+</div>
+</div>
+<!-- New Installation/Uninstallation Section -->
+<div id="install-details-section" style="margin-top: 60px;">
+<h2 class="section-heading" id="sec-install-plan">Installation/uninstallation</h2>
+<div class="plan-details-card" style="padding-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC installation</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.69 <span style="color: #666; font-weight: 400;">(151K reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹1,599</div>
+<ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+<li>Installation of indoor &amp; outdoor units with free gas check</li>
+</ul>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<img alt="AC Installation" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;"/>
+</div>
+<button id="open-install-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+<span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
+</div>
+</div>
+</div>
+<div class="plan-details-card" style="padding-top: 20px; margin-top: 20px; border-top: 1px solid #eee;">
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; padding-right: 20px;">
+<h4 style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">AC uninstallation</h4>
+<div class="plan-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #7d33ff;"></i> 4.79 <span style="color: #666; font-weight: 400;">(141K reviews)</span></div>
+<div class="plan-price" style="font-weight: 600; font-size: 15px; margin-bottom: 10px; color: #000;">Starts at ₹699</div>
+<ul class="plan-features" style="margin-top: 15px; margin-bottom: 15px;">
+<li>Uninstallation of both indoor &amp; outdoor units</li>
+</ul>
+<a href="#" style="color: #7d33ff; font-weight: 600; font-size: 14px; text-decoration: none;">View details</a>
+</div>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: center;">
+<div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: -15px;">
+<img alt="AC Uninstallation" loading="lazy" src="images/slider_ac.png" style="width: 100%; height: 90px; object-fit: cover; border-radius: 8px;"/>
+</div>
+<button id="open-uninstall-options-btn" style="position: relative; z-index: 3; padding: 8px 30px; background: #fff; border: 1px solid #e0e0e0; color: #7d33ff; font-weight: 600; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer;">Add</button>
+<span style="font-size: 12px; color: #666; margin-top: 5px;">2 options</span>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 3-Column Detailed Section -->
+</main>
+<!-- Options Modal -->
+<div class="modal-overlay hidden" id="options-modal">
+<div class="modal-content options-modal-content">
+<button class="modal-close" id="close-options-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+<div class="options-modal-banner">
+<div class="options-banner-text">
+<h2>Foam-jet<br/>AC service</h2>
+<p>Deep cleans AC coils<br/>for better cooling</p>
+</div>
+<img alt="Foam-jet AC Service" loading="lazy" src="images/slider_ac.png"/>
+</div>
+<div class="options-modal-body">
+<h3 class="options-modal-title">Annual plan [2 times/year]</h3>
+<div class="options-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="options-discount"><i class="fa-solid fa-tag"></i> Get ₹100 off</div>
+<div class="options-card-container">
+<div class="option-card">
+<h4>1 AC</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹1198 <strike>₹1298</strike></div>
+<button class="option-add-btn" onclick="addToCart('1 AC', 1298)">Add</button>
+</div>
+<div class="option-card">
+<h4>2 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹2196 <strike>₹2596</strike></div>
+<button class="option-add-btn" onclick="addToCart('2 ACs', 2596)">Add</button>
+</div>
+<div class="option-card">
+<h4>3 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹2994 <strike>₹3894</strike></div>
+<button class="option-add-btn" onclick="addToCart('3 ACs', 3894)">Add</button>
+</div>
+<div class="option-card">
+<h4>4 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹3592 <strike>₹5192</strike></div>
+<button class="option-add-btn" onclick="addToCart('4 ACs', 5192)">Add</button>
+</div>
+<div class="option-card">
+<h4>5 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹4490 <strike>₹6490</strike></div>
+<button class="option-add-btn" onclick="addToCart('5 ACs', 6490)">Add</button>
+</div>
+<div class="option-card">
+<h4>6 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹5388 <strike>₹7788</strike></div>
+<button class="option-add-btn" onclick="addToCart('6 ACs', 7788)">Add</button>
+</div>
+<div class="option-card">
+<h4>7 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹6286 <strike>₹9086</strike></div>
+<button class="option-add-btn" onclick="addToCart('7 ACs', 9086)">Add</button>
+</div>
+<div class="option-card">
+<h4>8 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹7184 <strike>₹10384</strike></div>
+<button class="option-add-btn" onclick="addToCart('8 ACs', 10384)">Add</button>
+</div>
+<div class="option-card">
+<h4>9 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹8082 <strike>₹11682</strike></div>
+<button class="option-add-btn" onclick="addToCart('9 ACs', 11682)">Add</button>
+</div>
+<div class="option-card">
+<h4>10 ACs</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(2.9M reviews)</span></div>
+<div class="option-price">₹8980 <strike>₹12980</strike></div>
+<button class="option-add-btn" onclick="addToCart('10 ACs', 12980)">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Install Options Modal -->
+<div class="modal-overlay hidden" id="install-options-modal">
+<div class="modal-content options-modal-content">
+<button class="modal-close" id="close-install-options-btn"><i class="fa-solid fa-xmark"></i></button>
+<div class="options-modal-banner">
+<div class="options-banner-text">
+<h2>AC installation</h2>
+<p>Expert installation done<br/>right the first time</p>
+</div>
+<img alt="AC Installation" loading="lazy" src="images/ac.jpg"/>
+</div>
+<div class="options-modal-body">
+<h3 class="options-modal-title">AC installation</h3>
+<div class="options-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(151K reviews)</span></div>
+<div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
+<span style="font-size: 13px; color: #444;">Standard rate card</span>
+</div>
+<i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+</div>
+<div class="options-card-container">
+<div class="option-card">
+<h4>Split AC</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(141K reviews)</span></div>
+<div class="option-price">₹2499</div>
+<button class="option-add-btn" onclick="addToCart('Split AC', 2499)">Add</button>
+</div>
+<div class="option-card">
+<h4>Window AC</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(11K reviews)</span></div>
+<div class="option-price">₹1599</div>
+<button class="option-add-btn" onclick="addToCart('Window AC', 1599)">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Uninstall Options Modal -->
+<div class="modal-overlay hidden" id="uninstall-options-modal">
+<div class="modal-content options-modal-content">
+<button class="modal-close" id="close-uninstall-options-btn"><i class="fa-solid fa-xmark"></i></button>
+<div class="options-modal-banner">
+<div class="options-banner-text">
+<h2>AC uninstallation</h2>
+<p>Safe removal without damage<br/>to your unit or walls</p>
+</div>
+<img alt="AC Uninstallation" loading="lazy" src="images/ac.jpg"/>
+</div>
+<div class="options-modal-body">
+<h3 class="options-modal-title">AC uninstallation</h3>
+<div class="options-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(141K reviews)</span></div>
+<div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
+<span style="font-size: 13px; color: #444;">Standard rate card</span>
+</div>
+<i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+</div>
+<div class="options-card-container">
+<div class="option-card">
+<h4>Split AC</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.79 <span>(132K reviews)</span></div>
+<div class="option-price">₹899</div>
+<button class="option-add-btn" onclick="addToCart('Split AC', 899)">Add</button>
+</div>
+<div class="option-card">
+<h4>Window AC</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.82 <span>(9K reviews)</span></div>
+<div class="option-price">₹699</div>
+<button class="option-add-btn" onclick="addToCart('Window AC', 699)">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Repair Options Modal -->
+<div class="modal-overlay hidden" id="repair-options-modal">
+<div class="modal-content options-modal-content">
+<button class="modal-close" id="close-repair-options-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+<div class="options-modal-banner" style="background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%); position: relative;">
+<div class="options-banner-text" style="position: absolute; left: 20px; top: 20px; z-index: 2;">
+<h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px;">AC Repair</h2>
+<p style="font-size: 14px; color: #555; line-height: 1.4;">Hassle-free fixes<br/>for all AC issues</p>
+</div>
+<img alt="AC Repair" loading="lazy" src="images/ac.jpg" style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8; mask-image: linear-gradient(to right, transparent, black 40%); -webkit-mask-image: linear-gradient(to right, transparent, black 40%);"/>
+</div>
+<div class="options-modal-body">
+<h3 class="options-modal-title">AC repair</h3>
+<div class="options-rating"><i class="fa-solid fa-star"></i> 4.73 <span>(865K reviews)</span></div>
+<div style="background: #f8f9fa; border-radius: 8px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 15px; margin-bottom: 25px; cursor: pointer;">
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="color: #00875a; font-weight: 700; font-size: 14px;"><i class="fa-solid fa-shield-halved"></i> Joamex cover</span>
+<span style="font-size: 13px; color: #444;">Standard rate card</span>
+</div>
+<i class="fa-solid fa-chevron-right" style="color: #666; font-size: 12px;"></i>
+</div>
+<div class="options-card-container">
+<div class="option-card">
+<h4>Less/no cooling</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.75 <span>(496K reviews)</span></div>
+<div class="option-price">₹299</div>
+<button class="option-add-btn" onclick="addToCart('Less/no cooling', 299)">Add</button>
+</div>
+<div class="option-card">
+<h4>Power issue</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.72 <span>(142K reviews)</span></div>
+<div class="option-price">₹299</div>
+<button class="option-add-btn" onclick="addToCart('Power issue', 299)">Add</button>
+</div>
+<div class="option-card">
+<h4>Unwanted noise/smell</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.77 <span>(42K reviews)</span></div>
+<div class="option-price">₹499</div>
+<button class="option-add-btn" onclick="addToCart('Unwanted noise/smell', 499)">Add</button>
+</div>
+<div class="option-card" style="display: flex; flex-direction: column; justify-content: center; position: relative;">
+<h4>Water leakage</h4>
+<div class="option-rating"><i class="fa-solid fa-star"></i> 4.69 <span>(185K reviews)</span></div>
+<div class="option-price">₹599</div>
+<button class="option-add-btn" style="padding: 5px 10px; width: fit-content; align-self: flex-end; position: absolute; bottom: 15px; right: 15px; background: transparent; color: #000; border: 2px solid #000; border-radius: 6px;"><i class="fa-solid fa-arrow-right"></i></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
         document.addEventListener('DOMContentLoaded', () => {
             const annualPlanBtn = document.getElementById('annual-plan-btn');
             const detailsSection = document.getElementById('ac-details-section');
@@ -707,168 +617,150 @@
             }
         });
     </script>
-    <script src="common.js?v=13"></script>
-    <script src="cart.js?v=13"></script>
-
-    
-    <!-- Foam Jet Modal -->
-    <div id="foam-jet-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
-        <div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
-            
-            <div style="position: relative; width: 100%; height: 160px; background: #e9e4dc;">
-                <button class="modal-close" onclick="document.getElementById('foam-jet-modal').style.display='none'" style="position: absolute; z-index: 10; background: rgba(0,0,0,0.3); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
-                <div style="padding: 24px; position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 5px 0;">Foam-jet<br>AC service</h2>
-                    <p style="margin: 0; color: #555; font-size: 14px;">Deep cleans AC coils<br>for better cooling</p>
-                </div>
-                <img src="images/slider_ac.png" style="position: absolute; right: 0; top: 0; height: 100%; width: 50%; object-fit: cover; border-top-right-radius: 12px;">
-            </div>
-            
-            <div class="options-modal-body" style="padding: 24px;">
-                <h3 class="options-modal-title" style="font-size: 20px; margin-bottom: 5px; font-weight: 700;">Foam-jet AC service</h3>
-                <div class="options-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.75 <span style="color: #666; font-weight: 400; text-decoration: underline; text-decoration-style: dotted;">(2.9M reviews)</span></div>
-                <div style="color: #00875a; font-weight: 600; font-size: 13px; margin-bottom: 20px;"><i class="fa-solid fa-tag"></i> Add more & save up to 25%</div>
-
-                <div style="position: relative; margin-bottom: 10px;">
-                    <button class="ac-scroll-btn ac-scroll-left" onclick="document.getElementById('ac-carousel').scrollBy(-150, 0)"><i class="fa-solid fa-arrow-left" style="font-size: 12px;"></i></button>
-                    <button class="ac-scroll-btn ac-scroll-right" onclick="document.getElementById('ac-carousel').scrollBy(150, 0)"><i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i></button>
-                    
-                    <div id="ac-carousel" class="ac-options-carousel">
-                        
-                        <!-- 1 AC -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">1 AC</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹599</span>
-                            </div>
-                            <div class="ac-option-per-ac">&nbsp;</div>
-                            <div class="ac-option-discount">&nbsp;</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 1 AC', 599); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 2 ACs -->
-                        <div class="ac-option-card bestseller">
-                            <div class="bestseller-badge">Bestseller</div>
-                            <div class="ac-option-title">2 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹1098</span>
-                                <span class="ac-option-strike">₹1198</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹549/AC)</div>
-                            <div class="ac-option-discount">8% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 2 ACs', 1098); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 3 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">3 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹1497</span>
-                                <span class="ac-option-strike">₹1797</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹499/AC)</div>
-                            <div class="ac-option-discount">17% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 3 ACs', 1497); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 4 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">4 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹1796</span>
-                                <span class="ac-option-strike">₹2396</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 4 ACs', 1796); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 5 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">5 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹2245</span>
-                                <span class="ac-option-strike">₹2995</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 5 ACs', 2245); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 6 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">6 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹2694</span>
-                                <span class="ac-option-strike">₹3594</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 6 ACs', 2694); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-                        
-                        <!-- 7 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">7 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹3143</span>
-                                <span class="ac-option-strike">₹4193</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 7 ACs', 3143); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-                        
-                        <!-- 8 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">8 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹3592</span>
-                                <span class="ac-option-strike">₹4792</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 8 ACs', 3592); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                        <!-- 9 ACs -->
-                        <div class="ac-option-card">
-                            <div class="ac-option-title">9 ACs</div>
-                            <div class="ac-option-price-row">
-                                <span class="ac-option-price">₹4041</span>
-                                <span class="ac-option-strike">₹5391</span>
-                            </div>
-                            <div class="ac-option-per-ac">(₹449/AC)</div>
-                            <div class="ac-option-discount">25% off</div>
-                            <button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 9 ACs', 4041); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Sidebar -->
-    <div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
-        <div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
-            <button id="close-cart-btn" class="modal-close" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
-            <div style="padding: 20px; border-bottom: 1px solid #eee;">
-                <h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
-            </div>
-            <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
-                <!-- Items will be injected here -->
-            </div>
-            <div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
-                    <span>Total:</span>
-                    <span id="cart-total-price">₹0</span>
-                </div>
-                <button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
-            </div>
-        </div>
-    </div>
-
+<script src="common.js?v=13"></script>
+<script src="cart.js?v=13"></script>
+<!-- Foam Jet Modal -->
+<div class="modal-overlay" id="foam-jet-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+<div class="modal-content options-modal-content" style="background: #fcfbf9; width: 100%; max-width: 500px; padding: 0; overflow: hidden; border-radius: 12px; position: relative;">
+<div style="position: relative; width: 100%; height: 160px; background: #e9e4dc;">
+<button class="modal-close" onclick="document.getElementById('foam-jet-modal').style.display='none'" style="position: absolute; z-index: 10; background: rgba(0,0,0,0.3); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; top: 15px; right: 15px; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+<div style="padding: 24px; position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+<h2 style="font-size: 24px; font-weight: 700; margin: 0 0 5px 0;">Foam-jet<br/>AC service</h2>
+<p style="margin: 0; color: #555; font-size: 14px;">Deep cleans AC coils<br/>for better cooling</p>
+</div>
+<img loading="lazy" src="images/slider_ac.png" style="position: absolute; right: 0; top: 0; height: 100%; width: 50%; object-fit: cover; border-top-right-radius: 12px;"/>
+</div>
+<div class="options-modal-body" style="padding: 24px;">
+<h3 class="options-modal-title" style="font-size: 20px; margin-bottom: 5px; font-weight: 700;">Foam-jet AC service</h3>
+<div class="options-rating" style="margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #6366f1;"></i> 4.75 <span style="color: #666; font-weight: 400; text-decoration: underline; text-decoration-style: dotted;">(2.9M reviews)</span></div>
+<div style="color: #00875a; font-weight: 600; font-size: 13px; margin-bottom: 20px;"><i class="fa-solid fa-tag"></i> Add more &amp; save up to 25%</div>
+<div style="position: relative; margin-bottom: 10px;">
+<button class="ac-scroll-btn ac-scroll-left" onclick="document.getElementById('ac-carousel').scrollBy(-150, 0)"><i class="fa-solid fa-arrow-left" style="font-size: 12px;"></i></button>
+<button class="ac-scroll-btn ac-scroll-right" onclick="document.getElementById('ac-carousel').scrollBy(150, 0)"><i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i></button>
+<div class="ac-options-carousel" id="ac-carousel">
+<!-- 1 AC -->
+<div class="ac-option-card">
+<div class="ac-option-title">1 AC</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹599</span>
+</div>
+<div class="ac-option-per-ac"> </div>
+<div class="ac-option-discount"> </div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 1 AC', 599); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 2 ACs -->
+<div class="ac-option-card bestseller">
+<div class="bestseller-badge">Bestseller</div>
+<div class="ac-option-title">2 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹1098</span>
+<span class="ac-option-strike">₹1198</span>
+</div>
+<div class="ac-option-per-ac">(₹549/AC)</div>
+<div class="ac-option-discount">8% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 2 ACs', 1098); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 3 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">3 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹1497</span>
+<span class="ac-option-strike">₹1797</span>
+</div>
+<div class="ac-option-per-ac">(₹499/AC)</div>
+<div class="ac-option-discount">17% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 3 ACs', 1497); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 4 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">4 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹1796</span>
+<span class="ac-option-strike">₹2396</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 4 ACs', 1796); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 5 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">5 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹2245</span>
+<span class="ac-option-strike">₹2995</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 5 ACs', 2245); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 6 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">6 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹2694</span>
+<span class="ac-option-strike">₹3594</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 6 ACs', 2694); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 7 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">7 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹3143</span>
+<span class="ac-option-strike">₹4193</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 7 ACs', 3143); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 8 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">8 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹3592</span>
+<span class="ac-option-strike">₹4792</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 8 ACs', 3592); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+<!-- 9 ACs -->
+<div class="ac-option-card">
+<div class="ac-option-title">9 ACs</div>
+<div class="ac-option-price-row">
+<span class="ac-option-price">₹4041</span>
+<span class="ac-option-strike">₹5391</span>
+</div>
+<div class="ac-option-per-ac">(₹449/AC)</div>
+<div class="ac-option-discount">25% off</div>
+<button class="ac-option-add" onclick="addToCart('Foam-jet AC service - 9 ACs', 4041); document.getElementById('foam-jet-modal').style.display='none';">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Sidebar -->
+<div class="modal-overlay" id="cart-sidebar" style="display: none; z-index: 10000;">
+<div class="modal-content" style="max-width: 400px; height: 100%; position: absolute; right: 0; top: 0; border-radius: 0; display: flex; flex-direction: column; background: #fff;">
+<button class="modal-close" id="close-cart-btn" style="right: auto; left: -40px; top: 15px; color: white; background: rgba(0,0,0,0.5);"><i class="fa-solid fa-xmark"></i></button>
+<div style="padding: 20px; border-bottom: 1px solid #eee;">
+<h2 style="margin: 0; font-size: 20px;">Your Cart</h2>
+</div>
+<div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 20px;">
+<!-- Items will be injected here -->
+</div>
+<div style="padding: 20px; border-top: 1px solid #eee; background: #f9f9f9;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: bold; font-size: 18px;">
+<span>Total:</span>
+<span id="cart-total-price">₹0</span>
+</div>
+<button id="checkout-btn" style="width: 100%; padding: 15px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;">Proceed to Checkout</button>
+</div>
+</div>
+</div>
 <style>
 .footer { background: #fff; color: #333; border-top: 1px solid #eaeaea; padding: 60px 40px; margin-top: 50px; font-family: 'Inter', sans-serif; }
 .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
@@ -981,134 +873,125 @@
 
     </style>
 <footer class="footer" style="padding: 60px 0 0; background-color: #fdfaf6; color: #333; font-family: 'Inter', sans-serif;">
-    <div class="footer-container">
-        
-        <!-- Col 1: Brand -->
-        <div class="footer-col">
-            <a href="index.html" style="display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 45px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 14px; margin-top: 5px;">
-            </a>
-            <p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
+<div class="footer-container">
+<!-- Col 1: Brand -->
+<div class="footer-col">
+<a href="index" style="display: inline-flex;  align-items: flex-start; text-decoration: none; margin-bottom: 20px;">
+<img alt="Joamex" loading="lazy" src="images/logo-full.png" style="height: 40px;"/>
+</a>
+<p style="color: #555; font-size: 14px; line-height: 1.6; max-width: 250px;">
                 Your one-stop destination for all home service needs. From cleaning to electrical works, we've got you covered with verified professionals.
             </p>
-        </div>
-        
-        <!-- Col 2: Company -->
-        <div class="footer-col">
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="about-us.html" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
-                <li style="margin-bottom: 12px;"><a href="terms.html" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
-                <li style="margin-bottom: 12px;"><a href="privacy.html" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
-                <li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
-            </ul>
-        </div>
-
-        <!-- Col 3: For Customers -->
-        <div class="footer-col">
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="reviews.html" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
-                <li style="margin-bottom: 12px;"><a href="contact.html" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
-                <li style="margin-bottom: 12px;"><a href="categories.html" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
-            </ul>
-        </div>
-        
-        <!-- Col 4: For Professionals -->
-        <div class="footer-col">
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px;"><a href="partner.html" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
-            </ul>
-        </div>
-
-        <!-- Col 5: Social Media & Quick Contact -->
-        <div class="footer-col">
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
-            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
-                <a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-            
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
-            <div style="display: flex; gap: 10px;">
-                <a href="https://wa.me/919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Cities Expandable Section -->
-    <div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
-        <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
-            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
-            <div class="cities-grid">
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Bengaluru</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kolkata</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nagpur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kanpur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Guntur</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Hyderabad</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Jaipur</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vizag</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nashik</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nellore</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mumbai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Surat</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Bhopal</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mysore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Warangal</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Delhi NCR</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Lucknow</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vijayawada</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Khammam</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Chennai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Indore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Chandigarh</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Ludhiana</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Karimnagar</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Pune</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Coimbatore</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Vadodara</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Madurai</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Nizamabad</a>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Ahmedabad</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Kochi</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Patna</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Rajkot</a>
-                    <a href="categories.html" style="color: #555; text-decoration: none;">Mahbubnagar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
-        <div style="margin-bottom: 5px;">&copy; 2026 <span id="secret-admin" style="user-select:none;">Joamex</span> | All Rights Reserved</div>
-        <div style="margin-top: 10px; padding: 6px 16px; border-radius: 30px; background: #fff; border: 1px solid #eaeaea; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: 0.3s; cursor: default;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'">
-    <span style="font-size: 13px; color: #777;">managed by</span>
-    <strong class="animated-brand-text" style="color: transparent; background: linear-gradient(90deg, #ff007f, #7928ca, #00d2ff, #f9cb28, #ff007f); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; font-weight: 900; font-size: 15px; letter-spacing: 0.5px; animation: shineText 3s linear infinite;">
+</div>
+<!-- Col 2: Company -->
+<div class="footer-col">
+<h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">Company</h3>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 12px;"><a href="about-us" style="color: #555; text-decoration: none; font-size: 14px;">About Us</a></li>
+<li style="margin-bottom: 12px;"><a href="terms" style="color: #555; text-decoration: none; font-size: 14px;">Terms &amp; Conditions</a></li>
+<li style="margin-bottom: 12px;"><a href="privacy" style="color: #555; text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+<li style="margin-bottom: 12px;"><a href="#" onclick="document.getElementById('cities-section').style.display = document.getElementById('cities-section').style.display === 'none' ? 'block' : 'none'; event.preventDefault();" style="color: #555; text-decoration: none; font-size: 14px;">Cities We Serve ▼</a></li>
+</ul>
+</div>
+<!-- Col 3: For Customers -->
+<div class="footer-col">
+<h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Customers</h3>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 12px;"><a href="reviews" style="color: #555; text-decoration: none; font-size: 14px;">Reviews</a></li>
+<li style="margin-bottom: 12px;"><a href="contact" style="color: #555; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+<li style="margin-bottom: 12px;"><a href="categories" style="color: #555; text-decoration: none; font-size: 14px;">Services We Offer</a></li>
+</ul>
+</div>
+<!-- Col 4: For Professionals -->
+<div class="footer-col">
+<h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px; color: #111;">For Professionals</h3>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 12px;"><a href="partner" style="color: #555; text-decoration: none; font-size: 14px;">Join as a Service Partner</a></li>
+</ul>
+</div>
+<!-- Col 5: Social Media & Quick Contact -->
+<div class="footer-col">
+<h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Social Media</h3>
+<div style="display: flex; gap: 10px; margin-bottom: 25px;">
+<a href="https://twitter.com/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #4ea4f9; color: white; text-decoration: none;"><i class="fa-brands fa-twitter"></i></a>
+<a href="https://www.facebook.com/vonexperts.in" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #3b5998; color: white; text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/joamex.in/" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.linkedin.com/company/joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #0e76a8; color: white; text-decoration: none;"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="https://youtube.com/@joamex" style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background-color: #ff0000; color: white; text-decoration: none;"><i class="fa-brands fa-youtube"></i></a>
+</div>
+<h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #111;">Quick Contact</h3>
+<div style="display: flex; gap: 10px;">
+<a href="https://wa.me/919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 20px;"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="tel:+919391769636" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 18px;"><i class="fa-solid fa-phone"></i></a>
+</div>
+</div>
+</div>
+<!-- Cities Expandable Section -->
+<div id="cities-section" style="display: none; background-color: #fdfaf6; padding: 0 20px 40px;">
+<div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #ebe9e4; padding-top: 30px;">
+<h3 style="font-size: 18px; font-weight: 800; margin-bottom: 25px; color: #111;">Cities We Serve</h3>
+<div class="cities-grid">
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Bengaluru</a>
+<a href="categories" style="color: #555; text-decoration: none;">Kolkata</a>
+<a href="categories" style="color: #555; text-decoration: none;">Nagpur</a>
+<a href="categories" style="color: #555; text-decoration: none;">Kanpur</a>
+<a href="categories" style="color: #555; text-decoration: none;">Guntur</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Hyderabad</a>
+<a href="categories" style="color: #555; text-decoration: none;">Jaipur</a>
+<a href="categories" style="color: #555; text-decoration: none;">Vizag</a>
+<a href="categories" style="color: #555; text-decoration: none;">Nashik</a>
+<a href="categories" style="color: #555; text-decoration: none;">Nellore</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Mumbai</a>
+<a href="categories" style="color: #555; text-decoration: none;">Surat</a>
+<a href="categories" style="color: #555; text-decoration: none;">Bhopal</a>
+<a href="categories" style="color: #555; text-decoration: none;">Mysore</a>
+<a href="categories" style="color: #555; text-decoration: none;">Warangal</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Delhi NCR</a>
+<a href="categories" style="color: #555; text-decoration: none;">Lucknow</a>
+<a href="categories" style="color: #555; text-decoration: none;">Thiruvananthapuram</a>
+<a href="categories" style="color: #555; text-decoration: none;">Vijayawada</a>
+<a href="categories" style="color: #555; text-decoration: none;">Khammam</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Chennai</a>
+<a href="categories" style="color: #555; text-decoration: none;">Indore</a>
+<a href="categories" style="color: #555; text-decoration: none;">Chandigarh</a>
+<a href="categories" style="color: #555; text-decoration: none;">Ludhiana</a>
+<a href="categories" style="color: #555; text-decoration: none;">Karimnagar</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Pune</a>
+<a href="categories" style="color: #555; text-decoration: none;">Coimbatore</a>
+<a href="categories" style="color: #555; text-decoration: none;">Vadodara</a>
+<a href="categories" style="color: #555; text-decoration: none;">Madurai</a>
+<a href="categories" style="color: #555; text-decoration: none;">Nizamabad</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<a href="categories" style="color: #555; text-decoration: none;">Ahmedabad</a>
+<a href="categories" style="color: #555; text-decoration: none;">Kochi</a>
+<a href="categories" style="color: #555; text-decoration: none;">Patna</a>
+<a href="categories" style="color: #555; text-decoration: none;">Rajkot</a>
+<a href="categories" style="color: #555; text-decoration: none;">Mahbubnagar</a>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom" style="background-color: #e9e6e0; padding: 25px; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #d5d3ce;">
+<div style="margin-bottom: 5px;">© 2026 <span id="secret-admin" style="user-select:none;">Joamex</span> | All Rights Reserved</div>
+<div onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.1)'" style="margin-top: 10px; padding: 6px 16px; border-radius: 30px; background: #fff; border: 1px solid #eaeaea; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: 0.3s; cursor: default;">
+<span style="font-size: 13px; color: #777;">managed by</span>
+<strong class="animated-brand-text" style="color: transparent; background: linear-gradient(90deg, #ff007f, #7928ca, #00d2ff, #f9cb28, #ff007f); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; font-weight: 900; font-size: 15px; letter-spacing: 0.5px; animation: shineText 3s linear infinite;">
         Indian Export Webmart
     </strong>
-    <i class="fa-solid fa-sparkles" style="color: #f9cb28; font-size: 14px; animation: pulseSparkle 1.5s infinite;"></i>
-    <style>
+<i class="fa-solid fa-sparkles" style="color: #f9cb28; font-size: 14px; animation: pulseSparkle 1.5s infinite;"></i>
+<style>
         @keyframes shineText {
             to { background-position: 200% center; }
         }
@@ -1118,51 +1001,41 @@
         }
     </style>
 </div>
-    </div>
+</div>
 </footer>
-
-    <!-- Location Modal -->
-    <div id="location-modal">
-        <div class="location-modal-box">
-            <div class="loc-modal-header">
-                <h2><i class="fa-solid fa-location-dot"></i> Select Your Location</h2>
-                <button class="loc-close-btn" onclick="document.getElementById('location-modal').style.display='none'"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            
-            <div class="loc-gps-box" onclick="triggerGpsLocation()">
-                <div class="loc-gps-icon">
-                    <i class="fa-solid fa-location-arrow"></i>
-                </div>
-                <div class="loc-gps-text">
-                    <h4>Use Current Location</h4>
-                    <p>Using GPS for accurate address</p>
-                </div>
-            </div>
-            
-            <div class="loc-divider">
-                <span>OR ENTER MANUALLY</span>
-            </div>
-            
-            <div class="loc-input-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="manual-loc-input" placeholder="Type area, street, city or 6-digit pincode" onkeypress="if(event.key === 'Enter') setManualLocation()">
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Sticky Contact Icons -->
-    <div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 15px;">
-        <a href="https://wa.me/919014380344" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="tel:+919014380344" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fa-solid fa-phone"></i>
-        </a>
-    </div>
-
+<!-- Location Modal -->
+<div id="location-modal">
+<div class="location-modal-box">
+<div class="loc-modal-header">
+<h2><i class="fa-solid fa-location-dot"></i> Select Your Location</h2>
+<button class="loc-close-btn" onclick="document.getElementById('location-modal').style.display='none'"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="loc-gps-box" onclick="triggerGpsLocation()">
+<div class="loc-gps-icon">
+<i class="fa-solid fa-location-arrow"></i>
+</div>
+<div class="loc-gps-text">
+<h4>Use Current Location</h4>
+<p>Using GPS for accurate address</p>
+</div>
+</div>
+<div class="loc-divider">
+<span>OR ENTER MANUALLY</span>
+</div>
+<div class="loc-input-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input id="manual-loc-input" onkeypress="if(event.key === 'Enter') setManualLocation()" placeholder="Type area, street, city or 6-digit pincode" type="text"/>
+</div>
+</div>
+</div>
+<!-- Sticky Contact Icons -->
+<div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 15px;">
+<a href="https://wa.me/919391769636" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.1)'" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+<a href="tel:+919391769636" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.1)'" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s;">
+<i class="fa-solid fa-phone"></i>
+</a>
+</div>
 </body>
 </html>
-
-
-

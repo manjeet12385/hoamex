@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival Lights Installation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="style.css?v=3100" rel="stylesheet">
+    <link href="style.css?v=3101" rel="stylesheet">
     
     <!-- Railing Rope Modal -->
     <div id="railing-rope-modal" class="modal-overlay hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; justify-content: center;">
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
@@ -44,7 +44,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
@@ -79,8 +79,6 @@
             padding: 20px;
         }
         .left-col {
-            position: sticky;
-            top: 20px;
             align-self: start;
         }
         .center-col {
@@ -238,15 +236,17 @@
             text-align: center;
         }
     </style>
+
+
 </head>
+
 <body>
 
     <!-- Header Section -->
     <header class="header premium-navbar">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-right: 15px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
+            <a href="index" class="logo" style="display: flex;  align-items: center; justify-content: center;  margin-right: 15px; text-decoration: none;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
         <div class="search-container" id="header-search">
@@ -275,43 +275,43 @@
                 </div>
             </div>
 
-            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 15px;">
+            <div style="border: 1px solid #eaeaea; border-radius: 12px; padding: 15px; position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: none; background: #fff; z-index: 10;">
                 <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 13px; color: #666; font-weight: normal;">Select a service</h3>
                 <div class="service-cat-grid">
                     <a href="#uninstallation" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Light uninstallations"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Light uninstallations"></div>
                         <p>Light<br>uninstallations</p>
                     </a>
                     <a href="#balcony" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Balcony lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Balcony lights"></div>
                         <p>Balcony lights</p>
                     </a>
                     <a href="#railing" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Railing lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Railing lights"></div>
                         <p>Railing lights</p>
                     </a>
                     <a href="#room" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Room lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Room lights"></div>
                         <p>Room lights</p>
                     </a>
                     <a href="#mandir" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Mandir lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Mandir lights"></div>
                         <p>Mandir lights</p>
                     </a>
                     <a href="#outdoor" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Outdoor lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Outdoor lights"></div>
                         <p>Outdoor lights</p>
                     </a>
                     <a href="#garden" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Garden lights"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Garden lights"></div>
                         <p>Garden lights</p>
                     </a>
                     <a href="#xmas" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Xmas light decor"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Xmas light decor"></div>
                         <p>Xmas light decor</p>
                     </a>
                     <a href="#custom" class="service-cat-item">
-                        <div class="service-cat-img"><img src="images/new_festival_lights_icon.jpg" alt="Custom services"></div>
+                        <div class="service-cat-img"><img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Custom services"></div>
                         <p>Custom services</p>
                     </a>
                 </div>
@@ -337,7 +337,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Light uninstallation (per light)', 124)">Add</button>
                     </div>
                 </div>
@@ -359,7 +359,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Balcony lights installation (Starry)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Balcony lights installation (Starry)" class="svc-img">
                         <button onclick="addToCart('Balcony lights installation (Starry)', 248)" id="open-balcony-starry-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -377,7 +377,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Balcony lights installation (String)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Balcony lights installation (String)" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Balcony lights installation (String)', 495)">Add</button>
                     </div>
                 </div>
@@ -400,7 +400,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (Rope)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (Rope)" class="svc-img">
                         <button onclick="addToCart('Railing lights installation (Rope)', 248)" id="open-railing-rope-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -418,7 +418,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (String)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (String)" class="svc-img">
                         <button onclick="addToCart('Railing lights installation (String)', 495)" id="open-railing-string-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -436,7 +436,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (Starry)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Railing lights installation (Starry)" class="svc-img">
                         <button onclick="addToCart('Railing lights installation (Starry)', 248)" id="open-railing-starry-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -460,7 +460,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Room lights installation (Starry)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Room lights installation (Starry)" class="svc-img">
                         <button onclick="addToCart('Room lights installation (Starry)', 248)" id="open-room-starry-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -478,7 +478,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Room lights installation (String)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Room lights installation (String)" class="svc-img">
                         <button onclick="addToCart('Room lights installation (String)', 248)" id="open-room-string-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
@@ -502,7 +502,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Mandir lights installation" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Mandir lights installation" class="svc-img">
                         <button onclick="addToCart('Mandir lights installation', 124)" id="open-mandir-lights-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
@@ -526,7 +526,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Outdoor lights installation" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Outdoor lights installation" class="svc-img">
                         <button onclick="addToCart('Outdoor lights installation', 1950)" id="open-outdoor-lights-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">2 options</p>
                     </div>
@@ -550,7 +550,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Garden lights installation" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Garden lights installation" class="svc-img">
                         <button onclick="addToCart('Garden lights installation', 248)" id="open-garden-lights-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
@@ -573,7 +573,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Xmas tree lights installation" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Xmas tree lights installation" class="svc-img">
                         <button onclick="addToCart('Xmas tree lights installation', 124)" id="open-xmas-tree-modal-btn" class="add-btn">Add</button>
                         <p class="options-text">3 options</p>
                     </div>
@@ -595,7 +595,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Xmas lantern installation" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Xmas lantern installation" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Xmas lantern installation', 99)">Add</button>
                     </div>
                 </div>
@@ -611,7 +611,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Lantern installation (per lantern)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Lantern installation (per lantern)" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Lantern installation (per lantern)', 124)">Add</button>
                     </div>
                 </div>
@@ -628,7 +628,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Light installation (per string)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Light installation (per string)" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Light installation (per string)', 124)">Add</button>
                     </div>
                 </div>
@@ -645,7 +645,7 @@
                         <a href="#" style="color: #6a1b9a; text-decoration: none; font-weight: 600; font-size: 14px;">View details</a>
                     </div>
                     <div class="svc-action">
-                        <img src="images/new_festival_lights_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" alt="Light uninstallation (per light)" class="svc-img">
                         <button class="add-btn" onclick="addToCart('Light uninstallation (per light)', 124)">Add</button>
                     </div>
                 </div>
@@ -678,7 +678,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
@@ -709,7 +709,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
@@ -745,7 +745,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-balcony-starry-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Balcony lights installation (Starry)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.66 (3K reviews)</p>
@@ -776,7 +776,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-rope-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Rope)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.55 (800 reviews)</p>
@@ -806,7 +806,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-xmas-tree-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Xmas tree lights installation</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 5.00 (36 reviews)</p>
@@ -842,7 +842,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (String)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.63 (523 reviews)</p>
@@ -872,7 +872,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-garden-lights-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Garden lights installation</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.64 (540 reviews)</p>
@@ -909,7 +909,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-outdoor-lights-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Outdoor lights installation</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.56 (490 reviews)</p>
@@ -940,7 +940,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-mandir-lights-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Mandir lights installation</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 25px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.66 (1K reviews)</p>
@@ -976,7 +976,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-railing-starry-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Railing lights installation (Starry)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.68 (219 reviews)</p>
@@ -986,14 +986,14 @@
                 <button id="scroll-right-railing-starry-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
                 <div id="modal-carousel-railing-starry" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                     <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                        <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
                         <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Starry lights</h4>
                         <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.72 <span style="color: #777;">(165 reviews)</span></div>
                         <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
                         <button class="option-add-btn" onclick="addToCart('Railing lights installation (Starry) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                     </div>
                     <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                        <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
                         <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Starry lights</h4>
                         <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.57 <span style="color: #777;">(54 reviews)</span></div>
                         <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
@@ -1009,7 +1009,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-room-starry-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Room lights installation (Starry)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.86 (348 reviews)</p>
@@ -1019,14 +1019,14 @@
                 <button id="scroll-right-room-starry-btn" style="position: absolute; right: -10px; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: white; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5;"><i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i></button>
                 <div id="modal-carousel-room-starry" class="wm-options-carousel" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; scrollbar-width: none; scroll-behavior: smooth;">
                     <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                        <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
                         <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">2 Starry lights</h4>
                         <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.87 <span style="color: #777;">(289 reviews)</span></div>
                         <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹248</div>
                         <button class="option-add-btn" onclick="addToCart('Room lights installation (Starry) - 2 lights',248)" style="width: 100%; padding: 8px; background: #fff; border: 1px solid #e0e0e0; color: #7b1fa2; font-weight: 600; border-radius: 8px; cursor: pointer;">Add</button>
                     </div>
                     <div class="option-card" style="min-width: 160px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; padding: 12px; background: #fff8ee;">
-                        <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
+                        <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: calc(100% + 24px); height: 100px; object-fit: cover; border-radius: 8px 8px 0 0; margin: -12px -12px 10px -12px;">
                         <h4 style="font-size: 16px; margin-bottom: 5px; color: #111;">4 Starry lights</h4>
                         <div class="option-rating" style="font-size: 12px; margin-bottom: 8px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.81 <span style="color: #777;">(59 reviews)</span></div>
                         <div class="option-price" style="font-size: 14px; font-weight: 600; margin-bottom: 15px;">₹495</div>
@@ -1042,7 +1042,7 @@
         <div class="modal-content options-modal-content" style="background: #fcfbf6; width: 100%; max-width: 500px; padding: 20px; border-radius: 12px; position: relative; max-height: 90vh; overflow-y: auto;">
             <button id="close-room-string-modal-btn" class="modal-close" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 20px; cursor: pointer; color: #fff; text-shadow: 0px 2px 5px rgba(0,0,0,0.9);"><i class="fa-solid fa-xmark"></i></button>
             <div style="height: 180px; width: calc(100% + 40px); margin: -20px -20px 20px -20px; overflow: hidden; border-radius: 12px 12px 0 0;">
-                <img src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="images/new_festival_lights_icon.jpg" onerror="this.src='images/new_festival_lights_icon.jpg'" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 class="options-modal-title" style="font-size: 24px; margin-bottom: 5px; font-weight: 700; color: #111;">Room lights installation (String)</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 5px;"><i class="fa-solid fa-star" style="color: #555;"></i> 4.72 (497 reviews)</p>

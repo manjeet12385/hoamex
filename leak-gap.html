@@ -21,9 +21,6 @@
         .kitchen-left {
             width: 320px;
             flex-shrink: 0;
-            position: sticky;
-            top: 40px;
-            height: fit-content;
         }
 
         .kitchen-header {
@@ -82,6 +79,10 @@
         }
 
         .view-services-btn {
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+            width: 100%;
             background: #9333ea;
             color: white;
             border: none;
@@ -175,16 +176,18 @@
             margin-bottom: 30px;
         }
     </style>
+
+
 </head>
+
 <body style="background-color: #fdfbf7;">
 
     <!-- Header -->
     <header class="header premium-navbar">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="index.html" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
-            <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none;">
-                <img src="images/logo.png" alt="Joamex Icon" style="height: 48px; border-radius: 8px;">
-                <img src="images/logo-text.png" alt="Joamex Text" style="height: 18px;">
+            <a href="index" style="color: #000; font-size: 20px; text-decoration: none;"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="index" class="logo" style="display: flex;  align-items: center; justify-content: center;  text-decoration: none;">
+                <img loading="lazy" src="images/logo-full.png" alt="Joamex" style="height: 40px;">
             </a>
         </div>
         <div class="search-container" id="header-search">
@@ -223,15 +226,15 @@
                 </div>
                 <div style="display: flex; gap: 15px; justify-content: space-between;">
                     <a href="#bedroom" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; color: inherit; cursor: pointer;">
-                        <img src="images/tools.jpg" alt="Bedroom & Living Areas" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Bedroom & Living Areas" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
                         <span style="font-size: 10px; font-weight: 500; color: #0f172a; line-height: 1.2;">Bedroom & Living<br>Areas</span>
                     </a>
                     <a href="#kitchen" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; color: inherit; cursor: pointer;">
-                        <img src="images/tools.jpg" alt="Kitchen" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Kitchen" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
                         <span style="font-size: 10px; font-weight: 500; color: #0f172a; line-height: 1.2;">Kitchen</span>
                     </a>
                     <a href="#bathroom" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; color: inherit; cursor: pointer;">
-                        <img src="images/tools.jpg" alt="Bathroom" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Bathroom" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
                         <span style="font-size: 10px; font-weight: 500; color: #0f172a; line-height: 1.2;">Bathroom</span>
                     </a>
                 </div>
@@ -243,7 +246,7 @@
         <div class="kitchen-right">
             <!-- Video Banner -->
             <div class="kitchen-banner">
-                <img src="images/tools.jpg" alt="Banner" class="kitchen-banner-img">
+                <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Banner" class="kitchen-banner-img">
                 
                 
                 <div class="banner-text-bottom" style="color: #0f172a; left: 40px; bottom: 40px; text-shadow: none;">
@@ -275,7 +278,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Door frame gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Door frame gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Door frame gap sealing', 449)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -294,7 +297,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Window frame gap sealing (Paintable)" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Window frame gap sealing (Paintable)" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Window frame gap sealing (Paintable)', 549)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -314,7 +317,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Window frame gap sealing (Waterproof)" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Window frame gap sealing (Waterproof)" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Window frame gap sealing (Waterproof)', 549)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -334,7 +337,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Cabinet to wall gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Cabinet to wall gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Cabinet to wall gap sealing', 449)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -354,7 +357,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Cupboard to wall gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Cupboard to wall gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Cupboard to wall gap sealing', 449)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -374,7 +377,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Skirting gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Skirting gap sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Skirting gap sealing', 599)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -400,7 +403,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Kitchen sink sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Kitchen sink sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Kitchen sink sealing', 549)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -409,10 +412,10 @@
 
                 <div style="margin-bottom: 25px;">
                     <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                        <img src="images/tools.jpg" style="flex: 2; height: 180px; border-radius: 12px; object-fit: cover;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="flex: 2; height: 180px; border-radius: 12px; object-fit: cover;">
                         <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                            <img src="images/tools.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
-                            <img src="images/tools.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
+                            <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
+                            <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
                         </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -459,7 +462,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="WC Toilet base sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="WC Toilet base sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('WC / Toilet base sealing', 399)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -483,7 +486,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Wash basin sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Wash basin sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Wash basin sealing', 399)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -507,7 +510,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Shower cubicle sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Shower cubicle sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Shower cubicle sealing', 549)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -528,7 +531,7 @@
                         <a href="#" style="color: #7c3aed; font-size: 14px; font-weight: 600; text-decoration: none;">View details</a>
                     </div>
                     <div style="width: 140px; position: relative; display: flex; flex-direction: column; align-items: center;">
-                        <img src="images/tools.jpg" alt="Bathtub sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" alt="Bathtub sealing" style="width: 100%; height: 110px; border-radius: 12px; object-fit: cover; margin-bottom: -15px;">
                         <button onclick="addToCart('Bathtub sealing', 549)" style="background: #fff; color: #7c3aed; font-weight: 600; padding: 6px 30px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 14px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 2;">Add</button>
                     </div>
                 </div>
@@ -537,10 +540,10 @@
 
                 <div style="margin-bottom: 25px;">
                     <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                        <img src="images/tools.jpg" style="flex: 2; height: 180px; border-radius: 12px; object-fit: cover;">
+                        <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="flex: 2; height: 180px; border-radius: 12px; object-fit: cover;">
                         <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                            <img src="images/tools.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
-                            <img src="images/tools.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
+                            <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
+                            <img loading="lazy" src="images/leak_gap_sealing_real.jpg" style="height: 85px; width: 100%; border-radius: 12px; object-fit: cover;">
                         </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
@@ -651,15 +654,16 @@
         }
     </style>
     <div class="sticky-contact-icons" style="position: fixed; left: 15px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 20px;">
-        <a href="https://wa.me/919014380344" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
+        <a href="https://wa.me/919391769636" target="_blank" class="sticky-wa-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #25d366; color: white; text-decoration: none; font-size: 32px; transition: transform 0.3s; position: relative;">
             <span class="notification-badge" style="position: absolute; right: -5px; top: -5px; background-color: #ff0000; color: white; font-size: 12px; font-weight: bold; padding: 3px 7px; border-radius: 50%; border: 2px solid white; line-height: 1;">1</span>
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+919014380344" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
+        <a href="tel:+919391769636" class="sticky-phone-icon" style="display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; background-color: #5c6bc0; color: white; text-decoration: none; font-size: 26px; transition: transform 0.3s; position: relative;">
             <span style="position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); top: -2px; left: -2px;"></span>
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
+
 
 </body>
 </html>
