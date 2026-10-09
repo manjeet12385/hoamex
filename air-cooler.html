@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Cooler Service &amp; Repair - Joamex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, Arial, sans-serif;
+            color: #111;
+            background: #fffef2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fffef2;
+        }
+
+        .air-cooler-page {
+            display: grid;
+            grid-template-columns: 44% 56%;
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 58px 40px 30px;
+        }
+
+        .air-cooler-summary {
+            min-width: 0;
+            padding: 0 26px 24px 5px;
+        }
+
+        .air-cooler-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .air-cooler-heading h1 {
+            display: -webkit-box;
+            overflow: hidden;
+            margin: 0 0 6px;
+            font-size: 30px;
+            line-height: 1.2;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .air-cooler-earliest {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 1px;
+            padding: 7px 10px;
+            border: 1px solid #eadfcb;
+            border-radius: 7px;
+            font-size: 9px;
+        }
+
+        .air-cooler-earliest strong {
+            color: #16824b;
+        }
+
+        .air-cooler-rating {
+            margin: 8px 0 22px;
+            font-size: 10px;
+        }
+
+        .air-cooler-rating i {
+            font-size: 9px;
+        }
+
+        .air-cooler-rating a {
+            color: inherit;
+        }
+
+        .air-cooler-warranty {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 0 0 15px -5px;
+            padding: 14px;
+            border-radius: 9px;
+            background: #fff7e8;
+            color: #333;
+            font-size: 10px;
+        }
+
+        .air-cooler-warranty i {
+            font-size: 13px;
+        }
+
+        .air-cooler-view-services {
+            display: inline-block;
+            padding: 12px 15px;
+            border-radius: 7px;
+            background: #7900df;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .air-cooler-services {
+            min-width: 0;
+            padding: 36px 0 0 28px;
+            border-left: 1px solid #eee8d9;
+        }
+
+        .air-cooler-services h2 {
+            margin: 0 0 14px;
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        .air-cooler-service {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 110px;
+            gap: 16px;
+            min-height: 188px;
+            padding: 17px 0 18px;
+            border-bottom: 1px solid #e8e0ce;
+        }
+
+        .air-cooler-service h3 {
+            margin: 0 0 6px;
+            font-size: 14px;
+            line-height: 1.35;
+        }
+
+        .air-cooler-service-rating,
+        .air-cooler-service-price,
+        .air-cooler-service-features {
+            font-size: 10px;
+        }
+
+        .air-cooler-service-rating {
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .air-cooler-service-rating i {
+            color: #7900df;
+        }
+
+        .air-cooler-service-rating a {
+            color: #555;
+        }
+
+        .air-cooler-service-price {
+            margin-bottom: 9px;
+            font-weight: 700;
+        }
+
+        .air-cooler-service-time {
+            margin-left: 5px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .air-cooler-service-features {
+            min-height: 33px;
+            margin: 0 0 8px;
+            padding: 8px 0 0 15px;
+            border-top: 1px dashed #e8e0ce;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .air-cooler-details {
+            color: #7900df;
+            font-size: 11px;
+            text-decoration: none;
+        }
+
+        .air-cooler-service-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .air-cooler-service-action img {
+            display: block;
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            background: #fff7e8;
+            object-fit: contain;
+        }
+
+        .air-cooler-service-action .add-btn {
+            position: relative;
+            z-index: 1;
+            min-width: 68px;
+            margin-top: -8px;
+            padding: 7px 13px;
+            border: 1px solid #d79aff;
+            border-radius: 7px;
+            background: #fff;
+            color: #7900df;
+            font-family: inherit;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .air-cooler-service-action .add-btn:hover {
+            background: #f8edff;
+        }
+
+        @media (max-width: 600px) {
+            .air-cooler-page {
+                grid-template-columns: 1fr;
+                padding: 28px 22px;
+            }
+
+            .air-cooler-summary {
+                padding: 0 0 22px;
+            }
+
+            .air-cooler-heading h1 {
+                font-size: 26px;
+            }
+
+            .air-cooler-warranty {
+                margin-left: 0;
+            }
+
+            .air-cooler-services {
+                padding: 24px 0 0;
+                border-top: 1px solid #eee8d9;
+                border-left: 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .air-cooler-page {
+                padding: 22px 14px;
+            }
+
+            .air-cooler-service {
+                grid-template-columns: minmax(0, 1fr) 82px;
+                gap: 10px;
+            }
+
+            .air-cooler-service-action img {
+                width: 82px;
+                height: 82px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="air-cooler-page">
+        <section class="air-cooler-summary" aria-labelledby="air-cooler-title">
+            <div class="air-cooler-heading">
+                <h1 id="air-cooler-title">Air Cooler Service &amp; Repair</h1>
+                <div class="air-cooler-earliest">
+                    <strong><i class="fa-solid fa-circle-check"></i> Earliest</strong>
+                    <span>Fri, 1:00 PM</span>
+                </div>
+            </div>
+            <div class="air-cooler-rating">
+                <i class="fa-solid fa-star"></i> 4.66 <a href="#air-cooler-services">(215K bookings)</a>
+            </div>
+            <div class="air-cooler-warranty">
+                <span><i class="fa-solid fa-shield-halved"></i> &nbsp;Up to 30 days warranty</span>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+            <a class="air-cooler-view-services" href="#air-cooler-services">View Services</a>
+        </section>
+
+        <section class="air-cooler-services" id="air-cooler-services" aria-labelledby="air-cooler-services-title">
+            <h2 id="air-cooler-services-title">Repair &amp; service</h2>
+
+            <article class="air-cooler-service">
+                <div>
+                    <h3>Air cooler check-up</h3>
+                    <div class="air-cooler-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.61 <a href="#air-cooler-services">(24K reviews)</a></div>
+                    <div class="air-cooler-service-price">₹249 <span class="air-cooler-service-time">• &nbsp;60 mins</span></div>
+                    <ul class="air-cooler-service-features">
+                        <li>Visitation fee will be adjusted in the final repair quote</li>
+                    </ul>
+                    <a class="air-cooler-details" href="#air-cooler-services">View details</a>
+                </div>
+                <div class="air-cooler-service-action">
+                    <img src="image%20copy%2010.png" alt="Air cooler check-up">
+                    <button class="add-btn" type="button" onclick="addToCart('Air cooler check-up', 249, 'image copy 10.png')">Add</button>
+                </div>
+            </article>
+
+            <article class="air-cooler-service">
+                <div>
+                    <h3>Air cooler service</h3>
+                    <div class="air-cooler-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.70 <a href="#air-cooler-services">(20K reviews)</a></div>
+                    <div class="air-cooler-service-price">₹599 <span class="air-cooler-service-time">• &nbsp;1 hr 30 mins</span></div>
+                    <ul class="air-cooler-service-features">
+                        <li>Descaling of pump &amp; base. Side pad replacement will cost extra.</li>
+                    </ul>
+                    <a class="air-cooler-details" href="#air-cooler-services">View details</a>
+                </div>
+                <div class="air-cooler-service-action">
+                    <img src="image%20copy%2010.png" alt="Air cooler service">
+                    <button class="add-btn" type="button" onclick="addToCart('Air cooler service', 599, 'image copy 10.png')">Add</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="common.js?v=13"></script>
+    <script src="cart.js?v=13"></script>
+</body>
+</html>

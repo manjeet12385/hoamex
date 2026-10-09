@@ -26,6 +26,38 @@
       "use": "@vercel/static"
     },
     {
+      "src": "image copy 10.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 11.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 12.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 13.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 14.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 15.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 16.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "image copy 17.png",
+      "use": "@vercel/static"
+    },
+    {
       "src": "images/**/*",
       "use": "@vercel/static"
     },

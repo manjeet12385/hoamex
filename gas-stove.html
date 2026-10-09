@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Stove Service &amp; Repair - Joamex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, Arial, sans-serif;
+            color: #111;
+            background: #fffef2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fffef2;
+        }
+
+        .gas-stove-page {
+            display: grid;
+            grid-template-columns: 44% 56%;
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 34px 48px;
+        }
+
+        .gas-stove-summary {
+            padding: 0 18px 24px 10px;
+        }
+
+        .gas-stove-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .gas-stove-summary h1 {
+            max-width: 180px;
+            margin: 0 0 6px;
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        .gas-stove-earliest {
+            display: inline-flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+            gap: 3px;
+            margin-top: 1px;
+            padding: 5px 7px;
+            border: 1px solid #eadfcb;
+            border-radius: 7px;
+            font-size: 8px;
+        }
+
+        .gas-stove-earliest strong {
+            color: #16824b;
+        }
+
+        .gas-stove-rating {
+            margin-bottom: 18px;
+            font-size: 9px;
+        }
+
+        .gas-stove-rating i {
+            font-size: 8px;
+        }
+
+        .gas-stove-warranty {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 0 0 12px -10px;
+            padding: 12px;
+            border-radius: 9px;
+            background: #fff7e8;
+            color: #333;
+            font-size: 8px;
+        }
+
+        .gas-stove-warranty i {
+            font-size: 12px;
+        }
+
+        .gas-stove-view-services {
+            display: inline-block;
+            padding: 9px 11px;
+            border-radius: 6px;
+            background: #7900df;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .gas-stove-services {
+            min-width: 0;
+            padding: 28px 16px 0;
+            border-left: 1px solid #eee8d9;
+        }
+
+        .gas-stove-section + .gas-stove-section {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #e8e0ce;
+        }
+
+        .gas-stove-section h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        .gas-stove-service {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 58px;
+            gap: 8px;
+            min-height: 98px;
+            padding: 8px 0 10px;
+            border-bottom: 1px solid #e8e0ce;
+        }
+
+        .gas-stove-service:last-child {
+            border-bottom: 0;
+        }
+
+        .gas-stove-service h3 {
+            margin: 0 0 3px;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        .gas-stove-service-rating,
+        .gas-stove-service-price,
+        .gas-stove-option-count,
+        .gas-stove-service-features,
+        .gas-stove-details {
+            font-size: 7px;
+        }
+
+        .gas-stove-service-rating {
+            margin-bottom: 3px;
+            color: #555;
+        }
+
+        .gas-stove-service-rating i {
+            color: #7900df;
+        }
+
+        .gas-stove-service-rating a {
+            color: #555;
+        }
+
+        .gas-stove-service-price {
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .gas-stove-service-features {
+            margin: 0 0 4px;
+            padding: 5px 0 0 10px;
+            border-top: 1px dashed #e8e0ce;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .gas-stove-details {
+            color: #7900df;
+            text-decoration: none;
+        }
+
+        .gas-stove-service-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gas-stove-service-action img {
+            display: block;
+            width: 54px;
+            height: 48px;
+            border-radius: 6px;
+            background: #fff7e8;
+            object-fit: contain;
+        }
+
+        .gas-stove-service-action .add-btn {
+            position: relative;
+            z-index: 1;
+            min-width: 44px;
+            margin-top: -4px;
+            padding: 3px 8px;
+            border: 1px solid #d79aff;
+            border-radius: 6px;
+            background: #fff;
+            color: #7900df;
+            font-family: inherit;
+            font-size: 8px;
+            cursor: pointer;
+        }
+
+        .gas-stove-service-action .add-btn:hover {
+            background: #f8edff;
+        }
+
+        .gas-stove-option-count {
+            margin-top: 2px;
+            color: #777;
+        }
+
+        .gas-stove-options-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 12000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .gas-stove-options-dialog {
+            position: relative;
+            width: min(360px, 100%);
+            max-height: min(92vh, 620px);
+            overflow-y: auto;
+            border-radius: 12px;
+            background: #fffef2;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.25);
+        }
+
+        .gas-stove-options-dialog.compact {
+            width: min(340px, 100%);
+        }
+
+        .gas-stove-options-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            display: flex;
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #222;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .gas-stove-options-banner {
+            position: relative;
+            height: 185px;
+            background: #fff7e8;
+        }
+
+        .gas-stove-options-banner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gas-stove-options-body {
+            padding: 18px 12px 16px;
+        }
+
+        .gas-stove-options-title {
+            margin: 0 0 4px;
+            font-size: 17px;
+        }
+
+        .gas-stove-options-rating {
+            margin-bottom: 14px;
+            color: #555;
+            font-size: 8px;
+        }
+
+        .gas-stove-options-rating i {
+            color: #171717;
+        }
+
+        .gas-stove-cover {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 30px;
+            padding: 11px 14px;
+            border-radius: 8px;
+            background: #fff7e8;
+            font-size: 8px;
+        }
+
+        .gas-stove-cover-label {
+            color: #218477;
+            font-weight: 700;
+        }
+
+        .gas-stove-cover i {
+            color: #222;
+        }
+
+        .gas-stove-option-carousel-wrap {
+            position: relative;
+        }
+
+        .gas-stove-option-carousel {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 0 2px 4px;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .gas-stove-option-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gas-stove-option-card {
+            display: flex;
+            min-width: 92px;
+            min-height: 82px;
+            flex: 1 0 92px;
+            flex-direction: column;
+            padding: 8px 7px 6px;
+            border: 1px solid #eadfcb;
+            border-radius: 6px;
+            background: #fffef8;
+        }
+
+        .gas-stove-option-card h4 {
+            margin: 0 0 4px;
+            font-size: 8px;
+            font-weight: 500;
+        }
+
+        .gas-stove-option-card .rating {
+            margin-bottom: 4px;
+            color: #555;
+            font-size: 7px;
+            white-space: nowrap;
+        }
+
+        .gas-stove-option-card .rating i {
+            color: #333;
+        }
+
+        .gas-stove-option-card .price {
+            margin-bottom: 5px;
+            font-size: 8px;
+            font-weight: 600;
+        }
+
+        .gas-stove-option-card .option-add-btn {
+            width: fit-content;
+            min-width: 42px;
+            margin-top: auto;
+            padding: 3px 8px;
+            border: 1px solid #eadfcb;
+            border-radius: 5px;
+            background: #fff;
+            color: #7900df;
+            font-family: inherit;
+            font-size: 8px;
+            cursor: pointer;
+        }
+
+        .gas-stove-option-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            z-index: 1;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background: #fff;
+            color: #222;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+        }
+
+        .gas-stove-option-carousel-arrow.left {
+            right: auto;
+            left: -8px;
+        }
+
+        @media (min-width: 700px) {
+            .gas-stove-service {
+                grid-template-columns: minmax(0, 1fr) 82px;
+                min-height: 120px;
+            }
+
+            .gas-stove-service h3 {
+                font-size: 11px;
+            }
+
+            .gas-stove-service-rating,
+            .gas-stove-service-price,
+            .gas-stove-service-features,
+            .gas-stove-details {
+                font-size: 9px;
+            }
+
+            .gas-stove-service-action img {
+                width: 76px;
+                height: 66px;
+            }
+
+            .gas-stove-service-action .add-btn {
+                min-width: 58px;
+                font-size: 9px;
+            }
+
+            .gas-stove-option-count {
+                font-size: 8px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .gas-stove-page {
+                grid-template-columns: 52% 48%;
+                padding: 32px 10px;
+            }
+
+            .gas-stove-summary {
+                padding: 0 10px 20px 5px;
+            }
+
+            .gas-stove-summary h1 {
+                max-width: 96px;
+                font-size: 15px;
+            }
+
+            .gas-stove-earliest {
+                padding: 4px 5px;
+                font-size: 6px;
+            }
+
+            .gas-stove-warranty {
+                margin-left: -5px;
+                padding: 9px 7px;
+                font-size: 6px;
+            }
+
+            .gas-stove-view-services {
+                padding: 7px 9px;
+                font-size: 7px;
+            }
+
+            .gas-stove-services {
+                padding: 18px 8px 0 12px;
+            }
+
+            .gas-stove-section h2 {
+                font-size: 13px;
+            }
+
+            .gas-stove-service {
+                grid-template-columns: minmax(0, 1fr) 48px;
+                gap: 5px;
+                min-height: 88px;
+                padding: 7px 0 8px;
+            }
+
+            .gas-stove-service h3 {
+                font-size: 7px;
+            }
+
+            .gas-stove-service-rating,
+            .gas-stove-service-price,
+            .gas-stove-service-features,
+            .gas-stove-details,
+            .gas-stove-option-count {
+                font-size: 6px;
+            }
+
+            .gas-stove-service-action img {
+                width: 46px;
+                height: 42px;
+            }
+
+            .gas-stove-service-action .add-btn {
+                min-width: 36px;
+                padding: 2px 5px;
+                font-size: 7px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .gas-stove-page {
+                grid-template-columns: 44% 56%;
+                padding-right: 6px;
+                padding-left: 6px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .gas-stove-options-overlay {
+                padding: 10px;
+            }
+
+            .gas-stove-options-dialog {
+                width: min(340px, 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="gas-stove-page">
+        <section class="gas-stove-summary" aria-labelledby="gas-stove-title">
+            <div class="gas-stove-heading">
+                <h1 id="gas-stove-title" aria-label="Stove Service &amp; Repair">Stove Service ...</h1>
+                <div class="gas-stove-earliest">
+                    <strong><i class="fa-solid fa-circle-check"></i> Earliest</strong>
+                    <span>Fri, 2:30 PM</span>
+                </div>
+            </div>
+            <div class="gas-stove-rating">
+                <i class="fa-solid fa-star"></i> 4.75 <a href="#gas-stove-services" style="color: inherit;">(16K bookings)</a>
+            </div>
+            <div class="gas-stove-warranty">
+                <span><i class="fa-solid fa-shield-halved"></i> &nbsp;Up to 30 days warranty</span>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+            <a class="gas-stove-view-services" href="#gas-stove-services">View Services</a>
+        </section>
+
+        <div class="gas-stove-services" id="gas-stove-services">
+            <section class="gas-stove-section" aria-labelledby="gas-stove-service-title">
+                <h2 id="gas-stove-service-title">Service</h2>
+
+                <article class="gas-stove-service">
+                    <div>
+                        <h3>Gas stove steam service</h3>
+                        <div class="gas-stove-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.69 <a href="#gas-stove-services">(19K reviews)</a></div>
+                        <div class="gas-stove-service-price">Starts at ₹99</div>
+                        <ul class="gas-stove-service-features">
+                            <li>Cleanup of burners, nozzles &amp; internal parts with steam machine</li>
+                        </ul>
+                        <a class="gas-stove-details" href="#gas-stove-services">View details</a>
+                    </div>
+                    <div class="gas-stove-service-action">
+                        <img src="images/gas_stove.png" alt="Gas stove steam service">
+                        <button class="add-btn" type="button" aria-haspopup="dialog" aria-controls="gas-stove-steam-options-modal" onclick="openGasStoveOptions('gas-stove-steam-options-modal')">Add</button>
+                        <span class="gas-stove-option-count">3 options</span>
+                    </div>
+                </article>
+
+                <article class="gas-stove-service">
+                    <div>
+                        <h3>Hob steam service</h3>
+                        <div class="gas-stove-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.70 <a href="#gas-stove-services">(12K reviews)</a></div>
+                        <div class="gas-stove-service-price">Starts at ₹159</div>
+                        <ul class="gas-stove-service-features">
+                            <li>Cleanup of burners, nozzles &amp; internal parts with steam machine</li>
+                        </ul>
+                        <a class="gas-stove-details" href="#gas-stove-services">View details</a>
+                    </div>
+                    <div class="gas-stove-service-action">
+                        <img src="images/gas_stove.png" alt="Hob steam service">
+                        <button class="add-btn" type="button" aria-haspopup="dialog" aria-controls="hob-steam-options-modal" onclick="openGasStoveOptions('hob-steam-options-modal')">Add</button>
+                        <span class="gas-stove-option-count">4 options</span>
+                    </div>
+                </article>
+            </section>
+
+            <section class="gas-stove-section" aria-labelledby="gas-stove-repair-title">
+                <h2 id="gas-stove-repair-title">Repair</h2>
+
+                <article class="gas-stove-service">
+                    <div>
+                        <h3>Gas stove check-up</h3>
+                        <div class="gas-stove-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.76 <a href="#gas-stove-services">(8K reviews)</a></div>
+                        <div class="gas-stove-service-price">₹179 <span style="font-weight: 400;">• &nbsp;45 mins</span></div>
+                        <ul class="gas-stove-service-features">
+                            <li>Repairs for issues like low flame, gas leakage, knob, pipe loose &amp; other faults</li>
+                        </ul>
+                        <a class="gas-stove-details" href="#gas-stove-services">View details</a>
+                    </div>
+                    <div class="gas-stove-service-action">
+                        <img src="images/gas_stove.png" alt="Gas stove check-up">
+                        <button class="add-btn" type="button" onclick="addToCart('Gas stove check-up', 179)">Add</button>
+                    </div>
+                </article>
+
+                <article class="gas-stove-service">
+                    <div>
+                        <h3>Hob check-up</h3>
+                        <div class="gas-stove-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.72 <a href="#gas-stove-services">(3K reviews)</a></div>
+                        <div class="gas-stove-service-price">₹169 <span style="font-weight: 400;">• &nbsp;45 mins</span></div>
+                        <ul class="gas-stove-service-features">
+                            <li>Visitation fee will be adjusted in the final repair quote</li>
+                        </ul>
+                        <a class="gas-stove-details" href="#gas-stove-services">View details</a>
+                    </div>
+                    <div class="gas-stove-service-action">
+                        <img src="images/gas_stove.png" alt="Hob check-up">
+                        <button class="add-btn" type="button" aria-haspopup="dialog" aria-controls="hob-checkup-options-modal" onclick="openGasStoveOptions('hob-checkup-options-modal')">Add</button>
+                        <span class="gas-stove-option-count">6 options</span>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <div class="gas-stove-options-overlay" id="gas-stove-steam-options-modal" role="presentation" aria-hidden="true">
+        <section class="gas-stove-options-dialog" role="dialog" aria-modal="true" aria-labelledby="gas-stove-steam-options-title">
+            <button class="gas-stove-options-close" type="button" aria-label="Close options" onclick="closeGasStoveOptions('gas-stove-steam-options-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="gas-stove-options-banner">
+                <img src="images/gas_stove.png" alt="Gas stove steam service">
+            </div>
+            <div class="gas-stove-options-body">
+                <h2 class="gas-stove-options-title" id="gas-stove-steam-options-title">Gas stove steam service</h2>
+                <div class="gas-stove-options-rating"><i class="fa-solid fa-star"></i> 4.69 <u>(41K reviews)</u></div>
+                <div class="gas-stove-cover">
+                    <span class="gas-stove-cover-label"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                    <span>Standard rate card</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="gas-stove-option-carousel-wrap">
+                    <div class="gas-stove-option-carousel">
+                        <article class="gas-stove-option-card">
+                            <h4>2 burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.74 (9K reviews)</div>
+                            <div class="price">₹399</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Gas stove steam service - 2 burners', 399, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>3 burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.70 (14K reviews)</div>
+                            <div class="price">₹399</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Gas stove steam service - 3 burners', 399, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>4+ burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.66 (18K reviews)</div>
+                            <div class="price">₹449</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Gas stove steam service - 4+ burners', 449, 'images/gas_stove.png')">Add</button>
+                        </article>
+                    </div>
+                    <button class="gas-stove-option-carousel-arrow" type="button" aria-label="Scroll options" data-carousel="gas-stove-steam-options-carousel"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="gas-stove-options-overlay" id="hob-steam-options-modal" role="presentation" aria-hidden="true">
+        <section class="gas-stove-options-dialog" role="dialog" aria-modal="true" aria-labelledby="hob-steam-options-title">
+            <button class="gas-stove-options-close" type="button" aria-label="Close options" onclick="closeGasStoveOptions('hob-steam-options-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="gas-stove-options-banner">
+                <img src="images/gas_stove.png" alt="Hob steam service">
+            </div>
+            <div class="gas-stove-options-body">
+                <h2 class="gas-stove-options-title" id="hob-steam-options-title">Hob steam service</h2>
+                <div class="gas-stove-options-rating"><i class="fa-solid fa-star"></i> 4.70 <u>(12K reviews)</u></div>
+                <div class="gas-stove-cover">
+                    <span class="gas-stove-cover-label"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                    <span>Standard rate card</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="gas-stove-option-carousel-wrap">
+                    <div class="gas-stove-option-carousel">
+                        <article class="gas-stove-option-card">
+                            <h4>2 burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.78 (293 reviews)</div>
+                            <div class="price">₹549</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob steam service - 2 burners', 549, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>3 burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.68 (3K reviews)</div>
+                            <div class="price">₹599</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob steam service - 3 burners', 599, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>4 burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.71 (8K reviews)</div>
+                            <div class="price">₹649</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob steam service - 4 burners', 649, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>5+ burners</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.70 (1K reviews)</div>
+                            <div class="price">₹749</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob steam service - 5+ burners', 749, 'images/gas_stove.png')">Add</button>
+                        </article>
+                    </div>
+                    <button class="gas-stove-option-carousel-arrow" type="button" aria-label="Scroll options" data-carousel="hob-steam-options-carousel"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="gas-stove-options-overlay" id="hob-checkup-options-modal" role="presentation" aria-hidden="true">
+        <section class="gas-stove-options-dialog compact" role="dialog" aria-modal="true" aria-labelledby="hob-checkup-options-title">
+            <button class="gas-stove-options-close" type="button" aria-label="Close options" onclick="closeGasStoveOptions('hob-checkup-options-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="gas-stove-options-body">
+                <h2 class="gas-stove-options-title" id="hob-checkup-options-title">Hob check-up</h2>
+                <div class="gas-stove-options-rating"><i class="fa-solid fa-star"></i> 4.74 <u>(32K reviews)</u></div>
+                <div class="gas-stove-cover">
+                    <span class="gas-stove-cover-label"><i class="fa-solid fa-shield-halved"></i> UC cover</span>
+                    <span>Standard rate card</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </div>
+                <div class="gas-stove-option-carousel-wrap">
+                    <button class="gas-stove-option-carousel-arrow left" type="button" aria-label="Scroll options left"><i class="fa-solid fa-arrow-left"></i></button>
+                    <div class="gas-stove-option-carousel" id="hob-checkup-options-carousel">
+                        <article class="gas-stove-option-card">
+                            <h4>Gas leakage</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.76 (3K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - Gas leakage', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>Knob issue</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.73 (7K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - Knob issue', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>Low flame</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.73 (9K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - Low flame', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>No flame</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.76 (5K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - No flame', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>Physical damage</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.75 (1K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - Physical damage', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                        <article class="gas-stove-option-card">
+                            <h4>Unknown issue</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.75 (7K reviews)</div>
+                            <div class="price">₹160</div>
+                            <button class="option-add-btn" type="button" onclick="addToCart('Hob check-up - Unknown issue', 160, 'images/gas_stove.png')">Add</button>
+                        </article>
+                    </div>
+                    <button class="gas-stove-option-carousel-arrow" type="button" aria-label="Scroll options right"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function openGasStoveOptions(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            const closeButton = modal.querySelector('.gas-stove-options-close');
+            if (closeButton) closeButton.focus();
+        }
+
+        function closeGasStoveOptions(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            if (!document.querySelector('.gas-stove-options-overlay[aria-hidden="false"]')) {
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.querySelectorAll('.gas-stove-options-overlay').forEach((modal) => {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeGasStoveOptions(modal.id);
+            });
+        });
+
+        document.querySelectorAll('.gas-stove-option-carousel-arrow').forEach((button) => {
+            button.addEventListener('click', () => {
+                const carousel = button.classList.contains('left')
+                    ? button.nextElementSibling
+                    : button.previousElementSibling;
+                if (carousel) {
+                    const direction = button.classList.contains('left') ? -200 : 200;
+                    carousel.scrollBy({ left: direction, behavior: 'smooth' });
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.gas-stove-options-overlay[aria-hidden="false"]').forEach((modal) => {
+                    closeGasStoveOptions(modal.id);
+                });
+            }
+        });
+    </script>
+    <script src="common.js?v=13"></script>
+    <script src="cart.js?v=13"></script>
+</body>
+</html>

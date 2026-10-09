@@ -287,6 +287,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const map = {
             'ac-service': 'AC', 'ac-repair': 'AC', 'refrigerator': 'Refrigerator', 'fridge': 'Refrigerator',
             'washing-machine': 'Washing Machine', 'microwave': 'Microwave', 'water-purifier': 'RO/Water Purifier',
+            'gas-stove': 'Gas Stove',
+            'air-cooler': 'Air Cooler',
+            'laptop-repair': 'Laptop & Computer',
+            'air-purifier': 'Air Purifier',
             'ro-service': 'RO/Water Purifier', 'geyser': 'Geyser Service & Repair', 'television': 'Television', 'chimney': 'Chimney',
             'electrician': 'Electrician', 'plumber': 'Plumber', 'carpenter': 'Carpenter', 'fan-installation': 'Fan Installation', 
             'leak': 'Leak & gap sealing', 'water-tank': 'Water Tank Cleaning', 'wood-polish': 'Wood & Furniture Polish', 'wood-furniture': 'Wood & Furniture Polish',

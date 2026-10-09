@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Purifier - Joamex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, Arial, sans-serif;
+            color: #111;
+            background: #fffef2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fffef2;
+        }
+
+        .air-purifier-page {
+            display: grid;
+            grid-template-columns: 44% 56%;
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 34px 48px;
+        }
+
+        .air-purifier-summary {
+            padding: 0 20px 24px 10px;
+        }
+
+        .air-purifier-summary h1 {
+            margin: 0 0 6px;
+            font-size: 22px;
+            line-height: 1.25;
+        }
+
+        .air-purifier-rating {
+            margin-bottom: 18px;
+            font-size: 9px;
+        }
+
+        .air-purifier-rating i {
+            font-size: 8px;
+        }
+
+        .air-purifier-rating a {
+            color: inherit;
+        }
+
+        .air-purifier-earliest {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-left: 16px;
+            padding: 5px 8px;
+            border: 1px solid #eadfcb;
+            border-radius: 7px;
+            vertical-align: top;
+            font-size: 8px;
+        }
+
+        .air-purifier-earliest strong {
+            color: #16824b;
+        }
+
+        .air-purifier-warranty {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 0 0 12px -10px;
+            padding: 12px;
+            border-radius: 9px;
+            background: #fff7e8;
+            color: #333;
+            font-size: 8px;
+        }
+
+        .air-purifier-warranty i {
+            font-size: 12px;
+        }
+
+        .air-purifier-view-services {
+            display: inline-block;
+            padding: 9px 11px;
+            border-radius: 6px;
+            background: #7900df;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .air-purifier-services {
+            min-width: 0;
+            padding: 28px 20px 0;
+            border-left: 1px solid #eee8d9;
+        }
+
+        .air-purifier-services h2 {
+            margin: 0 0 14px;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        .air-purifier-service {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 82px;
+            gap: 14px;
+            min-height: 142px;
+            padding: 12px 0 14px;
+            border-bottom: 1px solid #e8e0ce;
+        }
+
+        .air-purifier-service:first-of-type {
+            padding-top: 8px;
+        }
+
+        .air-purifier-service:last-child {
+            border-bottom: 0;
+        }
+
+        .air-purifier-service h3 {
+            margin: 0 0 5px;
+            font-size: 10px;
+            line-height: 1.35;
+        }
+
+        .air-purifier-service-rating,
+        .air-purifier-service-price,
+        .air-purifier-service-time {
+            font-size: 8px;
+        }
+
+        .air-purifier-service-rating {
+            margin-bottom: 4px;
+            color: #555;
+        }
+
+        .air-purifier-service-rating i {
+            color: #7900df;
+        }
+
+        .air-purifier-service-rating a {
+            color: #555;
+        }
+
+        .air-purifier-service-price {
+            margin-bottom: 7px;
+            font-weight: 700;
+        }
+
+        .air-purifier-service-time {
+            margin-left: 5px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .air-purifier-service-features {
+            min-height: 28px;
+            margin: 0 0 7px;
+            padding-left: 12px;
+            border-top: 1px dashed #e8e0ce;
+            color: #666;
+            font-size: 8px;
+            line-height: 1.5;
+        }
+
+        .air-purifier-service-features li {
+            padding-top: 5px;
+        }
+
+        .air-purifier-details {
+            color: #7900df;
+            font-size: 9px;
+            text-decoration: none;
+        }
+
+        .air-purifier-service-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .air-purifier-service-action img {
+            display: block;
+            width: 82px;
+            height: 82px;
+            border-radius: 7px;
+            background: #fff7e8;
+            object-fit: contain;
+        }
+
+        .air-purifier-service-action .add-btn {
+            position: relative;
+            z-index: 1;
+            min-width: 66px;
+            margin-top: -7px;
+            padding: 5px 12px;
+            border: 1px solid #d79aff;
+            border-radius: 7px;
+            background: #fff;
+            color: #7900df;
+            font-family: inherit;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .air-purifier-service-action .add-btn:hover {
+            background: #f8edff;
+        }
+
+        @media (max-width: 520px) {
+            .air-purifier-page {
+                grid-template-columns: 1fr;
+                padding: 24px 20px;
+            }
+
+            .air-purifier-summary {
+                padding: 0 0 20px;
+            }
+
+            .air-purifier-warranty {
+                margin-left: 0;
+            }
+
+            .air-purifier-services {
+                padding: 22px 0 0;
+                border-top: 1px solid #eee8d9;
+                border-left: 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .air-purifier-page {
+                padding: 20px 14px;
+            }
+
+            .air-purifier-service {
+                grid-template-columns: minmax(0, 1fr) 72px;
+                gap: 9px;
+            }
+
+            .air-purifier-service-action img {
+                width: 72px;
+                height: 72px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="air-purifier-page">
+        <section class="air-purifier-summary" aria-labelledby="air-purifier-title">
+            <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
+                <h1 id="air-purifier-title">Air Purifier</h1>
+                <div class="air-purifier-earliest">
+                    <strong><i class="fa-solid fa-circle-check"></i> Earliest</strong>
+                    <span>Fri, 1:00 PM</span>
+                </div>
+            </div>
+            <div class="air-purifier-rating">
+                <i class="fa-solid fa-star"></i> 4.75 <a href="#air-purifier-services">(24K bookings)</a>
+            </div>
+            <div class="air-purifier-warranty">
+                <span><i class="fa-solid fa-shield-halved"></i> &nbsp;Up to 180 days warranty</span>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+            <a class="air-purifier-view-services" href="#air-purifier-services">View Services</a>
+        </section>
+
+        <section class="air-purifier-services" id="air-purifier-services" aria-labelledby="air-purifier-services-title">
+            <h2 id="air-purifier-services-title">Service &amp; repair</h2>
+
+            <article class="air-purifier-service">
+                <div>
+                    <h3>Air purifier check-up</h3>
+                    <div class="air-purifier-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.65 <a href="#air-purifier-services">(1K reviews)</a></div>
+                    <div class="air-purifier-service-price">₹299 <span class="air-purifier-service-time">• &nbsp;45 mins</span></div>
+                    <ul class="air-purifier-service-features">
+                        <li>Visitation fee will be adjusted in the final repair quote</li>
+                    </ul>
+                    <a class="air-purifier-details" href="#air-purifier-services">View details</a>
+                </div>
+                <div class="air-purifier-service-action">
+                    <img src="images/air_purifier.png" alt="Air purifier check-up">
+                    <button class="add-btn" type="button" onclick="addToCart('Air purifier check-up', 299)">Add</button>
+                </div>
+            </article>
+
+            <article class="air-purifier-service">
+                <div>
+                    <h3>Air purifier filter cleaning</h3>
+                    <div class="air-purifier-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.79 <a href="#air-purifier-services">(3K reviews)</a></div>
+                    <div class="air-purifier-service-price">₹399 <span class="air-purifier-service-time">• &nbsp;30 mins</span></div>
+                    <ul class="air-purifier-service-features">
+                        <li>Water-cleaning for pre-filter; dry vacuuming for carbon &amp; HEPA filters</li>
+                    </ul>
+                    <a class="air-purifier-details" href="#air-purifier-services">View details</a>
+                </div>
+                <div class="air-purifier-service-action">
+                    <img src="images/air_purifier.png" alt="Air purifier filter cleaning">
+                    <button class="add-btn" type="button" onclick="addToCart('Air purifier filter cleaning', 399)">Add</button>
+                </div>
+            </article>
+
+            <article class="air-purifier-service">
+                <div>
+                    <h3>Air purifier filter &amp; parts cleaning</h3>
+                    <div class="air-purifier-service-rating"><i class="fa-solid fa-circle-check"></i> &nbsp;4.83 <a href="#air-purifier-services">(2K reviews)</a></div>
+                    <div class="air-purifier-service-price">₹799 <span class="air-purifier-service-time">• &nbsp;1 hr 15 mins</span></div>
+                    <ul class="air-purifier-service-features">
+                        <li>Filters &amp; body parts cleaning (requires dismantling)</li>
+                    </ul>
+                    <a class="air-purifier-details" href="#air-purifier-services">View details</a>
+                </div>
+                <div class="air-purifier-service-action">
+                    <img src="images/air_purifier.png" alt="Air purifier filter and parts cleaning">
+                    <button class="add-btn" type="button" onclick="addToCart('Air purifier filter & parts cleaning', 799)">Add</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="common.js?v=13"></script>
+    <script src="cart.js?v=13"></script>
+</body>
+</html>
