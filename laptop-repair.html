@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptop Repair - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=3135">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,6 +19,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             margin: 0;
             background: #fffef2;
@@ -26,10 +31,10 @@
         .laptop-page {
             display: grid;
             grid-template-columns: 43% 57%;
-            max-width: 1200px;
+            max-width: 1220px;
             min-height: 100vh;
             margin: 0 auto;
-            padding: 36px 48px;
+            padding: 36px 75px;
         }
 
         .laptop-summary {
@@ -201,7 +206,7 @@
         .laptop-service-action {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
         }
 
@@ -426,9 +431,54 @@
                 font-size: 12px;
             }
         }
+
+        @media (max-width: 768px) {
+            .laptop-page {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .laptop-page {
+                padding-right: clamp(16px, 3vw, 32px);
+                padding-left: clamp(16px, 3vw, 32px);
+            }
+        }
+
+        .laptop-instant,
+        .laptop-rating,
+        .laptop-service-rating,
+        .laptop-service-price,
+        .laptop-service-features,
+        .laptop-details,
+        .laptop-option-count {
+            font-size: 12px;
+        }
+
+        .laptop-warranty {
+            font-size: 14px;
+        }
+
+        .laptop-view-services,
+        .laptop-service-action .add-btn {
+            font-size: 13px;
+        }
+
+        .laptop-services h2 {
+            font-size: 25px;
+        }
+
+        .laptop-service h3 {
+            font-size: 16px;
+        }
+
+        .laptop-option-meta {
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
+    <div id="header-placeholder"></div>
     <main class="laptop-page">
         <section class="laptop-summary" aria-labelledby="laptop-title">
             <div class="laptop-heading">
@@ -527,6 +577,7 @@
             </article>
         </section>
     </main>
+    <div id="footer-placeholder"></div>
     <div class="laptop-modal-overlay" id="laptop-desktop-modal" aria-hidden="true">
         <div class="laptop-modal-window" role="dialog" aria-modal="true" aria-labelledby="laptop-desktop-title">
             <button class="laptop-modal-close" type="button" aria-label="Close" onclick="closeLaptopOptions('laptop-desktop-modal')">×</button>
@@ -708,7 +759,7 @@
             }
         });
     </script>
-    <script src="common.js?v=13"></script>
+    <script src="common.js?v=14"></script>
     <script src="cart.js?v=13"></script>
 </body>
 </html>

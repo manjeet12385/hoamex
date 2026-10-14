@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Purifier - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=3135">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,6 +19,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             margin: 0;
             background: #fffef2;
@@ -26,10 +31,10 @@
         .air-purifier-page {
             display: grid;
             grid-template-columns: 44% 56%;
-            max-width: 1200px;
+            max-width: 1220px;
             min-height: 100vh;
             margin: 0 auto;
-            padding: 34px 48px;
+            padding: 34px 75px;
         }
 
         .air-purifier-summary {
@@ -187,7 +192,7 @@
         .air-purifier-service-action {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
         }
 
@@ -255,9 +260,63 @@
                 height: 72px;
             }
         }
+
+        @media (max-width: 768px) {
+            .air-purifier-page {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .air-purifier-page {
+                padding-right: clamp(16px, 3vw, 32px);
+                padding-left: clamp(16px, 3vw, 32px);
+            }
+        }
+
+        .air-purifier-summary h1 {
+            font-size: 30px;
+        }
+
+        .air-purifier-rating {
+            font-size: 13px;
+        }
+
+        .air-purifier-earliest {
+            font-size: 11px;
+        }
+
+        .air-purifier-warranty {
+            font-size: 14px;
+        }
+
+        .air-purifier-view-services,
+        .air-purifier-details {
+            font-size: 13px;
+        }
+
+        .air-purifier-services h2 {
+            font-size: 24px;
+        }
+
+        .air-purifier-service h3 {
+            font-size: 16px;
+        }
+
+        .air-purifier-service-rating,
+        .air-purifier-service-price,
+        .air-purifier-service-time,
+        .air-purifier-service-features {
+            font-size: 12px;
+        }
+
+        .air-purifier-service-action .add-btn {
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
+    <div id="header-placeholder"></div>
     <main class="air-purifier-page">
         <section class="air-purifier-summary" aria-labelledby="air-purifier-title">
             <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
@@ -329,7 +388,8 @@
             </article>
         </section>
     </main>
-    <script src="common.js?v=13"></script>
+    <div id="footer-placeholder"></div>
+    <script src="common.js?v=14"></script>
     <script src="cart.js?v=13"></script>
 </body>
 </html>

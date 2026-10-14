@@ -50,8 +50,28 @@ const razorpay = new Razorpay({
 });
 
 const app = express();
-const HOST = process.env.HOST || '0.0.0.0';
-const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'localhost';
+const PORT = Number(process.env.PORT) || 3000;
+
+function startServer(port = PORT, host = HOST) {
+  const server = app.listen(port, host, () => {
+    console.log(`Server is running at http://${host === '0.0.0.0' ? 'localhost' : host}:${port}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      const nextPort = port + 1;
+      console.warn(`Port ${port} is busy. Trying ${nextPort}...`);
+      startServer(nextPort, host);
+      return;
+    }
+
+    console.error('Failed to start server:', err.message);
+    process.exit(1);
+  });
+
+  return server;
+}
 
 // ✅ FIX #21: DB Pool with timeout config to prevent connection leaks
 const pool = new Pool({
@@ -1056,12 +1076,7 @@ app.use((req, res) => {
 
 // Start Server (only if not running in Vercel)
 if (require.main === module) {
-  app.listen(PORT, HOST, () => {
-    console.log(`Server is running at http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}`);
-  }).on('error', (err) => {
-    console.error('Failed to start server:', err.message);
-    process.exit(1);
-  });
+  startServer(PORT, HOST);
 }
 
 module.exports = app;

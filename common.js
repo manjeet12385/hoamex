@@ -26,12 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    const footerPlaceholder = document.getElementById('footer-placeholder');
+    let footerPlaceholder = document.getElementById('footer-placeholder');
+    if (!footerPlaceholder && !document.querySelector('footer')) {
+        footerPlaceholder = document.createElement('div');
+        footerPlaceholder.id = 'footer-placeholder';
+        document.body.appendChild(footerPlaceholder);
+    }
+
     if (footerPlaceholder) {
         fetch('footer')
-            .then(res => res.text())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Footer request failed with status ${res.status}`);
+                }
+                return res.text();
+            })
             .then(data => {
                 footerPlaceholder.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Failed to load shared footer:', error);
             });
     }
 });

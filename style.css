@@ -1039,14 +1039,29 @@ body {
 }
 
 .ac-service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
     gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.ac-service-grid .ac-service-card-item {
+    flex: 0 0 calc((100% - 45px) / 4);
 }
 
 .ac-service-card-item {
     text-align: center;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .ac-service-grid .ac-service-card-item {
+        flex-basis: 72px;
+    }
 }
 
 .ac-service-card-item img {
@@ -2925,8 +2940,14 @@ body {
     margin: 0 !important;
     font-size: 16px !important;
     color: #3d3d3d !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
 }
 .premium-navbar .search-icon {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
     margin: 0 !important;
     flex-shrink: 0 !important;
     font-size: 20px !important;
@@ -4791,6 +4812,52 @@ html, body {
     display: none !important;
 }
 
+@media (max-width: 768px) {
+    .service-cat-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .service-cat-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-cat-grid > .service-cat-item {
+        flex: 0 0 72px !important;
+    }
+
+    .service-cat-grid .service-cat-img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .select-service-card .service-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .select-service-card .service-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .select-service-card .service-grid > .service-item-sidebar {
+        flex: 0 0 104px !important;
+        min-width: 104px !important;
+    }
+}
+
 .page-rating,
 .ac-rating,
 .kitchen-rating,
@@ -4846,5 +4913,354 @@ html, body {
     #prevBtnSalonMen.nav-btn:not(#nextBtnMainServices),
     #nextBtnSalonMen.nav-btn:not(#nextBtnMainServices) {
         top: 70px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #service-details-section .service-banner-card > div:not(.free-gas-tag) {
+        width: 55% !important;
+        padding: 44px 12px 12px !important;
+    }
+
+    #service-details-section .service-banner-card h3 {
+        font-size: 18px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 6px !important;
+    }
+
+    #service-details-section .service-banner-card p {
+        font-size: 11px !important;
+        line-height: 1.3 !important;
+    }
+
+    #service-details-section .service-banner-card img {
+        width: 58% !important;
+    }
+
+    .ac-service-layout .plan-details-card > .plan-header {
+        align-items: flex-start !important;
+        gap: 8px !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .ac-service-layout .plan-details-card > .plan-header > div:first-child {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+        padding-right: 4px !important;
+    }
+
+    .ac-service-layout .plan-details-card > .plan-header .add-btn-container {
+        flex: 0 0 64px !important;
+        width: 64px !important;
+        text-align: right !important;
+    }
+
+    .ac-service-layout .plan-details-card > .plan-header .add-btn {
+        width: 60px !important;
+        min-width: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px 8px !important;
+    }
+
+    #service-details-section .plan-details-card > div[style*="display: flex"] {
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    #service-details-section .plan-details-card > div[style*="display: flex"] > div:first-child {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        padding-right: 4px !important;
+    }
+
+    #service-details-section .plan-details-card > div[style*="display: flex"] > div:last-child {
+        flex: 0 0 76px !important;
+        width: 76px !important;
+    }
+
+    #service-details-section .plan-details-card > div[style*="display: flex"] img {
+        height: 64px !important;
+    }
+
+    #service-details-section .plan-details-card > div[style*="display: flex"] button {
+        width: 64px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+    }
+
+    #service-details-section .plan-details-card h4 {
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+    }
+
+    #service-details-section .plan-details-card .plan-rating,
+    #service-details-section .plan-details-card .plan-price {
+        font-size: 11px !important;
+        line-height: 1.35 !important;
+    }
+
+    #service-details-section .plan-details-card .save-tag,
+    #service-details-section .plan-details-card .plan-features,
+    #service-details-section .plan-details-card .view-details {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card:has(.add-btn) {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 12px !important;
+    }
+
+    .service-card:has(.add-btn) > .service-card-info {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    .service-card:has(.add-btn) > :not(.service-card-info) {
+        flex: 0 0 72px !important;
+        align-items: flex-end !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        margin-top: 0 !important;
+        min-width: 72px !important;
+        width: 72px !important;
+    }
+
+    .service-card:has(.add-btn) .service-img-wrap {
+        align-self: flex-end !important;
+        flex: 0 0 64px !important;
+        margin: 0 0 4px !important;
+        max-width: 64px !important;
+        width: 64px !important;
+        height: 64px !important;
+    }
+
+    .service-card:has(.add-btn) .add-btn,
+    .svc-row:has(.add-btn) .add-btn {
+        align-self: flex-end !important;
+        flex: 0 0 64px !important;
+        margin: 0 0 4px !important;
+        width: 64px !important;
+        min-width: 0 !important;
+        max-width: 64px !important;
+        padding: 6px 8px !important;
+    }
+
+    .plan-details-card > .plan-header:has(.add-btn) {
+        align-items: flex-start !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+    }
+
+    .plan-details-card > .plan-header:has(.add-btn) > :first-child {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    .plan-details-card > .plan-header:has(.add-btn) > .add-btn-container {
+        flex: 0 0 64px !important;
+        text-align: right !important;
+        width: 64px !important;
+    }
+
+    .plan-details-card > .plan-header:has(.add-btn) .add-btn {
+        margin-right: 0 !important;
+        padding: 6px 8px !important;
+        width: 60px !important;
+    }
+
+    .svc-row:has(.add-btn) {
+        align-items: flex-start !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+    }
+
+    .svc-row:has(.add-btn) .svc-info {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        padding-right: 4px !important;
+    }
+
+    .svc-row:has(.add-btn) .svc-media {
+        align-items: flex-end !important;
+        flex: 0 0 72px !important;
+        margin-top: 0 !important;
+        min-width: 72px !important;
+        width: 72px !important;
+    }
+
+    .svc-row:has(.add-btn) .svc-img {
+        width: 64px !important;
+        height: 64px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header.premium-navbar {
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+    }
+
+    .header.premium-navbar .logo {
+        margin-right: 0 !important;
+    }
+
+    .header.premium-navbar .search-container {
+        display: flex !important;
+        order: 2 !important;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-height: 36px !important;
+        margin: 12px 0 0 !important;
+    }
+
+    body,
+    body:has(.header .search-container[style*="display:none"]),
+    body:has(.header .search-container[style*="display: none"]) {
+        padding-top: 112px !important;
+    }
+
+    .main-content,
+    .page-wrapper {
+        width: 100% !important;
+        max-width: 1220px !important;
+        margin: 16px auto !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-sidebar {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    .left-sidebar > * {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    header.header,
+    header.header.premium-navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 10000 !important;
+    }
+}
+
+header.header {
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+@media (min-width: 769px) {
+    html {
+        scrollbar-gutter: stable !important;
+    }
+
+    html:root,
+    html:root body {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    header.header.premium-navbar:not(.home-page-header) {
+        padding-right: max(75px, calc(50% - 542.5px)) !important;
+        padding-left: max(75px, calc(50% - 542.5px)) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    header.header.premium-navbar:not(.home-page-header) {
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-content,
+    .page-wrapper,
+    .kitchen-page,
+    .bathroom-page,
+    .air-purifier-page,
+    .air-cooler-page,
+    .gas-stove-page,
+    .laptop-page,
+    .three-col-layout {
+        box-sizing: border-box !important;
+        max-width: 1220px !important;
+        padding-left: 75px !important;
+        padding-right: 75px !important;
+    }
+
+    .page-wrapper > .three-col-layout {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-content,
+    .page-wrapper,
+    .kitchen-page,
+    .bathroom-page,
+    .air-purifier-page,
+    .air-cooler-page,
+    .gas-stove-page,
+    .laptop-page,
+    .three-col-layout {
+        box-sizing: border-box !important;
+        padding-left: clamp(16px, 3vw, 32px) !important;
+        padding-right: clamp(16px, 3vw, 32px) !important;
+    }
+
+    .page-wrapper > .three-col-layout {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content,
+    .page-wrapper,
+    .kitchen-page,
+    .bathroom-page,
+    .air-purifier-page,
+    .air-cooler-page,
+    .gas-stove-page,
+    .laptop-page,
+    .legal-content,
+    .three-col-layout {
+        box-sizing: border-box !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .legal-content {
+        width: calc(100% - 32px) !important;
+    }
+
+    .page-wrapper > .three-col-layout {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }

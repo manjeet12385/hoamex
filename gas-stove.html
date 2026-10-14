@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gas Stove Service &amp; Repair - Joamex</title>
+    <link rel="stylesheet" href="style.css?v=3135">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,6 +19,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             margin: 0;
             background: #fffef2;
@@ -26,10 +31,10 @@
         .gas-stove-page {
             display: grid;
             grid-template-columns: 44% 56%;
-            max-width: 1200px;
+            max-width: 1220px;
             min-height: 100vh;
             margin: 0 auto;
-            padding: 34px 48px;
+            padding: 34px 75px;
         }
 
         .gas-stove-summary {
@@ -182,7 +187,7 @@
         .gas-stove-service-action {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
         }
 
@@ -515,6 +520,19 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .gas-stove-page {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gas-stove-page {
+                padding-right: clamp(16px, 3vw, 32px);
+                padding-left: clamp(16px, 3vw, 32px);
+            }
+        }
+
         @media (max-width: 420px) {
             .gas-stove-options-overlay {
                 padding: 10px;
@@ -524,9 +542,87 @@
                 width: min(340px, 100%);
             }
         }
+
+        .gas-stove-summary h1 {
+            max-width: none;
+            font-size: 30px;
+        }
+
+        .gas-stove-earliest,
+        .gas-stove-rating {
+            font-size: 12px;
+        }
+
+        .gas-stove-warranty {
+            font-size: 14px;
+        }
+
+        .gas-stove-view-services,
+        .gas-stove-details,
+        .gas-stove-service-rating,
+        .gas-stove-service-price,
+        .gas-stove-service-features,
+        .gas-stove-option-count,
+        .gas-stove-options-rating,
+        .gas-stove-cover,
+        .gas-stove-option-card h4,
+        .gas-stove-option-card .rating,
+        .gas-stove-option-card .price,
+        .gas-stove-option-card .option-add-btn {
+            font-size: 12px;
+        }
+
+        .gas-stove-section h2 {
+            font-size: 22px;
+        }
+
+        .gas-stove-service h3 {
+            font-size: 15px;
+        }
+
+        .gas-stove-service-action .add-btn {
+            font-size: 12px;
+        }
+
+        @media (max-width: 520px) {
+            .gas-stove-page {
+                grid-template-columns: 1fr;
+            }
+
+            .gas-stove-summary {
+                padding: 0 0 20px;
+            }
+
+            .gas-stove-summary h1 {
+                max-width: 70%;
+                font-size: 26px;
+            }
+
+            .gas-stove-warranty {
+                margin-left: 0;
+            }
+
+            .gas-stove-services {
+                padding: 18px 0 0;
+                border-top: 1px solid #eee8d9;
+                border-left: 0;
+            }
+
+            .gas-stove-service {
+                grid-template-columns: minmax(0, 1fr) 72px;
+                gap: 10px;
+                min-height: 112px;
+            }
+
+            .gas-stove-service-action img {
+                width: 68px;
+                height: 62px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div id="header-placeholder"></div>
     <main class="gas-stove-page">
         <section class="gas-stove-summary" aria-labelledby="gas-stove-title">
             <div class="gas-stove-heading">
@@ -816,7 +912,8 @@
             }
         });
     </script>
-    <script src="common.js?v=13"></script>
+    <div id="footer-placeholder"></div>
+    <script src="common.js?v=14"></script>
     <script src="cart.js?v=13"></script>
 </body>
 </html>

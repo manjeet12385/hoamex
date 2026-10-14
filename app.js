@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updateArrows = () => {
             const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-            previousButton.classList.toggle('is-hidden', carousel.scrollLeft <= 1);
-            nextButton.classList.toggle('is-hidden', carousel.scrollLeft >= maxScrollLeft - 1);
+            const previousHidden = carousel.scrollLeft <= 1;
+            const nextHidden = carousel.scrollLeft >= maxScrollLeft - 1;
+            previousButton.classList.toggle('is-hidden', previousHidden);
+            nextButton.classList.toggle('is-hidden', nextHidden);
+            previousButton.style.setProperty('display', previousHidden ? 'none' : 'flex', 'important');
+            nextButton.style.setProperty('display', nextHidden ? 'none' : 'flex', 'important');
         };
         const scrollOneItem = (direction) => {
             const item = carousel.querySelector(itemSelector);

@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Joamex - Home Services Simplified</title>
-<link href="style.css?v=3120" rel="stylesheet"/>
+<link href="style.css?v=3135" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 
@@ -56,7 +56,7 @@
 <img loading="lazy" alt="Kitchen Installation" src="images/kitchen.jpg"/>
 </div>
 <div class="carousel-item">
-<img loading="lazy" alt="Painting Service" src="images/painter.jpg"/>
+<img loading="lazy" alt="AC Service Technician" src="images/image%20copy%209.png"/>
 </div>
 </div>
 </div></section>
@@ -1157,7 +1157,7 @@
 </div>
 </div>
 </div>
-<script src="app.js?v=11"></script>
+<script src="app.js?v=13"></script>
 <script src="common.js?v=14"></script>
 <script src="cart.js?v=13"></script>
 <!-- Cart Sidebar -->
@@ -1189,11 +1189,15 @@
     font-family: 'Inter', sans-serif;
 }
 .footer-container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1220px;
     margin: 0 auto;
+    padding-right: 75px;
+    padding-left: 75px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
+    box-sizing: border-box;
 }
 .footer-col h3 {
     font-size: 18px;
@@ -1227,8 +1231,11 @@
     margin-bottom: 20px;
 }
 .footer-bottom {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1220px;
     margin: 40px auto 0;
+    padding-right: 75px !important;
+    padding-left: 75px !important;
     padding-top: 20px;
     border-top: 1px solid #eaeaea;
     display: flex;
@@ -1236,6 +1243,14 @@
     align-items: center;
     font-size: 13px;
     color: #666;
+    box-sizing: border-box;
+}
+#cities-section > div {
+    width: 100%;
+    max-width: 1220px !important;
+    padding-right: 75px !important;
+    padding-left: 75px !important;
+    box-sizing: border-box;
 }
 .social-icons a {
     color: #333;
@@ -1247,11 +1262,18 @@
     color: #6366f1;
 }
 @media (max-width: 768px) {
-    .footer { padding: 40px 20px; }
-    .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
-    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    .footer { padding: 40px 0; }
+    .footer-container { padding-right: 16px; padding-left: 16px; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-bottom { padding-right: 16px !important; padding-left: 16px !important; flex-direction: column; gap: 20px; text-align: center; }
+    #cities-section > div { padding-right: 16px !important; padding-left: 16px !important; }
     .social-icons { margin-top: 10px; }
     .social-icons a { margin: 0 10px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-container, .footer-bottom, #cities-section > div {
+        padding-right: clamp(16px, 3vw, 32px) !important;
+        padding-left: clamp(16px, 3vw, 32px) !important;
+    }
 }
 @media (max-width: 480px) {
     .footer-container { grid-template-columns: 1fr; }
