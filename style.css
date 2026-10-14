@@ -5264,3 +5264,71 @@ header.header {
         padding-right: 0 !important;
     }
 }
+
+@media (max-width: 768px) {
+    .header-actions > .location-btn,
+    .header-actions > .partner-btn,
+    .header-actions > #user-login-btn {
+        position: fixed !important;
+        bottom: 8px !important;
+        z-index: 10001 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: calc((100vw - 40px) / 3) !important;
+        min-width: 0 !important;
+        max-width: calc((100vw - 40px) / 3) !important;
+        height: 56px !important;
+        margin: 0 !important;
+        padding: 6px 4px !important;
+        border: 0 !important;
+        border-radius: 14px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        color: #30352c !important;
+        transform: none !important;
+        animation: none !important;
+        text-align: center !important;
+    }
+
+    .header-actions > .location-btn {
+        left: 50% !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: 10px !important;
+        line-height: 1.1 !important;
+        white-space: normal !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .header-actions > .location-btn i {
+        font-size: 16px !important;
+    }
+
+    .header-actions > .partner-btn {
+        left: 8px !important;
+        right: auto !important;
+        gap: 5px !important;
+        border-right: 1px solid rgba(37, 32, 20, 0.1) !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        white-space: normal !important;
+    }
+
+    .header-actions > .partner-btn i {
+        flex: 0 0 auto !important;
+        font-size: 15px !important;
+    }
+
+    .header-actions > #user-login-btn {
+        right: 8px !important;
+        left: auto !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+        font-size: 16px !important;
+    }
+
+    body::after {
+        z-index: 9999 !important;
+    }
+}
