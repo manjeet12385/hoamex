@@ -153,6 +153,98 @@
             border-radius: 6px;
             display: inline-block;
         }
+
+        .review-action {
+            margin-top: 16px;
+            border: 0;
+            border-radius: 8px;
+            background: #4a3aff;
+            color: white;
+            padding: 10px 14px;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .review-action:hover { background: #3828d8; }
+        .review-submitted {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .review-submitted i { color: #f59e0b; }
+
+        .review-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.55);
+        }
+        .review-modal[hidden] { display: none; }
+        .review-dialog {
+            width: min(100%, 480px);
+            padding: 25px;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+        }
+        .review-dialog-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .review-dialog h2 { color: #0f172a; font-size: 21px; }
+        .review-service-name { margin-top: 5px; color: #64748b; font-size: 14px; }
+        .review-close {
+            border: 0;
+            background: transparent;
+            color: #64748b;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .review-label { display: block; margin: 16px 0 8px; font-size: 14px; font-weight: 700; }
+        .rating-options { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 6px; }
+        .rating-options input { position: absolute; opacity: 0; }
+        .rating-options label { color: #cbd5e1; cursor: pointer; font-size: 30px; }
+        .rating-options label:hover,
+        .rating-options label:hover ~ label,
+        .rating-options input:checked ~ label { color: #f59e0b; }
+        .rating-options input:focus-visible + label { outline: 2px solid #4a3aff; outline-offset: 3px; }
+        .review-comment {
+            display: block;
+            width: 100%;
+            min-height: 100px;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font: inherit;
+            resize: vertical;
+        }
+        .review-submit {
+            width: 100%;
+            margin-top: 18px;
+            border: 0;
+            border-radius: 8px;
+            background: #4a3aff;
+            color: white;
+            padding: 12px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .review-submit:disabled { cursor: wait; opacity: 0.65; }
+        .review-message { min-height: 20px; margin-top: 10px; font-size: 13px; }
+        .review-message.error { color: #dc2626; }
         
         .empty-state {
             text-align: center;
@@ -231,6 +323,12 @@
             }
         }
     </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 
 
 </head>
@@ -257,6 +355,32 @@
                 <p>Loading your bookings...</p>
             </div>
         </div>
+    </div>
+
+    <div class="review-modal" id="reviewModal" hidden>
+        <section class="review-dialog" role="dialog" aria-modal="true" aria-labelledby="reviewDialogTitle">
+            <div class="review-dialog-header">
+                <div>
+                    <h2 id="reviewDialogTitle">Rate your service</h2>
+                    <p class="review-service-name" id="reviewServiceName"></p>
+                </div>
+                <button class="review-close" id="closeReviewModal" type="button" aria-label="Close review form">&times;</button>
+            </div>
+            <form id="reviewForm">
+                <span class="review-label">Your rating</span>
+                <div class="rating-options" role="radiogroup" aria-label="Rating from 1 to 5 stars">
+                    <input id="rating5" type="radio" name="rating" value="5" required><label for="rating5" aria-label="5 stars">&#9733;</label>
+                    <input id="rating4" type="radio" name="rating" value="4"><label for="rating4" aria-label="4 stars">&#9733;</label>
+                    <input id="rating3" type="radio" name="rating" value="3"><label for="rating3" aria-label="3 stars">&#9733;</label>
+                    <input id="rating2" type="radio" name="rating" value="2"><label for="rating2" aria-label="2 stars">&#9733;</label>
+                    <input id="rating1" type="radio" name="rating" value="1"><label for="rating1" aria-label="1 star">&#9733;</label>
+                </div>
+                <label class="review-label" for="reviewComment">Tell us about your experience (optional)</label>
+                <textarea class="review-comment" id="reviewComment" name="comment" maxlength="1000" placeholder="Share feedback about the service..."></textarea>
+                <button class="review-submit" id="reviewSubmit" type="submit">Submit review</button>
+                <p class="review-message" id="reviewMessage" aria-live="polite"></p>
+            </form>
+        </section>
     </div>
 
     <script>
@@ -348,6 +472,12 @@
                         let statusClass = 'status-pending';
                         if(status === 'Confirmed' || status === 'On the way') statusClass = 'status-confirmed';
                         else if(status === 'Completed') statusClass = 'status-confirmed'; // maybe a different color eventually
+                        const completed = String(status).trim().toLowerCase() === 'completed';
+                        const reviewActionHtml = completed
+                            ? (b.review_id
+                                ? `<div class="review-submitted"><i class="fa-solid fa-star"></i> Your rating: ${b.review_rating}/5</div>`
+                                : `<button class="review-action" type="button" onclick="openReviewModal(${Number(b.id)}, this)"><i class="fa-regular fa-star"></i> Rate &amp; Review</button>`)
+                            : '';
                         
                         const address = b.address + (b.landmark ? ', ' + b.landmark : '');
                         
@@ -381,6 +511,7 @@
                                         </div>
                                     </div>
                                     ${partnerInfoHtml}
+                                    ${reviewActionHtml}
                                 </div>
                                 <div class="b-right">
                                     <div class="b-price">&#8377;${b.total_amount}</div>
@@ -410,6 +541,67 @@
                 `;
             }
         }
+
+        function openReviewModal(bookingId, button) {
+            const modal = document.getElementById('reviewModal');
+            document.getElementById('reviewForm').dataset.bookingId = bookingId;
+            const heading = button.closest('.booking-card').querySelector('.b-title').cloneNode(true);
+            const statusBadge = heading.querySelector('.status-badge');
+            if (statusBadge) statusBadge.remove();
+            document.getElementById('reviewServiceName').textContent = heading.textContent.trim();
+            document.getElementById('reviewMessage').textContent = '';
+            document.getElementById('reviewMessage').classList.remove('error');
+            document.getElementById('reviewForm').reset();
+            modal.hidden = false;
+            document.getElementById('rating5').focus();
+        }
+
+        function closeReviewModal() {
+            document.getElementById('reviewModal').hidden = true;
+        }
+
+        document.getElementById('closeReviewModal').addEventListener('click', closeReviewModal);
+        document.getElementById('reviewModal').addEventListener('click', (event) => {
+            if (event.target.id === 'reviewModal') closeReviewModal();
+        });
+        document.getElementById('reviewForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const submitButton = document.getElementById('reviewSubmit');
+            const message = document.getElementById('reviewMessage');
+            const token = localStorage.getItem('token') || '';
+            const rating = form.querySelector('input[name="rating"]:checked');
+            submitButton.disabled = true;
+            message.textContent = '';
+            message.classList.remove('error');
+
+            try {
+                const response = await fetch(`/api/user/bookings/${encodeURIComponent(form.dataset.bookingId)}/review`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        rating: Number(rating.value),
+                        comment: document.getElementById('reviewComment').value
+                    })
+                });
+                const result = await response.json();
+                if (!response.ok || !result.success) {
+                    throw new Error(result.error || 'Unable to submit your review.');
+                }
+
+                closeReviewModal();
+                await loadUserBookings(email || phone, email ? 'email' : 'phone');
+            } catch (error) {
+                console.error('Review submission failed:', error);
+                message.textContent = error.message || 'Unable to submit your review. Please try again.';
+                message.classList.add('error');
+            } finally {
+                submitButton.disabled = false;
+            }
+        });
     </script>
 
 </body>

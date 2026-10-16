@@ -1,4 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const addFooterResourceLinks = (footer) => {
+        const sections = [
+            {
+                heading: 'For Customers',
+                links: [
+                    ['help-centre', 'Help Centre'],
+                    ['faqs', 'FAQs'],
+                    ['cancellation-refund', 'Cancellation & Refund Policy'],
+                    ['grievance-redressal', 'Grievance Redressal']
+                ]
+            },
+            {
+                heading: 'For Professionals',
+                links: [['partner-terms', 'Partner Terms']]
+            }
+        ];
+
+        sections.forEach(section => {
+            const column = Array.from(footer.querySelectorAll('.footer-col'))
+                .find(item => item.querySelector('h3')?.textContent.trim() === section.heading);
+            const list = column?.querySelector('ul');
+            if (!list) return;
+
+            section.links.forEach(([href, label]) => {
+                if (list.querySelector(`a[href="${href}"]`)) return;
+
+                const item = document.createElement('li');
+                const link = document.createElement('a');
+                const exampleItem = list.querySelector('li');
+                const exampleLink = exampleItem?.querySelector('a');
+                if (exampleItem?.getAttribute('style')) item.setAttribute('style', exampleItem.getAttribute('style'));
+                if (exampleLink?.getAttribute('style')) link.setAttribute('style', exampleLink.getAttribute('style'));
+                link.href = href;
+                link.textContent = label;
+                item.appendChild(link);
+                list.appendChild(item);
+            });
+        });
+    };
+
+    document.querySelectorAll('footer.footer').forEach(addFooterResourceLinks);
+
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         fetch('header')
@@ -43,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 footerPlaceholder.innerHTML = data;
+                footerPlaceholder.querySelectorAll('footer.footer').forEach(addFooterResourceLinks);
             })
             .catch(error => {
                 console.error('Failed to load shared footer:', error);
@@ -1594,6 +1637,53 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.mini-nav-btn.mini-prev i.fa-chevron-left').forEach(icon => {
         icon.classList.remove('fa-chevron-left');
         icon.classList.add('fa-arrow-left');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceGrids = document.querySelectorAll(
+        '.select-service-card .service-grid, .select-service-card .service-grid-box, .select-service-box .service-grid, .select-service-box .service-grid-box'
+    );
+
+    serviceGrids.forEach(grid => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'service-scroll-wrap';
+        grid.parentNode.insertBefore(wrapper, grid);
+        wrapper.appendChild(grid);
+
+        const createArrow = (direction, icon) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `service-scroll-arrow service-scroll-arrow--${direction}`;
+            button.setAttribute('aria-label', direction === 'next' ? 'Scroll to more services' : 'Scroll to previous services');
+            button.innerHTML = `<i class="fa-solid ${icon}" aria-hidden="true"></i>`;
+            wrapper.appendChild(button);
+            return button;
+        };
+
+        const previousButton = createArrow('previous', 'fa-chevron-left');
+        const nextButton = createArrow('next', 'fa-chevron-right');
+        const updateArrows = () => {
+            const canScroll = window.matchMedia('(max-width: 768px)').matches &&
+                grid.scrollWidth > grid.clientWidth + 1;
+            wrapper.classList.toggle('service-scroll-wrap--active', canScroll);
+            previousButton.hidden = !canScroll || grid.scrollLeft <= 1;
+            nextButton.hidden = !canScroll ||
+                grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 1;
+        };
+
+        previousButton.addEventListener('click', () => {
+            grid.scrollBy({ left: -Math.max(grid.clientWidth * 0.75, 120), behavior: 'smooth' });
+        });
+        nextButton.addEventListener('click', () => {
+            grid.scrollBy({ left: Math.max(grid.clientWidth * 0.75, 120), behavior: 'smooth' });
+        });
+        grid.addEventListener('scroll', updateArrows, { passive: true });
+        window.addEventListener('resize', updateArrows);
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(updateArrows).observe(grid);
+        }
+        updateArrows();
     });
 });
 

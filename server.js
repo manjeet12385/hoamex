@@ -182,6 +182,15 @@ async function initDb() {
         assigned_partner_phone VARCHAR(20),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
+
+      CREATE TABLE IF NOT EXISTS booking_reviews (
+        id SERIAL PRIMARY KEY,
+        booking_id INTEGER NOT NULL UNIQUE REFERENCES bookings(id) ON DELETE CASCADE,
+        customer_email VARCHAR(100) NOT NULL,
+        rating SMALLINT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+        comment TEXT NOT NULL DEFAULT '',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
       
       CREATE TABLE IF NOT EXISTS partners (
         id SERIAL PRIMARY KEY,
@@ -888,11 +897,23 @@ app.get('/api/user/bookings', authGuard, async (req, res) => {
       email = email.trim().toLowerCase();
       // Search by email column OR by phone_number linked to user's email account
       result = await pool.query(
-        'SELECT * FROM bookings WHERE LOWER(TRIM(email)) = $1 OR phone_number IN (SELECT phone FROM users WHERE LOWER(TRIM(email)) = $1) ORDER BY id DESC',
+        `SELECT b.*, r.id AS review_id, r.rating AS review_rating
+         FROM bookings b
+         LEFT JOIN booking_reviews r ON r.booking_id = b.id
+         WHERE LOWER(TRIM(b.email)) = $1
+           OR b.phone_number IN (SELECT phone FROM users WHERE LOWER(TRIM(email)) = $1)
+         ORDER BY b.id DESC`,
         [email]
       );
     } else if (phone) {
-      result = await pool.query('SELECT * FROM bookings WHERE phone_number = $1 ORDER BY id DESC', [phone]);
+      result = await pool.query(
+        `SELECT b.*, r.id AS review_id, r.rating AS review_rating
+         FROM bookings b
+         LEFT JOIN booking_reviews r ON r.booking_id = b.id
+         WHERE b.phone_number = $1
+         ORDER BY b.id DESC`,
+        [phone]
+      );
     } else {
       return res.status(400).json({ error: 'Email or phone required' });
     }
@@ -900,6 +921,53 @@ app.get('/api/user/bookings', authGuard, async (req, res) => {
   } catch (error) {
     console.error('Error fetching user bookings:', error);
     res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post('/api/user/bookings/:id/review', authGuard, async (req, res) => {
+  if (req.user.role !== 'user' && req.user.role) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  const bookingId = Number(req.params.id);
+  const { rating, comment = '' } = req.body;
+  const normalizedEmail = String(req.user.email || '').trim().toLowerCase();
+
+  if (!Number.isSafeInteger(bookingId) || bookingId <= 0) {
+    return res.status(400).json({ error: 'Invalid booking ID.' });
+  }
+  if (!Number.isInteger(rating) || rating < 1 || rating > 5) {
+    return res.status(400).json({ error: 'Rating must be a whole number from 1 to 5.' });
+  }
+  if (typeof comment !== 'string' || comment.trim().length > 1000) {
+    return res.status(400).json({ error: 'Review comment must be 1000 characters or fewer.' });
+  }
+
+  try {
+    const bookingResult = await pool.query(
+      `SELECT id FROM bookings
+       WHERE id = $1
+         AND (LOWER(TRIM(email)) = $2
+           OR phone_number IN (SELECT phone FROM users WHERE LOWER(TRIM(email)) = $2))
+         AND LOWER(TRIM(status)) = 'completed'`,
+      [bookingId, normalizedEmail]
+    );
+    if (bookingResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Completed booking not found.' });
+    }
+
+    await pool.query(
+      `INSERT INTO booking_reviews (booking_id, customer_email, rating, comment)
+       VALUES ($1, $2, $3, $4)`,
+      [bookingId, normalizedEmail, rating, comment.trim()]
+    );
+    return res.status(201).json({ success: true, message: 'Thank you for your review.' });
+  } catch (error) {
+    if (error.code === '23505') {
+      return res.status(409).json({ error: 'A review has already been submitted for this booking.' });
+    }
+    console.error('Error submitting booking review:', error);
+    return res.status(500).json({ error: 'Unable to submit review right now.' });
   }
 });
 

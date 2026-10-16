@@ -1,0 +1,16 @@
+ air-cooler.html         | 322 [32m+++++++++++++++++++[m
+ air-purifier.html       | 335 [32m++++++++++++++++++++[m
+ cart.js                 |   4 [32m+[m
+ gas-stove.html          | 822 [32m++++++++++++++++++++++++++++++++++++++++++++++++[m
+ image copy 10.png       | Bin [31m0[m -> [32m69756[m bytes
+ image copy 11.png       | Bin [31m0[m -> [32m224413[m bytes
+ image copy 12.png       | Bin [31m0[m -> [32m62631[m bytes
+ image copy 13.png       | Bin [31m0[m -> [32m27624[m bytes
+ image copy 14.png       | Bin [31m0[m -> [32m85221[m bytes
+ image copy 16.png       | Bin [31m0[m -> [32m328221[m bytes
+ image copy 17.png       | Bin [31m0[m -> [32m85903[m bytes
+ images/air_purifier.png | Bin [31m0[m -> [32m100545[m bytes
+ images/gas_stove.png    | Bin [31m0[m -> [32m27624[m bytes
+ index.html              |  62 [32m+++[m[31m-[m
+ vercel.json             |  32 [32m++[m
+ 15 files changed, 1565 insertions(+), 12 deletions(-)

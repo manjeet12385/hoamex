@@ -1,0 +1,146 @@
+[1mdiff --git a/.vscode/settings.json b/.vscode/settings.json[m
+[1mnew file mode 100644[m
+[1mindex 00000000..52372626[m
+[1m--- /dev/null[m
+[1m+++ b/.vscode/settings.json[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m    "chat.disableAIFeatures": false[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/about-us.html b/about-us.html[m
+[1mindex 739bef26..e31b349b 100644[m
+[1m--- a/about-us.html[m
+[1m+++ b/about-us.html[m
+[36m@@ -34,6 +34,12 @@[m
+             margin-bottom: 15px;[m
+         }[m
+     </style>[m
+[32m+[m[32m    <!-- Favicon -->[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">[m
+[32m+[m[32m    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">[m
+[32m+[m[32m    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">[m
+[32m+[m
+ [m
+ [m
+ </head>[m
+[36m@@ -66,10 +72,23 @@[m
+     </div>[m
+ [m
+     <div class="content-container">[m
+[32m+[m[32m        <h2>About Joamex</h2>[m
+[32m+[m[32m        <p>Joamex is a home-services platform that helps customers find and request services for their homes, and helps service professionals connect with customers. Customers can explore available service categories, review the information shown for a service, and submit a booking request online.</p>[m
+         <h2>Our Mission</h2>[m
+[31m-        <p>At Joamex, we believe in making home services accessible, reliable, and premium. Our mission is to connect skilled professionals with customers looking for high-quality services at their doorstep.</p>[m
+[32m+[m[32m        <p>Our mission is to make home services more accessible and convenient by bringing customers and skilled service professionals together. We aim to make it easier to discover services, understand the booking details, and request help at home.</p>[m
+         <h2>Our Journey</h2>[m
+[31m-        <p>Started in 2024, we have quickly grown to become a trusted name in home services, from beauty and wellness to home repairs and cleaning.</p>[m
+[32m+[m[32m        <p>Joamex started in 2024 with the goal of simplifying how people find home services. The platform brings together service categories that include home repairs, cleaning, beauty and wellness, and other everyday home needs.</p>[m
+[32m+[m[32m        <h2>How the platform works</h2>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li>Customers browse the services currently listed on the website and review the service and price details shown before booking.</li>[m
+[32m+[m[32m            <li>Customers provide the contact, address, service, and scheduling details needed to submit a booking request.</li>[m
+[32m+[m[32m            <li>Service professionals can apply through the partner registration process and provide the requested profile, skills, documents, and payout details.</li>[m
+[32m+[m[32m            <li>For help with a booking or account, customers and partners can contact Joamex through the support channels on our <a href="contact">Contact Us page</a>.</li>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m        <h2>For customers and service professionals</h2>[m
+[32m+[m[32m        <p>We want customers to be able to find relevant services and get clear information about their booking. We want professionals to have a way to apply to offer their skills through the platform. Service availability, booking details, and partner-specific terms can vary; please review the information shown for the service or account that applies to you.</p>[m
+[32m+[m[32m        <h2>Our commitment</h2>[m
+[32m+[m[32m        <p>We continue to improve the website and support experience. If you have feedback, a question, or a concern about a booking, please <a href="contact">get in touch with Joamex</a>.</p>[m
+     </div>[m
+ [m
+     <!-- The updated footer will be injected by update_footer.py -->[m
+[36m@@ -313,4 +332,3 @@[m
+ </body>[m
+ </html>[m
+ [m
+[31m-[m
+[1mdiff --git a/ac-repair.html b/ac-repair.html[m
+[1mindex 82ab1199..f6f5b0b8 100644[m
+[1m--- a/ac-repair.html[m
+[1m+++ b/ac-repair.html[m
+[36m@@ -4,9 +4,15 @@[m
+     <meta charset="UTF-8">[m
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+     <title>AC Repair - Joamex</title>[m
+[31m-    <link rel="stylesheet" href="style.css?v=3136">[m
+[32m+[m[32m    <link rel="stylesheet" href="style.css?v=3138">[m
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">[m
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">[m
+[32m+[m[32m    <!-- Favicon -->[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">[m
+[32m+[m[32m    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">[m
+[32m+[m[32m    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">[m
+[32m+[m
+     [m
+ [m
+ [m
+[36m@@ -257,7 +263,7 @@[m
+         </div>[m
+ </main>[m
+     [m
+[31m-    <script src="common.js?v=14"></script>[m
+[32m+[m[32m    <script src="common.js?v=15"></script>[m
+     <script src="cart.js?v=13"></script>[m
+ [m
+     <!-- Cart Sidebar -->[m
+[1mdiff --git a/ac-service.html b/ac-service.html[m
+[1mindex 3d80601b..a9c77e65 100644[m
+[1m--- a/ac-service.html[m
+[1m+++ b/ac-service.html[m
+[36m@@ -5,9 +5,15 @@[m
+ <meta charset="utf-8"/>[m
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>[m
+ <title>AC Service &amp; Repair - Joamex</title>[m
+[31m-<link href="style.css?v=3136" rel="stylesheet"/>[m
+[32m+[m[32m<link href="style.css?v=3138" rel="stylesheet"/>[m
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>[m
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>[m
+[32m+[m[32m    <!-- Favicon -->[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">[m
+[32m+[m[32m    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">[m
+[32m+[m[32m    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">[m
+[32m+[m
+ </head>[m
+ <body>[m
+ <!-- Header Section -->[m
+[36m@@ -617,7 +623,7 @@[m
+             }[m
+         });[m
+     </script>[m
+[31m-<script src="common.js?v=14"></script>[m
+[32m+[m[32m<script src="common.js?v=15"></script>[m
+ <script src="cart.js?v=13"></script>[m
+ <!-- Foam Jet Modal -->[m
+ <div class="modal-overlay" id="foam-jet-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">[m
+[1mdiff --git a/admin.html b/admin.html[m
+[1mindex f6098b70..d3dece4d 100644[m
+[1m--- a/admin.html[m
+[1m+++ b/admin.html[m
+[36m@@ -233,6 +233,12 @@[m
+             }[m
+         }[m
+     </style>[m
+[32m+[m[32m    <!-- Favicon -->[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">[m
+[32m+[m[32m    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">[m
+[32m+[m[32m    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">[m
+[32m+[m
+ [m
+ [m
+ </head>[m
+[1mdiff --git a/air-cooler.html b/air-cooler.html[m
+[1mindex 7b3cebbb..15d3efef 100644[m
+[1m--- a/air-cooler.html[m
+[1m+++ b/air-cooler.html[m
+[36m@@ -306,6 +306,12 @@[m
+             font-size: 13px;[m
+         }[m
+     </style>[m
+[32m+[m[32m    <!-- Favicon -->[m
+[32m+[m[32m    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">[m
+[32m+[m[32m    <link rel="icon"
